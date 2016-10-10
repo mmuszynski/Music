@@ -127,12 +127,13 @@ import UIKit
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
         let offset = offsetForNote(name, octave: octave, clef: displayedClef)
-        noteLayer.position.y += offset
+        let viewOffset = viewOffsetForStaffOffset(offset)
+        noteLayer.position.y += viewOffset
         
         if accidental != .none {
             accidentalLayer = MusicStaffViewElementLayer(type: .accidental(accidental))
             accidentalLayer?.height = 0.70 * 4.0 * spaceWidth
-            accidentalLayer?.position = CGPoint(x: xPosition, y: self.bounds.size.height + offset)
+            accidentalLayer?.position = CGPoint(x: xPosition, y: self.bounds.size.height + viewOffset)
             staffLayer.addSublayer(accidentalLayer!)
             noteLayer.position.x += accidentalLayer!.bounds.width
         }
@@ -145,24 +146,17 @@ import UIKit
         //do we need ledger lines?
         //this is a get-it-working approach
         var ledgerLines: CAShapeLayer?
-        
-        if name == .c && octave != 5 {
+        if let ledger = ledgerLinesForOffset(offset) {
             ledgerLines = CAShapeLayer()
-            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width, height: staffLayer.lineWidth)
+            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 2.0)
             ledgerLines!.backgroundColor = UIColor.black.cgColor
             ledgerLines!.position.y += noteLayer.anchorPoint.y * noteLayer.bounds.size.height
             ledgerLines!.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
-            ledgerLines!.strokeColor = UIColor.black.cgColor
-            noteLayer.addSublayer(ledgerLines!)
-        }
-        
-        if name == .b && octave != 4 {
-            ledgerLines = CAShapeLayer()
-            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width, height: staffLayer.lineWidth)
-            ledgerLines!.backgroundColor = UIColor.black.cgColor
-            ledgerLines!.position.y += noteLayer.anchorPoint.y * noteLayer.bounds.size.height
-            ledgerLines!.position.y += (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
-            ledgerLines!.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
+            
+            if !ledger.centered {
+                ledgerLines!.position.y += (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
+            }
+            
             ledgerLines!.strokeColor = UIColor.black.cgColor
             noteLayer.addSublayer(ledgerLines!)
         }
@@ -186,40 +180,64 @@ import UIKit
     ///Calculates the offset for each note in a given clef
     ///
     ///Since notes need to be draw in the correct place in the y-axis, the offset from a given starting location must be computed. Currently, the zero-offset corresponds to the note one ledger line below the lowest staff line (aka Middle C in Treble Clef).
-    func offsetForNote(_ name: NoteName, octave: Int, clef: ClefType) -> CGFloat {
-        var offset: CGFloat = 0
-        var clefOctave: Int = 0
+    ///
+    ///The offset for the note specifies an offset from the center of the view.
+    func offsetForNote(_ name: NoteName, octave: Int, clef: ClefType) -> Int {
+        var offset: Int = 0
+        var clefOctave: Int
         
         switch displayedClef {
         case .treble:
+            //middle line of treble clef is B4
+            //offset of zero corresponds to B4
+            //the clef octave zeroes out the clef and the offset should be set to the positive offset of the note
             clefOctave = 4
-            offset = CGFloat(0.0)
+            offset += NoteName.b.rawValue
         case .bass:
-            offset = spaceWidth
             clefOctave = 3
+            offset += NoteName.d.rawValue
         case .alto:
-            offset = spaceWidth / CGFloat(2.0)
             clefOctave = 4
         case .tenor:
             clefOctave = 4
-            offset = -spaceWidth / CGFloat(2.0)
         }
         
         if name == .a || name == .b {
-            clefOctave -= 1
+            clefOctave += 1
         }
         
-        let octaveOffset = 7 * (octave - clefOctave)
-        offset -= CGFloat(name.rawValue - octaveOffset) * spaceWidth / 2.0
+        let octaveOffset = 7 * (clefOctave - octave)
+        offset -= name.rawValue - octaveOffset
         
         return offset
     }
     
+    func viewOffsetForStaffOffset(_ offset: Int) -> CGFloat {
+        let offsetFloat = CGFloat(offset)
+        return -self.bounds.size.height / 2.0 + offsetFloat * spaceWidth / 2.0
+    }
+    
+    /*
+    ///Returns the number of ledger lines for a note in the given octave and clef
+    ///
+    ///Often times, notes will be drawn either below or above the five lines of the staff. Ledger lines are drawn onto the note layer and will always need to be drawn towards the center of the staff.
+    ///
+    ///- parameter name: The name of the note
+    ///- parameter octave: The octave of the note
+    ///- parameter clef: The type of clef
+    ///- returns: The number of ledger lines and wheter the note resides on a line or between two lines
     func ledgerLinesForNote(_ name: NoteName, octave: Int, clef: ClefType) -> (number: Int, offset: Bool) {
-        //initially hardcoded for treble clef
-        let offset = name.rawValue % 2 == 0
+        let viewOffset = offsetForNote(name, octave: octave, clef: clef)
         
-        return (0, offset)
+        return (0, false)
+    }*/
+    
+    func ledgerLinesForOffset(_ offset: Int) -> (count: Int, centered: Bool)? {
+        if abs(offset) < 6 {
+            return nil
+        }
+    
+        return ((abs(offset) - 4) / 2, offset % 2 == 0)
     }
         
     override func prepareForInterfaceBuilder() {
