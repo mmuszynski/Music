@@ -10,13 +10,21 @@ import UIKit
 
 @IBDesignable class MusicStaffView: UIView {
     
-    @IBInspectable var previewNotes: Int = 8 {
+    ///The number of notes to be displayed in the interface builder preview.
+    ///
+    ///Because of limitations in the way interface builder can set user defined values, the values in the `noteArray` are hardcoded. This variable allows for various different numbers of notes to be tested.
+    @IBInspectable private var previewNotes: Int = 8 {
         didSet {
             self.setupLayers()
         }
     }
     
+    ///Private backing array for `noteArray`.
     private var _noteArray: [MusicStaffViewNote] = []
+    
+    ///Provides an array of `MusicStaffViewNote` objects that represent the notes to be displayed in the `MusicStaffView`.
+    ///
+    ///The notes represented on a the `MusicStaffView` are represented by `MusicStafffViewNote` objects that describe the position and length of each note, along with any accidentals necessary to draw.
     public var noteArray: [MusicStaffViewNote] {
         get {
             #if TARGET_INTERFACE_BUILDER
@@ -33,45 +41,55 @@ import UIKit
         }
     }
     
+    ///The maximum number of ledger lines to be drawn within the `MusicStaffView`.
     @IBInspectable var maxLedgerLines : Int = 0 {
         didSet {
             self.setupLayers()
         }
     }
+    
+    ///The preferred horizontal spacing, in points, between horizontal staff elements, such as notes, accidentals, clefs and key signatures.
     @IBInspectable var preferredHorizontalSpacing : CGFloat = 0 {
         didSet {
             self.setupLayers()
         }
     }
+    
+    ///The clef to display, wrapped in an `ClefType` enum.
     @IBInspectable var displayedClef : ClefType = .treble {
         didSet{
             self.setupLayers()
         }
     }
+    
+    ///Whether or not to draw the frames for each of the elements drawn in the staff.
+    ///
+    ///When set to true, this will draw bright, semi-transparent boxes in the frames of each of the layers representing a staff element.
     @IBInspectable var debug : Bool = false {
         didSet{
             self.setupLayers()
         }
     }
-    var noteNameForFirstNote: NoteName = .b {
-        didSet {
-            self.setupLayers()
-        }
-    }
     
+    //Redraw the layers when the bounding rectangle changes
     override var bounds : CGRect {
         didSet {
             self.setupLayers()
         }
     }
     
-    
+    ///The width of each space between two lines on the staff. Read Only.
+    ///
+    ///
     var spaceWidth : CGFloat {
         get {
             return self.bounds.size.height / (6.0 + 2.0 * CGFloat(maxLedgerLines))
         }
     }
     
+    ///Instructs the view to draw all accidentals, even if the `MusicStaffViewNote`'s accidental type is set to none.
+    ///
+    ///In certain circumstances, it can be helpful to see the accidentals in front of all notes. `MusicStaffView` makes no determinations about accidentals that carry through measures or key signatures.
     var drawAllAccidentals : Bool = false
     var staffLayer : MusicStaffViewStaffLayer
     
@@ -93,9 +111,7 @@ import UIKit
         self.drawClef(displayedClef, atHorizontalPosition: 0.0)
         
         for i in 0..<noteArray.count {
-            
             let note = noteArray[i]
-            
             self.drawNote(note.name, octave: note.octave, accidental: note.accidental, length: note.length, atHorizontalPosition: staffLayer.currentHorizontalPosition +
                 preferredHorizontalSpacing, forcedDirection: nil)
         }
@@ -148,7 +164,7 @@ import UIKit
         var ledgerLines: CAShapeLayer?
         if let ledger = ledgerLinesForOffset(offset) {
             ledgerLines = CAShapeLayer()
-            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 2.0)
+            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 3.0)
             ledgerLines!.backgroundColor = UIColor.black.cgColor
             ledgerLines!.position.y += noteLayer.anchorPoint.y * noteLayer.bounds.size.height
             ledgerLines!.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
