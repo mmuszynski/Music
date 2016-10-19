@@ -91,34 +91,48 @@ import UIKit
     ///
     ///In certain circumstances, it can be helpful to see the accidentals in front of all notes. `MusicStaffView` makes no determinations about accidentals that carry through measures or key signatures.
     var drawAllAccidentals : Bool = false
+    
+    //The staff layer that is drawn
     var staffLayer : MusicStaffViewStaffLayer
     
+    //Required initializer to make sure the `MusicStaffViewStaffLayer` is defined as it is not an optional.
     required init(coder aDecoder: NSCoder) {
         staffLayer = MusicStaffViewStaffLayer()
         super.init(coder: aDecoder)!
     }
     
+    //Required initializer to make sure the `MusicStaffViewStaffLayer` is defined as it is not an optional. Calls the layer setup function as well.
     override init(frame: CGRect) {
         staffLayer = MusicStaffViewStaffLayer()
         super.init(frame: frame)
         self.setupLayers()
     }
     
+    ///Redraws all elements of the `MusicStaffView`, first removing them if they are already drawn.
+    ///
+    ///This method does the drawing of the various elements of the musical staff. Generally it is not necessary to call this function manually, as it is called when the various different layer elements are updated (e.g. when the clef type is changed, the view will be redrawn using this method).
+    ///
+    ///Elements are drawn in order of increasing importance, so as to keep the most important items drawn on top. In practice, this is unnecessary, as all elements are currently drawn in the same color, but (as an example) addition of color information would require that certain elements such as notes and accidentals are drawn on top of the staff lines.
+    ///
+    ///The current order for drawing is as follows:
+    ///1. The lines of the staff
+    ///2. The clef
+    ///3. The individual notes (and the accidentals which are currently attached to the note layer)
     func setupLayers() {
         staffLayer.removeFromSuperlayer()
         staffLayer = MusicStaffViewStaffLayer()
-        self.drawStaffInRect(self.bounds)
-        self.drawClef(displayedClef, atHorizontalPosition: 0.0)
+        self.drawStaff(in: self.bounds)
+        self.draw(clef: displayedClef, atHorizontalPosition: 0.0)
         
         for i in 0..<noteArray.count {
             let note = noteArray[i]
-            self.drawNote(note.name, octave: note.octave, accidental: note.accidental, length: note.length, atHorizontalPosition: staffLayer.currentHorizontalPosition +
-                preferredHorizontalSpacing, forcedDirection: nil)
+            self.draw(note: note, atHorizontalPosition: staffLayer.currentHorizontalPosition + preferredHorizontalSpacing, forcedDirection: nil)
         }
         
     }
     
-    func drawStaffInRect(_ rect: CGRect) {
+    ///Draws the five lines of the musical staff in the appropriate rectangle. In general, this rectangle is the bounds of the `MusicStaffView` but could eventually be customized.
+    private func drawStaff(in rect: CGRect) {
         staffLayer.frame = rect
         staffLayer.maxLedgerLines = self.maxLedgerLines
         if debug {
@@ -127,14 +141,35 @@ import UIKit
         self.layer.addSublayer(staffLayer)
     }
     
-    func drawClef(_ type: ClefType, atHorizontalPosition xPosition: CGFloat) {
+    ///Draws the clef at the proper position. Currently, this is hardcoded to draw the treble clef at the far left of the staff.
+    private func draw(clef type: ClefType, atHorizontalPosition xPosition: CGFloat) {
+        //FIXME: Allow for the drawing of other clefs
         let clefLayer = MusicStaffViewElementLayer(type: .clef(type))
         clefLayer.height = 6.5 * spaceWidth
         clefLayer.position = CGPoint(x: xPosition, y: self.bounds.size.height / 2.0 + spaceWidth)
         staffLayer.addSublayer(clefLayer)
     }
     
-    func drawNote(_ name: NoteName, octave: Int, accidental: AccidentalType, length: NoteLength, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
+    ///Convenience method to adopt Swift 3.0 conventions
+    private func draw(note: MusicStaffViewNote, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
+        self.drawNote(named: note.name, octave: note.octave, accidental: note.accidental, length: note.length, atHorizontalPosition: xPosition, forcedDirection: forcedDirection)
+    }
+    
+    ///Draws a note at a given horizontal position in the staff.
+    ///
+    ///This method is used by `setupLayers()` to draw a note with the given information at the appropriate horizontal position. Specifically, the method calculates where to place the note vertically with respect to the currently selected clef given its name and octave.
+    ///
+    ///The method creates a new `NoteLayer`, positions it properly and finally adds accidentals and ledger lines as necessary to complete the visual presentation of a note at the appropriate position in the staff.
+    ///
+    ///- note: it is possible to force a note to be drawn in a particular direction (e.g. up or down) by using the forcedDirection attribute. As of yet, this is untested and may result in undefined behavior, most likely ledger lines or accidentals in incorrect places.
+    ///
+    ///- parameter name: The name of the note
+    ///- parameter octave: The octave of the note
+    ///- parameter accidental: The `AccidentalType` to draw, including `AccidentalType.none` if there should be no accidental
+    ///- parameter length: The length of note to be drawn
+    ///- parameter atHorizontalPosition: The horizontal position, in points, at which to draw the left edge of the note
+    ///- parameter forcedDirection: The direction, up or down, to force the note (see note above)
+    private func drawNote(named name: NoteName, octave: Int, accidental: AccidentalType, length: NoteLength, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
         let noteLayer = MusicStaffViewElementLayer(type: .note(name, accidental, length))
         
         var accidentalLayer: MusicStaffViewElementLayer?
@@ -142,7 +177,7 @@ import UIKit
         noteLayer.height = 4.0 * spaceWidth
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
-        let offset = offsetForNote(name, octave: octave, clef: displayedClef)
+        let offset = offsetForNote(named: name, octave: octave, clef: displayedClef)
         let viewOffset = viewOffsetForStaffOffset(offset)
         noteLayer.position.y += viewOffset
         
@@ -162,7 +197,8 @@ import UIKit
         //do we need ledger lines?
         //this is a get-it-working approach
         var ledgerLines: CAShapeLayer?
-        if let ledger = ledgerLinesForOffset(offset) {
+        let ledger = ledgerLinesForStaffOffset(offset)
+        if ledger.count > 0 {
             ledgerLines = CAShapeLayer()
             ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 3.0)
             ledgerLines!.backgroundColor = UIColor.black.cgColor
@@ -197,8 +233,12 @@ import UIKit
     ///
     ///Since notes need to be draw in the correct place in the y-axis, the offset from a given starting location must be computed. Currently, the zero-offset corresponds to the note one ledger line below the lowest staff line (aka Middle C in Treble Clef).
     ///
-    ///The offset for the note specifies an offset from the center of the view.
-    func offsetForNote(_ name: NoteName, octave: Int, clef: ClefType) -> Int {
+    ///The offset for the note specifies an offset from the center of the view, which also represents the center of the staff.
+    ///
+    ///- parameter name: The name of the note
+    ///- parameter octave: The octave of the note
+    ///- parameter clef: The type of clef
+    private func offsetForNote(named name: NoteName, octave: Int, clef: ClefType) -> Int {
         var offset: Int = 0
         var clefOctave: Int
         
@@ -228,29 +268,26 @@ import UIKit
         return offset
     }
     
-    func viewOffsetForStaffOffset(_ offset: Int) -> CGFloat {
+    ///Translates the staff-based offset (e.g. the number of positions above or below the middle staff line) into a useable metric based on the size of the view.
+    ///
+    ///This is a convenience method that calculates the actual distance in points represented by a note that is a specific amount of places higher or lower than the middle staff line. For example, an offset of 0 translates to the middle of the view, while an offset of 2, representing the first staff line above the middle line, translates to a specific vertical distance equal to the width between the spaces of the staff.
+    ///
+    ///- parameter offset: The number of positions above or below the middle line where the note resides
+    private func viewOffsetForStaffOffset(_ offset: Int) -> CGFloat {
         let offsetFloat = CGFloat(offset)
         return -self.bounds.size.height / 2.0 + offsetFloat * spaceWidth / 2.0
     }
     
-    /*
-    ///Returns the number of ledger lines for a note in the given octave and clef
+    ///The number of ledger lines necessary for a note at a given staff offset.
     ///
-    ///Often times, notes will be drawn either below or above the five lines of the staff. Ledger lines are drawn onto the note layer and will always need to be drawn towards the center of the staff.
+    ///When a note is far enough from the center line of the staff, it will be necessary to draw ledger lines to represent how much outside the staff it lays.
     ///
-    ///- parameter name: The name of the note
-    ///- parameter octave: The octave of the note
-    ///- parameter clef: The type of clef
-    ///- returns: The number of ledger lines and wheter the note resides on a line or between two lines
-    func ledgerLinesForNote(_ name: NoteName, octave: Int, clef: ClefType) -> (number: Int, offset: Bool) {
-        let viewOffset = offsetForNote(name, octave: octave, clef: clef)
-        
-        return (0, false)
-    }*/
-    
-    func ledgerLinesForOffset(_ offset: Int) -> (count: Int, centered: Bool)? {
+    ///- parameter offset: The number of positions above or below the middle line where the note resides
+    ///
+    ///- returns: A tuple with the number of ledger lines and a boolean representing whether or not they are centered on the notehead
+    private func ledgerLinesForStaffOffset(_ offset: Int) -> (count: Int, centered: Bool) {
         if abs(offset) < 6 {
-            return nil
+            return (0, false)
         }
     
         return ((abs(offset) - 4) / 2, offset % 2 == 0)
