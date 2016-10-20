@@ -29,8 +29,8 @@ import UIKit
         get {
             #if TARGET_INTERFACE_BUILDER
                 let testArray = [MusicStaffViewNote(name: .c, accidental: .none, length: .quarter, octave: 4),
-                                 MusicStaffViewNote(name: .b, accidental: .none, length: .quarter, octave: 4),
-                                 MusicStaffViewNote(name: .d, accidental: .none, length: .quarter, octave: 4)]
+                                 MusicStaffViewNote(name: .a, accidental: .none, length: .quarter, octave: 4),
+                                 MusicStaffViewNote(name: .g, accidental: .none, length: .quarter, octave: 3)]
                 return testArray
             #else
                 return _noteArray
@@ -56,7 +56,7 @@ import UIKit
     }
     
     ///The clef to display, wrapped in an `ClefType` enum.
-    @IBInspectable var displayedClef : ClefType = .treble {
+    @IBInspectable var displayedClef : MusicStaffViewClefType = .treble {
         didSet{
             self.setupLayers()
         }
@@ -142,7 +142,7 @@ import UIKit
     }
     
     ///Draws the clef at the proper position. Currently, this is hardcoded to draw the treble clef at the far left of the staff.
-    private func draw(clef type: ClefType, atHorizontalPosition xPosition: CGFloat) {
+    private func draw(clef type: MusicStaffViewClefType, atHorizontalPosition xPosition: CGFloat) {
         //FIXME: Allow for the drawing of other clefs
         let clefLayer = MusicStaffViewElementLayer(type: .clef(type))
         clefLayer.height = 6.5 * spaceWidth
@@ -169,7 +169,7 @@ import UIKit
     ///- parameter length: The length of note to be drawn
     ///- parameter atHorizontalPosition: The horizontal position, in points, at which to draw the left edge of the note
     ///- parameter forcedDirection: The direction, up or down, to force the note (see note above)
-    private func drawNote(named name: NoteName, octave: Int, accidental: AccidentalType, length: NoteLength, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
+    private func drawNote(named name: MusicStaffViewNoteName, octave: Int, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
         let noteLayer = MusicStaffViewElementLayer(type: .note(name, accidental, length))
         
         var accidentalLayer: MusicStaffViewElementLayer?
@@ -194,22 +194,28 @@ import UIKit
             direction = forcedDirection!
         }
         
-        //do we need ledger lines?
-        //this is a get-it-working approach
-        var ledgerLines: CAShapeLayer?
+        //draw ledger lines if necessary
+        var ledgerLines: CALayer?
         let ledger = ledgerLinesForStaffOffset(offset)
         if ledger.count > 0 {
-            ledgerLines = CAShapeLayer()
-            ledgerLines!.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 3.0)
-            ledgerLines!.backgroundColor = UIColor.black.cgColor
-            ledgerLines!.position.y += noteLayer.anchorPoint.y * noteLayer.bounds.size.height
-            ledgerLines!.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
+            ledgerLines = CALayer()
             
-            if !ledger.centered {
-                ledgerLines!.position.y += (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
+            //hopefully
+            for i in 0..<ledger.count {
+                let currentLedgerLine = CAShapeLayer()
+                currentLedgerLine.bounds = CGRect(x: 0, y: 0, width: noteLayer.bounds.size.width - 2.0, height: staffLayer.lineWidth * 3.0)
+                currentLedgerLine.backgroundColor = UIColor.black.cgColor
+                currentLedgerLine.position.y += noteLayer.anchorPoint.y * noteLayer.bounds.size.height - CGFloat(i) * spaceWidth
+                currentLedgerLine.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
+                
+                if !ledger.centered {
+                    currentLedgerLine.position.y += (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
+                }
+                
+                currentLedgerLine.strokeColor = UIColor.black.cgColor
+                ledgerLines?.addSublayer(currentLedgerLine)
             }
             
-            ledgerLines!.strokeColor = UIColor.black.cgColor
             noteLayer.addSublayer(ledgerLines!)
         }
 
@@ -238,7 +244,7 @@ import UIKit
     ///- parameter name: The name of the note
     ///- parameter octave: The octave of the note
     ///- parameter clef: The type of clef
-    private func offsetForNote(named name: NoteName, octave: Int, clef: ClefType) -> Int {
+    private func offsetForNote(named name: MusicStaffViewNoteName, octave: Int, clef: MusicStaffViewClefType) -> Int {
         var offset: Int = 0
         var clefOctave: Int
         
@@ -248,14 +254,20 @@ import UIKit
             //offset of zero corresponds to B4
             //the clef octave zeroes out the clef and the offset should be set to the positive offset of the note
             clefOctave = 4
-            offset += NoteName.b.rawValue
+            offset += MusicStaffViewNoteName.b.rawValue
         case .bass:
             clefOctave = 3
-            offset += NoteName.d.rawValue
+            offset += MusicStaffViewNoteName.d.rawValue
         case .alto:
             clefOctave = 4
         case .tenor:
             clefOctave = 4
+        case .genericFClef(let offset):
+            fatalError("Not yet implemented for F Clef with offset \(offset)")
+        case .genericGClef(let offset):
+            fatalError("Not yet implemented for G Clef with offset \(offset)")
+        case .genericCCleft(let offset):
+            fatalError("Not yet implemented for C Clef with offset \(offset)")
         }
         
         if name == .a || name == .b {

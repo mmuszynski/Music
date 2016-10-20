@@ -9,20 +9,23 @@
 import UIKit
 
 enum StaffViewElementType {
-    case clef(ClefType)
-    case note(NoteName, AccidentalType, NoteLength)
-    case accidental(AccidentalType)
+    case clef(MusicStaffViewClefType)
+    case note(MusicStaffViewNoteName, MusicStaffViewAccidentalType, MusicStaffViewNoteLength)
+    case accidental(MusicStaffViewAccidentalType)
     case none
 }
 
-enum ClefType {
+public enum MusicStaffViewClefType {
     case treble
     case alto
     case tenor
     case bass
+    case genericCCleft(offset: Int)
+    case genericFClef(offset: Int)
+    case genericGClef(offset: Int)
 }
 
-enum AccidentalType {
+public enum MusicStaffViewAccidentalType {
     case none
     case flat
     case natural
@@ -31,7 +34,7 @@ enum AccidentalType {
     case doubleSharp
 }
 
-enum NoteLength {
+public enum MusicStaffViewNoteLength {
     case breve
     case whole
     case half
@@ -42,7 +45,7 @@ enum NoteLength {
     case sixtyFourth
 }
 
-enum NoteName: Int {
+public enum MusicStaffViewNoteName: Int {
     case c = 0, d, e, f, g, a, b
     
     init?(stringValue: String) {

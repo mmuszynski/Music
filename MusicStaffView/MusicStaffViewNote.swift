@@ -10,12 +10,12 @@ import UIKit
 
 class MusicStaffViewNote: MusicStaffViewElement {
     
-    var name : NoteName = .c
-    var length : NoteLength = .quarter
+    var name : MusicStaffViewNoteName = .c
+    var length : MusicStaffViewNoteLength = .quarter
     var octave : Int = 4
-    var accidental : AccidentalType = .natural
+    var accidental : MusicStaffViewAccidentalType = .natural
     
-    required init(name: NoteName, accidental: AccidentalType, length: NoteLength, octave: Int) {
+    required init(name: MusicStaffViewNoteName, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.length = length
