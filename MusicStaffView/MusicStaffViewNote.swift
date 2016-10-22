@@ -8,14 +8,18 @@
 
 import UIKit
 
-class MusicStaffViewNote: MusicStaffViewElement {
+public func +(lhs: MusicStaffViewNote, rhs: Int) -> MusicStaffViewNote {
+    return lhs
+}
+
+public class MusicStaffViewNote: MusicStaffViewElement {
     
     var name : MusicStaffViewNoteName = .c
     var length : MusicStaffViewNoteLength = .quarter
     var octave : Int = 4
-    var accidental : MusicStaffViewAccidentalType = .natural
+    var accidental : MusicStaffViewAccidentalType = .none
     
-    required init(name: MusicStaffViewNoteName, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, octave: Int) {
+    public required init(name: MusicStaffViewNoteName, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.length = length

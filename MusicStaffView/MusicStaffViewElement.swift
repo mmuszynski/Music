@@ -23,6 +23,26 @@ public enum MusicStaffViewClefType {
     case genericCCleft(offset: Int)
     case genericFClef(offset: Int)
     case genericGClef(offset: Int)
+    
+    public var middleLineNote: MusicStaffViewNote {
+        switch self {
+        case .treble:
+            return MusicStaffViewNote(name: .b, accidental: .none, length: .quarter, octave: 4)
+        case .alto:
+            return MusicStaffViewNote(name: .c, accidental: .none, length: .quarter, octave: 4)
+        case .tenor:
+            return MusicStaffViewNote(name: .a, accidental: .none, length: .quarter, octave: 3)
+        case .bass:
+            return MusicStaffViewNote(name: .d, accidental: .none, length: .quarter, octave: 3)
+        case .genericCCleft(let offset):
+            fatalError()
+        case .genericFClef(let offset):
+            fatalError()
+        case .genericGClef(let offset):
+            fatalError()
+        }
+    }
+    
 }
 
 public enum MusicStaffViewAccidentalType {
