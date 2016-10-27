@@ -20,7 +20,7 @@ public enum MusicStaffViewClefType {
     case alto
     case tenor
     case bass
-    case genericCCleft(offset: Int)
+    case genericCClef(offset: Int)
     case genericFClef(offset: Int)
     case genericGClef(offset: Int)
     
@@ -34,7 +34,7 @@ public enum MusicStaffViewClefType {
             return MusicStaffViewNote(name: .a, accidental: .none, length: .quarter, octave: 3)
         case .bass:
             return MusicStaffViewNote(name: .d, accidental: .none, length: .quarter, octave: 3)
-        case .genericCCleft(let offset):
+        case .genericCClef(let offset):
             fatalError()
         case .genericFClef(let offset):
             fatalError()

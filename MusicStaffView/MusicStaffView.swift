@@ -8,6 +8,17 @@
 
 import UIKit
 
+///Instructs the `MusicStaffView` to draw notes using the spacing set in `preferredHorizontalSpacing` or to fill all available space by dividing the space for notes into equal parts.
+///
+///For certain uses, notes on a staff should be drawn to maximize all available space. In other cases (for example, when the notes will take up more space than the visible area of the view itself), it makes sense to draw the notes as close together as possible. These scenarios are represented in `MusicStaffViewSpacingType` as `preferred`, which uses the `preferredHorizontalSpacing` property, or `uniform`, which discards the property in favor of spacing notes equally across the view.
+///
+///- Warning: There may be cases where using uniform spacing will still cause notes to be drawn outside the visible area of the `MusicStaffView`. Currently, the framework takes no position in these situations.
+public enum MusicStaffViewSpacingType {
+    //FIXME: What happens when spacing causes notes to draw past the bounds of the view?
+    case preferred
+    case uniform
+}
+
 @IBDesignable class MusicStaffView: UIView {
     
     ///The number of notes to be displayed in the interface builder preview.
@@ -28,9 +39,7 @@ import UIKit
     public var noteArray: [MusicStaffViewNote] {
         get {
             #if TARGET_INTERFACE_BUILDER
-                let testArray = [MusicStaffViewNote(name: .c, accidental: .none, length: .quarter, octave: 4),
-                                 MusicStaffViewNote(name: .a, accidental: .none, length: .quarter, octave: 4),
-                                 MusicStaffViewNote(name: .g, accidental: .none, length: .quarter, octave: 3)]
+                let testArray = [MusicStaffViewNote(name: .c, accidental: .sharp, length: .quarter, octave: 5)]
                 return testArray
             #else
                 return _noteArray
@@ -92,6 +101,11 @@ import UIKit
     ///In certain circumstances, it can be helpful to see the accidentals in front of all notes. `MusicStaffView` makes no determinations about accidentals that carry through measures or key signatures.
     var drawAllAccidentals : Bool = false
     
+    ///Instructs whether to fill all available space by using uniform spacing or to draw the clef information and then fill in the notes using `preferredHorizontalSpacing`.
+    ///
+    ///
+    var spacing: MusicStaffViewSpacingType = .uniform
+    
     //The staff layer that is drawn
     var staffLayer : MusicStaffViewStaffLayer
     
@@ -124,10 +138,53 @@ import UIKit
         self.drawStaff(in: self.bounds)
         self.draw(clef: displayedClef, atHorizontalPosition: 0.0)
         
+        //the layers representing the notes to be drawn
+        var noteLayers = [MusicStaffViewElementLayer]()
+        //previously, the notes were drawn sequentially
+        //the staff layer kept up-to-date with where the last element ended and the next should begin
+        //setupLayers() needs to keep up with this now
+        //the current position of the staff after drawing the clef is the first place to draw a note
+        var currentPosition = staffLayer.currentHorizontalPosition
+        
         for i in 0..<noteArray.count {
+            currentPosition += preferredHorizontalSpacing
             let note = noteArray[i]
-            self.draw(note: note, atHorizontalPosition: staffLayer.currentHorizontalPosition + preferredHorizontalSpacing, forcedDirection: nil)
+            let noteLayer = self.noteLayerFor(note: note, atHorizontalPosition: currentPosition, forcedDirection: nil)
+            noteLayers.append(noteLayer)
+            currentPosition += noteLayer.bounds.width
         }
+        
+        //if the spacing is set to uniform, there needs to be a calculation done to make the notes equally spaced:
+        //1. get the position of the first note as it is the leftmost bound
+        //1a. alternatively, the staffLayer.currentHorizontalPosition will work
+        //2. sum the widths of the notes
+        //3. subtract this sum from the width of the view
+        //4. divide this by the number of spaces between notes
+        //4a. note that there are spacers between each note and one on either side for a total of noteLayer.count + 1
+        if self.spacing == .uniform {
+            let leftmostBound = staffLayer.currentHorizontalPosition
+            let widthSum = noteLayers.reduce(CGFloat(0), { (collection, layer) -> CGFloat in
+                return collection + layer.bounds.width
+            })
+            let drawableWidth = staffLayer.bounds.width - leftmostBound
+            let spacerCount = noteLayers.count + 1
+            let spacerWidth = (drawableWidth - widthSum) / CGFloat(spacerCount)
+            
+            currentPosition = leftmostBound
+            for layer in noteLayers {
+                currentPosition += spacerWidth
+                print(currentPosition)
+                layer.frame.origin.x = currentPosition
+                staffLayer.addSublayer(layer)
+                currentPosition += layer.bounds.width
+            }
+        } else {
+            for layer in noteLayers {
+                staffLayer.addSublayer(layer)
+            }
+        }
+        
+
         
     }
     
@@ -141,7 +198,9 @@ import UIKit
         self.layer.addSublayer(staffLayer)
     }
     
-    ///Draws the clef at the proper position. Currently, this is hardcoded to draw the treble clef at the far left of the staff.
+    ///Draws the clef at the proper position.
+    ///
+    ///Currently, this is hardcoded to draw the treble clef at the far left of the staff.
     private func draw(clef type: MusicStaffViewClefType, atHorizontalPosition xPosition: CGFloat) {
         //FIXME: Allow for the drawing of other clefs
         let clefLayer = MusicStaffViewElementLayer(type: .clef(type))
@@ -152,16 +211,19 @@ import UIKit
     
     ///Convenience method to adopt Swift 3.0 conventions
     private func draw(note: MusicStaffViewNote, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
-        self.drawNote(named: note.name, octave: note.octave, accidental: note.accidental, length: note.length, atHorizontalPosition: xPosition, forcedDirection: forcedDirection)
+        let noteLayer = self.noteLayerFor(note: note, atHorizontalPosition: xPosition, forcedDirection: forcedDirection)
+        staffLayer.addSublayer(noteLayer)
     }
     
-    ///Draws a note at a given horizontal position in the staff.
+    ///Intitializes a note at a given horizontal position in the staff.
     ///
-    ///This method is used by `setupLayers()` to draw a note with the given information at the appropriate horizontal position. Specifically, the method calculates where to place the note vertically with respect to the currently selected clef given its name and octave.
+    ///This method is used by `setupLayers()` to initialize a `MusicStaffViewElementLayer` proper notational attributes at a suggested horizontal position. Specifically, the method calculates where to place the note vertically with respect to the currently selected clef given its name and octave.
     ///
-    ///The method creates a new `NoteLayer`, positions it properly and finally adds accidentals and ledger lines as necessary to complete the visual presentation of a note at the appropriate position in the staff.
+    ///The method creates a new `MusicStaffViewElementLayer`, positions it properly and finally adds accidentals and ledger lines as necessary to complete the visual presentation of a note at the appropriate position in the staff.
     ///
-    ///- note: it is possible to force a note to be drawn in a particular direction (e.g. up or down) by using the forcedDirection attribute. As of yet, this is untested and may result in undefined behavior, most likely ledger lines or accidentals in incorrect places.
+    ///- note: It is possible to force a note to be drawn in a particular direction (e.g. up or down) by using the forcedDirection attribute. As of yet, this is untested and may result in undefined behavior, most likely ledger lines or accidentals in incorrect places.
+    ///
+    ///- note: Previously, this method was used to actually draw the note in place. In order to best space notes equally, it makes sense to create the layer, but postpone the positioning until the full width of all notes in the view is known. See `setuplayers()` for more information.
     ///
     ///- parameter name: The name of the note
     ///- parameter octave: The octave of the note
@@ -169,11 +231,16 @@ import UIKit
     ///- parameter length: The length of note to be drawn
     ///- parameter atHorizontalPosition: The horizontal position, in points, at which to draw the left edge of the note
     ///- parameter forcedDirection: The direction, up or down, to force the note (see note above)
-    private func drawNote(named name: MusicStaffViewNoteName, octave: Int, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) {
+    private func noteLayerFor(note: MusicStaffViewNote, atHorizontalPosition xPosition: CGFloat, forcedDirection: NoteFlagDirection?) -> MusicStaffViewElementLayer {
+        let name = note.name
+        let octave = note.octave
+        let accidental = note.accidental
+        let length = note.length
+        
         let noteLayer = MusicStaffViewElementLayer(type: .note(name, accidental, length))
         
         var accidentalLayer: MusicStaffViewElementLayer?
-
+        
         noteLayer.height = 4.0 * spaceWidth
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
@@ -184,9 +251,9 @@ import UIKit
         if accidental != .none {
             accidentalLayer = MusicStaffViewElementLayer(type: .accidental(accidental))
             accidentalLayer?.height = 0.70 * 4.0 * spaceWidth
-            accidentalLayer?.position = CGPoint(x: xPosition, y: self.bounds.size.height + viewOffset)
-            staffLayer.addSublayer(accidentalLayer!)
-            noteLayer.position.x += accidentalLayer!.bounds.width
+            //accidentalLayer?.position = CGPoint(x: xPosition, y: self.bounds.size.height + viewOffset)
+            noteLayer.addSublayer(accidentalLayer!)
+            //noteLayer.position.x += accidentalLayer!.bounds.width
         }
         
         var direction = (noteLayer.position.y > (self.bounds.size.height / 2.0)) ? NoteFlagDirection.down : NoteFlagDirection.up
@@ -218,7 +285,7 @@ import UIKit
             
             noteLayer.addSublayer(ledgerLines!)
         }
-
+        
         //default direction is up
         if direction == .down {
             noteLayer.transform = CATransform3DIdentity
@@ -232,7 +299,7 @@ import UIKit
             accidentalLayer?.backgroundColor = UIColor(red: 0, green: 1.0, blue: 1.0, alpha: 0.3).cgColor
         }
         
-        staffLayer.addSublayer(noteLayer)
+        return noteLayer
     }
     
     ///Calculates the offset for each note in a given clef
@@ -266,7 +333,7 @@ import UIKit
             fatalError("Not yet implemented for F Clef with offset \(offset)")
         case .genericGClef(let offset):
             fatalError("Not yet implemented for G Clef with offset \(offset)")
-        case .genericCCleft(let offset):
+        case .genericCClef(let offset):
             fatalError("Not yet implemented for C Clef with offset \(offset)")
         }
         
