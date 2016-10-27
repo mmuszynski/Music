@@ -39,7 +39,7 @@ public enum MusicStaffViewSpacingType {
     public var noteArray: [MusicStaffViewNote] {
         get {
             #if TARGET_INTERFACE_BUILDER
-                let testArray = [MusicStaffViewNote(name: .c, accidental: .sharp, length: .quarter, octave: 5)]
+                let testArray = [MusicStaffViewNote(name: .c, accidental: .sharp, length: .quarter, octave: 4)]
                 return testArray
             #else
                 return _noteArray
@@ -74,7 +74,7 @@ public enum MusicStaffViewSpacingType {
     ///Whether or not to draw the frames for each of the elements drawn in the staff.
     ///
     ///When set to true, this will draw bright, semi-transparent boxes in the frames of each of the layers representing a staff element.
-    @IBInspectable var debug : Bool = false {
+    @IBInspectable var debug : Bool = true {
         didSet{
             self.setupLayers()
         }
@@ -239,6 +239,11 @@ public enum MusicStaffViewSpacingType {
         
         let noteLayer = MusicStaffViewElementLayer(type: .note(name, accidental, length))
         
+        var direction = (noteLayer.position.y > (self.bounds.size.height / 2.0)) ? NoteFlagDirection.down : NoteFlagDirection.up
+        if forcedDirection != nil {
+            direction = forcedDirection!
+        }
+        
         var accidentalLayer: MusicStaffViewElementLayer?
         
         noteLayer.height = 4.0 * spaceWidth
@@ -247,18 +252,14 @@ public enum MusicStaffViewSpacingType {
         let offset = offsetForNote(named: name, octave: octave, clef: displayedClef)
         let viewOffset = viewOffsetForStaffOffset(offset)
         noteLayer.position.y += viewOffset
-        
+    
         if accidental != .none {
             accidentalLayer = MusicStaffViewElementLayer(type: .accidental(accidental))
             accidentalLayer?.height = 0.70 * 4.0 * spaceWidth
-            //accidentalLayer?.position = CGPoint(x: xPosition, y: self.bounds.size.height + viewOffset)
+            accidentalLayer?.position = noteLayer.anchorPoint
+            
             noteLayer.addSublayer(accidentalLayer!)
             //noteLayer.position.x += accidentalLayer!.bounds.width
-        }
-        
-        var direction = (noteLayer.position.y > (self.bounds.size.height / 2.0)) ? NoteFlagDirection.down : NoteFlagDirection.up
-        if forcedDirection != nil {
-            direction = forcedDirection!
         }
         
         //draw ledger lines if necessary
@@ -287,7 +288,7 @@ public enum MusicStaffViewSpacingType {
         }
         
         //default direction is up
-        if direction == .down {
+        if direction == .up {
             noteLayer.transform = CATransform3DIdentity
         } else {
             noteLayer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1.0)
