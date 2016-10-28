@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum StaffViewElementType {
+public enum MusicStaffViewElementType {
     case clef(MusicStaffViewClefType)
     case note(MusicStaffViewNoteName, MusicStaffViewAccidentalType, MusicStaffViewNoteLength)
     case accidental(MusicStaffViewAccidentalType)
@@ -68,7 +68,7 @@ public enum MusicStaffViewNoteLength {
 public enum MusicStaffViewNoteName: Int {
     case c = 0, d, e, f, g, a, b
     
-    init?(stringValue: String) {
+    public init?(stringValue: String) {
         switch stringValue {
         case "A", "a":
             self = .a

@@ -19,7 +19,7 @@ public enum MusicStaffViewSpacingType {
     case uniform
 }
 
-@IBDesignable class MusicStaffView: UIView {
+@IBDesignable public class MusicStaffView: UIView {
     
     ///The number of notes to be displayed in the interface builder preview.
     ///
@@ -31,7 +31,11 @@ public enum MusicStaffViewSpacingType {
     }
     
     ///Private backing array for `noteArray`.
-    private var _noteArray: [MusicStaffViewNote] = []
+    private var _noteArray: [MusicStaffViewNote] = [] {
+        didSet {
+            setupLayers()
+        }
+    }
     
     ///Provides an array of `MusicStaffViewNote` objects that represent the notes to be displayed in the `MusicStaffView`.
     ///
@@ -39,7 +43,8 @@ public enum MusicStaffViewSpacingType {
     public var noteArray: [MusicStaffViewNote] {
         get {
             #if TARGET_INTERFACE_BUILDER
-                let testArray = [MusicStaffViewNote(name: .c, accidental: .sharp, length: .quarter, octave: 4)]
+                var testArray = [MusicStaffViewNote]()
+                testArray.append(MusicStaffViewNote(name: .c, accidental: .sharp, length: .quarter, octave: 4))
                 return testArray
             #else
                 return _noteArray
@@ -81,7 +86,7 @@ public enum MusicStaffViewSpacingType {
     }
     
     //Redraw the layers when the bounding rectangle changes
-    override var bounds : CGRect {
+    override public var bounds : CGRect {
         didSet {
             self.setupLayers()
         }
@@ -104,13 +109,13 @@ public enum MusicStaffViewSpacingType {
     ///Instructs whether to fill all available space by using uniform spacing or to draw the clef information and then fill in the notes using `preferredHorizontalSpacing`.
     ///
     ///
-    var spacing: MusicStaffViewSpacingType = .uniform
+    public var spacing: MusicStaffViewSpacingType = .uniform
     
     //The staff layer that is drawn
     var staffLayer : MusicStaffViewStaffLayer
     
     //Required initializer to make sure the `MusicStaffViewStaffLayer` is defined as it is not an optional.
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         staffLayer = MusicStaffViewStaffLayer()
         super.init(coder: aDecoder)!
     }
@@ -138,8 +143,9 @@ public enum MusicStaffViewSpacingType {
         self.drawStaff(in: self.bounds)
         self.draw(clef: displayedClef, atHorizontalPosition: 0.0)
         
-        //the layers representing the notes to be drawn
-        var noteLayers = [MusicStaffViewElementLayer]()
+        //the layers representing the horizontal elements to be drawn
+        //decoration elements will have to be dealt with at a later date
+        var elementLayers = [MusicStaffViewElementLayer]()
         //previously, the notes were drawn sequentially
         //the staff layer kept up-to-date with where the last element ended and the next should begin
         //setupLayers() needs to keep up with this now
@@ -149,8 +155,12 @@ public enum MusicStaffViewSpacingType {
         for i in 0..<noteArray.count {
             currentPosition += preferredHorizontalSpacing
             let note = noteArray[i]
-            let noteLayer = self.noteLayerFor(note: note, atHorizontalPosition: currentPosition, forcedDirection: nil)
-            noteLayers.append(noteLayer)
+            let noteLayer = self.noteLayerFor(note: note, atHorizontalPosition: currentPosition, forcedDirection: i == 0 ? nil : .down)
+            if let accidentalLayer = self.accidentalLayerFor(noteLayer: noteLayer, type: note.accidental) {
+                elementLayers.append(accidentalLayer)
+                currentPosition += accidentalLayer.bounds.width
+            }
+            elementLayers.append(noteLayer)
             currentPosition += noteLayer.bounds.width
         }
         
@@ -163,23 +173,30 @@ public enum MusicStaffViewSpacingType {
         //4a. note that there are spacers between each note and one on either side for a total of noteLayer.count + 1
         if self.spacing == .uniform {
             let leftmostBound = staffLayer.currentHorizontalPosition
-            let widthSum = noteLayers.reduce(CGFloat(0), { (collection, layer) -> CGFloat in
+            let widthSum = elementLayers.reduce(CGFloat(0), { (collection, layer) -> CGFloat in
                 return collection + layer.bounds.width
             })
             let drawableWidth = staffLayer.bounds.width - leftmostBound
-            let spacerCount = noteLayers.count + 1
+            let spacerCount = elementLayers.filter({ (layer) -> Bool in
+                if case .accidental(_) = layer.type {
+                    return false
+                }
+                return true
+            }).count + 1
             let spacerWidth = (drawableWidth - widthSum) / CGFloat(spacerCount)
             
-            currentPosition = leftmostBound
-            for layer in noteLayers {
-                currentPosition += spacerWidth
-                print(currentPosition)
+            currentPosition = leftmostBound + spacerWidth
+            for layer in elementLayers {
                 layer.frame.origin.x = currentPosition
                 staffLayer.addSublayer(layer)
                 currentPosition += layer.bounds.width
+                if case .note(_) = layer.type {
+                    currentPosition += spacerWidth
+                }
+                
             }
         } else {
-            for layer in noteLayers {
+            for layer in elementLayers {
                 staffLayer.addSublayer(layer)
             }
         }
@@ -239,27 +256,24 @@ public enum MusicStaffViewSpacingType {
         
         let noteLayer = MusicStaffViewElementLayer(type: .note(name, accidental, length))
         
-        var direction = (noteLayer.position.y > (self.bounds.size.height / 2.0)) ? NoteFlagDirection.down : NoteFlagDirection.up
-        if forcedDirection != nil {
-            direction = forcedDirection!
-        }
-        
-        var accidentalLayer: MusicStaffViewElementLayer?
-        
         noteLayer.height = 4.0 * spaceWidth
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
         let offset = offsetForNote(named: name, octave: octave, clef: displayedClef)
         let viewOffset = viewOffsetForStaffOffset(offset)
         noteLayer.position.y += viewOffset
-    
-        if accidental != .none {
-            accidentalLayer = MusicStaffViewElementLayer(type: .accidental(accidental))
-            accidentalLayer?.height = 0.70 * 4.0 * spaceWidth
-            accidentalLayer?.position = noteLayer.anchorPoint
-            
-            noteLayer.addSublayer(accidentalLayer!)
-            //noteLayer.position.x += accidentalLayer!.bounds.width
+        
+        var direction = (offset <= 0) ? NoteFlagDirection.down : NoteFlagDirection.up
+        if forcedDirection != nil {
+            direction = forcedDirection!
+        }
+        
+        //default direction is up
+        if direction == .up {
+            noteLayer.transform = CATransform3DIdentity
+        } else {
+            noteLayer.anchorPoint = CGPoint(x: 0.5, y: 0.62)
+            noteLayer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1.0)
         }
         
         //draw ledger lines if necessary
@@ -287,20 +301,30 @@ public enum MusicStaffViewSpacingType {
             noteLayer.addSublayer(ledgerLines!)
         }
         
-        //default direction is up
-        if direction == .up {
-            noteLayer.transform = CATransform3DIdentity
-        } else {
-            noteLayer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1.0)
-        }
-        
         if debug {
             noteLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 1.0, alpha: 0.3).cgColor
             ledgerLines?.backgroundColor = UIColor.green.cgColor
-            accidentalLayer?.backgroundColor = UIColor(red: 0, green: 1.0, blue: 1.0, alpha: 0.3).cgColor
         }
         
         return noteLayer
+    }
+    
+    func accidentalLayerFor(noteLayer: MusicStaffViewElementLayer, type: MusicStaffViewAccidentalType) -> MusicStaffViewElementLayer? {
+        let accidentalLayer: MusicStaffViewElementLayer
+        let accidental = type
+        
+        guard accidental != .none else {
+            return nil
+        }
+        
+        accidentalLayer = MusicStaffViewElementLayer(type: .accidental(accidental))
+        accidentalLayer.height = 0.70 * 4.0 * spaceWidth
+        accidentalLayer.position = noteLayer.position
+        
+        if debug {
+            accidentalLayer.backgroundColor = UIColor(red: 0, green: 1.0, blue: 1.0, alpha: 0.3).cgColor
+        }
+        return accidentalLayer
     }
     
     ///Calculates the offset for each note in a given clef
@@ -373,7 +397,7 @@ public enum MusicStaffViewSpacingType {
         return ((abs(offset) - 4) / 2, offset % 2 == 0)
     }
         
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         self.setupLayers()
     }
 

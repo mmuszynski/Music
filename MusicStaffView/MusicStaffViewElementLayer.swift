@@ -10,15 +10,15 @@ import UIKit
 
 class MusicStaffViewElementLayer: CAShapeLayer {
     
-    let type : StaffViewElementType
+    let type : MusicStaffViewElementType
     var preferredElementSpacing : CGFloat = 0
     
     required init?(coder aDecoder: NSCoder) {
-        type = StaffViewElementType.none
+        type = MusicStaffViewElementType.none
         super.init(coder: aDecoder)
     }
     
-    init(type: StaffViewElementType) {
+    init(type: MusicStaffViewElementType) {
         self.type = type
         super.init()
         self.strokeColor = nil
