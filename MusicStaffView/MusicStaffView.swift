@@ -291,7 +291,7 @@ public enum MusicStaffViewSpacingType {
                 currentLedgerLine.position.x += noteLayer.anchorPoint.x * noteLayer.bounds.size.width
                 
                 if !ledger.centered {
-                    currentLedgerLine.position.y += (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
+                    currentLedgerLine.position.y -= (direction == .up) ? spaceWidth / 2.0 : -spaceWidth / 2.0
                 }
                 
                 currentLedgerLine.strokeColor = UIColor.black.cgColor
