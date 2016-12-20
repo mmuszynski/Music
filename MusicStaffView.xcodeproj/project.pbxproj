@@ -17,6 +17,8 @@
 		27527EA01D9ED56B00C97B25 /* MusicStaffViewNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E9A1D9ED56B00C97B25 /* MusicStaffViewNote.swift */; };
 		27527EA11D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */; };
 		27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF16091E097EB700EB5695 /* MusicNote.swift */; };
+		27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160B1E09849800EB5695 /* MusicInterval.swift */; };
+		27FF160E1E0984CE00EB5695 /* MusicKeySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		27527E9A1D9ED56B00C97B25 /* MusicStaffViewNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffViewNote.swift; sourceTree = "<group>"; };
 		27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffViewStaffLayer.swift; sourceTree = "<group>"; };
 		27FF16091E097EB700EB5695 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNote.swift; sourceTree = "<group>"; };
+		27FF160B1E09849800EB5695 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInterval.swift; sourceTree = "<group>"; };
+		27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicKeySignature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */,
 				27527E961D9ED56B00C97B25 /* MusicStaffView.swift */,
 				27FF16091E097EB700EB5695 /* MusicNote.swift */,
+				27FF160B1E09849800EB5695 /* MusicInterval.swift */,
+				27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */,
 				27527E801D9ED55300C97B25 /* Info.plist */,
 			);
 			path = MusicStaffView;
@@ -225,8 +231,10 @@
 				27527E9D1D9ED56B00C97B25 /* MusicStaffViewElement.swift in Sources */,
 				27527EA11D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift in Sources */,
 				27527E9E1D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift in Sources */,
+				27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */,
 				27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */,
 				27527E9C1D9ED56B00C97B25 /* MusicStaffView.swift in Sources */,
+				27FF160E1E0984CE00EB5695 /* MusicKeySignature.swift in Sources */,
 				27527EA01D9ED56B00C97B25 /* MusicStaffViewNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
