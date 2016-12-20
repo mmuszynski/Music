@@ -24,7 +24,7 @@ public enum MusicStaffViewClefType {
     case genericFClef(offset: Int)
     case genericGClef(offset: Int)
     
-    public var middleLineNote: MusicStaffViewNote {
+    public var zeroOffsetNote: MusicStaffViewNote {
         switch self {
         case .treble:
             return MusicStaffViewNote(name: .b, accidental: .none, length: .quarter, octave: 4)

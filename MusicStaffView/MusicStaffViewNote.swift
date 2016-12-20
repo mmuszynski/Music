@@ -26,4 +26,11 @@ public class MusicStaffViewNote: MusicStaffViewElement {
         self.octave = octave
     }
     
+    fileprivate func advanced(by: Int) -> MusicStaffViewNote {
+        var advancedNote = MusicStaffViewNote(name: self.name, accidental: self.accidental, length: self.length, octave: self.octave)
+        
+        
+        return advancedNote
+    }
+    
 }
