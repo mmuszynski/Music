@@ -1,27 +1,24 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Provides analysis tools for basic western Music Theory functions
+* Integrates with MusicStaffView for the display of notes and rhythms
 
-### How do I get set up? ###
+### Currently Planned Elements ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Note
+* Interval
+* Key Signature
+* Scale
+* Chord
 
-### Contribution guidelines ###
+### Important Secondary Elements (mostly regarding display/engraving) ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Rests
+* Note Decoration (accent, slur, etc)
+* Dynamics
+* Text
 
 ### Who do I talk to? ###
 
