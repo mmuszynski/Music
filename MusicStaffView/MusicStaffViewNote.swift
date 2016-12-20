@@ -14,12 +14,12 @@ public func +(lhs: MusicStaffViewNote, rhs: Int) -> MusicStaffViewNote {
 
 public class MusicStaffViewNote: MusicStaffViewElement {
     
-    public var name : MusicStaffViewNoteName = .c
-    public var length : MusicStaffViewNoteLength = .quarter
+    public var name : MusicNoteName = .c
+    public var length : MusicNoteLength = .quarter
     public var octave : Int = 4
-    public var accidental : MusicStaffViewAccidentalType = .none
+    public var accidental : MusicNoteAccidentalType = .none
     
-    public required init(name: MusicStaffViewNoteName, accidental: MusicStaffViewAccidentalType, length: MusicStaffViewNoteLength, octave: Int) {
+    public required init(name: MusicNoteName, accidental: MusicNoteAccidentalType, length: MusicNoteLength, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.length = length
