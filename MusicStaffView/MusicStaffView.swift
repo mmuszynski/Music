@@ -309,7 +309,7 @@ public enum MusicStaffViewSpacingType {
         return noteLayer
     }
     
-    func accidentalLayerFor(noteLayer: MusicStaffViewElementLayer, type: MusicStaffViewAccidentalType) -> MusicStaffViewElementLayer? {
+    func accidentalLayerFor(noteLayer: MusicStaffViewElementLayer, type: MusicNoteAccidentalType) -> MusicStaffViewElementLayer? {
         let accidentalLayer: MusicStaffViewElementLayer
         let accidental = type
         
@@ -336,7 +336,7 @@ public enum MusicStaffViewSpacingType {
     ///- parameter name: The name of the note
     ///- parameter octave: The octave of the note
     ///- parameter clef: The type of clef
-    private func offsetForNote(named name: MusicStaffViewNoteName, octave: Int, clef: MusicStaffViewClefType) -> Int {
+    private func offsetForNote(named name: MusicNoteName, octave: Int, clef: MusicStaffViewClefType) -> Int {
         var offset: Int = 0
         var clefOctave: Int
         
@@ -346,10 +346,10 @@ public enum MusicStaffViewSpacingType {
             //offset of zero corresponds to B4
             //the clef octave zeroes out the clef and the offset should be set to the positive offset of the note
             clefOctave = 4
-            offset += MusicStaffViewNoteName.b.rawValue
+            offset += MusicNoteName.b.rawValue
         case .bass:
             clefOctave = 3
-            offset += MusicStaffViewNoteName.d.rawValue
+            offset += MusicNoteName.d.rawValue
         case .alto:
             clefOctave = 4
         case .tenor:
