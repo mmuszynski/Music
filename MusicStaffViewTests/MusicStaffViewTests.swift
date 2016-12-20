@@ -21,7 +21,21 @@ class MusicStaffViewTests: XCTestCase {
         super.tearDown()
     }
     
-    func testNote() {
+    func testNoteEquality() {
+        let note1 = MusicNote(name: .a, accidental: .natural, length: .quarter, octave: 1)
+        let note2 = MusicNote(name: .a, accidental: .natural, length: .quarter, octave: 1)
+        XCTAssertEqual(note1, note2)
+        
+        note1.name = .b
+        XCTAssertNotEqual(note1, note2)
+        note2.name = .b
+        XCTAssertEqual(note1, note2)
+        
+        note1.accidental = .none
+        XCTAssertNotEqual(note1, note2)
+        note2.accidental = .none
+        XCTAssertEqual(note1, note2)
+
         
     }
     

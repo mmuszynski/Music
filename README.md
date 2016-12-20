@@ -13,6 +13,13 @@
 * Scale
 * Chord
 
+### Tests that should be passable ###
+
+* Given the notes of a chord, can the chord be inferred
+* Given the notese of a scale, can the scale be inferred
+* Given a chord, can the notes be generated
+* Given a scale, can the notes be generated
+
 ### Important Secondary Elements (mostly regarding display/engraving) ###
 
 * Rests

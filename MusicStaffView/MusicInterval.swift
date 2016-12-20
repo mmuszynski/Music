@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+public enum MusicIntervalQuality {
+    case perfect, major, minor, diminshed, augmented
+}
+
+public enum MusicIntervalQuantity: Int {
+    case unison = 0, second, third, fourth, fifth, sixth, seventh, octave, ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth
+}
+
+public class MusicInterval {
+}
