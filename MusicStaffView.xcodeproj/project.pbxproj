@@ -98,10 +98,10 @@
 				27527E991D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift */,
 				27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */,
 				27527E961D9ED56B00C97B25 /* MusicStaffView.swift */,
-				27FF16091E097EB700EB5695 /* MusicNote.swift */,
 				27FF160B1E09849800EB5695 /* MusicInterval.swift */,
 				27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */,
 				276FAA431E155D5B00C2FC6A /* MusicPitch.swift */,
+				27FF16091E097EB700EB5695 /* MusicNote.swift */,
 				27527E801D9ED55300C97B25 /* Info.plist */,
 			);
 			path = MusicStaffView;

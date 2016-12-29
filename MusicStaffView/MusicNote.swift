@@ -21,23 +21,22 @@ public enum MusicNoteLength {
 
 public class MusicNote: Hashable {
     
-    public var name : MusicNoteName = .c
+    public var pitch: MusicPitch
     public var length : MusicNoteLength = .quarter
-    public var octave : Int = 4
-    public var accidental : MusicNoteAccidentalType = .none
-    public var index : Int {
-        return octave * 12 + name.rawValue + accidental.modifier()
-    }
     
-    public required init(name: MusicNoteName, accidental: MusicNoteAccidentalType, length: MusicNoteLength, octave: Int) {
-        self.name = name
-        self.accidental = accidental
+    public required init(name: MusicPitchName, accidental: MusicPitchAccidentalType, length: MusicNoteLength, octave: Int) {
+        self.pitch = MusicPitch(name: name, accidental: accidental, octave: octave)
         self.length = length
-        self.octave = octave
     }
     
-    func isEquivalentTo(note: MusicNote) -> Bool {
-        return false
+    func isEquivalent(to note: MusicNote) -> Bool {
+        if self.pitch != note.pitch {
+            return false
+        } else if self.length != note.length {
+            return false
+        }
+        
+        return true
     }
     
     private var _enharmonicEquivalents = Set<MusicNote>()
@@ -50,21 +49,11 @@ public class MusicNote: Hashable {
     
     //Hashable
     public var hashValue: Int {
-        return index.hashValue ^ name.hashValue ^ length.hashValue
+        return self.pitch.hashValue ^ self.length.hashValue
     }
     
     public static func ==(lhs: MusicNote, rhs: MusicNote) -> Bool {
-        if lhs.name != rhs.name {
-            return false
-        } else if rhs.length != lhs.length {
-            return false
-        } else if rhs.octave != lhs.octave {
-            return false
-        } else if rhs.accidental != lhs.accidental {
-            return false
-        }
-        
-        return true
+        return lhs.isEquivalent(to: rhs)
     }
     
 }

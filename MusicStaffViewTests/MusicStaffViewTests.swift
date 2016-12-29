@@ -21,22 +21,37 @@ class MusicStaffViewTests: XCTestCase {
         super.tearDown()
     }
     
-    func testNoteEquality() {
-        let note1 = MusicNote(name: .a, accidental: .natural, length: .quarter, octave: 1)
-        let note2 = MusicNote(name: .a, accidental: .natural, length: .quarter, octave: 1)
-        XCTAssertEqual(note1, note2)
+    func testPitchEquality() {
+        var pitch1 = MusicPitch(name: .a, accidental: .natural, octave: 1)
+        var pitch2 = MusicPitch(name: .a, accidental: .natural, octave: 1)
+        XCTAssertEqual(pitch1, pitch2)
         
-        note1.name = .b
-        XCTAssertNotEqual(note1, note2)
-        note2.name = .b
-        XCTAssertEqual(note1, note2)
+        pitch1.name = .b
+        XCTAssertNotEqual(pitch1, pitch2)
+        pitch2.name = .b
+        XCTAssertEqual(pitch1, pitch2)
         
-        note1.accidental = .none
-        XCTAssertNotEqual(note1, note2)
-        note2.accidental = .none
-        XCTAssertEqual(note1, note2)
+        pitch1.accidental = .none
+        XCTAssertNotEqual(pitch1, pitch2)
+        pitch2.accidental = .none
+        XCTAssertEqual(pitch1, pitch2)
+    }
+    
+    func testEnharmonicModifierForName() {
+        //c, d, e, f, g, a, b
+        //must translate to semitone modifiers
+        //0, 2, 4, 5, 7, 9, 11
+        let pitchNames: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
+        let modifiers = pitchNames.map { $0.modifier() }
+        XCTAssertEqual([0, 2, 4, 5, 7, 9, 11], modifiers)
+    }
+    
+    func testEnharmonicEquivalence() {
+        let pitch1 = MusicPitch(name: .a, accidental: .sharp, octave: 1)
+        let pitch2 = MusicPitch(name: .b, accidental: .flat, octave: 1)
 
-        
+        XCTAssertEqual(pitch1.enharmonicIndex, pitch2.enharmonicIndex, "\(pitch1.enharmonicIndex) != \(pitch2.enharmonicIndex)")
+        XCTAssertTrue(pitch1.isEnharmonicEquivalent(of: pitch2), "\(pitch1.enharmonicIndex) != \(pitch2.enharmonicIndex)")
     }
     
     func testMajorScales() {
