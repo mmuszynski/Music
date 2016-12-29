@@ -8,30 +8,6 @@
 
 import Foundation
 
-public enum MusicNoteAccidentalType {
-    case none
-    case flat
-    case natural
-    case sharp
-    case doubleFlat
-    case doubleSharp
-    
-    public func modifier() -> Int {
-        switch self {
-        case .none, .natural:
-            return 0
-        case .flat:
-            return -1
-        case .doubleFlat:
-            return -2
-        case .sharp:
-            return 1
-        case .doubleSharp:
-            return 2
-        }
-    }
-}
-
 public enum MusicNoteLength {
     case breve
     case whole
@@ -41,31 +17,6 @@ public enum MusicNoteLength {
     case sixteenth
     case thirtySecond
     case sixtyFourth
-}
-
-public enum MusicNoteName: Int {
-    case c = 0, d, e, f, g, a, b
-    
-    public init?(stringValue: String) {
-        switch stringValue {
-        case "A", "a", "la", "La":
-            self = .a
-        case "B", "b":
-            self = .b
-        case "C", "c":
-            self = .c
-        case "D", "d":
-            self = .d
-        case "E", "e":
-            self = .e
-        case "F", "f":
-            self = .f
-        case "G", "g":
-            self = .g
-        default:
-            return nil
-        }
-    }
 }
 
 public class MusicNote: Hashable {
