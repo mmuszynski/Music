@@ -52,6 +52,7 @@ public class MusicNote: Hashable {
         return self.pitch.hashValue ^ self.length.hashValue
     }
     
+    //Equatable
     public static func ==(lhs: MusicNote, rhs: MusicNote) -> Bool {
         return lhs.isEquivalent(to: rhs)
     }

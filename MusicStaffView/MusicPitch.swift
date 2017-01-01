@@ -32,6 +32,17 @@ public struct MusicPitch: Hashable {
         self.octave = octave
     }
     
+    public init?(enharmonicIndex: Int, accidental: MusicPitchAccidentalType) {
+        //the octave will give a range of 12 half-steps
+        //the accidental adds or subtracts from there
+        //the name is the final piece of the puzzle
+        let octave = enharmonicIndex / 12
+        var difference = enharmonicIndex - octave * 12 - accidental.modifier()
+        
+        
+        return nil
+    }
+    
     public static func ==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
         if lhs.name != rhs.name {
             return false

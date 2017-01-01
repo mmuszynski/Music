@@ -54,6 +54,13 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertTrue(pitch1.isEnharmonicEquivalent(of: pitch2), "\(pitch1.enharmonicIndex) != \(pitch2.enharmonicIndex)")
     }
     
+    func testPitchFromEnharmonic() {
+        let aNatural1 = MusicPitch(name: .a, accidental: .natural, octave: 1)
+        let aNaturalEI = MusicPitch(enharmonicIndex: aNatural1.enharmonicIndex, accidental: .natural)
+        
+        XCTAssertTrue(aNatural1 == aNaturalEI)
+    }
+    
     func testMajorScales() {
         
     }
