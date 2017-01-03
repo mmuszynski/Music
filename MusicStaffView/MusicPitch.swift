@@ -19,30 +19,64 @@ infix operator ~==: ComparisonPrecedence
 ///
 public struct MusicPitch: Hashable {
    
+    ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
+    
+    ///The `MusicPitchAccidentalType` representing the accidental modifier of the pitch
     public var accidental: MusicPitchAccidentalType = .natural
+    
+    ///The octave of the pitch
     public var octave: Int = 0
+    
+    ///Integer based index representing number of semitones from the reference pitch C0.
     public var enharmonicIndex: Int {
-        return octave * 8 + accidental.modifier() + name.modifier()
+        return octave * 12 + accidental.modifier() + name.modifier()
     }
     
+    ///Standard initializer, rearranged to fit the way pitches are described.
     public init(name: MusicPitchName, accidental: MusicPitchAccidentalType, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.octave = octave
     }
     
+    ///Initializer from `enharmonicIndex` and `accidental`.
+    ///
+    ///Computes `octave` and `name` properties.
+    ///
+    ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided accidental type.
     public init?(enharmonicIndex: Int, accidental: MusicPitchAccidentalType) {
         //the octave will give a range of 12 half-steps
         //the accidental adds or subtracts from there
         //the name is the final piece of the puzzle
-        let octave = enharmonicIndex / 12
+        var octave = enharmonicIndex / 12
         var difference = enharmonicIndex - octave * 12 - accidental.modifier()
+        if difference > 11 {
+            octave += 1
+            difference -= 12
+        } else if difference < 0 {
+            octave -= 1
+            difference += 12
+        }
+        guard let pitchName = MusicPitchName(enharmonicModifier: difference) else {
+            return nil
+        }
         
-        
-        return nil
+        self = MusicPitch(name: pitchName, accidental: accidental, octave: octave)
     }
     
+    ///Generates all enharmonics of the given pitch.
+    ///
+    ///
+    public func allEnharmonics() -> Set<MusicPitch> {
+        let accidentals: [MusicPitchAccidentalType] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
+        let accidentalSet = Set<MusicPitchAccidentalType>(accidentals)
+        let ei = self.enharmonicIndex
+        var enharmonics = accidentalSet.flatMap { MusicPitch(enharmonicIndex: ei, accidental: $0) }
+        enharmonics.append(self)
+        return Set<MusicPitch>(enharmonics)
+    }
+
     public static func ==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
         if lhs.name != rhs.name {
             return false
@@ -71,10 +105,16 @@ public struct MusicPitch: Hashable {
 public enum MusicPitchName: Int {
     case c = 0, d, e, f, g, a, b
     
+    static var allValues: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
+    static var allModifiers: [Int] = {
+        return allValues.map { $0.modifier() }
+    }()
+    
     func modifier() -> Int {
         return self.rawValue * 2 - (self.rawValue * 2 >= 5 ? 1 : 0)
     }
     
+    ///Attempts to initialize a `MusicPitchName` from a string value (e.g. "A", "b", "do", "Re", etc)
     public init?(stringValue: String) {
         switch stringValue {
         case "A", "a", "la", "La":
@@ -94,6 +134,15 @@ public enum MusicPitchName: Int {
         default:
             return nil
         }
+    }
+    
+    ///Attempts to generate a `MusicPitchName` from an enharmonicModifier integer.
+    public init?(enharmonicModifier: Int) {
+        guard let index = MusicPitchName.allModifiers.index(of: enharmonicModifier) else {
+            return nil
+        }
+        
+        self = MusicPitchName.allValues[index]
     }
 }
 
