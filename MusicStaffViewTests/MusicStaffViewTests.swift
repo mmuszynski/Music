@@ -21,6 +21,66 @@ class MusicStaffViewTests: XCTestCase {
         super.tearDown()
     }
     
+    func testNoteNameCreation() {
+        XCTAssertNil(MusicPitchName(stringValue: "bob"))
+        
+        let a = MusicPitchName.a
+        let b = MusicPitchName.b
+        let c = MusicPitchName.c
+        let d = MusicPitchName.d
+        let e = MusicPitchName.e
+        let f = MusicPitchName.f
+        let g = MusicPitchName.g
+        
+        var Do = MusicPitchName(stringValue: "Do")
+        var Re = MusicPitchName(stringValue: "Re")
+        var Mi = MusicPitchName(stringValue: "Mi")
+        var Fa = MusicPitchName(stringValue: "Fa")
+        var So = MusicPitchName(stringValue: "So")
+        var La = MusicPitchName(stringValue: "La")
+        var Ti = MusicPitchName(stringValue: "Ti")
+        
+        XCTAssertEqual(c, Do)
+        XCTAssertEqual(d, Re)
+        XCTAssertEqual(e, Mi)
+        XCTAssertEqual(f, Fa)
+        XCTAssertEqual(g, So)
+        XCTAssertEqual(a, La)
+        XCTAssertEqual(b, Ti)
+        
+        Do = MusicPitchName(stringValue: "do")
+        Re = MusicPitchName(stringValue: "re")
+        Mi = MusicPitchName(stringValue: "mi")
+        Fa = MusicPitchName(stringValue: "fa")
+        So = MusicPitchName(stringValue: "so")
+        La = MusicPitchName(stringValue: "la")
+        Ti = MusicPitchName(stringValue: "ti")
+        
+        XCTAssertEqual(c, Do)
+        XCTAssertEqual(d, Re)
+        XCTAssertEqual(e, Mi)
+        XCTAssertEqual(f, Fa)
+        XCTAssertEqual(g, So)
+        XCTAssertEqual(a, La)
+        XCTAssertEqual(b, Ti)
+        
+        Do = MusicPitchName(stringValue: "C")
+        Re = MusicPitchName(stringValue: "D")
+        Mi = MusicPitchName(stringValue: "E")
+        Fa = MusicPitchName(stringValue: "F")
+        So = MusicPitchName(stringValue: "G")
+        La = MusicPitchName(stringValue: "A")
+        Ti = MusicPitchName(stringValue: "B")
+        
+        XCTAssertEqual(c, Do)
+        XCTAssertEqual(d, Re)
+        XCTAssertEqual(e, Mi)
+        XCTAssertEqual(f, Fa)
+        XCTAssertEqual(g, So)
+        XCTAssertEqual(a, La)
+        XCTAssertEqual(b, Ti)
+    }
+    
     func testPitchEquality() {
         var pitch1 = MusicPitch(name: .a, accidental: .natural, octave: 1)
         var pitch2 = MusicPitch(name: .a, accidental: .natural, octave: 1)
@@ -35,6 +95,9 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertNotEqual(pitch1, pitch2)
         pitch2.accidental = .none
         XCTAssertEqual(pitch1, pitch2)
+        
+        pitch1.octave = 10
+        XCTAssertNotEqual(pitch1, pitch2)
     }
     
     func testEnharmonicModifierForName() {
@@ -155,6 +218,25 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertEqual(aSharp0.allEnharmonics(), testSet)
         XCTAssertEqual(bFlat0.allEnharmonics(), testSet)
         XCTAssertEqual(Cbb1.allEnharmonics(), testSet)
+    }
+    
+    func testComparisons() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let Csharp0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
+        XCTAssertGreaterThan(Csharp0, C0)
+        XCTAssertLessThan(C0, Csharp0)
+        
+        let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
+        let ordered = [C0, Csharp0, D0]
+        let sorted = [D0, Csharp0, C0].sorted()
+        XCTAssertEqual(ordered, sorted)
+        
+        let Db0 = MusicPitch(name: .d, accidental: .flat, octave: 0)
+        let Dsharp0 = MusicPitch(name: .d, accidental: .sharp, octave: 0)
+        let Eb0 = MusicPitch(name: .e, accidental: .flat, octave: 0)
+        let larger = [C0, Csharp0, Db0, D0, Dsharp0, Eb0]
+        let sortedLarger = [D0, Eb0, Csharp0, Dsharp0, C0, Db0].sorted()
+        XCTAssertEqual(larger, sortedLarger)
     }
     
 }

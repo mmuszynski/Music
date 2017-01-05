@@ -17,7 +17,7 @@ infix operator ~==: ComparisonPrecedence
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
 ///
 ///
-public struct MusicPitch: Hashable {
+public struct MusicPitch: Hashable, Comparable {
    
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
@@ -100,6 +100,24 @@ public struct MusicPitch: Hashable {
     public func isEnharmonicEquivalent(of pitch: MusicPitch) -> Bool {
         return self ~== pitch
     }
+    
+    
+    /// Returns a Boolean value indicating whether the `enharmonicIndex` of the first
+    /// pitch is less than that of the second pitch.
+    ///
+    /// This function is the only requirement of the `Comparable` protocol. The
+    /// remainder of the relational operator functions are implemented by the
+    /// standard library for any type that conforms to `Comparable`.
+    ///
+    /// - Parameters:
+    ///   - lhs: A pitch to compare.
+    ///   - rhs: Another pitch to compare.
+    public static func <(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
+        guard lhs.enharmonicIndex != rhs.enharmonicIndex else {
+            return lhs.name.modifier() < rhs.name.modifier()
+        }
+        return lhs.enharmonicIndex < rhs.enharmonicIndex
+    }
 }
 
 public enum MusicPitchName: Int {
@@ -116,20 +134,20 @@ public enum MusicPitchName: Int {
     
     ///Attempts to initialize a `MusicPitchName` from a string value (e.g. "A", "b", "do", "Re", etc)
     public init?(stringValue: String) {
-        switch stringValue {
-        case "A", "a", "la", "La":
+        switch stringValue.lowercased() {
+        case "a", "la":
             self = .a
-        case "B", "b":
+        case "b", "ti", "si":
             self = .b
-        case "C", "c":
+        case "c", "do":
             self = .c
-        case "D", "d":
+        case "d", "re":
             self = .d
-        case "E", "e":
+        case "e", "mi":
             self = .e
-        case "F", "f":
+        case "f", "fa":
             self = .f
-        case "G", "g":
+        case "g", "so", "sol":
             self = .g
         default:
             return nil

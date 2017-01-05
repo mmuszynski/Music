@@ -88,5 +88,7 @@ public class MusicNote: Hashable {
         return lhs.isEquivalent(to: rhs)
     }
     
+    //Comparable
+    
 }
 
