@@ -9,13 +9,13 @@
 import UIKit
 
 public enum MusicStaffViewElementType {
-    case clef(MusicStaffViewClefType)
+    case clef(MusicClefType)
     case note(MusicPitchName, MusicPitchAccidentalType, MusicNoteLength)
     case accidental(MusicPitchAccidentalType)
     case none
 }
 
-public enum MusicStaffViewClefType {
+public enum MusicClefType {
     case treble
     case alto
     case tenor
@@ -24,16 +24,16 @@ public enum MusicStaffViewClefType {
     case genericFClef(offset: Int)
     case genericGClef(offset: Int)
     
-    public var zeroOffsetNote: MusicStaffViewNote {
+    public var zeroOffsetPitch: MusicPitch {
         switch self {
         case .treble:
-            return MusicStaffViewNote(name: .b, accidental: .none, length: .quarter, octave: 4)
+            return MusicPitch(name: .b, accidental: .none, octave: 4)
         case .alto:
-            return MusicStaffViewNote(name: .c, accidental: .none, length: .quarter, octave: 4)
+            return MusicPitch(name: .c, accidental: .none, octave: 4)
         case .tenor:
-            return MusicStaffViewNote(name: .a, accidental: .none, length: .quarter, octave: 3)
+            return MusicPitch(name: .a, accidental: .none, octave: 3)
         case .bass:
-            return MusicStaffViewNote(name: .d, accidental: .none, length: .quarter, octave: 3)
+            return MusicPitch(name: .d, accidental: .none, octave: 3)
         case .genericCClef(let offset):
             fatalError()
         case .genericFClef(let offset):
@@ -41,6 +41,27 @@ public enum MusicStaffViewClefType {
         case .genericGClef(let offset):
             fatalError()
         }
+    }
+    
+    public func pitch(forOffset offset: Int, accidental: MusicPitchAccidentalType = .none) -> MusicPitch {
+        let clefOffsetPitch = self.zeroOffsetPitch
+        //change the offset such that it is relative to the C in this octave
+        let clefOffsetFromOctaveC = clefOffsetPitch.name.rawValue
+        let cOffset = offset + clefOffsetFromOctaveC
+        
+        //come up with the appropriate, relative octave
+        let relativeOctave = cOffset >= 0 ? cOffset / 7 : cOffset / 8 - 1
+        
+        //come up with the relative offset caused by the note
+        let noteOffset = cOffset % 7
+        let absoluteOffset = noteOffset < 0 ? 7 + noteOffset : noteOffset
+        
+        guard let newPitchName = MusicPitchName(rawValue: absoluteOffset) else {
+            fatalError("Pitch Name Value out of range")
+        }
+        let newOct = clefOffsetPitch.octave + relativeOctave
+        
+        return MusicPitch(name: newPitchName, accidental: accidental, octave: newOct)
     }
     
 }

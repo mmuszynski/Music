@@ -18,7 +18,7 @@ enum ScaleMode {
 
 class MusicStaffViewKeySignature: MusicStaffViewElement {
     
-    var rootNote = MusicStaffViewNote(name: .c, accidental: .natural, length: .quarter, octave: 0)
+    var rootNote = MusicPitch(name: .c, accidental: .natural, octave: 0)
     
     init(sharps: UInt, mode: ScaleMode) {
     }

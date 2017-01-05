@@ -70,7 +70,7 @@ public enum MusicStaffViewSpacingType {
     }
     
     ///The clef to display, wrapped in an `ClefType` enum.
-    @IBInspectable var displayedClef : MusicStaffViewClefType = .treble {
+    @IBInspectable var displayedClef : MusicClefType = .treble {
         didSet{
             self.setupLayers()
         }
@@ -218,7 +218,7 @@ public enum MusicStaffViewSpacingType {
     ///Draws the clef at the proper position.
     ///
     ///Currently, this is hardcoded to draw the treble clef at the far left of the staff.
-    private func draw(clef type: MusicStaffViewClefType, atHorizontalPosition xPosition: CGFloat) {
+    private func draw(clef type: MusicClefType, atHorizontalPosition xPosition: CGFloat) {
         //FIXME: Allow for the drawing of other clefs
         let clefLayer = MusicStaffViewElementLayer(type: .clef(type))
         clefLayer.height = 6.5 * spaceWidth
@@ -336,7 +336,7 @@ public enum MusicStaffViewSpacingType {
     ///- parameter name: The name of the note
     ///- parameter octave: The octave of the note
     ///- parameter clef: The type of clef
-    private func offsetForNote(named name: MusicPitchName, octave: Int, clef: MusicStaffViewClefType) -> Int {
+    private func offsetForNote(named name: MusicPitchName, octave: Int, clef: MusicClefType) -> Int {
         var offset: Int = 0
         var clefOctave: Int
         

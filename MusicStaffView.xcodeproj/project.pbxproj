@@ -16,6 +16,7 @@
 		27527E9F1D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E991D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift */; };
 		27527EA11D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */; };
 		276FAA441E155D5B00C2FC6A /* MusicPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FAA431E155D5B00C2FC6A /* MusicPitch.swift */; };
+		276FAA461E1ECBF900C2FC6A /* MusicClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */; };
 		27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF16091E097EB700EB5695 /* MusicNote.swift */; };
 		27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160B1E09849800EB5695 /* MusicInterval.swift */; };
 		27FF160E1E0984CE00EB5695 /* MusicKeySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */; };
@@ -45,6 +46,7 @@
 		27527E991D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffViewKeySignature.swift; sourceTree = "<group>"; };
 		27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffViewStaffLayer.swift; sourceTree = "<group>"; };
 		276FAA431E155D5B00C2FC6A /* MusicPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitch.swift; sourceTree = "<group>"; };
+		276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicClefTests.swift; sourceTree = "<group>"; };
 		27FF16091E097EB700EB5695 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNote.swift; sourceTree = "<group>"; };
 		27FF160B1E09849800EB5695 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInterval.swift; sourceTree = "<group>"; };
 		27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicKeySignature.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				27527E8A1D9ED55300C97B25 /* MusicStaffViewTests.swift */,
+				276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */,
 				27527E8C1D9ED55300C97B25 /* Info.plist */,
 			);
 			path = MusicStaffViewTests;
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27527E8B1D9ED55300C97B25 /* MusicStaffViewTests.swift in Sources */,
+				276FAA461E1ECBF900C2FC6A /* MusicClefTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
