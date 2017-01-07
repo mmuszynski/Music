@@ -35,11 +35,11 @@ public enum MusicClefType {
         case .bass:
             return MusicPitch(name: .d, accidental: .none, octave: 3)
         case .genericCClef(let offset):
-            fatalError()
+            return MusicClefType.alto.pitch(forOffset: -offset)
         case .genericFClef(let offset):
-            fatalError()
+            return MusicClefType.bass.pitch(forOffset: -offset)
         case .genericGClef(let offset):
-            fatalError()
+            return MusicClefType.treble.pitch(forOffset: -offset)
         }
     }
     
@@ -55,10 +55,7 @@ public enum MusicClefType {
         //come up with the relative offset caused by the note
         let noteOffset = cOffset % 7
         let absoluteOffset = noteOffset < 0 ? 7 + noteOffset : noteOffset
-        
-        guard let newPitchName = MusicPitchName(rawValue: absoluteOffset) else {
-            fatalError("Pitch Name Value out of range")
-        }
+        let newPitchName = MusicPitchName(rawValue: absoluteOffset)!
         let newOct = clefOffsetPitch.octave + relativeOctave
         
         return MusicPitch(name: newPitchName, accidental: accidental, octave: newOct)
