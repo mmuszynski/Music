@@ -76,6 +76,36 @@ public struct MusicPitch: Hashable, Comparable {
         enharmonics.append(self)
         return Set<MusicPitch>(enharmonics)
     }
+    
+    ///Calculates the relative distance between this pitch and a second when drawn on a staff.
+    ///
+    ///This method calculates the relative distance between the current note and a second note when drawn on a staff. Since pitch names determine their position on the staff, the most obvious usage involves calculating the place to draw a note with a given name and octave against the reference pitch of a clef.
+    ///
+    /// - note:
+    ///  This is a convenience wrapper for `relativeOffset(for:MusicPitch)`
+    ///
+    /// - Parameters:
+    ///   - name: The `MusicPitch` to compare to the current `MusicPitch`
+    ///   - octave: The octave of the second pitch.
+    public func relativeOffset(for name: MusicPitchName, octave: Int) -> Int {
+        return self.relativeOffset(for: MusicPitch(name: name, accidental: .none, octave: octave));
+    }
+    
+    ///Calculates the relative distance between this pitch and a second when drawn on a staff.
+    ///
+    ///This method calculates the relative distance between the current note and a second note when drawn on a staff. Since pitch names determine their position on the staff, the most obvious usage involves calculating the place to draw a note with a given name and octave against the reference pitch of a clef.
+    ///
+    /// - Parameters:
+    ///   - name: The `MusicPitchName` to compare to the current `MusicPitch`
+    ///   - octave: The octave of the second pitch.
+    public func relativeOffset(for pitch: MusicPitch) -> Int {
+        let finalPitch = pitch.name.rawValue
+        let finalOctave = pitch.octave
+        let initialPitch = self.name.rawValue
+        let initialOctave = self.octave
+                
+        return 7 * (finalOctave - initialOctave) + finalPitch - initialPitch
+    }
 
     public static func ==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
         if lhs.name != rhs.name {

@@ -259,7 +259,7 @@ public enum MusicStaffViewSpacingType {
         noteLayer.height = 4.0 * spaceWidth
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
-        let offset = offsetForNote(named: name, octave: octave, clef: displayedClef)
+        let offset = self.displayedClef.offsetForPitch(named: name, octave: octave)
         let viewOffset = viewOffsetForStaffOffset(offset)
         noteLayer.position.y += viewOffset
         
@@ -325,51 +325,6 @@ public enum MusicStaffViewSpacingType {
             accidentalLayer.backgroundColor = UIColor(red: 0, green: 1.0, blue: 1.0, alpha: 0.3).cgColor
         }
         return accidentalLayer
-    }
-    
-    ///Calculates the offset for each note in a given clef
-    ///
-    ///Since notes need to be draw in the correct place in the y-axis, the offset from a given starting location must be computed. Currently, the zero-offset corresponds to the note one ledger line below the lowest staff line (aka Middle C in Treble Clef).
-    ///
-    ///The offset for the note specifies an offset from the center of the view, which also represents the center of the staff.
-    ///
-    ///- parameter name: The name of the note
-    ///- parameter octave: The octave of the note
-    ///- parameter clef: The type of clef
-    private func offsetForNote(named name: MusicPitchName, octave: Int, clef: MusicClefType) -> Int {
-        var offset: Int = 0
-        var clefOctave: Int
-        
-        switch displayedClef {
-        case .treble:
-            //middle line of treble clef is B4
-            //offset of zero corresponds to B4
-            //the clef octave zeroes out the clef and the offset should be set to the positive offset of the note
-            clefOctave = 4
-            offset += MusicPitchName.b.rawValue
-        case .bass:
-            clefOctave = 3
-            offset += MusicPitchName.d.rawValue
-        case .alto:
-            clefOctave = 4
-        case .tenor:
-            clefOctave = 4
-        case .genericFClef(let offset):
-            fatalError("Not yet implemented for F Clef with offset \(offset)")
-        case .genericGClef(let offset):
-            fatalError("Not yet implemented for G Clef with offset \(offset)")
-        case .genericCClef(let offset):
-            fatalError("Not yet implemented for C Clef with offset \(offset)")
-        }
-        
-        if name == .a || name == .b {
-            clefOctave += 1
-        }
-        
-        let octaveOffset = 7 * (clefOctave - octave)
-        offset -= name.rawValue - octaveOffset
-        
-        return offset
     }
     
     ///Translates the staff-based offset (e.g. the number of positions above or below the middle staff line) into a useable metric based on the size of the view.

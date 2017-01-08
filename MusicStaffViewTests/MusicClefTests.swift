@@ -13,121 +13,66 @@ class MusicClefTests: XCTestCase {
     
     func testClefOffset() {
         let bassClef = MusicClefType.bass
-        XCTAssertEqual(bassClef.pitch(forOffset: -9), MusicPitch(name: .b, accidental: .none, octave: 1))
-        XCTAssertEqual(bassClef.pitch(forOffset: -8), MusicPitch(name: .c, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -7), MusicPitch(name: .d, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -6), MusicPitch(name: .e, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -5), MusicPitch(name: .f, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -4), MusicPitch(name: .g, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -3), MusicPitch(name: .a, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -2), MusicPitch(name: .b, accidental: .none, octave: 2))
-        XCTAssertEqual(bassClef.pitch(forOffset: -1), MusicPitch(name: .c, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 0), MusicPitch(name: .d, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 1), MusicPitch(name: .e, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 2), MusicPitch(name: .f, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 3), MusicPitch(name: .g, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 4), MusicPitch(name: .a, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 5), MusicPitch(name: .b, accidental: .none, octave: 3))
-        XCTAssertEqual(bassClef.pitch(forOffset: 6), MusicPitch(name: .c, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 7), MusicPitch(name: .d, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 8), MusicPitch(name: .e, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 9), MusicPitch(name: .f, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 10), MusicPitch(name: .g, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 11), MusicPitch(name: .a, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 12), MusicPitch(name: .b, accidental: .none, octave: 4))
-        XCTAssertEqual(bassClef.pitch(forOffset: 13), MusicPitch(name: .c, accidental: .none, octave: 5))
+        for octave in 0...8 {
+            for pitch in [.c, .d, .e, .f, .g, .a] as [MusicPitchName] {
+                let offset = -22 + pitch.rawValue + 7 * octave
+                XCTAssertEqual(bassClef.pitch(forOffset: offset), MusicPitch(name: pitch, accidental: .none, octave: octave))
+                XCTAssertEqual(bassClef.offsetForPitch(named: pitch, octave: octave), offset)
+            }
+        }
     }
     
     func testCleffOffsetAlto() {
-    
         let altoClef = MusicClefType.alto
-        XCTAssertEqual(altoClef.pitch(forOffset: -9), MusicPitch(name: .a, accidental: .none, octave: 2))
-        XCTAssertEqual(altoClef.pitch(forOffset: -8), MusicPitch(name: .b, accidental: .none, octave: 2))
-        XCTAssertEqual(altoClef.pitch(forOffset: -7), MusicPitch(name: .c, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -6), MusicPitch(name: .d, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -5), MusicPitch(name: .e, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -4), MusicPitch(name: .f, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -3), MusicPitch(name: .g, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -2), MusicPitch(name: .a, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: -1), MusicPitch(name: .b, accidental: .none, octave: 3))
-        XCTAssertEqual(altoClef.pitch(forOffset: 0), MusicPitch(name: .c, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 1), MusicPitch(name: .d, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 2), MusicPitch(name: .e, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 3), MusicPitch(name: .f, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 4), MusicPitch(name: .g, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 5), MusicPitch(name: .a, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 6), MusicPitch(name: .b, accidental: .none, octave: 4))
-        XCTAssertEqual(altoClef.pitch(forOffset: 7), MusicPitch(name: .c, accidental: .none, octave: 5))
-        XCTAssertEqual(altoClef.pitch(forOffset: 8), MusicPitch(name: .d, accidental: .none, octave: 5))
-        XCTAssertEqual(altoClef.pitch(forOffset: 9), MusicPitch(name: .e, accidental: .none, octave: 5))
-        
+        for octave in 0...8 {
+            for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
+                let offset = -28 + pitch.rawValue + 7 * octave
+                print(offset)
+                XCTAssertEqual(altoClef.pitch(forOffset: offset), MusicPitch(name: pitch, accidental: .none, octave: octave))
+                XCTAssertEqual(altoClef.offsetForPitch(named: pitch, octave: octave), offset)
+            }
+        }
     }
     
     func testClefOffsetTreble() {
-    
         let trebleClef = MusicClefType.treble
-        XCTAssertEqual(trebleClef.pitch(forOffset: -9), MusicPitch(name: .g, accidental: .none, octave: 3))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -8), MusicPitch(name: .a, accidental: .none, octave: 3))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -7), MusicPitch(name: .b, accidental: .none, octave: 3))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -6), MusicPitch(name: .c, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -5), MusicPitch(name: .d, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -4), MusicPitch(name: .e, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -3), MusicPitch(name: .f, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -2), MusicPitch(name: .g, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: -1), MusicPitch(name: .a, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 0), MusicPitch(name: .b, accidental: .none, octave: 4))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 1), MusicPitch(name: .c, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 2), MusicPitch(name: .d, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 3), MusicPitch(name: .e, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 4), MusicPitch(name: .f, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 5), MusicPitch(name: .g, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 6), MusicPitch(name: .a, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 7), MusicPitch(name: .b, accidental: .none, octave: 5))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 8), MusicPitch(name: .c, accidental: .none, octave: 6))
-        XCTAssertEqual(trebleClef.pitch(forOffset: 9), MusicPitch(name: .d, accidental: .none, octave: 6))
+        for octave in 0...8 {
+            for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
+                let offset = -34 + pitch.rawValue + 7 * octave
+                print(offset)
+                XCTAssertEqual(trebleClef.pitch(forOffset: offset), MusicPitch(name: pitch, accidental: .none, octave: octave))
+                XCTAssertEqual(trebleClef.offsetForPitch(named: pitch, octave: octave), offset)
+            }
+        }
         
     }
     
     func testClefOffsetTenor() {
-    
-        let tenorClef = MusicClefType.tenor
-        XCTAssertEqual(tenorClef.pitch(forOffset: -9), MusicPitch(name: .f, accidental: .none, octave: 2))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -8), MusicPitch(name: .g, accidental: .none, octave: 2))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -7), MusicPitch(name: .a, accidental: .none, octave: 2))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -6), MusicPitch(name: .b, accidental: .none, octave: 2))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -5), MusicPitch(name: .c, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -4), MusicPitch(name: .d, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -3), MusicPitch(name: .e, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -2), MusicPitch(name: .f, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: -1), MusicPitch(name: .g, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 0), MusicPitch(name: .a, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 1), MusicPitch(name: .b, accidental: .none, octave: 3))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 2), MusicPitch(name: .c, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 3), MusicPitch(name: .d, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 4), MusicPitch(name: .e, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 5), MusicPitch(name: .f, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 6), MusicPitch(name: .g, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 7), MusicPitch(name: .a, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 8), MusicPitch(name: .b, accidental: .none, octave: 4))
-        XCTAssertEqual(tenorClef.pitch(forOffset: 9), MusicPitch(name: .c, accidental: .none, octave: 5))
+        let tenor = MusicClefType.tenor
+        for octave in 0...8 {
+            for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
+                let offset = -26 + pitch.rawValue + 7 * octave
+                print(offset)
+                XCTAssertEqual(tenor.pitch(forOffset: offset), MusicPitch(name: pitch, accidental: .none, octave: octave))
+                XCTAssertEqual(tenor.offsetForPitch(named: pitch, octave: octave), offset)
+            }
+        }
         
     }
     
     func testGenericClefBaritone() {
         let baritoneClef = MusicClefType.genericCClef(offset: 4)
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 0), MusicPitch(name: .f, accidental: .none, octave: 3))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 1), MusicPitch(name: .g, accidental: .none, octave: 3))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 2), MusicPitch(name: .a, accidental: .none, octave: 3))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 3), MusicPitch(name: .b, accidental: .none, octave: 3))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 4), MusicPitch(name: .c, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 5), MusicPitch(name: .d, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 6), MusicPitch(name: .e, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 7), MusicPitch(name: .f, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 8), MusicPitch(name: .g, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 9), MusicPitch(name: .a, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 10), MusicPitch(name: .b, accidental: .none, octave: 4))
-        XCTAssertEqual(baritoneClef.pitch(forOffset: 11), MusicPitch(name: .c, accidental: .none, octave: 5))
-
+        for octave in 0...8 {
+            for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
+                let offset = -24 + pitch.rawValue + 7 * octave
+                print(offset)
+                XCTAssertEqual(baritoneClef.pitch(forOffset: offset), MusicPitch(name: pitch, accidental: .none, octave: octave))
+                XCTAssertEqual(baritoneClef.offsetForPitch(named: pitch, octave: octave), offset)
+            }
+        }
+    }
+    
+    func testGenericClefTreble() {
     }
     
 }

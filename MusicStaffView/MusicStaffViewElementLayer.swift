@@ -24,7 +24,7 @@ class MusicStaffViewElementLayer: CAShapeLayer {
         self.strokeColor = nil
 
         switch type {
-        case .clef(.treble):
+        case .clef(.gClef):
             self.anchorPoint = CGPoint(x: -0.1, y: 0.61);
         case .note:
             self.anchorPoint = CGPoint(x: 0.5, y: 0.865);
@@ -70,7 +70,7 @@ class MusicStaffViewElementLayer: CAShapeLayer {
             switch type {
             case .clef(let clef):
                 switch clef {
-                case .treble:
+                case .gClef:
                     return trebleClefPath()
                 default:
                     return trebleClefPath()
@@ -110,7 +110,7 @@ class MusicStaffViewElementLayer: CAShapeLayer {
     func staffPath() -> CGPath {
 
         switch type {
-        case .clef(.treble):
+        case .clef(.gClef):
             return trebleClefPath()
         default:
             break

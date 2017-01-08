@@ -239,4 +239,31 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertEqual(larger, sortedLarger)
     }
     
+    //The relative offset needs to be calculated
+    //
+    func testRelativeOffsets() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C01 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
+        let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
+        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let F0 = MusicPitch(name: .f, accidental: .natural, octave: 0)
+        let G0 = MusicPitch(name: .g, accidental: .natural, octave: 0)
+        let A0 = MusicPitch(name: .a, accidental: .natural, octave: 0)
+        let B0 = MusicPitch(name: .b, accidental: .natural, octave: 0)
+        let C1 = MusicPitch(name: .c, accidental: .natural, octave: 1)
+        let D1 = MusicPitch(name: .d, accidental: .natural, octave: 1)
+        let E1 = MusicPitch(name: .e, accidental: .natural, octave: 1)
+        let F1 = MusicPitch(name: .f, accidental: .natural, octave: 1)
+        let G1 = MusicPitch(name: .g, accidental: .natural, octave: 1)
+        let A1 = MusicPitch(name: .a, accidental: .natural, octave: 1)
+        let B1 = MusicPitch(name: .b, accidental: .natural, octave: 1)
+        
+        let array = [C01, D0, E0, F0, G0, A0, B0, C1, D1, E1, F1, G1, A1, B1]
+        let offsets = array.map { C0.relativeOffset(for: $0) }
+        let offsets2 = array.map { C0.relativeOffset(for: $0.name, octave: $0.octave) }
+        let test = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+        XCTAssertEqual(offsets, test)
+        XCTAssertEqual(offsets2, test)
+    }
+    
 }
