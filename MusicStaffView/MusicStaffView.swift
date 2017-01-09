@@ -259,7 +259,7 @@ public enum MusicStaffViewSpacingType {
         noteLayer.height = 4.0 * spaceWidth
         noteLayer.position = CGPoint(x: xPosition + noteLayer.bounds.size.width / 2.0, y: self.bounds.size.height)
         
-        let offset = self.displayedClef.offsetForPitch(named: name, octave: octave)
+        let offset = -self.displayedClef.offsetForPitch(named: name, octave: octave)
         let viewOffset = viewOffsetForStaffOffset(offset)
         noteLayer.position.y += viewOffset
         

@@ -61,7 +61,7 @@ class MusicClefTests: XCTestCase {
     }
     
     func testGenericClefBaritone() {
-        let baritoneClef = MusicClefType.genericCClef(offset: 4)
+        let baritoneClef = MusicClefType.cClef(offset: 4)
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
                 let offset = -24 + pitch.rawValue + 7 * octave
