@@ -65,6 +65,22 @@ public struct MusicPitch: Hashable, Comparable {
         self = MusicPitch(name: pitchName, accidental: accidental, octave: octave)
     }
     
+    ///Initializer from `enharmonicIndex` and `name`.
+    ///
+    ///Computes `octave` and `accidental` properties.
+    ///
+    ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided name.
+    public init?(enharmonicIndex: Int, name: MusicPitchName) {
+        //here's a dumb way of doing this. make all the potential notes possible with each of the accidental types
+        let accidentals: [MusicPitchAccidentalType] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
+        let potentials = accidentals.flatMap { MusicPitch(enharmonicIndex: enharmonicIndex, accidental: $0) }
+        guard let correct = potentials.filter({ $0.name == name }).last else {
+            return nil
+        }
+        
+        self = correct
+    }
+    
     ///Generates all enharmonics of the given pitch.
     ///
     ///
@@ -192,6 +208,12 @@ public enum MusicPitchName: Int {
         
         self = MusicPitchName.allValues[index]
     }
+    
+    ///Provides the next name in ascending scale order
+    public var nextName: MusicPitchName {
+        let rawValue = (self.rawValue + 1) % 7
+        return MusicPitchName.init(rawValue: rawValue)!
+    }
 }
 
 public enum MusicPitchAccidentalType {
@@ -214,6 +236,23 @@ public enum MusicPitchAccidentalType {
             return 1
         case .doubleSharp:
             return 2
+        }
+    }
+    
+    init?(enharmonicModifier: Int) {
+        switch enharmonicModifier {
+        case 0:
+            self = .natural
+        case -1:
+            self = .flat
+        case -2:
+            self = .doubleFlat
+        case 1:
+            self = .sharp
+        case 2:
+            self = .doubleSharp
+        default:
+            return nil
         }
     }
 }
