@@ -105,7 +105,7 @@ class MusicStaffViewTests: XCTestCase {
         //must translate to semitone modifiers
         //0, 2, 4, 5, 7, 9, 11
         let pitchNames: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
-        let modifiers = pitchNames.map { $0.modifier() }
+        let modifiers = pitchNames.map { $0.enharmonicModifier }
         XCTAssertEqual([0, 2, 4, 5, 7, 9, 11], modifiers)
     }
     

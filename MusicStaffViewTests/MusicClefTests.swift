@@ -71,8 +71,4 @@ class MusicClefTests: XCTestCase {
             }
         }
     }
-    
-    func testGenericClefTreble() {
-    }
-    
 }

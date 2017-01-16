@@ -30,7 +30,7 @@ public struct MusicPitch: Hashable, Comparable {
     
     ///Integer based index representing number of semitones from the reference pitch C0.
     public var enharmonicIndex: Int {
-        return octave * 12 + accidental.modifier() + name.modifier()
+        return octave * 12 + accidental.enharmonicModifier + name.enharmonicModifier
     }
     
     ///Standard initializer, rearranged to fit the way pitches are described.
@@ -50,7 +50,7 @@ public struct MusicPitch: Hashable, Comparable {
         //the accidental adds or subtracts from there
         //the name is the final piece of the puzzle
         var octave = enharmonicIndex / 12
-        var difference = enharmonicIndex - octave * 12 - accidental.modifier()
+        var difference = enharmonicIndex - octave * 12 - accidental.enharmonicModifier
         if difference > 11 {
             octave += 1
             difference -= 12
@@ -144,7 +144,7 @@ public struct MusicPitch: Hashable, Comparable {
     ///   - rhs: Another pitch to compare.
     public static func <(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
         guard lhs.enharmonicIndex != rhs.enharmonicIndex else {
-            return lhs.name.modifier() < rhs.name.modifier()
+            return lhs.name.enharmonicModifier < rhs.name.enharmonicModifier
         }
         return lhs.enharmonicIndex < rhs.enharmonicIndex
     }
@@ -155,10 +155,10 @@ public enum MusicPitchName: Int {
     
     static var allValues: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
     static var allModifiers: [Int] = {
-        return allValues.map { $0.modifier() }
+        return allValues.map { $0.enharmonicModifier }
     }()
     
-    func modifier() -> Int {
+    var enharmonicModifier: Int {
         return self.rawValue * 2 - (self.rawValue * 2 >= 5 ? 1 : 0)
     }
     
@@ -202,7 +202,7 @@ public enum MusicPitchAccidentalType {
     case doubleFlat
     case doubleSharp
     
-    func modifier() -> Int {
+    var enharmonicModifier: Int {
         switch self {
         case .none, .natural:
             return 0
