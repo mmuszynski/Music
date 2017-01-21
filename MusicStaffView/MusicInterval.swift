@@ -9,14 +9,15 @@
 import Foundation
 
 public enum MusicIntervalQuality {
-    case perfect, major, minor, diminshed, augmented
+    case perfect, major, minor, diminished, augmented
 }
 
 public enum MusicIntervalQuantity {
-    case unison, second, third, fourth, fifth, sixth, seventh, octave, generic(num: Int)
+    case unison, second, third, fourth, fifth, sixth, seventh, octave
+    indirect case generic(octave: Int, plusQuantity: MusicIntervalQuantity)
     
     public init(rawValue: Int) {
-        switch rawValue {
+        switch abs(rawValue) {
         case 0:
             self = .unison
         case 1:
@@ -34,10 +35,15 @@ public enum MusicIntervalQuantity {
         case 7:
             self = .octave
         default:
-            self = .generic(num: rawValue)
+            let octave = abs(rawValue) / 7
+            let quantity = abs(rawValue) % 7
+            self = .generic(octave: octave, plusQuantity: MusicIntervalQuantity(rawValue: quantity))
         }
     }
     
+    //This is a doozy. There is an indirect quantity (generic) that takes an octave plus a quantity.
+    //But it's probably not good to let it recurse generally. So let's hope that it only recurses once.
+    //Can we break that? Who knows at this point.
     var rawValue: Int {
         switch self {
         case .unison:
@@ -56,11 +62,25 @@ public enum MusicIntervalQuantity {
             return 6
         case .octave:
             return 7
-        case .generic(let num):
-            return num
+        case .generic(let octave, let quantity):
+            guard octave >= 0 else {
+                fatalError()
+            }
+            
+            switch quantity {
+            case .generic(_, _):
+                fatalError()
+            default:
+                return octave * 7 + quantity.rawValue
+            }
         }
     }
-
+    
+    var isPerfectType: Bool {
+        let raw = self.rawValue % 7
+        return raw == 0 || raw == 3 || raw == 4
+    }
+    
 }
 
 extension MusicIntervalQuantity: Equatable {
@@ -82,8 +102,8 @@ extension MusicIntervalQuantity: Equatable {
             return true
         case (.octave, .octave):
             return true
-        case (let .generic(x), let .generic(y)):
-            return x == y
+        case (let .generic(x1, y1), let .generic(x2, y2)):
+            return x1 == x2 && y1 == y2
         default:
             return false
         }
@@ -92,6 +112,8 @@ extension MusicIntervalQuantity: Equatable {
 
 public enum MusicIntervalError: Error {
     case InvalidQuality
+    case InvalidQuantity
+    case undefined(reason: String)
 }
 
 public struct MusicInterval {
@@ -125,16 +147,18 @@ public struct MusicInterval {
         let quantity = MusicIntervalQuantity(rawValue: offset)
         let quality: MusicIntervalQuality
         let translatedOffset = quantity.rawValue % 7
-        let translatedHalfSteps = halfSteps % 12
+        let translatedHalfSteps = abs(halfSteps) % 12
         
         guard quantity != .unison else {
-            if halfSteps == 0 {
+            switch halfSteps {
+            case 0:
                 quality = .perfect
-            } else if halfSteps == 1 {
+            case 1, -1:
                 quality = .augmented
-            } else {
+            default:
                 throw MusicIntervalError.InvalidQuality
             }
+
             return (quality, quantity)
         }
         
@@ -146,12 +170,12 @@ public struct MusicInterval {
             case 1:
                 quality = .augmented
             default:
-                quality = .diminshed
+                quality = .diminished
             }
         case 1:
             switch translatedHalfSteps {
             case 0:
-                quality = .diminshed
+                quality = .diminished
             case 1:
                 quality = .minor
             case 2:
@@ -162,7 +186,7 @@ public struct MusicInterval {
         case 2:
             switch translatedHalfSteps {
             case 2:
-                quality = .diminshed
+                quality = .diminished
             case 3:
                 quality = .minor
             case 4:
@@ -177,7 +201,7 @@ public struct MusicInterval {
             case 6:
                 quality = .augmented
             default:
-                quality = .diminshed
+                quality = .diminished
             }
         case 4:
             switch translatedHalfSteps {
@@ -186,12 +210,12 @@ public struct MusicInterval {
             case 8:
                 quality = .augmented
             default:
-                quality = .diminshed
+                quality = .diminished
             }
         case 5:
             switch translatedHalfSteps {
             case 7:
-                quality = .diminshed
+                quality = .diminished
             case 8:
                 quality = .minor
             case 9:
@@ -202,7 +226,7 @@ public struct MusicInterval {
         case 6:
             switch translatedHalfSteps {
             case 9:
-                quality = .diminshed
+                quality = .diminished
             case 10:
                 quality = .minor
             case 11:
@@ -211,17 +235,29 @@ public struct MusicInterval {
                 quality = .augmented
             }
         default:
-            quality = .perfect
+            throw MusicIntervalError.undefined(reason: "\(#line)")
         }
         
         return (quality, quantity)
     }
     
     //INITIALIZERS
-    ///Initializes an interval from a root pitch and a destination pitch
+    ///Initializes an interval from a root pitch and a destination pitch.
+    ///
+    ///- parameter rootPitch: The basic root pith of the interval
+    ///- parameter destinationPitch: The secondary pitch that completes the definition of the interval
+    ///
+    ///Computes quality and quantity (i.e. major third) based on the relative distance of the destination pitch from the root pitch. Throws an error if a valid interval cannot be created (e.g. a diminished unison makes little sense, as there is no way to lower a unison in order to diminish its magnitude).
+    ///
+    ///Further, doubly-diminished and doubly-augmented intervals, while potentially musically valid, have not been defined in this library.
+    ///
+    ///- throws: `MusicIntervalError` if unable to compute a proper `MusicIntervalQuality`.
+    ///
+    ///- important: Downward intervals have yet to be defined
     public init(rootPitch: MusicPitch, destinationPitch: MusicPitch) throws {
         self.rootPitch = rootPitch
         self.destinationPitch = destinationPitch
+        
         let offset = destinationPitch.name.rawValue - rootPitch.name.rawValue + (destinationPitch.octave - rootPitch.octave) * 7
         let halfSteps = destinationPitch.enharmonicIndex - rootPitch.enharmonicIndex
         let (quality, quantity) = try MusicInterval.qualityAndQuantity(withHalfSteps: halfSteps, offset: offset)

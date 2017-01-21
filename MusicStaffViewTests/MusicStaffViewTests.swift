@@ -224,7 +224,8 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertNotNil(MusicPitch(enharmonicIndex: 22, name: .b))
         //A double sharp, octave 1
         XCTAssertNotNil(MusicPitch(enharmonicIndex: 22, name: .a))
-        //Test that some B enharmonics are not able to be spelled with certain accidentals
+        //Test a wrong EI
+        XCTAssertNil(MusicPitch(enharmonicIndex: 25, name: .a))
         
         //Test that enharmonics built with the EI are enharmonically equivalent
         let bFlat = MusicPitch(enharmonicIndex: 22, name: .b)
@@ -236,13 +237,6 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertNotNil(b0)
         XCTAssertEqual(b0?.name, .b)
         XCTAssertEqual(b0?.octave, 0)
-    }
-    
-    func testPitchFromEnharmonicBSharpEdgeCase() {
-        //B sharp doesn't want to work, apparently
-        var ei = MusicPitch(name: .a, accidental: .sharp, octave: 0).enharmonicIndex
-        ei += 2
-        XCTAssertNotNil(MusicPitch(enharmonicIndex: ei, name: .b))
     }
     
     func testAllEnharmonics() {
@@ -320,66 +314,6 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 1), .sharp)
         XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 2), .doubleSharp)
         XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 3), nil)
-    }
-    
-    func testCMajorScale() {
-        let root = MusicPitch(name: .c, accidental: .natural, octave: 0)
-        var scalePitches = [root]
-        let cMajor = [root,
-                      MusicPitch(name: .d, accidental: .natural, octave: 0),
-                      MusicPitch(name: .e, accidental: .natural, octave: 0),
-                      MusicPitch(name: .f, accidental: .natural, octave: 0),
-                      MusicPitch(name: .g, accidental: .natural, octave: 0),
-                      MusicPitch(name: .a, accidental: .natural, octave: 0),
-                      MusicPitch(name: .b, accidental: .natural, octave: 0)]
-        let scale = [2, 2, 1, 2, 2, 2]
-        for halfSteps in scale {
-            let current = scalePitches.last!
-            let nextName = current.name.nextName
-            let next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
-            scalePitches.append(next!)
-        }
-        XCTAssertEqual(scalePitches, cMajor)
-    }
-    
-    func testEMajorScale() {
-        let root = MusicPitch(name: .e, accidental: .natural, octave: 0)
-        var scalePitches = [root]
-        let cMajor = [root,
-                      MusicPitch(name: .f, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .g, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .a, accidental: .natural, octave: 0),
-                      MusicPitch(name: .b, accidental: .natural, octave: 0),
-                      MusicPitch(name: .c, accidental: .sharp, octave: 1),
-                      MusicPitch(name: .d, accidental: .sharp, octave: 1)]
-        let scale = [2, 2, 1, 2, 2, 2]
-        for halfSteps in scale {
-            let current = scalePitches.last!
-            let nextName = current.name.nextName
-            let next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
-            scalePitches.append(next!)
-        }
-        XCTAssertEqual(scalePitches, cMajor)
-    }
-    
-    func testCSharpMajorScale() {
-        let root = MusicPitch(name: .c, accidental: .sharp, octave: 0)
-        var scalePitches = [root]
-        let cMajor = [root,
-                      MusicPitch(name: .d, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .e, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .f, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .g, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .a, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .b, accidental: .sharp, octave: 0)]
-        let scale = [2, 2, 1, 2, 2, 2]
-        for halfSteps in scale {
-            let current = scalePitches.last!
-            let nextName = current.name.nextName
-            let next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
-            scalePitches.append(next!)
-        }
-        XCTAssertEqual(scalePitches, cMajor)
     }
     
 }
