@@ -316,4 +316,10 @@ class MusicStaffViewTests: XCTestCase {
         XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 3), nil)
     }
     
+//    func testTransposition() {
+//        let pitch = MusicPitch(name: .c, accidental: .natural, octave: 0)
+//        let interval = MusicInterval(quality: MusicIntervalQuality.major, quantity: MusicIntervalQuantity.third)
+//        let transposed = pitch.transposed(by: interval)
+//    }
+    
 }

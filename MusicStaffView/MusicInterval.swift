@@ -10,9 +10,79 @@ import Foundation
 
 public enum MusicIntervalQuality {
     case perfect, major, minor, diminished, augmented
+    
+    var perfectModifier: Int? {
+        switch self {
+        case .perfect:
+            return 0
+        case .augmented:
+            return 1
+        case .diminished:
+            return -1
+        default:
+            return nil
+        }
+    }
+    
+    var majorMinorModifier: Int? {
+        switch self {
+        case .major:
+            return 0
+        case .minor:
+            return -1
+        case .augmented:
+            return 2
+        case .diminished:
+            return -2
+        default:
+            return nil
+        }
+    }
 }
 
-public enum MusicIntervalQuantity {
+extension MusicIntervalQuality: CustomStringConvertible, CustomDebugStringConvertible {
+    public var description: String {
+        switch self {
+        case .perfect:
+            return "Perfect"
+        case .augmented:
+            return "Augmented"
+        case .diminished:
+            return "Diminished"
+        case .major:
+            return "Major"
+        case .minor:
+            return "Minor"
+        }
+    }
+    
+    public var debugDescription: String {
+        switch self {
+        case .perfect:
+            return "P"
+        case .augmented:
+            return "A"
+        case .diminished:
+            return "d"
+        case .major:
+            return "M"
+        case .minor:
+            return "m"
+        }
+    }
+    
+    static var allValues: [MusicIntervalQuality] {
+        return [.perfect, .augmented, .diminished, .major, .minor]
+    }
+    
+    static var allDescriptions: [String] {
+        let allValues = MusicIntervalQuality.allValues
+        let allDesc = allValues.map { $0.description } + allValues.map { $0.debugDescription }
+        return allDesc
+    }
+}
+
+public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringConvertible {
     case unison, second, third, fourth, fifth, sixth, seventh, octave
     indirect case generic(octave: Int, plusQuantity: MusicIntervalQuantity)
     
@@ -81,6 +151,37 @@ public enum MusicIntervalQuantity {
         return raw == 0 || raw == 3 || raw == 4
     }
     
+    var modifier: Int {
+        return 0
+    }
+    
+    public var description: String {
+        switch self {
+        case .unison:
+            return "unison"
+        case .second:
+            return "second"
+        case .third:
+            return "third"
+        case .fourth:
+            return "fourth"
+        case .fifth:
+            return "fifth"
+        case .sixth:
+            return "sixth"
+        case .seventh:
+            return "seventh"
+        case .octave:
+            return "octave"
+        case .generic(let octave, let quantity):
+            return "\(octave) octave" + (octave > 1 ? "s" : "") + " plus " + quantity.description
+        }
+    }
+    
+    public var debugDescription: String {
+        return "\(self.rawValue + 1)"
+    }
+    
 }
 
 extension MusicIntervalQuantity: Equatable {
@@ -113,6 +214,7 @@ extension MusicIntervalQuantity: Equatable {
 public enum MusicIntervalError: Error {
     case InvalidQuality
     case InvalidQuantity
+    case InvalidNaturalLangaugeString
     case undefined(reason: String)
 }
 
@@ -240,6 +342,32 @@ public struct MusicInterval {
         
         return (quality, quantity)
     }
+
+    ///Attempts to build a quality and quantity a known number of half steps and staff offset
+    ///
+    ///- parameter halfSteps: The distance in half steps between the two notes
+    ///- parameter offset: The distance the notes would be drawn on a staff (e.g. the distance between C and D is 1)
+    static func offsetAndEnharnomicModifier(withQuality quality: MusicIntervalQuality, quantity: MusicIntervalQuantity) throws -> (offset: Int, modifier: Int) {
+        let modifier: Int
+        if quantity.isPerfectType {
+            guard ![MusicIntervalQuality.major, MusicIntervalQuality.minor].contains(quality) else {
+                throw MusicIntervalError.InvalidQuality
+            }
+            
+            let qualityModifier = quality.perfectModifier!
+            modifier = quantity.modifier + qualityModifier
+        } else {
+            guard quality != .perfect else {
+                throw MusicIntervalError.InvalidQuality
+            }
+            
+            let qualityModifier = quality.majorMinorModifier!
+            modifier = quantity.modifier + qualityModifier
+        }
+        
+        return (offset: quantity.rawValue, modifier: modifier)
+    }
+
     
     //INITIALIZERS
     ///Initializes an interval from a root pitch and a destination pitch.
@@ -267,11 +395,32 @@ public struct MusicInterval {
         self.range = Range<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
     }
     
-//    public init(rootPitch: MusicPitch, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity) throws {
-//        self.rootPitch = rootPitch
-//        if quality == .major || quality == .minor && (true) {
-//            throw MusicIntervalError.InvalidQuality
-//        }
-//        
-//    }
+    ///Initializes an interval from a given quality and quantity.
+    public init(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, rootPitch: MusicPitch = MusicPitch(name: .c, accidental: .natural, octave: 0)) throws {
+        self.rootPitch = rootPitch
+        if quantity.isPerfectType && (quality == .major || quality == .minor) {
+            throw MusicIntervalError.InvalidQuality
+        }
+        let offset = quantity.rawValue
+        let name = rootPitch.name.offset(by: offset)
+        guard let destination = MusicPitch(enharmonicIndex: 70, name: name) else {
+            throw MusicIntervalError.undefined(reason: "Couldn't figure out a destination pitch")
+        }
+        self.destinationPitch =  destination
+        self.quality = quality
+        self.quantity = quantity
+        self.range = Range<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
+    }
+    
+    ///Initializes based on a natural language string.
+    ///
+    ///
+    public init(string: String) throws {
+        let qualityNames = MusicIntervalQuality.allDescriptions.map { $0.lowercased() }
+        let foundQuality = qualityNames.filter { string.contains($0) }
+        guard foundQuality.count == 1 else {
+            throw MusicIntervalError.InvalidNaturalLangaugeString
+        }
+        
+    }
 }

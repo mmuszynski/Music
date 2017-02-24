@@ -17,7 +17,7 @@ infix operator ~==: ComparisonPrecedence
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
 ///
 ///
-public struct MusicPitch: Hashable, Comparable {
+public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
    
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
@@ -164,9 +164,17 @@ public struct MusicPitch: Hashable, Comparable {
         }
         return lhs.enharmonicIndex < rhs.enharmonicIndex
     }
+    
+    ///A more easily readable version of the description
+    public var debugDescription: String {
+        let name = self.name.debugDescription
+        let accidentalName = self.accidental.debugDescription
+        let octaveName = "\(self.octave)"
+        return name + accidentalName + octaveName
+    }
 }
 
-public enum MusicPitchName: Int {
+public enum MusicPitchName: Int, CustomDebugStringConvertible {
     case c = 0, d, e, f, g, a, b
     
     static var allValues: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
@@ -209,14 +217,56 @@ public enum MusicPitchName: Int {
         self = MusicPitchName.allValues[index]
     }
     
+    ///Gives the name of a note offset by a given number of spaces on the staff
+    public func offset(by offset: Int) -> MusicPitchName {
+        let rawValue = wrappableModulo(self.rawValue + offset, mod: 7)
+        return MusicPitchName(rawValue: rawValue)!
+    }
+    
     ///Provides the next name in ascending scale order
     public var nextName: MusicPitchName {
-        let rawValue = (self.rawValue + 1) % 7
-        return MusicPitchName.init(rawValue: rawValue)!
+        return self.offset(by: 1)
+    }
+    
+    ///Provides the next name in descending scale order
+    public var previousName: MusicPitchName {
+        return self.offset(by: -1)
+    }
+    
+    ///A version of the modulo operator that rolls over when negative.
+    ///
+    ///e.g. -2 % 7 would normally return -2, but in this case returns 4, as it wraps around from the maximum value of 6.
+    ///
+    ///- parameter num: The dividend (the left-hand side of the modulo operation)
+    ///- parameter mod: The divisor (the right-hand side of the modulo operation)
+    ///- returns: `num % mod` if the result is positive, `mod - abs(num % mod)` if the result of `num % mod` is negative
+    private func wrappableModulo(_ num: Int, mod: Int) -> Int {
+        let laps = abs(num / mod) + 1
+        return (mod * laps + num) % mod
+    }
+    
+    ///Provides non-localized name descriptions for debugging purposes
+    public var debugDescription: String {
+        switch self {
+        case .c:
+            return "C"
+        case .d:
+            return "D"
+        case .e:
+            return "E"
+        case .f:
+            return "F"
+        case .g:
+            return "G"
+        case .a:
+            return "A"
+        case .b:
+            return "B"
+        }
     }
 }
 
-public enum MusicPitchAccidentalType {
+public enum MusicPitchAccidentalType: CustomDebugStringConvertible {
     case none
     case flat
     case natural
@@ -253,6 +303,21 @@ public enum MusicPitchAccidentalType {
             self = .doubleSharp
         default:
             return nil
+        }
+    }
+    
+    public var debugDescription: String {
+        switch self {
+        case .none, .natural:
+            return ""
+        case .flat:
+            return "b"
+        case .doubleFlat:
+            return "bb"
+        case .sharp:
+            return "#"
+        case .doubleSharp:
+            return "x"
         }
     }
 }

@@ -336,4 +336,10 @@ class MusicIntervalTests: XCTestCase {
         
         self.measure(createIntervals)
     }
+    
+    func testNaturalLanguageInit() {
+        let minorSecond = MusicInterval(quality: .minor, quantity: .second)
+        let naturalLanguage = MusicInterval(string: "Minor Second")
+        XCTAssertEqual(minorSecond, naturalLanguage)
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 enum MusicScaleMode {
-    case major, harmonicMinor, naturalMinor
+    case major, harmonicMinor, naturalMinor, melodicMinor, majorPentatonic
     
     var halfStepDescription: [Int] {
         switch self {
@@ -19,6 +19,10 @@ enum MusicScaleMode {
             return [2, 1, 2, 2, 1, 3]
         case .naturalMinor:
             return [2, 1, 2, 2, 1, 2]
+        case .melodicMinor:
+            return [2, 1, 2, 2, 2, 2, 1, -2, -2, -1, -2, -2, -1, -2]
+        case .majorPentatonic:
+            return []
         }
     }
 }
@@ -46,9 +50,20 @@ public struct MusicScale: Collection {
         let halfStepDescription = mode.halfStepDescription
         for halfSteps in halfStepDescription {
             let current = scalePitches.last!
-            let nextName = current.name.nextName
-            let next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
-            scalePitches.append(next!)
+            let next: MusicPitch?
+            
+            if halfSteps > 0 {
+                let nextName = current.name.nextName
+                next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
+            } else {
+                let nextName = current.name.previousName
+                next = MusicPitch(enharmonicIndex: current.enharmonicIndex + halfSteps, name: nextName)
+            }
+
+            guard let nextNote = next else {
+                continue
+            }
+            scalePitches.append(nextNote)
         }
         
         notes = scalePitches
