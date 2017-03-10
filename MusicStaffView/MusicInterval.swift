@@ -415,12 +415,13 @@ public struct MusicInterval {
     ///Initializes based on a natural language string.
     ///
     ///
+    @available(*,unavailable)
     public init(string: String) throws {
         let qualityNames = MusicIntervalQuality.allDescriptions.map { $0.lowercased() }
         let foundQuality = qualityNames.filter { string.contains($0) }
         guard foundQuality.count == 1 else {
             throw MusicIntervalError.InvalidNaturalLangaugeString
         }
-        
+        fatalError()
     }
 }
