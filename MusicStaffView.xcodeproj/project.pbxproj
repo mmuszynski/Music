@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2749F9FF1E2DD4460093BB78 /* MusicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749F9FE1E2DD4460093BB78 /* MusicScale.swift */; };
 		2749FA011E2DD4550093BB78 /* MusicScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749FA001E2DD4550093BB78 /* MusicScaleTests.swift */; };
+		274DA8171E89B2D400E99F27 /* MusicIntervalQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */; };
+		274DA8191E89B2EA00E99F27 /* MusicIntervalQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */; };
 		27527E861D9ED55300C97B25 /* MusicStaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27527E7C1D9ED55300C97B25 /* MusicStaffView.framework */; };
 		27527E8B1D9ED55300C97B25 /* MusicStaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E8A1D9ED55300C97B25 /* MusicStaffViewTests.swift */; };
 		27527E8D1D9ED55300C97B25 /* MusicStaffView.h in Headers */ = {isa = PBXBuildFile; fileRef = 27527E7F1D9ED55300C97B25 /* MusicStaffView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		2749F9FE1E2DD4460093BB78 /* MusicScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScale.swift; sourceTree = "<group>"; };
 		2749FA001E2DD4550093BB78 /* MusicScaleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScaleTests.swift; sourceTree = "<group>"; };
+		274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalQuality.swift; sourceTree = "<group>"; };
+		274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalQuantity.swift; sourceTree = "<group>"; };
 		27527E7C1D9ED55300C97B25 /* MusicStaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MusicStaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27527E7F1D9ED55300C97B25 /* MusicStaffView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicStaffView.h; sourceTree = "<group>"; };
 		27527E801D9ED55300C97B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */,
 				276FAA431E155D5B00C2FC6A /* MusicPitch.swift */,
 				27FF160B1E09849800EB5695 /* MusicInterval.swift */,
+				274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */,
+				274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */,
 				27FF16091E097EB700EB5695 /* MusicNote.swift */,
 				276FAA471E23167200C2FC6A /* MusicClefType.swift */,
 				2749F9FE1E2DD4460093BB78 /* MusicScale.swift */,
@@ -248,9 +254,11 @@
 				2749F9FF1E2DD4460093BB78 /* MusicScale.swift in Sources */,
 				276FAA441E155D5B00C2FC6A /* MusicPitch.swift in Sources */,
 				27527E9F1D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift in Sources */,
+				274DA8171E89B2D400E99F27 /* MusicIntervalQuality.swift in Sources */,
 				27527E9D1D9ED56B00C97B25 /* MusicStaffViewElement.swift in Sources */,
 				276FAA481E23167200C2FC6A /* MusicClefType.swift in Sources */,
 				27527EA11D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift in Sources */,
+				274DA8191E89B2EA00E99F27 /* MusicIntervalQuantity.swift in Sources */,
 				27527E9E1D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift in Sources */,
 				27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */,
 				27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */,

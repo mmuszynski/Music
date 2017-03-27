@@ -337,10 +337,75 @@ class MusicIntervalTests: XCTestCase {
         self.measure(createIntervals)
     }
     
-//    
-//    func testNaturalLanguageInit() {
-//        let minorSecond = MusicInterval(quality: .minor, quantity: .second)
-//        let naturalLanguage = MusicInterval(string: "Minor Second")
-//        XCTAssertEqual(minorSecond, naturalLanguage)
-//    }
+    func testIntervalFromQualityQuantity() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
+        do {
+            let majorSecond = try MusicInterval(quality: .major, quantity: .second, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(majorSecond.range, C0...D0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        
+        let Eb0 = MusicPitch(name: .e, accidental: .flat, octave: 0)
+        do {
+            let m2 = try MusicInterval(quality: .minor, quantity: .third, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(m2.range, C0...Eb0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        let Ebb0 = MusicPitch(name: .e, accidental: .doubleFlat, octave: 0)
+        do {
+            let dim3 = try MusicInterval(quality: .diminished, quantity: .third, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(dim3.range, C0...Ebb0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        let Esharp0 = MusicPitch(name: .e, accidental: .sharp, octave: 0)
+        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        do {
+            let aug3 = try MusicInterval(quality: .augmented, quantity: .third, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(aug3.range, C0...Esharp0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        let Gx0 = MusicPitch(name: .g, accidental: .doubleSharp, octave: 0)
+        do {
+            let aug3 = try MusicInterval(quality: .augmented, quantity: .third, direction: .upward, rootPitch: E0)
+            XCTAssertEqual(aug3.range, E0...Gx0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        let F0 = MusicPitch(name: .f, accidental: .natural, octave: 0)
+        do {
+            let P4 = try MusicInterval(quality: .perfect, quantity: .fourth, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(P4.range, C0...F0)
+        } catch {
+            XCTFail("\(error)")
+        }
+        
+        let Fsharp0 = MusicPitch(name: .f, accidental: .sharp, octave: 0)
+        do {
+            let aug4 = try MusicInterval(quality: .augmented, quantity: .fourth, direction: .upward, rootPitch: C0)
+            XCTAssertEqual(aug4.range, C0...Fsharp0)
+        } catch {
+            XCTFail("\(error)")
+        }
+    }
+    
+    func testPoorlyPairedQualityAndQuantity() {
+        do {
+            let _ = try MusicInterval(quality: .perfect, quantity: .third, direction: .upward)
+            XCTFail()
+        } catch MusicIntervalError.InvalidQuality {
+            
+        } catch {
+            XCTFail("Wrong error \(error)")
+        }
+    }
 }

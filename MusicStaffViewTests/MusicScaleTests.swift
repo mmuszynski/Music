@@ -28,9 +28,10 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .f, accidental: .natural, octave: 0),
                       MusicPitch(name: .g, accidental: .natural, octave: 0),
                       MusicPitch(name: .a, accidental: .natural, octave: 0),
-                      MusicPitch(name: .b, accidental: .natural, octave: 0)]
+                      MusicPitch(name: .b, accidental: .natural, octave: 0),
+                      MusicPitch(name: .c, accidental: .natural, octave: 1)]
         XCTAssert(scale == cMajor)
-        XCTAssert(scale.count == 7)
+        XCTAssert(scale.count == 8)
     }
     
     func testEMajorScale() {
@@ -42,7 +43,8 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .a, accidental: .natural, octave: 0),
                       MusicPitch(name: .b, accidental: .natural, octave: 0),
                       MusicPitch(name: .c, accidental: .sharp, octave: 1),
-                      MusicPitch(name: .d, accidental: .sharp, octave: 1)]
+                      MusicPitch(name: .d, accidental: .sharp, octave: 1),
+                      MusicPitch(name: .e, accidental: .natural, octave: 1)]
         XCTAssert(scale == eMajor)
     }
     
@@ -55,7 +57,8 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .f, accidental: .sharp, octave: 0),
                       MusicPitch(name: .g, accidental: .sharp, octave: 0),
                       MusicPitch(name: .a, accidental: .sharp, octave: 0),
-                      MusicPitch(name: .b, accidental: .sharp, octave: 0)]
+                      MusicPitch(name: .b, accidental: .sharp, octave: 0),
+                      MusicPitch(name: .c, accidental: .sharp, octave: 1)]
         XCTAssert(scale == cSharpMajor)
     }
     
@@ -68,7 +71,8 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .g, accidental: .natural, octave: 0),
                       MusicPitch(name: .a, accidental: .natural, octave: 0),
                       MusicPitch(name: .b, accidental: .flat, octave: 0),
-                      MusicPitch(name: .c, accidental: .sharp, octave: 1)]
+                      MusicPitch(name: .c, accidental: .sharp, octave: 1),
+                      MusicPitch(name: .d, accidental: .natural, octave: 1)]
         XCTAssert(scale == dMinor, "\(scale)")
     }
     
@@ -81,7 +85,8 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .f, accidental: .natural, octave: 0),
                       MusicPitch(name: .g, accidental: .natural, octave: 0),
                       MusicPitch(name: .a, accidental: .flat, octave: 0),
-                      MusicPitch(name: .b, accidental: .flat, octave: 0)]
+                      MusicPitch(name: .b, accidental: .flat, octave: 0),
+                      MusicPitch(name: .c, accidental: .natural, octave: 0)]
         XCTAssert(scale == dMinor, "\(scale)")
     }
     
@@ -104,5 +109,17 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .d, accidental: .natural, octave: 0),
                       MusicPitch(name: .c, accidental: .natural, octave: 0)]
         XCTAssert(scale == cMinor, "\(scale)")
+    }
+    
+    func testMajorPentatonic() {
+        let root = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let scale = MusicScale(root: root, mode: .majorPentatonic)
+        let cPent = [root,
+                    MusicPitch(name: .d, accidental: .natural, octave: 0),
+                    MusicPitch(name: .e, accidental: .flat, octave: 0),
+                    MusicPitch(name: .g, accidental: .natural, octave: 0),
+                    MusicPitch(name: .a, accidental: .natural, octave: 0),
+                    MusicPitch(name: .c, accidental: .natural, octave: 1)]
+        XCTAssert(scale == cPent, "\(scale)")
     }
 }
