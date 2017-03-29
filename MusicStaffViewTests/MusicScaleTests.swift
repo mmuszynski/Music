@@ -14,14 +14,14 @@ class MusicScaleTests: XCTestCase {
     func testEnumeration() {
         let root = MusicPitch(name: .c, accidental: .natural, octave: 0)
         let scale = MusicScale(root: root, mode: .major)
-        for note in scale {
+        for _ in scale {
             
         }
     }
     
     func testCMajorScale() {
         let root = MusicPitch(name: .c, accidental: .natural, octave: 0)
-        let scale = MusicScale(root: root, mode: .major)
+        let up = MusicScale(root: root, mode: .major)
         let cMajor = [root,
                       MusicPitch(name: .d, accidental: .natural, octave: 0),
                       MusicPitch(name: .e, accidental: .natural, octave: 0),
@@ -30,8 +30,17 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .a, accidental: .natural, octave: 0),
                       MusicPitch(name: .b, accidental: .natural, octave: 0),
                       MusicPitch(name: .c, accidental: .natural, octave: 1)]
-        XCTAssert(scale == cMajor)
-        XCTAssert(scale.count == 8)
+        XCTAssert(up == cMajor)
+        XCTAssert(up.count == 8)
+        
+        let C1 = MusicPitch(name: .c, accidental: .natural, octave: 1)
+        let down = MusicScale(root: C1, mode: .major, direction: .down)
+        XCTAssert(down == cMajor.reversed())
+        XCTAssert(down.count == 8)
+        
+        let circular = MusicScale(root: root, mode: .major, direction: .circular)
+        let full = Array<MusicPitch>(cMajor[0..<7] + cMajor.reversed())
+        XCTAssert(circular == full)
     }
     
     func testEMajorScale() {
@@ -86,7 +95,7 @@ class MusicScaleTests: XCTestCase {
                       MusicPitch(name: .g, accidental: .natural, octave: 0),
                       MusicPitch(name: .a, accidental: .flat, octave: 0),
                       MusicPitch(name: .b, accidental: .flat, octave: 0),
-                      MusicPitch(name: .c, accidental: .natural, octave: 0)]
+                      MusicPitch(name: .c, accidental: .natural, octave: 1)]
         XCTAssert(scale == dMinor, "\(scale)")
     }
     
@@ -116,10 +125,14 @@ class MusicScaleTests: XCTestCase {
         let scale = MusicScale(root: root, mode: .majorPentatonic)
         let cPent = [root,
                     MusicPitch(name: .d, accidental: .natural, octave: 0),
-                    MusicPitch(name: .e, accidental: .flat, octave: 0),
+                    MusicPitch(name: .e, accidental: .natural, octave: 0),
                     MusicPitch(name: .g, accidental: .natural, octave: 0),
-                    MusicPitch(name: .a, accidental: .natural, octave: 0),
-                    MusicPitch(name: .c, accidental: .natural, octave: 1)]
+                    MusicPitch(name: .a, accidental: .natural, octave: 0)]
         XCTAssert(scale == cPent, "\(scale)")
+        
+        let circle = MusicScale(root: root, mode: .majorPentatonic, direction: .circular)
+        let cPentCirc = Array<MusicPitch>(cPent[0..<cPent.count-1] + cPent.reversed())
+        XCTAssert(circle == cPentCirc, "\(circle)")
+
     }
 }

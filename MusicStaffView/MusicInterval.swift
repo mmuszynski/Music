@@ -8,15 +8,24 @@
 
 import Foundation
 
+public typealias IntervalTriple = (MusicIntervalDirection, MusicIntervalQuality, MusicIntervalQuantity)
+
 public enum MusicIntervalDirection {
     case upward, downward
 }
 
+/// An `Error` describing the various reasons that a `MusicInterval` could not be created
+///
+/// - InvalidQuality: The `MusicIntervalQuality` is invalid or does not match the `MusicIntervalQuantity` (e.g. Perfect Third)
+/// - InvalidQuantity: The `MusicIntervalQuantity` is invalid
+/// - InvalidNaturalLangaugeString: The `String` used to initialize the interval was invalid
+/// - CouldNotComputeDestniationPitch: The destination pitch could not be computed. Usually this means that the destination pitch would require an exotic modifier such as a triple flat.
+/// - undefined: Any error that does not fit into the above. This is slated to be removed in a future release.
 public enum MusicIntervalError: Error {
     case InvalidQuality
     case InvalidQuantity
     case InvalidNaturalLangaugeString
-    case CouldNoteComputeDestniationPitch(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection)
+    case CouldNotComputeDestniationPitch(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection, rootPitch: MusicPitch)
     case undefined(reason: String)
 }
 
@@ -212,11 +221,15 @@ public struct MusicInterval {
         if quantity.isPerfectType && (quality == .major || quality == .minor) {
             throw MusicIntervalError.InvalidQuality
         }
-        let (offset, ehm) = try MusicInterval.offsetAndEnharnomicModifier(withQuality: quality, quantity: quantity)
+        var (offset, ehm) = try MusicInterval.offsetAndEnharnomicModifier(withQuality: quality, quantity: quantity)
+        if direction == .downward {
+            offset = -offset
+            ehm = -ehm
+        }
         
         let name = rootPitch.name.offset(by: offset)
         guard let destination = MusicPitch(enharmonicIndex: rootPitch.enharmonicIndex + ehm, name: name) else {
-            throw MusicIntervalError.CouldNoteComputeDestniationPitch(quality: quality, quantity: quantity, direction: direction)
+            throw MusicIntervalError.CouldNotComputeDestniationPitch(quality: quality, quantity: quantity, direction: direction, rootPitch: rootPitch)
         }
         self.destinationPitch =  destination
         self.quality = quality
@@ -224,13 +237,14 @@ public struct MusicInterval {
         self.range = ClosedRange<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
     }
     
-    ///Initializes based on a natural language string.
-    ///
-    ///
     @available(*,unavailable)
-    public init(string: String) throws {
+    /// Initalizes from a natural language string
+    ///
+    /// - Parameter string: Natural language string, e.g. m3
+    /// - Throws: `MusicIntervalError` if the interval cannot be created
+    public init(naturalLanguageString: String) throws {
         let qualityNames = MusicIntervalQuality.allDescriptions.map { $0.lowercased() }
-        let foundQuality = qualityNames.filter { string.contains($0) }
+        let foundQuality = qualityNames.filter { naturalLanguageString.contains($0) }
         guard foundQuality.count == 1 else {
             throw MusicIntervalError.InvalidNaturalLangaugeString
         }

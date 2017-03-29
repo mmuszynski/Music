@@ -408,4 +408,20 @@ class MusicIntervalTests: XCTestCase {
             XCTFail("Wrong error \(error)")
         }
     }
+    
+    func testDestinationPitchesThatShouldNotBeReached() {
+        let Dx0 = MusicPitch(name: .d, accidental: .doubleSharp, octave: 0)
+
+        do {
+            let badInterval = try MusicInterval(quality: .major, quantity: .third, direction: .upward, rootPitch: Dx0)
+            XCTFail("\(badInterval)")
+        } catch MusicIntervalError.CouldNotComputeDestniationPitch(quality: let quality, quantity: let quantity, direction: let direction, let rootPitch) {
+            XCTAssertEqual(quality, .major)
+            XCTAssertEqual(quantity, .third)
+            XCTAssertEqual(direction, .upward)
+            XCTAssertEqual(rootPitch, Dx0)
+        } catch {
+            XCTFail("Wrong error \(error)")
+        }
+    }
 }
