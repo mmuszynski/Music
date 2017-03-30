@@ -10,8 +10,8 @@ import UIKit
 
 public enum MusicStaffViewElementType {
     case clef(MusicClefType)
-    case note(MusicPitchName, MusicPitchAccidentalType, MusicNoteLength)
-    case accidental(MusicPitchAccidentalType)
+    case note(MusicPitchName, MusicPitchAccidental, MusicNoteLength)
+    case accidental(MusicPitchAccidental)
     case none
 }
 

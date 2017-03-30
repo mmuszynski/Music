@@ -12,7 +12,7 @@
 		274DA8171E89B2D400E99F27 /* MusicIntervalQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */; };
 		274DA8191E89B2EA00E99F27 /* MusicIntervalQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */; };
 		27527E861D9ED55300C97B25 /* MusicStaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27527E7C1D9ED55300C97B25 /* MusicStaffView.framework */; };
-		27527E8B1D9ED55300C97B25 /* MusicStaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E8A1D9ED55300C97B25 /* MusicStaffViewTests.swift */; };
+		27527E8B1D9ED55300C97B25 /* MusicNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E8A1D9ED55300C97B25 /* MusicNoteTests.swift */; };
 		27527E8D1D9ED55300C97B25 /* MusicStaffView.h in Headers */ = {isa = PBXBuildFile; fileRef = 27527E7F1D9ED55300C97B25 /* MusicStaffView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27527E9C1D9ED56B00C97B25 /* MusicStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E961D9ED56B00C97B25 /* MusicStaffView.swift */; };
 		27527E9D1D9ED56B00C97B25 /* MusicStaffViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27527E971D9ED56B00C97B25 /* MusicStaffViewElement.swift */; };
@@ -23,6 +23,12 @@
 		276FAA461E1ECBF900C2FC6A /* MusicClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */; };
 		276FAA481E23167200C2FC6A /* MusicClefType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FAA471E23167200C2FC6A /* MusicClefType.swift */; };
 		27AB68981E1C597B004AC36A /* MusicIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB68971E1C597B004AC36A /* MusicIntervalTests.swift */; };
+		27C351CD1E8DAAB100EA7064 /* MusicPitchAccidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351CC1E8DAAB100EA7064 /* MusicPitchAccidental.swift */; };
+		27C351CF1E8DAAEC00EA7064 /* MusicPitchName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351CE1E8DAAEC00EA7064 /* MusicPitchName.swift */; };
+		27C351D31E8DAB3200EA7064 /* MusicTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D21E8DAB3200EA7064 /* MusicTransposable.swift */; };
+		27C351D51E8DAC5F00EA7064 /* MusicPitchTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D41E8DAC5F00EA7064 /* MusicPitchTransposable.swift */; };
+		27C351D71E8DADBA00EA7064 /* MusicIntervalTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D61E8DADBA00EA7064 /* MusicIntervalTransposable.swift */; };
+		27C351D91E8DAFF400EA7064 /* MusicIntervalEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */; };
 		27FEF4D51E8AF123008FAD2A /* MusicScaleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */; };
 		27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF16091E097EB700EB5695 /* MusicNote.swift */; };
 		27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160B1E09849800EB5695 /* MusicInterval.swift */; };
@@ -49,7 +55,7 @@
 		27527E7F1D9ED55300C97B25 /* MusicStaffView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicStaffView.h; sourceTree = "<group>"; };
 		27527E801D9ED55300C97B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27527E851D9ED55300C97B25 /* MusicStaffViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicStaffViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27527E8A1D9ED55300C97B25 /* MusicStaffViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStaffViewTests.swift; sourceTree = "<group>"; };
+		27527E8A1D9ED55300C97B25 /* MusicNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNoteTests.swift; sourceTree = "<group>"; };
 		27527E8C1D9ED55300C97B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27527E961D9ED56B00C97B25 /* MusicStaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffView.swift; sourceTree = "<group>"; };
 		27527E971D9ED56B00C97B25 /* MusicStaffViewElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicStaffViewElement.swift; sourceTree = "<group>"; };
@@ -60,6 +66,12 @@
 		276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicClefTests.swift; sourceTree = "<group>"; };
 		276FAA471E23167200C2FC6A /* MusicClefType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicClefType.swift; sourceTree = "<group>"; };
 		27AB68971E1C597B004AC36A /* MusicIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalTests.swift; sourceTree = "<group>"; };
+		27C351CC1E8DAAB100EA7064 /* MusicPitchAccidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitchAccidental.swift; sourceTree = "<group>"; };
+		27C351CE1E8DAAEC00EA7064 /* MusicPitchName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitchName.swift; sourceTree = "<group>"; };
+		27C351D21E8DAB3200EA7064 /* MusicTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTransposable.swift; sourceTree = "<group>"; };
+		27C351D41E8DAC5F00EA7064 /* MusicPitchTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitchTransposable.swift; sourceTree = "<group>"; };
+		27C351D61E8DADBA00EA7064 /* MusicIntervalTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalTransposable.swift; sourceTree = "<group>"; };
+		27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalEquality.swift; sourceTree = "<group>"; };
 		27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScaleMode.swift; sourceTree = "<group>"; };
 		27FF16091E097EB700EB5695 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNote.swift; sourceTree = "<group>"; };
 		27FF160B1E09849800EB5695 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInterval.swift; sourceTree = "<group>"; };
@@ -115,10 +127,9 @@
 				27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */,
 				27527E961D9ED56B00C97B25 /* MusicStaffView.swift */,
 				27FF160D1E0984CE00EB5695 /* MusicKeySignature.swift */,
-				276FAA431E155D5B00C2FC6A /* MusicPitch.swift */,
-				27FF160B1E09849800EB5695 /* MusicInterval.swift */,
-				274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */,
-				274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */,
+				27C351D21E8DAB3200EA7064 /* MusicTransposable.swift */,
+				27C351D01E8DAAF900EA7064 /* MusicPitch */,
+				27C351D11E8DAB0100EA7064 /* MusicInterval */,
 				27FF16091E097EB700EB5695 /* MusicNote.swift */,
 				276FAA471E23167200C2FC6A /* MusicClefType.swift */,
 				2749F9FE1E2DD4460093BB78 /* MusicScale.swift */,
@@ -131,13 +142,36 @@
 		27527E891D9ED55300C97B25 /* MusicStaffViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				27527E8A1D9ED55300C97B25 /* MusicStaffViewTests.swift */,
+				27527E8A1D9ED55300C97B25 /* MusicNoteTests.swift */,
 				276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */,
 				27AB68971E1C597B004AC36A /* MusicIntervalTests.swift */,
 				2749FA001E2DD4550093BB78 /* MusicScaleTests.swift */,
 				27527E8C1D9ED55300C97B25 /* Info.plist */,
 			);
 			path = MusicStaffViewTests;
+			sourceTree = "<group>";
+		};
+		27C351D01E8DAAF900EA7064 /* MusicPitch */ = {
+			isa = PBXGroup;
+			children = (
+				276FAA431E155D5B00C2FC6A /* MusicPitch.swift */,
+				27C351CE1E8DAAEC00EA7064 /* MusicPitchName.swift */,
+				27C351CC1E8DAAB100EA7064 /* MusicPitchAccidental.swift */,
+				27C351D41E8DAC5F00EA7064 /* MusicPitchTransposable.swift */,
+			);
+			name = MusicPitch;
+			sourceTree = "<group>";
+		};
+		27C351D11E8DAB0100EA7064 /* MusicInterval */ = {
+			isa = PBXGroup;
+			children = (
+				27FF160B1E09849800EB5695 /* MusicInterval.swift */,
+				274DA8161E89B2D400E99F27 /* MusicIntervalQuality.swift */,
+				274DA8181E89B2EA00E99F27 /* MusicIntervalQuantity.swift */,
+				27C351D61E8DADBA00EA7064 /* MusicIntervalTransposable.swift */,
+				27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */,
+			);
+			name = MusicInterval;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,19 +289,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				2749F9FF1E2DD4460093BB78 /* MusicScale.swift in Sources */,
+				27C351D51E8DAC5F00EA7064 /* MusicPitchTransposable.swift in Sources */,
 				276FAA441E155D5B00C2FC6A /* MusicPitch.swift in Sources */,
 				27527E9F1D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift in Sources */,
 				274DA8171E89B2D400E99F27 /* MusicIntervalQuality.swift in Sources */,
 				27527E9D1D9ED56B00C97B25 /* MusicStaffViewElement.swift in Sources */,
 				276FAA481E23167200C2FC6A /* MusicClefType.swift in Sources */,
+				27C351D91E8DAFF400EA7064 /* MusicIntervalEquality.swift in Sources */,
+				27C351CD1E8DAAB100EA7064 /* MusicPitchAccidental.swift in Sources */,
 				27527EA11D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift in Sources */,
 				274DA8191E89B2EA00E99F27 /* MusicIntervalQuantity.swift in Sources */,
+				27C351D31E8DAB3200EA7064 /* MusicTransposable.swift in Sources */,
 				27527E9E1D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift in Sources */,
 				27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */,
 				27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */,
+				27C351CF1E8DAAEC00EA7064 /* MusicPitchName.swift in Sources */,
 				27FF16101E098CF600EB5695 /* MusicStaffViewNote.swift in Sources */,
 				27FEF4D51E8AF123008FAD2A /* MusicScaleMode.swift in Sources */,
 				27527E9C1D9ED56B00C97B25 /* MusicStaffView.swift in Sources */,
+				27C351D71E8DADBA00EA7064 /* MusicIntervalTransposable.swift in Sources */,
 				27FF160E1E0984CE00EB5695 /* MusicKeySignature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +318,7 @@
 			files = (
 				2749FA011E2DD4550093BB78 /* MusicScaleTests.swift in Sources */,
 				27AB68981E1C597B004AC36A /* MusicIntervalTests.swift in Sources */,
-				27527E8B1D9ED55300C97B25 /* MusicStaffViewTests.swift in Sources */,
+				27527E8B1D9ED55300C97B25 /* MusicNoteTests.swift in Sources */,
 				276FAA461E1ECBF900C2FC6A /* MusicClefTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

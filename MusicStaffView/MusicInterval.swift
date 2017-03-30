@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias IntervalTriple = (MusicIntervalDirection, MusicIntervalQuality, MusicIntervalQuantity)
+public typealias MusicIntervalTriple = (direction: MusicIntervalDirection, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity)
 
 public enum MusicIntervalDirection {
     case upward, downward
@@ -41,6 +41,9 @@ public struct MusicInterval {
     
     ///The quantity of the interval, described as a `MusicIntervalQuantity` type.
     var quantity: MusicIntervalQuantity
+    
+    ///The direction of the interval, described as a `MusicIntervalDirection` type.
+    var direction: MusicIntervalDirection
     
     ///The `ClosedRange<MusicNote>` defined by this interval
     var range: ClosedRange<MusicPitch>
@@ -204,6 +207,7 @@ public struct MusicInterval {
         self.quantity = quantity
         self.quality = quality
         self.range = ClosedRange<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
+        self.direction = rootPitch < destinationPitch ? .upward : .downward
     }
     
     
@@ -235,6 +239,7 @@ public struct MusicInterval {
         self.quality = quality
         self.quantity = quantity
         self.range = ClosedRange<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
+        self.direction = direction
     }
     
     @available(*,unavailable)

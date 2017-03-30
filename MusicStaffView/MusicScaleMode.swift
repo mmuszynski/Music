@@ -16,7 +16,7 @@ import Foundation
 enum MusicScaleMode {
     case major, harmonicMinor, naturalMinor, melodicMinor, majorPentatonic
     
-    var upwardIntervalDescription: [IntervalTriple] {
+    var upwardIntervalDescription: [MusicIntervalTriple] {
         switch self {
         case .major:
             return [(.upward, .major, .second),
@@ -65,15 +65,15 @@ enum MusicScaleMode {
         }
     }
     
-    var downwardIntervalDescription: [IntervalTriple] {
+    var downwardIntervalDescription: [MusicIntervalTriple] {
         
         return self.upwardIntervalDescription.reversed().map({
-            (direction, quality, quantity) -> IntervalTriple in
+            (direction, quality, quantity) -> MusicIntervalTriple in
                 return (.downward, quality, quantity)
         })
     }
     
-    var circularIntervalDescription: [IntervalTriple] {
+    var circularIntervalDescription: [MusicIntervalTriple] {
         return self.upwardIntervalDescription + self.downwardIntervalDescription
     }
 }

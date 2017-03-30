@@ -23,7 +23,7 @@ public class MusicStaffViewNote: MusicStaffViewElement {
     public var octave: Int {
         return note.octave
     }
-    public var accidental: MusicPitchAccidentalType {
+    public var accidental: MusicPitchAccidental {
         return note.accidental
     }
     

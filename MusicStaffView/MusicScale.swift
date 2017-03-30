@@ -51,7 +51,7 @@ public struct MusicScale: Collection {
     init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) {
         var scalePitches = [root]
 
-        let intervals: Array<IntervalTriple>
+        let intervals: Array<MusicIntervalTriple>
         switch direction {
         case .up:
             intervals = mode.upwardIntervalDescription

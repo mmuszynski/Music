@@ -22,8 +22,8 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
     
-    ///The `MusicPitchAccidentalType` representing the accidental modifier of the pitch
-    public var accidental: MusicPitchAccidentalType = .natural
+    ///The `MusicPitchAccidental` representing the accidental modifier of the pitch
+    public var accidental: MusicPitchAccidental = .natural
     
     ///The octave of the pitch
     public var octave: Int = 0
@@ -34,7 +34,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     }
     
     ///Standard initializer, rearranged to fit the way pitches are described.
-    public init(name: MusicPitchName, accidental: MusicPitchAccidentalType, octave: Int) {
+    public init(name: MusicPitchName, accidental: MusicPitchAccidental, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.octave = octave
@@ -45,7 +45,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///Computes `octave` and `name` properties.
     ///
     ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided accidental type.
-    public init?(enharmonicIndex: Int, accidental: MusicPitchAccidentalType) {
+    public init?(enharmonicIndex: Int, accidental: MusicPitchAccidental) {
         //the octave will give a range of 12 half-steps
         //the accidental adds or subtracts from there
         //the name is the final piece of the puzzle
@@ -72,7 +72,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided name.
     public init?(enharmonicIndex: Int, name: MusicPitchName) {
         //here's a dumb way of doing this. make all the potential notes possible with each of the accidental types
-        let accidentals: [MusicPitchAccidentalType] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
+        let accidentals: [MusicPitchAccidental] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
         let potentials = accidentals.flatMap { MusicPitch(enharmonicIndex: enharmonicIndex, accidental: $0) }
         guard let correct = potentials.filter({ $0.name == name }).last else {
             return nil
@@ -85,8 +85,8 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///
     ///
     public func allEnharmonics() -> Set<MusicPitch> {
-        let accidentals: [MusicPitchAccidentalType] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
-        let accidentalSet = Set<MusicPitchAccidentalType>(accidentals)
+        let accidentals: [MusicPitchAccidental] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
+        let accidentalSet = Set<MusicPitchAccidental>(accidentals)
         let ei = self.enharmonicIndex
         var enharmonics = accidentalSet.flatMap { MusicPitch(enharmonicIndex: ei, accidental: $0) }
         enharmonics.append(self)
@@ -147,7 +147,6 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
         return self ~== pitch
     }
     
-    
     /// Returns a Boolean value indicating whether the `enharmonicIndex` of the first
     /// pitch is less than that of the second pitch.
     ///
@@ -171,153 +170,5 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
         let accidentalName = self.accidental.debugDescription
         let octaveName = "\(self.octave)"
         return name + accidentalName + octaveName
-    }
-}
-
-public enum MusicPitchName: Int, CustomDebugStringConvertible {
-    case c = 0, d, e, f, g, a, b
-    
-    static var allValues: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
-    static var allModifiers: [Int] = {
-        return allValues.map { $0.enharmonicModifier }
-    }()
-    
-    var enharmonicModifier: Int {
-        return self.rawValue * 2 - (self.rawValue * 2 >= 5 ? 1 : 0)
-    }
-    
-    ///Attempts to initialize a `MusicPitchName` from a string value (e.g. "A", "b", "do", "Re", etc)
-    public init?(stringValue: String) {
-        switch stringValue.lowercased() {
-        case "a", "la":
-            self = .a
-        case "b", "ti", "si":
-            self = .b
-        case "c", "do":
-            self = .c
-        case "d", "re":
-            self = .d
-        case "e", "mi":
-            self = .e
-        case "f", "fa":
-            self = .f
-        case "g", "so", "sol":
-            self = .g
-        default:
-            return nil
-        }
-    }
-    
-    ///Attempts to generate a `MusicPitchName` from an enharmonicModifier integer.
-    public init?(enharmonicModifier: Int) {
-        guard let index = MusicPitchName.allModifiers.index(of: enharmonicModifier) else {
-            return nil
-        }
-        
-        self = MusicPitchName.allValues[index]
-    }
-    
-    ///Gives the name of a note offset by a given number of spaces on the staff
-    public func offset(by offset: Int) -> MusicPitchName {
-        let rawValue = wrappableModulo(self.rawValue + offset, mod: 7)
-        return MusicPitchName(rawValue: rawValue)!
-    }
-    
-    ///Provides the next name in ascending scale order
-    public var nextName: MusicPitchName {
-        return self.offset(by: 1)
-    }
-    
-    ///Provides the next name in descending scale order
-    public var previousName: MusicPitchName {
-        return self.offset(by: -1)
-    }
-    
-    ///A version of the modulo operator that rolls over when negative.
-    ///
-    ///e.g. -2 % 7 would normally return -2, but in this case returns 4, as it wraps around from the maximum value of 6.
-    ///
-    ///- parameter num: The dividend (the left-hand side of the modulo operation)
-    ///- parameter mod: The divisor (the right-hand side of the modulo operation)
-    ///- returns: `num % mod` if the result is positive, `mod - abs(num % mod)` if the result of `num % mod` is negative
-    private func wrappableModulo(_ num: Int, mod: Int) -> Int {
-        let laps = abs(num / mod) + 1
-        return (mod * laps + num) % mod
-    }
-    
-    ///Provides non-localized name descriptions for debugging purposes
-    public var debugDescription: String {
-        switch self {
-        case .c:
-            return "C"
-        case .d:
-            return "D"
-        case .e:
-            return "E"
-        case .f:
-            return "F"
-        case .g:
-            return "G"
-        case .a:
-            return "A"
-        case .b:
-            return "B"
-        }
-    }
-}
-
-public enum MusicPitchAccidentalType: CustomDebugStringConvertible {
-    case none
-    case flat
-    case natural
-    case sharp
-    case doubleFlat
-    case doubleSharp
-    
-    var enharmonicModifier: Int {
-        switch self {
-        case .none, .natural:
-            return 0
-        case .flat:
-            return -1
-        case .doubleFlat:
-            return -2
-        case .sharp:
-            return 1
-        case .doubleSharp:
-            return 2
-        }
-    }
-    
-    init?(enharmonicModifier: Int) {
-        switch enharmonicModifier {
-        case 0:
-            self = .natural
-        case -1:
-            self = .flat
-        case -2:
-            self = .doubleFlat
-        case 1:
-            self = .sharp
-        case 2:
-            self = .doubleSharp
-        default:
-            return nil
-        }
-    }
-    
-    public var debugDescription: String {
-        switch self {
-        case .none, .natural:
-            return ""
-        case .flat:
-            return "b"
-        case .doubleFlat:
-            return "bb"
-        case .sharp:
-            return "#"
-        case .doubleSharp:
-            return "x"
-        }
     }
 }

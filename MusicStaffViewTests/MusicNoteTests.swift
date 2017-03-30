@@ -307,19 +307,25 @@ class MusicStaffViewTests: XCTestCase {
     }
     
     func testAccidentalInits() {
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: -3), nil)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: -2), .doubleFlat)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: -1), .flat)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 0), .natural)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 1), .sharp)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 2), .doubleSharp)
-        XCTAssertEqual(MusicPitchAccidentalType(enharmonicModifier: 3), nil)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -3), nil)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -2), .doubleFlat)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -1), .flat)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 0), .natural)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 1), .sharp)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 2), .doubleSharp)
+        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 3), nil)
     }
     
-//    func testTransposition() {
-//        let pitch = MusicPitch(name: .c, accidental: .natural, octave: 0)
-//        let interval = MusicInterval(quality: MusicIntervalQuality.major, quantity: MusicIntervalQuantity.third)
-//        let transposed = pitch.transposed(by: interval)
-//    }
+    func testTransposition() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let interval: MusicIntervalTriple = (direction: .upward, quality: .major, quantity: .third)
+        do {
+            let transposed = try C0.transposed(by: interval)
+            XCTAssertEqual(transposed, E0)
+        } catch {
+            XCTFail("Should not produce error \(error)")
+        }
+    }
     
 }

@@ -309,7 +309,7 @@ public enum MusicStaffViewSpacingType {
         return noteLayer
     }
     
-    func accidentalLayerFor(noteLayer: MusicStaffViewElementLayer, type: MusicPitchAccidentalType) -> MusicStaffViewElementLayer? {
+    func accidentalLayerFor(noteLayer: MusicStaffViewElementLayer, type: MusicPitchAccidental) -> MusicStaffViewElementLayer? {
         let accidentalLayer: MusicStaffViewElementLayer
         let accidental = type
         

@@ -25,7 +25,7 @@ public class MusicNote: Hashable {
     public var length : MusicNoteLength = .quarter
     
     ///Accidental of the note's pitch.
-    public var accidental: MusicPitchAccidentalType {
+    public var accidental: MusicPitchAccidental {
         get {
             return self.pitch.accidental
         }
@@ -59,7 +59,7 @@ public class MusicNote: Hashable {
         self.length = length
     }
     
-    public required init(name: MusicPitchName, accidental: MusicPitchAccidentalType, length: MusicNoteLength, octave: Int) {
+    public required init(name: MusicPitchName, accidental: MusicPitchAccidental, length: MusicNoteLength, octave: Int) {
         self.pitch = MusicPitch(name: name, accidental: accidental, octave: octave)
         self.length = length
     }

@@ -424,4 +424,29 @@ class MusicIntervalTests: XCTestCase {
             XCTFail("Wrong error \(error)")
         }
     }
+    
+    func testDirectionOnCreatedInterval() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let Cis0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
+        let upward = try! MusicInterval(rootPitch: C0, destinationPitch: Cis0)
+        let downward = try! MusicInterval(rootPitch: Cis0, destinationPitch: C0)
+        XCTAssertEqual(upward.direction, .upward)
+        XCTAssertEqual(downward.direction, .downward)
+    }
+    
+    func testTransposition() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let Gis0 = MusicPitch(name: .g, accidental: .sharp, octave: 0)
+        let transposition: MusicIntervalTriple = (direction: .upward, quality: .major, quantity: .third)
+        
+        do {
+            let interval = try MusicInterval(rootPitch: C0, destinationPitch: E0)
+            let final = try MusicInterval(rootPitch: E0, destinationPitch: Gis0)
+            let transposed = try interval.transposed(by: transposition)
+            XCTAssertEqual(transposed, final)
+        } catch {
+            XCTFail("Should not error: \(error)")
+        }
+    }
 }
