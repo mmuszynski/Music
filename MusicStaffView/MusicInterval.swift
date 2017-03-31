@@ -8,34 +8,13 @@
 
 import Foundation
 
-public typealias MusicIntervalTriple = (direction: MusicIntervalDirection, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity)
+//public typealias MusicIntervalTriple = (direction: MusicIntervalDirection, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity)
 
 public enum MusicIntervalDirection {
     case upward, downward
 }
 
-/// An `Error` describing the various reasons that a `MusicInterval` could not be created
-///
-/// - InvalidQuality: The `MusicIntervalQuality` is invalid or does not match the `MusicIntervalQuantity` (e.g. Perfect Third)
-/// - InvalidQuantity: The `MusicIntervalQuantity` is invalid
-/// - InvalidNaturalLangaugeString: The `String` used to initialize the interval was invalid
-/// - CouldNotComputeDestniationPitch: The destination pitch could not be computed. Usually this means that the destination pitch would require an exotic modifier such as a triple flat.
-/// - undefined: Any error that does not fit into the above. This is slated to be removed in a future release.
-public enum MusicIntervalError: Error {
-    case InvalidQuality
-    case InvalidQuantity
-    case InvalidNaturalLangaugeString
-    case CouldNotComputeDestniationPitch(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection, rootPitch: MusicPitch)
-    case undefined(reason: String)
-}
-
 public struct MusicInterval {
-    ///The root pitch of the interval, described as a `MusicPitch`.
-    var rootPitch: MusicPitch
-    
-    ///The destniation pitch of the interval, described as a `MusicPitch`.
-    var destinationPitch: MusicPitch
-        
     ///The quality of the interval, described as a `MusicIntervalQuality` type.
     var quality: MusicIntervalQuality
     
@@ -45,14 +24,16 @@ public struct MusicInterval {
     ///The direction of the interval, described as a `MusicIntervalDirection` type.
     var direction: MusicIntervalDirection
     
-    ///The `ClosedRange<MusicNote>` defined by this interval
-    var range: ClosedRange<MusicPitch>
-    
     ///The number of half steps spanned by the interval.
     ///
     ///Notes that are enharmonically equivalent will return a half-step distance of zero. Upward intervals are described with positive numbers, while downward intervals are described with negative numbers.
     var halfStepDistance: Int {
-        return destinationPitch.enharmonicIndex - rootPitch.enharmonicIndex
+        let dist = try! MusicInterval.offsetAndEnharnomicModifier(withQuality: self.quality, quantity: self.quantity).modifier
+        if self.direction == .downward {
+            return -dist
+        } else {
+            return dist
+        }
     }
     
     ///Attempts to build a quality and quantity a known number of half steps and staff offset
@@ -72,7 +53,7 @@ public struct MusicInterval {
             case 1, -1:
                 quality = .augmented
             default:
-                throw MusicIntervalError.InvalidQuality
+                throw MusicIntervalError.InvalidQualityQuantityCombination
             }
 
             return (quality, quantity)
@@ -165,14 +146,14 @@ public struct MusicInterval {
         let modifier: Int
         if quantity.isPerfectType {
             guard ![MusicIntervalQuality.major, MusicIntervalQuality.minor].contains(quality) else {
-                throw MusicIntervalError.InvalidQuality
+                throw MusicIntervalError.InvalidQualityQuantityCombination
             }
             
             let qualityModifier = quality.perfectModifier!
             modifier = quantity.modifier + qualityModifier
         } else {
             guard quality != .perfect else {
-                throw MusicIntervalError.InvalidQuality
+                throw MusicIntervalError.InvalidQualityQuantityCombination
             }
             
             let qualityModifier = quality.majorMinorModifier!
@@ -194,22 +175,20 @@ public struct MusicInterval {
     ///Further, doubly-diminished and doubly-augmented intervals, while potentially musically valid, have not been defined in this library.
     ///
     ///- throws: `MusicIntervalError` if unable to compute a proper `MusicIntervalQuality`.
-    ///
-    ///- important: Downward intervals have yet to be defined
     public init(rootPitch: MusicPitch, destinationPitch: MusicPitch) throws {
-        self.rootPitch = rootPitch
-        self.destinationPitch = destinationPitch
-        
         let offset = destinationPitch.name.rawValue - rootPitch.name.rawValue + (destinationPitch.octave - rootPitch.octave) * 7
         let halfSteps = destinationPitch.enharmonicIndex - rootPitch.enharmonicIndex
         let (quality, quantity) = try MusicInterval.qualityAndQuantity(withHalfSteps: halfSteps, offset: offset)
         
         self.quantity = quantity
         self.quality = quality
-        self.range = ClosedRange<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
         self.direction = rootPitch < destinationPitch ? .upward : .downward
     }
     
+    @available(*,unavailable,renamed: "init(direction:quality:quantity:)")
+    public init(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection) throws {
+        fatalError()
+    }
     
     ///Initializes an interval from a given quality, quantity, and direction.
     ///
@@ -220,26 +199,32 @@ public struct MusicInterval {
     ///   - rootPitch: `MusicPitch` describing the root pitch of the interval
     /// - Throws: `MusicIntervalError` if a destination pitch cannot be computed or if a quality and quantity do not make a valid couple
     ///
-    public init(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection, rootPitch: MusicPitch = MusicPitch(name: .c, accidental: .natural, octave: 0)) throws {
-        self.rootPitch = rootPitch
-        if quantity.isPerfectType && (quality == .major || quality == .minor) {
-            throw MusicIntervalError.InvalidQuality
+    public init(direction: MusicIntervalDirection, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity) throws {
+        //self.rootPitch = rootPitch
+        guard !(quantity.isPerfectType && (quality == .major || quality == .minor)) else {
+            throw MusicIntervalError.InvalidQualityQuantityCombination
         }
+        
+        guard !(!quantity.isPerfectType && (quality == .perfect)) else {
+            throw MusicIntervalError.InvalidQualityQuantityCombination
+        }
+        
+        self.quality = quality
+        self.quantity = quantity
+        self.direction = direction
+    }
+    
+    public func destinationPitch(withRootPitch root: MusicPitch) throws -> MusicPitch {
         var (offset, ehm) = try MusicInterval.offsetAndEnharnomicModifier(withQuality: quality, quantity: quantity)
         if direction == .downward {
             offset = -offset
             ehm = -ehm
         }
-        
-        let name = rootPitch.name.offset(by: offset)
-        guard let destination = MusicPitch(enharmonicIndex: rootPitch.enharmonicIndex + ehm, name: name) else {
-            throw MusicIntervalError.CouldNotComputeDestniationPitch(quality: quality, quantity: quantity, direction: direction, rootPitch: rootPitch)
+        let name = root.name.offset(by: offset)
+        guard let destination = MusicPitch(enharmonicIndex: root.enharmonicIndex + ehm, name: name) else {
+            throw MusicIntervalError.CouldNotComputeDestniationPitch(quality: quality, quantity: quantity, direction: direction, rootPitch: root)
         }
-        self.destinationPitch =  destination
-        self.quality = quality
-        self.quantity = quantity
-        self.range = ClosedRange<MusicPitch>(uncheckedBounds: (lower: rootPitch, upper: destinationPitch))
-        self.direction = direction
+        return destination
     }
     
     @available(*,unavailable)

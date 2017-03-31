@@ -319,8 +319,8 @@ class MusicStaffViewTests: XCTestCase {
     func testTransposition() {
         let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
         let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
-        let interval: MusicIntervalTriple = (direction: .upward, quality: .major, quantity: .third)
         do {
+            let interval = try MusicInterval(direction: .upward, quality: .major, quantity: .third)
             let transposed = try C0.transposed(by: interval)
             XCTAssertEqual(transposed, E0)
         } catch {

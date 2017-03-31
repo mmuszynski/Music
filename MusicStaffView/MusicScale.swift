@@ -51,7 +51,7 @@ public struct MusicScale: Collection {
     init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) {
         var scalePitches = [root]
 
-        let intervals: Array<MusicIntervalTriple>
+        let intervals: Array<MusicInterval>
         switch direction {
         case .up:
             intervals = mode.upwardIntervalDescription
@@ -60,11 +60,15 @@ public struct MusicScale: Collection {
         case .circular:
             intervals = mode.circularIntervalDescription
         }
-        for (direction, quality, quantity) in intervals {
+        for interval in intervals {
+            let direction = interval.direction
+            let quantity = interval.quantity
+            let quality = interval.quality
+            
             let currentPitch = scalePitches.last!
             do {
-                let interval = try MusicInterval(quality: quality, quantity: quantity, direction: direction, rootPitch: currentPitch)
-                let nextPitch = interval.destinationPitch
+                let interval = try MusicInterval(direction: direction, quality: quality, quantity: quantity)
+                let nextPitch = try interval.destinationPitch(withRootPitch: currentPitch)
                 scalePitches.append(nextPitch)
             } catch {
                 fatalError("\(error)")

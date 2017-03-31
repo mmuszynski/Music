@@ -9,8 +9,8 @@
 import Foundation
 
 extension MusicPitch: MusicTransposable {
-    func transposed(by interval: MusicIntervalTriple) throws -> MusicPitch {
-        let interval = try MusicInterval(quality: interval.quality, quantity: interval.quantity, direction: interval.direction, rootPitch: self)
-        return interval.destinationPitch
+    func transposed(by interval: MusicInterval) throws -> MusicPitch {
+        let interval = try MusicInterval(direction: interval.direction, quality: interval.quality, quantity: interval.quantity)
+        return try interval.destinationPitch(withRootPitch: self)
     }
 }

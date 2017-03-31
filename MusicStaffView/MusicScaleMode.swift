@@ -16,7 +16,7 @@ import Foundation
 enum MusicScaleMode {
     case major, harmonicMinor, naturalMinor, melodicMinor, majorPentatonic
     
-    var upwardIntervalDescription: [MusicIntervalTriple] {
+    var upwardIntervalDescription: [MusicInterval] {
         switch self {
         case .major:
             return [(.upward, .major, .second),
@@ -25,7 +25,7 @@ enum MusicScaleMode {
                     (.upward, .major, .second),
                     (.upward, .major, .second),
                     (.upward, .major, .second),
-                    (.upward, .minor, .second)]
+                    (.upward, .minor, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .harmonicMinor:
             return [(.upward, .major, .second),
                     (.upward, .minor, .second),
@@ -33,7 +33,7 @@ enum MusicScaleMode {
                     (.upward, .major, .second),
                     (.upward, .minor, .second),
                     (.upward, .augmented, .second),
-                    (.upward, .minor, .second)]
+                    (.upward, .minor, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .naturalMinor:
             return [(.upward, .major, .second),
                     (.upward, .minor, .second),
@@ -41,7 +41,7 @@ enum MusicScaleMode {
                     (.upward, .major, .second),
                     (.upward, .minor, .second),
                     (.upward, .major, .second),
-                    (.upward, .major, .second)]
+                    (.upward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .melodicMinor:
             return [(.upward, .major, .second),
                     (.upward, .minor, .second),
@@ -56,24 +56,24 @@ enum MusicScaleMode {
                     (.downward, .major, .second),
                     (.downward, .major, .second),
                     (.downward, .minor, .second),
-                    (.downward, .major, .second)]
+                    (.downward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .majorPentatonic:
             return [(.upward, .major, .second),
                     (.upward, .major, .second),
                     (.upward, .minor, .third),
-                    (.upward, .major, .second)]
+                    (.upward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         }
     }
     
-    var downwardIntervalDescription: [MusicIntervalTriple] {
+    var downwardIntervalDescription: [MusicInterval] {
         
         return self.upwardIntervalDescription.reversed().map({
-            (direction, quality, quantity) -> MusicIntervalTriple in
-                return (.downward, quality, quantity)
+            interval -> MusicInterval in
+            return try! MusicInterval(direction: .downward, quality: interval.quality, quantity: interval.quantity)
         })
     }
     
-    var circularIntervalDescription: [MusicIntervalTriple] {
+    var circularIntervalDescription: [MusicInterval] {
         return self.upwardIntervalDescription + self.downwardIntervalDescription
     }
 }

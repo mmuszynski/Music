@@ -10,6 +10,6 @@ import Foundation
 
 extension MusicInterval: Equatable {
     public static func ==(lhs: MusicInterval, rhs: MusicInterval) -> Bool {
-        return lhs.range == rhs.range
+        return false
     }
 }
