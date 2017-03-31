@@ -29,11 +29,7 @@ public struct MusicInterval {
     ///Notes that are enharmonically equivalent will return a half-step distance of zero. Upward intervals are described with positive numbers, while downward intervals are described with negative numbers.
     var halfStepDistance: Int {
         let dist = try! MusicInterval.offsetAndEnharnomicModifier(withQuality: self.quality, quantity: self.quantity).modifier
-        if self.direction == .downward {
-            return -dist
-        } else {
-            return dist
-        }
+        return dist * (self.direction == .upward ? 1 : -1)
     }
     
     ///Attempts to build a quality and quantity a known number of half steps and staff offset
@@ -185,11 +181,6 @@ public struct MusicInterval {
         self.direction = rootPitch < destinationPitch ? .upward : .downward
     }
     
-    @available(*,unavailable,renamed: "init(direction:quality:quantity:)")
-    public init(quality: MusicIntervalQuality, quantity: MusicIntervalQuantity, direction: MusicIntervalDirection) throws {
-        fatalError()
-    }
-    
     ///Initializes an interval from a given quality, quantity, and direction.
     ///
     /// - Parameters:
@@ -214,6 +205,12 @@ public struct MusicInterval {
         self.direction = direction
     }
     
+    
+    /// Computes a destination `MusicPitch` that is a given interval away from the root `MusicPitch`.
+    ///
+    /// - Parameter root: `MusicPitch` defining the root of the interval
+    /// - Returns: `MusicPitch` that defined by the destination of the `MusicInterval`
+    /// - Throws: `MusicIntervalError` if unable to compute a destination pitch
     public func destinationPitch(withRootPitch root: MusicPitch) throws -> MusicPitch {
         var (offset, ehm) = try MusicInterval.offsetAndEnharnomicModifier(withQuality: quality, quantity: quantity)
         if direction == .downward {

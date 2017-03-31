@@ -20,6 +20,20 @@
                ReferencedContainer = "container:MusicStaffView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "27527E841D9ED55300C97B25"
+               BuildableName = "MusicStaffViewTests.xctest"
+               BlueprintName = "MusicStaffViewTests"
+               ReferencedContainer = "container:MusicStaffView.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

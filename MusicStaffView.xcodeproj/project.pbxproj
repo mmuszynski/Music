@@ -30,6 +30,9 @@
 		27C351D51E8DAC5F00EA7064 /* MusicPitchTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D41E8DAC5F00EA7064 /* MusicPitchTransposable.swift */; };
 		27C351D71E8DADBA00EA7064 /* MusicIntervalTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D61E8DADBA00EA7064 /* MusicIntervalTransposable.swift */; };
 		27C351D91E8DAFF400EA7064 /* MusicIntervalEquality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */; };
+		27C351DD1E8ED1CA00EA7064 /* MusicChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351DC1E8ED1CA00EA7064 /* MusicChord.swift */; };
+		27C351DF1E8ED2A800EA7064 /* MusicChordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351DE1E8ED2A800EA7064 /* MusicChordTests.swift */; };
+		27C351E11E8ED9F300EA7064 /* MusicChordMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351E01E8ED9F300EA7064 /* MusicChordMode.swift */; };
 		27FEF4D51E8AF123008FAD2A /* MusicScaleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */; };
 		27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF16091E097EB700EB5695 /* MusicNote.swift */; };
 		27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160B1E09849800EB5695 /* MusicInterval.swift */; };
@@ -74,6 +77,9 @@
 		27C351D41E8DAC5F00EA7064 /* MusicPitchTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitchTransposable.swift; sourceTree = "<group>"; };
 		27C351D61E8DADBA00EA7064 /* MusicIntervalTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalTransposable.swift; sourceTree = "<group>"; };
 		27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalEquality.swift; sourceTree = "<group>"; };
+		27C351DC1E8ED1CA00EA7064 /* MusicChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChord.swift; sourceTree = "<group>"; };
+		27C351DE1E8ED2A800EA7064 /* MusicChordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChordTests.swift; sourceTree = "<group>"; };
+		27C351E01E8ED9F300EA7064 /* MusicChordMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChordMode.swift; sourceTree = "<group>"; };
 		27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScaleMode.swift; sourceTree = "<group>"; };
 		27FF16091E097EB700EB5695 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNote.swift; sourceTree = "<group>"; };
 		27FF160B1E09849800EB5695 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInterval.swift; sourceTree = "<group>"; };
@@ -132,9 +138,10 @@
 				27C351D21E8DAB3200EA7064 /* MusicTransposable.swift */,
 				27C351D01E8DAAF900EA7064 /* MusicPitch */,
 				27C351D11E8DAB0100EA7064 /* MusicInterval */,
+				27C351DA1E8ED1A900EA7064 /* MusicScale */,
+				27C351DB1E8ED1B900EA7064 /* MusicChord */,
 				27FF16091E097EB700EB5695 /* MusicNote.swift */,
 				276FAA471E23167200C2FC6A /* MusicClefType.swift */,
-				2749F9FE1E2DD4460093BB78 /* MusicScale.swift */,
 				27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */,
 				27527E801D9ED55300C97B25 /* Info.plist */,
 			);
@@ -148,6 +155,7 @@
 				276FAA451E1ECBF900C2FC6A /* MusicClefTests.swift */,
 				27AB68971E1C597B004AC36A /* MusicIntervalTests.swift */,
 				2749FA001E2DD4550093BB78 /* MusicScaleTests.swift */,
+				27C351DE1E8ED2A800EA7064 /* MusicChordTests.swift */,
 				27527E8C1D9ED55300C97B25 /* Info.plist */,
 			);
 			path = MusicStaffViewTests;
@@ -175,6 +183,23 @@
 				27C351D81E8DAFF400EA7064 /* MusicIntervalEquality.swift */,
 			);
 			name = MusicInterval;
+			sourceTree = "<group>";
+		};
+		27C351DA1E8ED1A900EA7064 /* MusicScale */ = {
+			isa = PBXGroup;
+			children = (
+				2749F9FE1E2DD4460093BB78 /* MusicScale.swift */,
+			);
+			name = MusicScale;
+			sourceTree = "<group>";
+		};
+		27C351DB1E8ED1B900EA7064 /* MusicChord */ = {
+			isa = PBXGroup;
+			children = (
+				27C351DC1E8ED1CA00EA7064 /* MusicChord.swift */,
+				27C351E01E8ED9F300EA7064 /* MusicChordMode.swift */,
+			);
+			name = MusicChord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +321,7 @@
 				276FAA441E155D5B00C2FC6A /* MusicPitch.swift in Sources */,
 				27527E9F1D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift in Sources */,
 				274DA8171E89B2D400E99F27 /* MusicIntervalQuality.swift in Sources */,
+				27C351E11E8ED9F300EA7064 /* MusicChordMode.swift in Sources */,
 				278A25651E8E0BB4007AAAA0 /* MusicIntervalError.swift in Sources */,
 				27527E9D1D9ED56B00C97B25 /* MusicStaffViewElement.swift in Sources */,
 				276FAA481E23167200C2FC6A /* MusicClefType.swift in Sources */,
@@ -305,6 +331,7 @@
 				274DA8191E89B2EA00E99F27 /* MusicIntervalQuantity.swift in Sources */,
 				27C351D31E8DAB3200EA7064 /* MusicTransposable.swift in Sources */,
 				27527E9E1D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift in Sources */,
+				27C351DD1E8ED1CA00EA7064 /* MusicChord.swift in Sources */,
 				27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */,
 				27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */,
 				27C351CF1E8DAAEC00EA7064 /* MusicPitchName.swift in Sources */,
@@ -324,6 +351,7 @@
 				27AB68981E1C597B004AC36A /* MusicIntervalTests.swift in Sources */,
 				27527E8B1D9ED55300C97B25 /* MusicNoteTests.swift in Sources */,
 				276FAA461E1ECBF900C2FC6A /* MusicClefTests.swift in Sources */,
+				27C351DF1E8ED2A800EA7064 /* MusicChordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

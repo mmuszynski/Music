@@ -14,10 +14,6 @@ import Foundation
 ///
 ///However, these three clefs represent three categories under which most other clefs can be described. These clefs are represented as cases of the enum. Other, more useful clefs are represented as static functions (see `MusicClefType.treble`, `MusicClefType.bass`, etc)
 public enum MusicClefType {
-//    case treble
-//    case alto
-//    case tenor
-//    case bass
     case cClef(offset: Int)
     case fClef(offset: Int)
     case gClef(offset: Int)
