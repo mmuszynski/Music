@@ -25,5 +25,18 @@ public struct MusicChord: Collection {
         return notes.index(after: i)
     }
     
+    public var type: MusicChordType
+    public var mode: MusicChordMode
+    public var root: MusicPitch
+    
+    public init(root: MusicPitch, mode: MusicChordMode, type: MusicChordType) throws {
+        self.type = type
+        self.mode = mode
+        self.root = root
+    }
+    
+    public static func ==(lhs: MusicChord, rhs: [MusicPitch]) -> Bool {
+        return lhs.notes == rhs
+    }
     
 }

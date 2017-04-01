@@ -48,34 +48,15 @@ public struct MusicScale: Collection {
     ///   - direction: A `MusicScaleDirection` defining the direction of the scale (e.g. up, down, both). Defaults to upward.
     ///
     /// - note: By definition, `MusicScale` includes two octaves of the root note
-    init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) {
-        var scalePitches = [root]
-
-        let intervals: Array<MusicInterval>
+    init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) throws {
         switch direction {
         case .up:
-            intervals = mode.upwardIntervalDescription
+            notes = try mode.upwardPitches(from: root)
         case .down:
-            intervals = mode.downwardIntervalDescription
+            notes = try mode.downwardPitches(from: root)
         case .circular:
-            intervals = mode.circularIntervalDescription
+            notes = try mode.pitches(from: root)
         }
-        for interval in intervals {
-            let direction = interval.direction
-            let quantity = interval.quantity
-            let quality = interval.quality
-            
-            let currentPitch = scalePitches.last!
-            do {
-                let interval = try MusicInterval(direction: direction, quality: quality, quantity: quantity)
-                let nextPitch = try interval.destinationPitch(withRootPitch: currentPitch)
-                scalePitches.append(nextPitch)
-            } catch {
-                fatalError("\(error)")
-            }
-        }
-        
-        notes = scalePitches
     }
     
     public static func ==(lhs: MusicScale, rhs: [MusicPitch]) -> Bool {

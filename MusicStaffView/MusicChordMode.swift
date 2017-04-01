@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public enum MusicChordMode {
+    case major, minor, augmented, diminished
+}
+
+public enum MusicChordType {
+    case triad, seventh, augmentedSixth, ninth, eleventh, thirteenth
+}
