@@ -9,7 +9,7 @@
 import Foundation
 
 public struct MusicChord: Collection {
-    private var notes: [_Element] = []
+    internal var notes: [_Element] = []
     public typealias _Element = MusicPitch
     
     public var startIndex: Int {
@@ -26,13 +26,12 @@ public struct MusicChord: Collection {
     }
     
     public var type: MusicChordType
-    public var mode: MusicChordMode
     public var root: MusicPitch
     
-    public init(root: MusicPitch, mode: MusicChordMode, type: MusicChordType) throws {
+    public init(root: MusicPitch, type: MusicChordType) throws {
         self.type = type
-        self.mode = mode
         self.root = root
+        self.notes = try type.pitches(from: root)
     }
     
     public static func ==(lhs: MusicChord, rhs: [MusicPitch]) -> Bool {
