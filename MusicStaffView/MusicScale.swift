@@ -22,23 +22,9 @@ enum MusicScaleDirection {
 /// A `Collection` type that describes the pitches of a given `MusicScaleMode`.
 ///
 /// Musical scales lend themselves to a collection-type, acting as an immutable array of `MusicNote` objects.
-public struct MusicScale: Collection {
-    private var notes: [_Element] = []
+public struct MusicScale: MusicPitchCollection {
+    internal var notes: [_Element] = []
     public typealias _Element = MusicPitch
-    
-    public var startIndex: Int {
-        return notes.startIndex
-    }
-    public var endIndex: Int {
-        return notes.endIndex
-    }
-    public subscript(position: Int) -> _Element {
-        return notes[position]
-    }
-    public func index(after i: Int) -> Int {
-        return notes.index(after: i)
-    }
-    
     
     /// Initializes a `MusicScale`.
     ///

@@ -8,22 +8,9 @@
 
 import Foundation
 
-public struct MusicChord: Collection {
+public struct MusicChord: MusicPitchCollection {
     internal var notes: [_Element] = []
     public typealias _Element = MusicPitch
-    
-    public var startIndex: Int {
-        return notes.startIndex
-    }
-    public var endIndex: Int {
-        return notes.endIndex
-    }
-    public subscript(position: Int) -> _Element {
-        return notes[position]
-    }
-    public func index(after i: Int) -> Int {
-        return notes.index(after: i)
-    }
     
     public var type: MusicChordType
     public var root: MusicPitch
