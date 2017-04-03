@@ -9,7 +9,7 @@
 import Foundation
 
 public struct MusicChord: MusicPitchCollection {
-    internal var notes: [_Element] = []
+    internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
     
     public var type: MusicChordType
@@ -18,11 +18,17 @@ public struct MusicChord: MusicPitchCollection {
     public init(root: MusicPitch, type: MusicChordType) throws {
         self.type = type
         self.root = root
-        self.notes = try type.pitches(from: root)
+        self.pitches = try type.pitches(from: root)
+    }
+    
+    internal init(pitches: [MusicPitch]) {
+        self.pitches = pitches.sorted()
+        self.root = pitches.first!
+        self.type = try! MusicChordType.genericType(fromNotes: self.pitches)
     }
     
     public static func ==(lhs: MusicChord, rhs: [MusicPitch]) -> Bool {
-        return lhs.notes == rhs
+        return lhs.pitches == rhs
     }
     
 }

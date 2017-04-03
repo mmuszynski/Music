@@ -23,7 +23,7 @@ enum MusicScaleDirection {
 ///
 /// Musical scales lend themselves to a collection-type, acting as an immutable array of `MusicNote` objects.
 public struct MusicScale: MusicPitchCollection {
-    internal var notes: [_Element] = []
+    internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
     
     /// Initializes a `MusicScale`.
@@ -37,16 +37,20 @@ public struct MusicScale: MusicPitchCollection {
     init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) throws {
         switch direction {
         case .up:
-            notes = try mode.upwardPitches(from: root)
+            pitches = try mode.upwardPitches(from: root)
         case .down:
-            notes = try mode.downwardPitches(from: root)
+            pitches = try mode.downwardPitches(from: root)
         case .circular:
-            notes = try mode.pitches(from: root)
+            pitches = try mode.pitches(from: root)
         }
     }
     
+    internal init(pitches: [MusicPitch]) {
+        self.pitches = pitches
+    }
+    
     public static func ==(lhs: MusicScale, rhs: [MusicPitch]) -> Bool {
-        return lhs.notes == rhs
+        return lhs.pitches == rhs
     }
     
 

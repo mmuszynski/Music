@@ -36,6 +36,7 @@
 		27C351DF1E8ED2A800EA7064 /* MusicChordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351DE1E8ED2A800EA7064 /* MusicChordTests.swift */; };
 		27C351E11E8ED9F300EA7064 /* MusicChordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351E01E8ED9F300EA7064 /* MusicChordType.swift */; };
 		27C351E71E8F151800EA7064 /* MusicIntervalRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C351E61E8F151800EA7064 /* MusicIntervalRepresentable.swift */; };
+		27F1B57B1E92156400A4050E /* MusicChordType+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1B57A1E92156400A4050E /* MusicChordType+Equatable.swift */; };
 		27FEF4D51E8AF123008FAD2A /* MusicScaleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */; };
 		27FF160A1E097EB700EB5695 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF16091E097EB700EB5695 /* MusicNote.swift */; };
 		27FF160C1E09849800EB5695 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF160B1E09849800EB5695 /* MusicInterval.swift */; };
@@ -86,6 +87,7 @@
 		27C351DE1E8ED2A800EA7064 /* MusicChordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChordTests.swift; sourceTree = "<group>"; };
 		27C351E01E8ED9F300EA7064 /* MusicChordType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChordType.swift; sourceTree = "<group>"; };
 		27C351E61E8F151800EA7064 /* MusicIntervalRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalRepresentable.swift; sourceTree = "<group>"; };
+		27F1B57A1E92156400A4050E /* MusicChordType+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MusicChordType+Equatable.swift"; sourceTree = "<group>"; };
 		27FEF4D41E8AF123008FAD2A /* MusicScaleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScaleMode.swift; sourceTree = "<group>"; };
 		27FF16091E097EB700EB5695 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNote.swift; sourceTree = "<group>"; };
 		27FF160B1E09849800EB5695 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicInterval.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				27C351DC1E8ED1CA00EA7064 /* MusicChord.swift */,
 				27C351E01E8ED9F300EA7064 /* MusicChordType.swift */,
 				278A25661E904506007AAAA0 /* MusicChord+Equatable.swift */,
+				27F1B57A1E92156400A4050E /* MusicChordType+Equatable.swift */,
 			);
 			name = MusicChord;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				27C351CF1E8DAAEC00EA7064 /* MusicPitchName.swift in Sources */,
 				27FF16101E098CF600EB5695 /* MusicStaffViewNote.swift in Sources */,
 				278A25671E904506007AAAA0 /* MusicChord+Equatable.swift in Sources */,
+				27F1B57B1E92156400A4050E /* MusicChordType+Equatable.swift in Sources */,
 				27FEF4D51E8AF123008FAD2A /* MusicScaleMode.swift in Sources */,
 				27527E9C1D9ED56B00C97B25 /* MusicStaffView.swift in Sources */,
 				27C351D71E8DADBA00EA7064 /* MusicIntervalTransposable.swift in Sources */,

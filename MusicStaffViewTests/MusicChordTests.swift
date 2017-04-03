@@ -55,6 +55,25 @@ class MusicChordTests: XCTestCase {
         let majorChord = try! MusicChord(root: C0, type: majorTriad)
         
         XCTAssertEqual(genericChord, majorChord)
+        XCTAssertEqual(genericChord.type, majorChord.type)
+    }
+    
+    func testChordTransposition() {
+        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let G0 = MusicPitch(name: .g, accidental: .natural, octave: 0)
+        let Cis0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
+        let Eis0 = MusicPitch(name: .e, accidental: .sharp, octave: 0)
+        let Gis0 = MusicPitch(name: .g, accidental: .sharp, octave: 0)
+        
+        let cMajorTriad = try! MusicChord(root: C0, type: MusicChordType.majorTriad)
+        let cisMajorTriad = try! MusicChord(root: Cis0, type: MusicChordType.majorTriad)
+        
+        XCTAssert(cMajorTriad == [C0, E0, G0])
+        XCTAssert(cisMajorTriad == [Cis0, Eis0, Gis0])
+
+        let cis = try! cMajorTriad.transposed(by: MusicInterval(direction: .upward, quality: .augmented, quantity: .unison))
+        XCTAssertEqual(cis, cisMajorTriad)
     }
     
 }

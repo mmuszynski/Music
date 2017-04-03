@@ -24,39 +24,43 @@ public enum MusicChordType: MusicIntervalRepresentable {
     }
     
     public var intervalDescription: [MusicInterval] {
+        func tripletToInterval(triplet: (MusicIntervalDirection, MusicIntervalQuality, MusicIntervalQuantity)) -> MusicInterval {
+            return try! MusicInterval(direction: triplet.0, quality: triplet.1, quantity: triplet.2)
+        }
+        
         switch self {
         case .majorTriad:
             return [(.upward, .major, .third),
-                    (.upward, .minor, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .minor, .third)].map(tripletToInterval)
         case .minorTriad:
             return [(.upward, .minor, .third),
-                    (.upward, .major, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third)].map(tripletToInterval)
         case .augmentedTriad:
             return [(.upward, .major, .third),
-                    (.upward, .major, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third)].map(tripletToInterval)
         case .diminishedTriad:
             return [(.upward, .minor, .third),
-                    (.upward, .minor, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .minor, .third)].map(tripletToInterval)
         case .majorSeventh:
             return [(.upward, .major, .third),
                     (.upward, .minor, .third),
-                    (.upward, .major, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third)].map(tripletToInterval)
         case .dominantSeventh:
             return [(.upward, .major, .third),
                     (.upward, .minor, .third),
-                    (.upward, .minor, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .minor, .third)].map(tripletToInterval)
         case .minorSeventh:
             return [(.upward, .minor, .third),
                     (.upward, .major, .third),
-                    (.upward, .minor, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .minor, .third)].map(tripletToInterval)
         case .halfDiminishedSeventh:
             return [(.upward, .minor, .third),
                     (.upward, .minor, .third),
-                    (.upward, .major, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third)].map(tripletToInterval)
         case .fullyDiminishedSeventh:
             return [(.upward, .minor, .third),
                     (.upward, .minor, .third),
-                    (.upward, .minor, .third)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .minor, .third)].map(tripletToInterval)
         case .generic(let intervals):
             return intervals
         }
