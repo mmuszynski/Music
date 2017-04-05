@@ -8,11 +8,12 @@
 
 import Foundation
 
+/// Describes a Collection consisting of `MusicPitch` objects. This should also adopt `MusicTransposable`, as the MusicPitch elements can be transposed.
 internal protocol MusicPitchCollection: Collection, MusicTransposable {
     var pitches: [MusicPitch] { get set }
-    init(pitches: [MusicPitch])
 }
 
+/// Extends `MusicPitchCollection` to give a default `Collection` implementation.
 extension MusicPitchCollection {
     public var startIndex: Int {
         return pitches.startIndex
@@ -28,8 +29,11 @@ extension MusicPitchCollection {
     }
 }
 
+/// Extends `MusicPitchCollection` to give a default `MusicTransposable` implementation.
 extension MusicPitchCollection {
     func transposed(by interval: MusicInterval) throws -> Self {
-        return Self(pitches: try pitches.map { try $0.transposed(by: interval) })
+        var newSelf = self
+        newSelf.pitches = try self.pitches.map { try $0.transposed(by: interval) }
+        return newSelf
     }
 }

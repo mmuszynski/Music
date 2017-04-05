@@ -45,10 +45,6 @@ public struct MusicScale: MusicPitchCollection {
         }
     }
     
-    internal init(pitches: [MusicPitch]) {
-        self.pitches = pitches
-    }
-    
     public static func ==(lhs: MusicScale, rhs: [MusicPitch]) -> Bool {
         return lhs.pitches == rhs
     }

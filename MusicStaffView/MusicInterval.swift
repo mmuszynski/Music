@@ -158,7 +158,6 @@ public struct MusicInterval {
         
         return (offset: quantity.rawValue, modifier: modifier)
     }
-
     
     //INITIALIZERS
     ///Initializes an interval from a root pitch and a destination pitch.
