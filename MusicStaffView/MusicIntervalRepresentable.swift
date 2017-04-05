@@ -8,8 +8,14 @@
 
 import Foundation
 
+/// An object whose form can be represented by an ordered Array of `MusicInterval` objects.
+///
+/// Musical concepts such as Scales and Chords are defined by the intervals between their pitches. For example, a major scale consists of a specific pattern of major seconds and minor seconds. These intervals, combined with a root pitch, fully define the collection of pitches that comprise the scale.
 public protocol MusicIntervalRepresentable {
+    
+    /// A set of `MusicIntervals` that describes the collection
     var intervalDescription: [MusicInterval] { get }
+    func pitches(from root: MusicPitch) throws -> [MusicPitch]
 }
 
 public protocol MusicIntervalRepresentableUpward: MusicIntervalRepresentable {

@@ -31,7 +31,7 @@ extension MusicPitchCollection {
 
 /// Extends `MusicPitchCollection` to give a default `MusicTransposable` implementation.
 extension MusicPitchCollection {
-    func transposed(by interval: MusicInterval) throws -> Self {
+    public func transposed(by interval: MusicInterval) throws -> Self {
         var newSelf = self
         newSelf.pitches = try self.pitches.map { try $0.transposed(by: interval) }
         return newSelf
