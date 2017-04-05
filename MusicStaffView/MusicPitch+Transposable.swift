@@ -9,7 +9,7 @@
 import Foundation
 
 extension MusicPitch: MusicTransposable {
-    func transposed(by interval: MusicInterval) throws -> MusicPitch {
+    public func transposed(by interval: MusicInterval) throws -> MusicPitch {
         let interval = try MusicInterval(direction: interval.direction, quality: interval.quality, quantity: interval.quantity)
         return try interval.destinationPitch(withRootPitch: self)
     }

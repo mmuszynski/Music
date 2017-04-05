@@ -15,14 +15,19 @@ public protocol MusicIntervalRepresentable {
     
     /// A set of `MusicIntervals` that describes the collection
     var intervalDescription: [MusicInterval] { get }
+    
+    
+    /// The pitches that define the collection when created from a root `MusicPitch.`
+    ///
+    /// - Parameter root: `MusicPitch` defining the root pitch of the collection
+    /// - Returns: An array of `MusicPitch` values defining the collection
+    /// - Throws: An appropriate error if the pitches are not able to be described
     func pitches(from root: MusicPitch) throws -> [MusicPitch]
 }
 
-public protocol MusicIntervalRepresentableUpward: MusicIntervalRepresentable {
+/// An object whose form can be represented by an ordered Array of `MusicInterval` objects and whose form is different upward than it is downward.
+public protocol MusicIntervalRepresentableDirectional: MusicIntervalRepresentable {
     var upwardIntervalDescription: [MusicInterval] { get }
-}
-
-public protocol MusicIntervalRepresentableDownward: MusicIntervalRepresentable {
     var downwardIntervalDescription: [MusicInterval] { get }
 }
 
@@ -38,7 +43,7 @@ public extension MusicIntervalRepresentable {
     }
 }
 
-public extension MusicIntervalRepresentableDownward {
+public extension MusicIntervalRepresentableDirectional {
     func downwardPitches(from root: MusicPitch) throws -> [MusicPitch] {
         var pitches = [root]
         for interval in downwardIntervalDescription {
@@ -48,9 +53,7 @@ public extension MusicIntervalRepresentableDownward {
         }
         return pitches
     }
-}
-
-public extension MusicIntervalRepresentableUpward {
+    
     func upwardPitches(from root: MusicPitch) throws -> [MusicPitch] {
         var pitches = [root]
         for interval in upwardIntervalDescription {

@@ -273,7 +273,7 @@ public enum MusicStaffViewSpacingType {
             noteLayer.transform = CATransform3DIdentity
         } else {
             noteLayer.anchorPoint = CGPoint(x: 0.5, y: 0.62)
-            noteLayer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1.0)
+            noteLayer.transform = CATransform3DMakeRotation(CGFloat(Double.pi), 0, 0, 1.0)
         }
         
         //draw ledger lines if necessary
