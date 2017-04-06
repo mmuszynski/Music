@@ -116,6 +116,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271F798A1E96E40500917159 /* MusicStaffView */ = {
+			isa = PBXGroup;
+			children = (
+				27527E971D9ED56B00C97B25 /* MusicStaffViewElement.swift */,
+				27FF160F1E098CF600EB5695 /* MusicStaffViewNote.swift */,
+				27527E981D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift */,
+				27527E991D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift */,
+				27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */,
+				27527E961D9ED56B00C97B25 /* MusicStaffView.swift */,
+			);
+			name = MusicStaffView;
+			sourceTree = "<group>";
+		};
 		27527E721D9ED55300C97B25 = {
 			isa = PBXGroup;
 			children = (
@@ -138,12 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				27527E7F1D9ED55300C97B25 /* MusicStaffView.h */,
-				27527E971D9ED56B00C97B25 /* MusicStaffViewElement.swift */,
-				27FF160F1E098CF600EB5695 /* MusicStaffViewNote.swift */,
-				27527E981D9ED56B00C97B25 /* MusicStaffViewElementLayer.swift */,
-				27527E991D9ED56B00C97B25 /* MusicStaffViewKeySignature.swift */,
-				27527E9B1D9ED56B00C97B25 /* MusicStaffViewStaffLayer.swift */,
-				27527E961D9ED56B00C97B25 /* MusicStaffView.swift */,
+				271F798A1E96E40500917159 /* MusicStaffView */,
 				275704EA1E92D0AE00E81D3D /* Protocols */,
 				27C351D01E8DAAF900EA7064 /* MusicPitch */,
 				27C351D11E8DAB0100EA7064 /* MusicInterval */,

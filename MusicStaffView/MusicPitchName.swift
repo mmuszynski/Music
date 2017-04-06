@@ -8,14 +8,20 @@
 
 import Foundation
 
+/// The name used to describe a musical pitch, describing its place on the staff.
 public enum MusicPitchName: Int, CustomDebugStringConvertible {
     case c = 0, d, e, f, g, a, b
     
+    /// All values of the enum, suitable for enumeration
     static var allValues: [MusicPitchName] = [.c, .d, .e, .f, .g, .a, .b]
+    
+    /// All `enharmonicModifier` values, suitable for enumeration and useful for computing a pitch in many circumstances. Lazily evaluated.
     static var allModifiers: [Int] = {
         return allValues.map { $0.enharmonicModifier }
     }()
     
+
+    /// The enharmonic modifier for a specific `MusicPitchName`, meaning the number of half steps the name raises from `c`.
     var enharmonicModifier: Int {
         return self.rawValue * 2 - (self.rawValue * 2 >= 5 ? 1 : 0)
     }
