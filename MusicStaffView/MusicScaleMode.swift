@@ -71,8 +71,4 @@ enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentableDirec
             return try! MusicInterval(direction: .downward, quality: interval.quality, quantity: interval.quantity)
         })
     }
-    
-    var intervalDescription: [MusicInterval] {
-        return self.upwardIntervalDescription + self.downwardIntervalDescription
-    }
 }

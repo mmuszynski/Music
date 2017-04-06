@@ -63,4 +63,8 @@ public extension MusicIntervalRepresentableDirectional {
         }
         return pitches
     }
+    
+    var intervalDescription: [MusicInterval] {
+        return upwardIntervalDescription + downwardIntervalDescription
+    }
 }
