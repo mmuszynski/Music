@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27527E7B1D9ED55300C97B25"
-               BuildableName = "MusicStaffView.framework"
-               BlueprintName = "MusicStaffView"
-               ReferencedContainer = "container:MusicStaffView.xcodeproj">
+               BuildableName = "Music.framework"
+               BlueprintName = "Music"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27527E841D9ED55300C97B25"
-               BuildableName = "MusicStaffViewTests.xctest"
-               BlueprintName = "MusicStaffViewTests"
-               ReferencedContainer = "container:MusicStaffView.xcodeproj">
+               BuildableName = "MusicTests.xctest"
+               BlueprintName = "MusicTests"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27527E841D9ED55300C97B25"
-               BuildableName = "MusicStaffViewTests.xctest"
-               BlueprintName = "MusicStaffViewTests"
-               ReferencedContainer = "container:MusicStaffView.xcodeproj">
+               BuildableName = "MusicTests.xctest"
+               BlueprintName = "MusicTests"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27527E7B1D9ED55300C97B25"
-            BuildableName = "MusicStaffView.framework"
-            BlueprintName = "MusicStaffView"
-            ReferencedContainer = "container:MusicStaffView.xcodeproj">
+            BuildableName = "Music.framework"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27527E7B1D9ED55300C97B25"
-            BuildableName = "MusicStaffView.framework"
-            BlueprintName = "MusicStaffView"
-            ReferencedContainer = "container:MusicStaffView.xcodeproj">
+            BuildableName = "Music.framework"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -98,9 +98,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27527E7B1D9ED55300C97B25"
-            BuildableName = "MusicStaffView.framework"
-            BlueprintName = "MusicStaffView"
-            ReferencedContainer = "container:MusicStaffView.xcodeproj">
+            BuildableName = "Music.framework"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

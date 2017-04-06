@@ -1,6 +1,6 @@
 //
-//  MusicStaffView.h
-//  MusicStaffView
+//  Music
+//  Music
 //
 //  Created by Mike Muszynski on 9/30/16.
 //  Copyright © 2016 Mike Muszynski. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for MusicStaffView.
+//! Project version number for Music.
 FOUNDATION_EXPORT double MusicStaffViewVersionNumber;
 
 //! Project version string for MusicStaffView.
