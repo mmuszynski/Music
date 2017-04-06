@@ -1,6 +1,6 @@
 //
 //  MusicIntervalQuality.swift
-//  MusicStaffView
+//  Music
 //
 //  Created by Mike Muszynski on 3/27/17.
 //  Copyright © 2017 Mike Muszynski. All rights reserved.

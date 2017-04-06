@@ -1,13 +1,13 @@
 //
 //  MusicClefTests.swift
-//  MusicStaffView
+//  Music
 //
 //  Created by Mike Muszynski on 1/5/17.
 //  Copyright © 2017 Mike Muszynski. All rights reserved.
 //
 
 import XCTest
-@testable import MusicStaffView
+@testable import Music
 
 class MusicClefTests: XCTestCase {
     

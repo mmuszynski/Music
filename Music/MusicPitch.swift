@@ -1,6 +1,6 @@
 //
 //  MusicPitch.swift
-//  MusicStaffView
+//  Music
 //
 //  Created by Mike Muszynski on 12/29/16.
 //  Copyright © 2016 Mike Muszynski. All rights reserved.

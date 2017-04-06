@@ -1,15 +1,15 @@
 //
-//  MusicStaffViewTests.swift
-//  MusicStaffViewTests
+//  MusicTests.swift
+//  MusicTests
 //
 //  Created by Mike Muszynski on 9/30/16.
 //  Copyright © 2016 Mike Muszynski. All rights reserved.
 //
 
 import XCTest
-@testable import MusicStaffView
+@testable import Music
 
-class MusicStaffViewTests: XCTestCase {
+class MusicTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

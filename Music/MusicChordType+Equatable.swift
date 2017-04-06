@@ -1,6 +1,6 @@
 //
 //  MusicChordType+Equatable.swift
-//  MusicStaffView
+//  Music
 //
 //  Created by Mike Muszynski on 4/3/17.
 //  Copyright © 2017 Mike Muszynski. All rights reserved.

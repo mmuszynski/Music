@@ -1,6 +1,6 @@
 //
 //  MusicStaffViewElementLayer.swift
-//  MusicStaffView
+//  Music
 //
 //  Created by Mike Muszynski on 1/5/15.
 //  Copyright (c) 2015 Mike Muszynski. All rights reserved.
