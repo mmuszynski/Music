@@ -44,6 +44,8 @@
 		27A350A71E96E94800344087 /* MusicIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350991E96E8D600344087 /* MusicIntervalTests.swift */; };
 		27A350A81E96E94D00344087 /* MusicClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350981E96E8D600344087 /* MusicClefTests.swift */; };
 		27A350A91E96E95100344087 /* MusicNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3509B1E96E8D600344087 /* MusicNoteTests.swift */; };
+		27A350B01E96EAF000344087 /* MusicRhythmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */; };
+		27A350B21E96EB2900344087 /* MusicRhythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350B11E96EB2900344087 /* MusicRhythm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicKeySignatureTests.swift; path = MusicTests/MusicKeySignatureTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3509B1E96E8D600344087 /* MusicNoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicNoteTests.swift; path = MusicTests/MusicNoteTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3509C1E96E8D600344087 /* MusicScaleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicScaleTests.swift; path = MusicTests/MusicScaleTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicRhythmTests.swift; path = MusicTests/MusicRhythmTests.swift; sourceTree = SOURCE_ROOT; };
+		27A350B11E96EB2900344087 /* MusicRhythm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicRhythm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 				27A3506E1E96E73900344087 /* MusicClefType.swift */,
 				271F798A1E96E40500917159 /* MusicStaffView */,
 				275704EA1E92D0AE00E81D3D /* Protocols */,
+				27A350B31E96EB2F00344087 /* MusicRhythm */,
 				27C351D01E8DAAF900EA7064 /* MusicPitch */,
 				27C351D11E8DAB0100EA7064 /* MusicInterval */,
 				275704ED1E92E4B000E81D3D /* MusicKeySignature */,
@@ -175,6 +180,7 @@
 				27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */,
 				27A3509B1E96E8D600344087 /* MusicNoteTests.swift */,
 				27A3509C1E96E8D600344087 /* MusicScaleTests.swift */,
+				27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */,
 				27A350961E96E8D600344087 /* Info.plist */,
 			);
 			name = MusicTests;
@@ -198,6 +204,14 @@
 				27A350791E96E75B00344087 /* MusicKeySignaturePitch.swift */,
 			);
 			name = MusicKeySignature;
+			sourceTree = "<group>";
+		};
+		27A350B31E96EB2F00344087 /* MusicRhythm */ = {
+			isa = PBXGroup;
+			children = (
+				27A350B11E96EB2900344087 /* MusicRhythm.swift */,
+			);
+			name = MusicRhythm;
 			sourceTree = "<group>";
 		};
 		27C351D01E8DAAF900EA7064 /* MusicPitch */ = {
@@ -369,6 +383,7 @@
 				27A350631E96E70F00344087 /* MusicStaffViewKeySignature.swift in Sources */,
 				27A350831E96E75B00344087 /* MusicInterval.swift in Sources */,
 				27A3506D1E96E72300344087 /* MusicChordType+Equatable.swift in Sources */,
+				27A350B21E96EB2900344087 /* MusicRhythm.swift in Sources */,
 				27A3506A1E96E72300344087 /* MusicChord.swift in Sources */,
 				27A350881E96E75B00344087 /* MusicIntervalRepresentable.swift in Sources */,
 				27A3508D1E96E75B00344087 /* MusicPitch+Transposable.swift in Sources */,
@@ -396,6 +411,7 @@
 				27A350A71E96E94800344087 /* MusicIntervalTests.swift in Sources */,
 				27A350A61E96E94400344087 /* MusicChordTests.swift in Sources */,
 				27A350A51E96E94000344087 /* MusicKeySignatureTests.swift in Sources */,
+				27A350B01E96EAF000344087 /* MusicRhythmTests.swift in Sources */,
 				27A350A91E96E95100344087 /* MusicNoteTests.swift in Sources */,
 				27A350A81E96E94D00344087 /* MusicClefTests.swift in Sources */,
 				27A350A41E96E93A00344087 /* MusicScaleTests.swift in Sources */,
