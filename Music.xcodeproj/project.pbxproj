@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27527E861D9ED55300C97B25 /* Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27527E7C1D9ED55300C97B25 /* Music.framework */; };
+		27826D171E9807E300EE9709 /* MusicRhythmLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27826D161E9807E300EE9709 /* MusicRhythmLength.swift */; };
 		27A350601E96E70F00344087 /* MusicStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3505A1E96E70F00344087 /* MusicStaffView.swift */; };
 		27A350611E96E70F00344087 /* MusicStaffViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3505B1E96E70F00344087 /* MusicStaffViewElement.swift */; };
 		27A350621E96E70F00344087 /* MusicStaffViewElementLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3505C1E96E70F00344087 /* MusicStaffViewElementLayer.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		27527E7C1D9ED55300C97B25 /* Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27527E851D9ED55300C97B25 /* MusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27826D161E9807E300EE9709 /* MusicRhythmLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicRhythmLength.swift; path = Music/MusicRhythmLength.swift; sourceTree = "<group>"; };
 		27A3505A1E96E70F00344087 /* MusicStaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicStaffView.swift; path = Music/MusicStaffView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3505B1E96E70F00344087 /* MusicStaffViewElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicStaffViewElement.swift; path = Music/MusicStaffViewElement.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3505C1E96E70F00344087 /* MusicStaffViewElementLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicStaffViewElementLayer.swift; path = Music/MusicStaffViewElementLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				27A350B11E96EB2900344087 /* MusicRhythm.swift */,
+				27826D161E9807E300EE9709 /* MusicRhythmLength.swift */,
 			);
 			name = MusicRhythm;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				27A350921E96E75B00344087 /* MusicScaleMode.swift in Sources */,
 				27A350891E96E75B00344087 /* MusicKeySignature.swift in Sources */,
 				27A350841E96E75B00344087 /* MusicInterval+Equatable.swift in Sources */,
+				27826D171E9807E300EE9709 /* MusicRhythmLength.swift in Sources */,
 				27A350851E96E75B00344087 /* MusicIntervalError.swift in Sources */,
 				27A3508C1E96E75B00344087 /* MusicPitch.swift in Sources */,
 				27A350931E96E75B00344087 /* MusicTransposable.swift in Sources */,
