@@ -4,7 +4,7 @@
 
 ## What will be represented? ##
 ### Object Types ###
-* MusicPitch - A pitch with a name and accidental type in a given octave
+* MusicPitch - A pitch with a name and accidental type in a given octave (note: unless otherwise specified, octaves will always refer to [Scientific Pitch Notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation))
 * MusicRhythm - A rhythm with a given duration
 * MusicInterval - The distance between two given notes
 
@@ -13,13 +13,21 @@
 * MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitch
 
 ###Enumerable Types###
+* MusicPitchName - The names, A-G (or Do-Ti), used in representing notes
+* MusicPitchAccidental - The values for sharps, flats and natural used in describing pitches
+* 
+
+###Unsure what type at this point, but probably enumerable###
 * MusicTimeSignature - A description of the number of beats in each measure and their composition
 * MusicKeySignature - A description of the flats and sharps in a given key signature
 
 ##Current Progress##
 ###MusicPitch###
 * Properties
-    - INT: Enharmonic Index
+    - Enharmonic Index (int): The number of half steps away from the reference pitch of C0
+    - name (MusicPitchName): The name of the note
+    - accidental (MusicPitchAccidental): The accidental of the note
+    - octave (int): The octave for the note
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
