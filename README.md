@@ -18,8 +18,8 @@
 
 ##Current Progress##
 ###MusicPitch###
-*Properties
--INT: Enharmonic Index
+* Properties
+    - INT: Enharmonic Index
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
