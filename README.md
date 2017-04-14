@@ -1,32 +1,25 @@
-# README #
+# Music #
 
-### What is this repository for? ###
+# A framework for representing Music in the Swift programming language #
 
-* A framework for representing Music in the Swift programming language
-
-### What objects will be represented ###
-#### Object Types ####
+## What will be represented? ##
+### Object Types ###
 * MusicPitch - A pitch with a name and accidental type in a given octave
 * MusicRhythm - A rhythm with a given duration
 * MusicInterval - The distance between two given notes
 
-####Collection Objects (see: MusicPitchCollection protocol)####
+###Collection Objects (see: MusicPitchCollection protocol)###
 * MusicChord - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitches
 * MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitch
 
-####Enumerable Type####
+###Enumerable Types###
 * MusicTimeSignature - A description of the number of beats in each measure and their composition
 * MusicKeySignature - A description of the flats and sharps in a given key signature
 
-###Current Progress###
+##Current Progress##
 
-### Further goals ###
+## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
 * Analysis tools for basic western Music Theory, including chord progression and voice leading
 
-### Important Secondary Elements (mostly regarding display/engraving) ###
-
-* Rests
-* Note Decoration (accent, slur, etc)
-* Dynamics
-* Text
+### Next Steps ###
