@@ -2,8 +2,18 @@
 
 ### What is this repository for? ###
 
-* Provides analysis tools for basic western Music Theory functions
-* Integrates with MusicStaffView for the display of notes and rhythms
+* A framework for representing Music in the Swift programming language
+
+### What objects will be represented ###
+
+* MusicPitch - Suitable for representing a pitch with a name and accidental type in a given octave
+**
+* A framework for representing Music in the Swift programming language 
+
+### Further goals ###
+
+* Integration with MusicStaffView for the display of pitches and rhythms
+* Analysis tools for basic western Music Theory, including chord progression and voice leading
 
 ### Currently Planned Elements ###
 
