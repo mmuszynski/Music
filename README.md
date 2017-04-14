@@ -17,6 +17,9 @@
 * MusicKeySignature - A description of the flats and sharps in a given key signature
 
 ##Current Progress##
+###MusicPitch###
+*Properties
+-INT: Enharmonic Index
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
