@@ -15,7 +15,9 @@
 ###Enumerable Types###
 * MusicPitchName - The names, A-G (or Do-Ti), used in representing notes
 * MusicPitchAccidental - The values for sharps, flats and natural used in describing pitches
-* 
+* MusicIntervalQuality - The modifier for interval quality (e.g. Major, Minor, Diminished, Augmented, Perfect)
+* MusicIntervalQuantity - The size of an interval, unison through octave, with a special generic case for intervals larger than an octave
+* MusicScaleMode - The scale modes (major, minor, pentatonic, etc)
 
 ###Unsure what type at this point, but probably enumerable###
 * MusicTimeSignature - A description of the number of beats in each measure and their composition
@@ -28,6 +30,10 @@
     - name (MusicPitchName): The name of the note
     - accidental (MusicPitchAccidental): The accidental of the note
     - octave (int): The octave for the note
+* Example:
+```swift
+    let tuningNote = MusicPitch(name: MusicPitchName.a, accidental: MusicPitchAccidental.natural, octave: 4)
+```
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
