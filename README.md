@@ -5,30 +5,24 @@
 * A framework for representing Music in the Swift programming language
 
 ### What objects will be represented ###
+#### Object Types ####
+* MusicPitch - A pitch with a name and accidental type in a given octave
+* MusicRhythm - A rhythm with a given duration
+* MusicInterval - The distance between two given notes
 
-* MusicPitch - Suitable for representing a pitch with a name and accidental type in a given octave
-**
-* A framework for representing Music in the Swift programming language 
+####Collection Objects (see: MusicPitchCollection protocol)####
+* MusicChord - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitches
+* MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitch
+
+####Enumerable Type####
+* MusicTimeSignature - A description of the number of beats in each measure and their composition
+* MusicKeySignature - A description of the flats and sharps in a given key signature
+
+###Current Progress###
 
 ### Further goals ###
-
 * Integration with MusicStaffView for the display of pitches and rhythms
 * Analysis tools for basic western Music Theory, including chord progression and voice leading
-
-### Currently Planned Elements ###
-
-* Note
-* Interval
-* Key Signature
-* Scale
-* Chord
-
-### Tests that should be passable ###
-
-* Given the notes of a chord, can the chord be inferred
-* Given the notese of a scale, can the scale be inferred
-* Given a chord, can the notes be generated
-* Given a scale, can the notes be generated
 
 ### Important Secondary Elements (mostly regarding display/engraving) ###
 
