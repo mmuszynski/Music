@@ -34,6 +34,12 @@ class MusicRhythmTests: XCTestCase {
         
         let durationDoubleDottedQuarter = MusicRhythmLength.quarter.duration * 7 / 4
         XCTAssertEqual(MusicRhythmLength.dotted(length: .dotted(length: .quarter)).duration, durationDoubleDottedQuarter)
+        
+        let durationDoubleDottedQuarterPlusSixteenth = MusicRhythmLength.dotted(length: .dotted(length: .quarter)).duration + MusicRhythmLength.sixteenth.duration
+        XCTAssertEqual(duration2, durationDoubleDottedQuarterPlusSixteenth)
+        
+        let durationDottedQuarterEighth = MusicRhythmLength.dotted(length: .quarter).duration + MusicRhythmLength.eighth.duration
+        XCTAssertEqual(durationDottedQuarterEighth, duration2)
     }
     
 }

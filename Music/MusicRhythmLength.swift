@@ -32,9 +32,17 @@ enum MusicRhythmLength {
             return 2
         case .sixtyfourth, .hemidemisemiquaver:
             return 1
-        case .dotted(let length):
-            let duration = length.duration
-            return duration + duration / 2
+        default:
+            return duration(of: self, withDots: 0)
+        }
+    }
+    
+    private func duration(of base: MusicRhythmLength, withDots dots: Int) -> Int {
+        if case .dotted(let inner) = base {
+            return self.duration(of: inner, withDots: dots + 1)
+        } else {
+            let power = Int(pow(2.0, Double(dots)))
+            return 2 * base.duration - base.duration / power
         }
     }
 }
