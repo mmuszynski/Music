@@ -1,6 +1,4 @@
-# Music #
-
-# A framework for representing Music in the Swift programming language #
+# Music - A framework for representing Music in the Swift programming language #
 
 ## What is represented? ##
 ### Object Types ###
@@ -11,14 +9,16 @@
 ### MusicCollection Protocol ###
 Defines a protocol to be apllied to a collection of MusicPitch objects. The only requirement is that the object contains an Array of MusicPitch objects called "pitches". Further functionality, such as enumeration or indexing, is inferred through a default extension of the protocol, but can be overridden if necessary (See also: MusicTransposable).
 
-The following types adopt MusicCollection, as they represent collections of notes for various Types:
+The following types adopt MusicCollection, as they represent collections of notes:
 
 * **MusicChord** - A collection of MusicPitches, defined with a root MusicPitch and the MusicIntervals used to describe the distance to the other pitches
 * **MusicScale** - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the other pitches
 
 ### MusicTransposable Protocol ###
 
-### Enumerable Types ###
+Music pitches can be transposed, or moved, in order to represent other pitches. For example, C0 transposed by a Major Third becomes E0. The MusicTransposable protocol should be adopted by any type that can be transposed by an interval. Default implementations are available for MusicPitch and types that adopt MusicPitchCollection (i.e. MusicChords can be transposed by transposing their individual pitches).
+
+### Enumerable (Definition) Types ###
 * **MusicPitchName** - The names, A-G (or Do-Ti), used in representing notes
 * **MusicPitchAccidental** - The values for sharps, flats and natural used in describing pitches
 * **MusicIntervalQuality** - The modifier for interval quality (e.g. Major, Minor, Diminished, Augmented, Perfect)
@@ -33,22 +33,29 @@ The following types adopt MusicCollection, as they represent collections of note
 ## Current Progress ##
 ### MusicPitch ###
 * Properties
-- Enharmonic Index (int): The number of half steps away from the reference pitch of C0
-- name (MusicPitchName): The name of the note
-- accidental (MusicPitchAccidental): The accidental of the note
-- octave (int): The octave for the note
+    - Enharmonic Index (int): The number of half steps away from the reference pitch of C0
+    - name (MusicPitchName): The name of the note
+    - accidental (MusicPitchAccidental): The accidental of the note
+    - octave (int): The octave for the note
 #### Example Usage ####
 ```swift
+//Using the standard initializer
 let tuningNote = MusicPitch(name: MusicPitchName.a, accidental: MusicPitchAccidental.natural, octave: 4)
+//Can also be initialized using the enharmonic index
+let C0 = MusicPitch(enharmonicIndex: 0, accidental: .natural)
+//Returns nil in cases where the Enharmonic Index and Accidental values cannot make a valid note
+//In this example, there is no way to build an enharmonic equivalent to C0 using a flat
+let noNote = MusicPitch(enharmonicIndex: 0, accidental: .flat)
+noNote == nil //returns true
 ```
 
 ### MusicInterval ###
 * Properties
-- quality (MusicIntervalQuality): The quality as defined above
-- quantity (MusicIntervalQuantity): The quantity as defined above
+    - quality (MusicIntervalQuality): The quality as defined above
+    - quantity (MusicIntervalQuantity): The quantity as defined above
 * Functions
-- Destination pitch from a root pitch
-- Initializable from a range of pitches
+    - Destination pitch from a root pitch
+    - Initializable from a range of pitches
 #### Example Usage ####
 ```swift
 let majorThird = MusicInterval(direction: .upward, quality: .major, quantity: .third)
@@ -60,5 +67,3 @@ let alsoMajorThird = MusicInterval(rootPitch: c0, destinationPitch: e0)
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
 * Analysis tools for basic western Music Theory, including chord progression and voice leading
-
-### Next Steps ###
