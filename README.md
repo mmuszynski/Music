@@ -9,11 +9,14 @@
 * MusicInterval - The distance between two given notes
 
 ### MusicCollection Protocol ###
-Defines
+Defines a protocol to be apllied to a collection of MusicPitch objects. The only requirement is that the object contains an Array of MusicPitch objects called "pitches". Further functionality, such as enumeration or indexing, is inferred through a default extension of the protocol, but can be overridden if necessary (See also: MusicTransposable).
 
-### Collection Objects (see: MusicPitchCollection protocol) ###
-* MusicChord - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitches
-* MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitch
+The following types adopt MusicCollection, as they represent collections of notes for various reasons:
+
+* MusicChord - A collection of MusicPitches, defined with a root MusicPitch and the MusicIntervals used to describe the distance to the other pitches
+* MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the other pitches
+
+### MusicTransposable Protocol ###
 
 ### Enumerable Types ###
 * MusicPitchName - The names, A-G (or Do-Ti), used in representing notes
