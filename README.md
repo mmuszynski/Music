@@ -3,8 +3,10 @@
 # A framework for representing Music in the Swift programming language #
 
 ## What is represented? ##
-### Object Types ###
-* MusicPitch - A pitch with a name and accidental type in a given octave (note: unless otherwise specified, octaves will always refer to [Scientific Pitch Notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation))
+### Basic Music Types ###
+The following are the basic, underlying foundation on which western music theory can be described. Of these, Pitch and Rhythm are the most basic. Intervals describe a relationship between two Pitches, and can be used to describe further musical constructs such as Scales and Chords.
+
+* MusicPitch - A pitch with a name and accidental type in a given octave
 * MusicRhythm - A rhythm with a given duration
 * MusicInterval - The distance between two given notes
 
