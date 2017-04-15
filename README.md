@@ -32,6 +32,12 @@ Music pitches can be transposed, or moved, in order to represent other pitches. 
 
 ## Current Progress ##
 ### MusicPitch ###
+MusicPitch is the basic description of where a pitch, the fundamental unit of musical notation. Note that pitches do not map directly to frequencies, so there is still some resolution required to match the physical production of the sound of a pitch. Thus frequency is not yet available in this library.
+
+Similar to the way that Time and Date are backed by an integer number of seconds since an epoch in Cocoa, pitches are backed by an integer distance from the reference note C0. This reference is referred to as the Enharmonic Index, and by definition any two notes that are enharmonically equivalent will have the same index.
+
+Pitches are generally initialized with a name, accidental, and octave, but can also be initialized using an initializer that requires the enharmonic index and the desired accidental. Since it will be impossible to represent a note at a given enharmonic index with all accidental types, this initializer returns nil if unable to compute a suitable pitch.
+
 * Properties
     - Enharmonic Index (int): The number of half steps away from the reference pitch of C0
     - name (MusicPitchName): The name of the note
@@ -50,17 +56,19 @@ noNote == nil //returns true
 ```
 
 ### MusicInterval ###
+MusicInterval is the backbone of the MusicTransposable protocol, as it does computations that translate a certain pitch by a given interval.
+
 * Properties
     - quality (MusicIntervalQuality): The quality as defined above
     - quantity (MusicIntervalQuantity): The quantity as defined above
 * Functions
-    - Destination pitch from a root pitch
+    - Computes destination pitch from a root pitch
     - Initializable from a range of pitches
 #### Example Usage ####
 ```swift
 let majorThird = MusicInterval(direction: .upward, quality: .major, quantity: .third)
 let c0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
-let e0 = majorThird.destinationPitch(withRootPitch: c0)
+let e0 = majorThird.destinationPitch(from: c0)
 let alsoMajorThird = MusicInterval(rootPitch: c0, destinationPitch: e0)
 ```
 

@@ -342,7 +342,7 @@ class MusicIntervalTests: XCTestCase {
         let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
         do {
             let majorSecond = try MusicInterval(direction: .upward, quality: .major, quantity: .second)
-            let destination = try majorSecond.destinationPitch(withRootPitch: C0)
+            let destination = try majorSecond.destinationPitch(from: C0)
             XCTAssertEqual(destination, D0)
         } catch {
             XCTFail("\(error)")
@@ -352,7 +352,7 @@ class MusicIntervalTests: XCTestCase {
         let Eb0 = MusicPitch(name: .e, accidental: .flat, octave: 0)
         do {
             let m3 = try MusicInterval( direction: .upward, quality: .minor, quantity: .third)
-            let destination = try m3.destinationPitch(withRootPitch: C0)
+            let destination = try m3.destinationPitch(from: C0)
 
             XCTAssertEqual(destination, Eb0)
         } catch {
@@ -362,7 +362,7 @@ class MusicIntervalTests: XCTestCase {
         let Ebb0 = MusicPitch(name: .e, accidental: .doubleFlat, octave: 0)
         do {
             let dim3 = try MusicInterval( direction: .upward, quality: .diminished, quantity: .third)
-            let destination = try dim3.destinationPitch(withRootPitch: C0)
+            let destination = try dim3.destinationPitch(from: C0)
             XCTAssertEqual(destination, Ebb0)
         } catch {
             XCTFail("\(error)")
@@ -372,7 +372,7 @@ class MusicIntervalTests: XCTestCase {
         let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
         do {
             let aug3 = try MusicInterval( direction: .upward, quality: .augmented, quantity: .third)
-            let destination = try aug3.destinationPitch(withRootPitch: C0)
+            let destination = try aug3.destinationPitch(from: C0)
             XCTAssertEqual(destination, Eis0)
         } catch {
             XCTFail("\(error)")
@@ -381,7 +381,7 @@ class MusicIntervalTests: XCTestCase {
         let Gx0 = MusicPitch(name: .g, accidental: .doubleSharp, octave: 0)
         do {
             let aug3 = try MusicInterval( direction: .upward, quality: .augmented, quantity: .third)
-            let destination = try aug3.destinationPitch(withRootPitch: E0)
+            let destination = try aug3.destinationPitch(from: E0)
 
             XCTAssertEqual(destination, Gx0)
         } catch {
@@ -391,7 +391,7 @@ class MusicIntervalTests: XCTestCase {
         let F0 = MusicPitch(name: .f, accidental: .natural, octave: 0)
         do {
             let P4 = try MusicInterval( direction: .upward, quality: .perfect, quantity: .fourth)
-            let destination = try P4.destinationPitch(withRootPitch: C0)
+            let destination = try P4.destinationPitch(from: C0)
 
             XCTAssertEqual(destination, F0)
         } catch {
@@ -401,7 +401,7 @@ class MusicIntervalTests: XCTestCase {
         let Fis0 = MusicPitch(name: .f, accidental: .sharp, octave: 0)
         do {
             let aug4 = try MusicInterval( direction: .upward, quality: .augmented, quantity: .fourth)
-            let destination = try aug4.destinationPitch(withRootPitch: C0)
+            let destination = try aug4.destinationPitch(from: C0)
 
             XCTAssertEqual(destination, Fis0)
         } catch {
@@ -425,7 +425,7 @@ class MusicIntervalTests: XCTestCase {
 
         do {
             let badInterval = try MusicInterval( direction: .upward, quality: .major, quantity: .third)
-            let _ = try badInterval.destinationPitch(withRootPitch: Dx0)
+            let _ = try badInterval.destinationPitch(from: Dx0)
             XCTFail("\(badInterval)")
         } catch MusicIntervalError.CouldNotComputeDestniationPitch(quality: let quality, quantity: let quantity, direction: let direction, let rootPitch) {
             XCTAssertEqual(quality, .major)

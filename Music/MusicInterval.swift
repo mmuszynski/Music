@@ -210,7 +210,7 @@ public struct MusicInterval {
     /// - Parameter root: `MusicPitch` defining the root of the interval
     /// - Returns: `MusicPitch` that defined by the destination of the `MusicInterval`
     /// - Throws: `MusicIntervalError` if unable to compute a destination pitch
-    public func destinationPitch(withRootPitch root: MusicPitch) throws -> MusicPitch {
+    public func destinationPitch(from root: MusicPitch) throws -> MusicPitch {
         var (offset, ehm) = try MusicInterval.offsetAndEnharnomicModifier(withQuality: quality, quantity: quantity)
         if direction == .downward {
             offset = -offset
