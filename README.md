@@ -8,6 +8,9 @@
 * MusicRhythm - A rhythm with a given duration
 * MusicInterval - The distance between two given notes
 
+### MusicCollection Protocol ###
+Defines
+
 ### Collection Objects (see: MusicPitchCollection protocol) ###
 * MusicChord - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitches
 * MusicScale - A collection of MusicPitches, defined by a root MusicPitch and the MusicIntervals used to describe the distance to the next pitch
