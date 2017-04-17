@@ -1,5 +1,5 @@
 //
-//  MusicClefType.swift
+//  MusicClef.swift
 //  Music
 //
 //  Created by Mike Muszynski on 1/8/17.
@@ -12,26 +12,26 @@ import Foundation
 ///
 ///The five lines in a musical staff are meaningless without reference to a clef. Over the evolution of western music, clefs organized themselves into three distinct types, the C Clef (most commonly associated with alto and tenor clefs), the G Clef (most commonly associated with treble clef) and the F Clef (most commonly associated with bass clef).
 ///
-///However, these three clefs represent three categories under which most other clefs can be described. These clefs are represented as cases of the enum. Other, more useful clefs are represented as static functions (see `MusicClefType.treble`, `MusicClefType.bass`, etc)
-public enum MusicClefType {
+///However, these three clefs represent three categories under which most other clefs can be described. These clefs are represented as cases of the enum. Other, more useful clefs are represented as static functions (see `MusicClef.treble`, `MusicClef.bass`, etc)
+public enum MusicClef {
     case cClef(offset: Int)
     case fClef(offset: Int)
     case gClef(offset: Int)
     
-    public static var treble: MusicClefType {
-        return MusicClefType.gClef(offset: -2)
+    public static var treble: MusicClef {
+        return MusicClef.gClef(offset: -2)
     }
     
-    public static var alto: MusicClefType {
-        return MusicClefType.cClef(offset: 0)
+    public static var alto: MusicClef {
+        return MusicClef.cClef(offset: 0)
     }
     
-    public static var tenor: MusicClefType {
-        return MusicClefType.cClef(offset: 2)
+    public static var tenor: MusicClef {
+        return MusicClef.cClef(offset: 2)
     }
     
-    public static var bass: MusicClefType {
-        return MusicClefType.fClef(offset: 2)
+    public static var bass: MusicClef {
+        return MusicClef.fClef(offset: 2)
     }
     
     var referencePitch: MusicPitch {
@@ -58,7 +58,7 @@ public enum MusicClefType {
             clefOffset = offset
         }
         
-        return MusicClefType.pitch(from: self.referencePitch, offset: -clefOffset)
+        return MusicClef.pitch(from: self.referencePitch, offset: -clefOffset)
     }
     
     ///Calculates a pitch that is offset by a number of staff places from another pitch
@@ -81,7 +81,7 @@ public enum MusicClefType {
     
     ///Calculates a pitch that is offset by a number of staff places from the `centerLinePitch` for this clef.
     func pitch(forOffset offset: Int, accidental: MusicPitchAccidental = .none) -> MusicPitch {
-        return MusicClefType.pitch(from: self.centerLinePitch, offset: offset, accidental: accidental)
+        return MusicClef.pitch(from: self.centerLinePitch, offset: offset, accidental: accidental)
     }
     
     ///Calculates the offset for a pitch the current clef

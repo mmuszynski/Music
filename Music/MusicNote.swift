@@ -8,21 +8,10 @@
 
 import Foundation
 
-public enum MusicNoteLength {
-    case breve
-    case whole
-    case half
-    case quarter
-    case eighth
-    case sixteenth
-    case thirtySecond
-    case sixtyFourth
-}
-
-public class MusicNote: Hashable {
+public struct MusicNote: Hashable {
     
     public var pitch: MusicPitch
-    public var length : MusicNoteLength = .quarter
+    public var rhythm: MusicRhythm = .quarter
     
     ///Accidental of the note's pitch.
     public var accidental: MusicPitchAccidental {
@@ -54,20 +43,10 @@ public class MusicNote: Hashable {
         }
     }
     
-    public required init(pitch: MusicPitch, length: MusicNoteLength) {
-        self.pitch = pitch
-        self.length = length
-    }
-    
-    public required init(name: MusicPitchName, accidental: MusicPitchAccidental, length: MusicNoteLength, octave: Int) {
-        self.pitch = MusicPitch(name: name, accidental: accidental, octave: octave)
-        self.length = length
-    }
-    
     private func isEquivalent(to note: MusicNote) -> Bool {
         if self.pitch != note.pitch {
             return false
-        } else if self.length != note.length {
+        } else if self.rhythm != note.rhythm {
             return false
         }
         
@@ -80,7 +59,7 @@ public class MusicNote: Hashable {
     
     //Hashable
     public var hashValue: Int {
-        return self.pitch.hashValue ^ self.length.hashValue
+        return self.pitch.hashValue ^ self.rhythm.hashValue
     }
     
     //Equatable

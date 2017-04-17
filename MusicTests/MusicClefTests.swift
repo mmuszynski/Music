@@ -12,7 +12,7 @@ import XCTest
 class MusicClefTests: XCTestCase {
     
     func testClefOffset() {
-        let bassClef = MusicClefType.bass
+        let bassClef = MusicClef.bass
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a] as [MusicPitchName] {
                 let offset = -22 + pitch.rawValue + 7 * octave
@@ -23,7 +23,7 @@ class MusicClefTests: XCTestCase {
     }
     
     func testCleffOffsetAlto() {
-        let altoClef = MusicClefType.alto
+        let altoClef = MusicClef.alto
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
                 let offset = -28 + pitch.rawValue + 7 * octave
@@ -35,7 +35,7 @@ class MusicClefTests: XCTestCase {
     }
     
     func testClefOffsetTreble() {
-        let trebleClef = MusicClefType.treble
+        let trebleClef = MusicClef.treble
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
                 let offset = -34 + pitch.rawValue + 7 * octave
@@ -48,7 +48,7 @@ class MusicClefTests: XCTestCase {
     }
     
     func testClefOffsetTenor() {
-        let tenor = MusicClefType.tenor
+        let tenor = MusicClef.tenor
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
                 let offset = -26 + pitch.rawValue + 7 * octave
@@ -61,7 +61,7 @@ class MusicClefTests: XCTestCase {
     }
     
     func testGenericClefBaritone() {
-        let baritoneClef = MusicClefType.cClef(offset: 4)
+        let baritoneClef = MusicClef.cClef(offset: 4)
         for octave in 0...8 {
             for pitch in [.c, .d, .e, .f, .g, .a, .b] as [MusicPitchName] {
                 let offset = -24 + pitch.rawValue + 7 * octave

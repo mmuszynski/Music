@@ -11,34 +11,34 @@ import XCTest
 
 class MusicRhythmTests: XCTestCase {
     
-    func testMusicRhythmLengths() {
+    func testMusicRhythms() {
         let duration64 = 1
-        XCTAssertEqual(MusicRhythmLength.sixtyfourth.duration, duration64)
+        XCTAssertEqual(MusicRhythm.sixtyfourth.duration, duration64)
         let duration32 = 2
-        XCTAssertEqual(MusicRhythmLength.thirtysecond.duration, duration32)
+        XCTAssertEqual(MusicRhythm.thirtysecond.duration, duration32)
         let duration16 = 4
-        XCTAssertEqual(MusicRhythmLength.sixteenth.duration, duration16)
+        XCTAssertEqual(MusicRhythm.sixteenth.duration, duration16)
         let duration8 = 8
-        XCTAssertEqual(MusicRhythmLength.eighth.duration, duration8)
+        XCTAssertEqual(MusicRhythm.eighth.duration, duration8)
         let duration4 = 16
-        XCTAssertEqual(MusicRhythmLength.quarter.duration, duration4)
+        XCTAssertEqual(MusicRhythm.quarter.duration, duration4)
         let duration2 = 32
-        XCTAssertEqual(MusicRhythmLength.half.duration, duration2)
+        XCTAssertEqual(MusicRhythm.half.duration, duration2)
         let duration1 = 64
-        XCTAssertEqual(MusicRhythmLength.whole.duration, duration1)
+        XCTAssertEqual(MusicRhythm.whole.duration, duration1)
         let duration0 = 128
-        XCTAssertEqual(MusicRhythmLength.breve.duration, duration0)
+        XCTAssertEqual(MusicRhythm.breve.duration, duration0)
         
         let durationDotted32 = 3
-        XCTAssertEqual(MusicRhythmLength.dotted(length: .thirtysecond).duration, durationDotted32)
+        XCTAssertEqual(MusicRhythm.dotted(length: .thirtysecond).duration, durationDotted32)
         
-        let durationDoubleDottedQuarter = MusicRhythmLength.quarter.duration * 7 / 4
-        XCTAssertEqual(MusicRhythmLength.dotted(length: .dotted(length: .quarter)).duration, durationDoubleDottedQuarter)
+        let durationDoubleDottedQuarter = MusicRhythm.quarter.duration * 7 / 4
+        XCTAssertEqual(MusicRhythm.dotted(length: .dotted(length: .quarter)).duration, durationDoubleDottedQuarter)
         
-        let durationDoubleDottedQuarterPlusSixteenth = MusicRhythmLength.dotted(length: .dotted(length: .quarter)).duration + MusicRhythmLength.sixteenth.duration
+        let durationDoubleDottedQuarterPlusSixteenth = MusicRhythm.dotted(length: .dotted(length: .quarter)).duration + MusicRhythm.sixteenth.duration
         XCTAssertEqual(duration2, durationDoubleDottedQuarterPlusSixteenth)
         
-        let durationDottedQuarterEighth = MusicRhythmLength.dotted(length: .quarter).duration + MusicRhythmLength.eighth.duration
+        let durationDottedQuarterEighth = MusicRhythm.dotted(length: .quarter).duration + MusicRhythm.eighth.duration
         XCTAssertEqual(durationDottedQuarterEighth, duration2)
     }
     

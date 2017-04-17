@@ -21,7 +21,7 @@ enum MusicScaleDirection {
 
 /// A `Collection` type that describes the pitches of a given `MusicScaleMode`.
 ///
-/// Musical scales lend themselves to a collection-type, acting as an immutable array of `MusicNote` objects.
+/// Musical scales lend themselves to a collection-type, acting as an immutable array of `MusicPitch` objects.
 public struct MusicScale: MusicPitchCollection {
     internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
@@ -29,7 +29,7 @@ public struct MusicScale: MusicPitchCollection {
     /// Initializes a `MusicScale`.
     ///
     /// - Parameters:
-    ///   - root: The root `MusicNote` that the scale is built on
+    ///   - root: The root `MusicPitch` that the scale is built on
     ///   - mode: The `MusicScaleMode` that defines the scale
     ///   - direction: A `MusicScaleDirection` defining the direction of the scale (e.g. up, down, both). Defaults to upward.
     ///
