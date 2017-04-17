@@ -38,6 +38,21 @@ public enum MusicIntervalQuality {
             return nil
         }
     }
+    
+    var complement: MusicIntervalQuality {
+        switch self {
+        case .perfect:
+            return .perfect
+        case .augmented:
+            return .diminished
+        case .diminished:
+            return .augmented
+        case .major:
+            return .minor
+        case .minor:
+            return .major
+        }
+    }
 }
 
 extension MusicIntervalQuality: CustomStringConvertible, CustomDebugStringConvertible {

@@ -64,6 +64,8 @@ MusicInterval is the backbone of the MusicTransposable protocol, as it does comp
 * Functions
     - Computes destination pitch from a root pitch
     - Initializable from a range of pitches
+    - Can be musically inverted (giving the complement that completes the octave)
+    - Can be reversed (as if the root and destination are swapped)
 #### Example Usage ####
 ```swift
 let majorThird = MusicInterval(direction: .upward, quality: .major, quantity: .third)
@@ -71,6 +73,9 @@ let c0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
 let e0 = majorThird.destinationPitch(from: c0)
 let alsoMajorThird = MusicInterval(rootPitch: c0, destinationPitch: e0)
 ```
+
+### MusicScale ###
+### MusicChord ###
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms

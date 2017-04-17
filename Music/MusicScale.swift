@@ -34,14 +34,16 @@ public struct MusicScale: MusicPitchCollection {
     ///   - direction: A `MusicScaleDirection` defining the direction of the scale (e.g. up, down, both). Defaults to upward.
     ///
     /// - note: By definition, `MusicScale` includes two octaves of the root note
-    init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .up) throws {
+    init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .circular) throws {
         switch direction {
         case .up:
             pitches = try mode.upwardPitches(from: root)
         case .down:
             pitches = try mode.downwardPitches(from: root)
         case .circular:
-            pitches = try mode.pitches(from: root)
+            let upward = try mode.upwardPitches(from: root)[0..<mode.upwardIntervalDescription.count]
+            let downward = try mode.downwardPitches(from: root)
+            pitches = upward + downward
         }
     }
     

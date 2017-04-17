@@ -482,4 +482,11 @@ class MusicIntervalTests: XCTestCase {
         compound.invert()
         XCTAssertEqual(minorSixth, compound)
     }
+    
+    func testReversal() {
+        let majorThird = try! MusicPitch.C0..<MusicPitch.E0
+        let minorThird = try! MusicPitch.E0..<MusicPitch.C0
+        let otherMajorThird = minorThird.reversed
+        XCTAssertEqual(majorThird, otherMajorThird)
+    }
 }

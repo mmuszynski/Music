@@ -18,55 +18,39 @@ enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentableDirec
         switch self {
         case .major:
             return [(.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third),
+                    (.upward, .perfect, .fourth),
+                    (.upward, .perfect, .fifth),
+                    (.upward, .major, .sixth),
+                    (.upward, .major, .seventh),
+                    (.upward, .perfect, .octave)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .harmonicMinor:
-            return [(.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .augmented, .second),
-                    (.upward, .minor, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+            var alteredMajor = MusicScaleMode.major.upwardIntervalDescription
+            alteredMajor[1] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .third)
+            alteredMajor[4] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .sixth)
+            return alteredMajor
         case .naturalMinor:
-            return [(.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+            var altered = MusicScaleMode.harmonicMinor.upwardIntervalDescription
+            altered[5] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .seventh)
+            return altered
         case .melodicMinor:
-            return [(.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .second),
-                    (.downward, .major, .second),
-                    (.downward, .major, .second),
-                    (.downward, .minor, .second),
-                    (.downward, .major, .second),
-                    (.downward, .major, .second),
-                    (.downward, .minor, .second),
-                    (.downward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+            var alteredMajor = MusicScaleMode.major.upwardIntervalDescription
+            alteredMajor[1] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .third)
+            return alteredMajor
         case .majorPentatonic:
             return [(.upward, .major, .second),
-                    (.upward, .major, .second),
-                    (.upward, .minor, .third),
-                    (.upward, .major, .second)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .third),
+                    (.upward, .perfect, .fifth),
+                    (.upward, .major, .sixth)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         }
     }
     
     var downwardIntervalDescription: [MusicInterval] {
-        return self.upwardIntervalDescription.reversed().map({
-            interval -> MusicInterval in
-            return try! MusicInterval(direction: .downward, quality: interval.quality, quantity: interval.quantity)
-        })
+        switch self {
+        case .melodicMinor:
+            return MusicScaleMode.naturalMinor.downwardIntervalDescription
+        default:
+            return self.upwardIntervalDescription.reversed()
+        }
     }
 }

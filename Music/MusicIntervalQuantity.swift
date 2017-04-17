@@ -72,6 +72,29 @@ public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringCon
         }
     }
     
+    var complement: MusicIntervalQuantity {
+        switch self {
+        case.unison:
+            return .octave
+        case .second:
+            return .seventh
+        case .third:
+            return .sixth
+        case .fourth:
+            return .fifth
+        case .fifth:
+            return .fourth
+        case .sixth:
+            return .third
+        case .seventh:
+            return .second
+        case .octave:
+            return .unison
+        case .compound(_, let quantity):
+            return quantity.complement
+        }
+    }
+
     var isPerfectType: Bool {
         let raw = self.rawValue % 7
         return raw == 0 || raw == 3 || raw == 4

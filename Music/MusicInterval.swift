@@ -175,40 +175,8 @@ public struct MusicInterval {
             self.quantity = quantity
         }
         
-        switch self.quality {
-        case .augmented:
-            self.quality = .diminished
-        case .diminished:
-            self.quality = .augmented
-        case .major:
-            self.quality = .minor
-        case .minor:
-            self.quality = .major
-        case .perfect:
-            break
-        }
-        
-        switch self.quantity {
-        case.unison:
-            break
-        case .second:
-            self.quantity = .seventh
-        case .third:
-            self.quantity = .sixth
-        case .fourth:
-            self.quantity = .fifth
-        case .fifth:
-            self.quantity = .fourth
-        case .sixth:
-            self.quantity = .third
-        case .seventh:
-            self.quantity = .second
-        case .octave:
-            self.quantity = .unison
-        case .compound(_, let quantity):
-            self.quantity = quantity
-            self.invert()
-        }
+        self.quality = self.quality.complement
+        self.quantity = self.quantity.complement
     }
     
     /// Provides the inverted form of the interval as a new object.
@@ -218,6 +186,16 @@ public struct MusicInterval {
         return other
     }
     
+    /// Provides the reverse of the interval, or the interval if the root and destination notes are switched.
+    mutating public func reverse() {
+        self.direction = self.direction == .upward ? .downward : .upward
+    }
+    
+    public var reversed: MusicInterval {
+        var other = self
+        other.reverse()
+        return other
+    }
     
     
     //INITIALIZERS

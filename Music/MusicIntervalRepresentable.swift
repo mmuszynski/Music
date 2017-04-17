@@ -35,8 +35,7 @@ public extension MusicIntervalRepresentable {
     func pitches(from root: MusicPitch) throws -> [MusicPitch] {
         var pitches = [root]
         for interval in intervalDescription {
-            let lastPitch = pitches.last!
-            let nextPitch = try interval.destinationPitch(from: lastPitch)
+            let nextPitch = try interval.destinationPitch(from: root)
             pitches.append(nextPitch)
         }
         return pitches
@@ -45,20 +44,19 @@ public extension MusicIntervalRepresentable {
 
 public extension MusicIntervalRepresentableDirectional {
     func downwardPitches(from root: MusicPitch) throws -> [MusicPitch] {
-        var pitches = [root]
+        var pitches = [MusicPitch]()
         for interval in downwardIntervalDescription {
-            let lastPitch = pitches.last!
-            let nextPitch = try interval.destinationPitch(from: lastPitch)
+            let nextPitch = try interval.destinationPitch(from: root)
             pitches.append(nextPitch)
         }
+        pitches.append(root)
         return pitches
     }
     
     func upwardPitches(from root: MusicPitch) throws -> [MusicPitch] {
         var pitches = [root]
         for interval in upwardIntervalDescription {
-            let lastPitch = pitches.last!
-            let nextPitch = try interval.destinationPitch(from: lastPitch)
+            let nextPitch = try interval.destinationPitch(from: root)
             pitches.append(nextPitch)
         }
         return pitches
