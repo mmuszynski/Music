@@ -10,7 +10,7 @@ import Foundation
 
 public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringConvertible {
     case unison, second, third, fourth, fifth, sixth, seventh, octave
-    indirect case generic(octave: Int, plusQuantity: MusicIntervalQuantity)
+    indirect case compound(octaves: Int, plusQuantity: MusicIntervalQuantity)
     
     public init(rawValue: Int) {
         switch abs(rawValue) {
@@ -33,7 +33,7 @@ public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringCon
         default:
             let octave = abs(rawValue) / 7
             let quantity = abs(rawValue) % 7
-            self = .generic(octave: octave, plusQuantity: MusicIntervalQuantity(rawValue: quantity))
+            self = .compound(octaves: octave, plusQuantity: MusicIntervalQuantity(rawValue: quantity))
         }
     }
     
@@ -58,13 +58,13 @@ public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringCon
             return 6
         case .octave:
             return 7
-        case .generic(let octave, let quantity):
+        case .compound(let octave, let quantity):
             guard octave >= 0 else {
                 fatalError()
             }
             
             switch quantity {
-            case .generic(_, _):
+            case .compound(_, _):
                 fatalError()
             default:
                 return octave * 7 + quantity.rawValue
@@ -97,13 +97,13 @@ public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringCon
             return 11
         case .octave:
             return 12
-        case .generic(let octave, let quantity):
+        case .compound(let octave, let quantity):
             guard octave >= 0 else {
                 fatalError()
             }
             
             switch quantity {
-            case .generic(_, _):
+            case .compound(_, _):
                 fatalError()
             default:
                 return octave * 12 + quantity.modifier
@@ -129,7 +129,7 @@ public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringCon
             return "seventh"
         case .octave:
             return "octave"
-        case .generic(let octave, let quantity):
+        case .compound(let octave, let quantity):
             return "\(octave) octave" + (octave > 1 ? "s" : "") + " plus " + quantity.description
         }
     }
@@ -159,7 +159,7 @@ extension MusicIntervalQuantity: Equatable {
             return true
         case (.octave, .octave):
             return true
-        case (let .generic(x1, y1), let .generic(x2, y2)):
+        case (let .compound(x1, y1), let .compound(x2, y2)):
             return x1 == x2 && y1 == y2
         default:
             return false

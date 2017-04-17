@@ -11,7 +11,6 @@ import Foundation
 ///Default implementation for transposing a music pitch.
 extension MusicPitch: MusicTransposable {
     public func transposed(by interval: MusicInterval) throws -> MusicPitch {
-        let interval = try MusicInterval(direction: interval.direction, quality: interval.quality, quantity: interval.quantity)
         return try interval.destinationPitch(from: self)
     }
 }

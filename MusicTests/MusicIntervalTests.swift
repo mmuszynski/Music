@@ -9,11 +9,29 @@
 import XCTest
 @testable import Music
 
+extension MusicPitch {
+    fileprivate static var C0: MusicPitch {
+        return MusicPitch(name: .c, accidental: .natural, octave: 0)
+    }
+    fileprivate static var E0: MusicPitch {
+        return MusicPitch(name: .e, accidental: .natural, octave: 0)
+    }
+    
+    fileprivate var nextOctave: MusicPitch {
+        let octave = try! MusicInterval(direction: .upward, quality: .perfect, quantity: .octave)
+        return try! self.transposed(by: octave)
+    }
+    
+    fileprivate static func ..<(lhs: MusicPitch, rhs: MusicPitch) throws -> MusicInterval {
+        return try MusicInterval(rootPitch: lhs, destinationPitch: rhs)
+    }
+}
+
 class MusicIntervalTests: XCTestCase {
     
     func testIntervalsUnisons() {
         //unison
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let CSharp0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
         let Cflat1 = MusicPitch(name: .c, accidental: .flat, octave: 1)
 
@@ -50,7 +68,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testDownwardUnision() {
-        let c0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let c0 = MusicPitch.C0
         let cb0 = MusicPitch(name: .c, accidental: .flat, octave: 0)
         do {
             let augmentedUnison = try MusicInterval(rootPitch: c0, destinationPitch: cb0)
@@ -63,7 +81,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testIntervalsSeconds() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
         let Db0 = MusicPitch(name: .d, accidental: .flat, octave: 0)
         let Dsharp0 = MusicPitch(name: .d, accidental: .sharp, octave: 0)
@@ -97,7 +115,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testDownwardSecond() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
         
         do {
@@ -111,10 +129,10 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testThirds() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let Ebb0 = MusicPitch(name: .e, accidental: .doubleFlat, octave: 0)
         let Eb0 = MusicPitch(name: .e, accidental: .flat, octave: 0)
-        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let E0 = MusicPitch.E0
         let Es0 = MusicPitch(name: .e, accidental: .sharp, octave: 0)
         
         do {
@@ -143,7 +161,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testFourths() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let F0 = MusicPitch(name: .f, accidental: .natural, octave: 0)
         let Fs0 = MusicPitch(name: .f, accidental: .sharp, octave: 0)
         let Fb0 = MusicPitch(name: .f, accidental: .flat, octave: 0)
@@ -169,7 +187,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testFifths() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let G0 = MusicPitch(name: .g, accidental: .natural, octave: 0)
         let Gs0 = MusicPitch(name: .g, accidental: .sharp, octave: 0)
         let Gb0 = MusicPitch(name: .g, accidental: .flat, octave: 0)
@@ -195,7 +213,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testSixths() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let A0 = MusicPitch(name: .a, accidental: .natural, octave: 0)
         let As0 = MusicPitch(name: .a, accidental: .sharp, octave: 0)
         let Ab0 = MusicPitch(name: .a, accidental: .flat, octave: 0)
@@ -227,7 +245,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testSevenths() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let B0 = MusicPitch(name: .b, accidental: .natural, octave: 0)
         let Bs0 = MusicPitch(name: .b, accidental: .sharp, octave: 0)
         let Bb0 = MusicPitch(name: .b, accidental: .flat, octave: 0)
@@ -259,7 +277,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testOctaves() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let C1 = MusicPitch(name: .c, accidental: .natural, octave: 1)
         let Cs1 = MusicPitch(name: .c, accidental: .sharp, octave: 1)
         let Cb1 = MusicPitch(name: .c, accidental: .flat, octave: 1)
@@ -285,7 +303,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testGenericIntervals() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let C2 = MusicPitch(name: .c, accidental: .natural, octave: 2)
         let Cs2 = MusicPitch(name: .c, accidental: .sharp, octave: 2)
         let Cb2 = MusicPitch(name: .c, accidental: .flat, octave: 2)
@@ -294,17 +312,17 @@ class MusicIntervalTests: XCTestCase {
             let perfect = try MusicInterval(rootPitch: C0, destinationPitch: C2)
             XCTAssertEqual(perfect.halfStepDistance, 24)
             XCTAssertEqual(perfect.quality, MusicIntervalQuality.perfect)
-            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.generic(octave: 2, plusQuantity: .unison))
+            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.compound(octaves: 2, plusQuantity: .unison))
             
             let diminished = try MusicInterval(rootPitch: C0, destinationPitch: Cb2)
             XCTAssertEqual(diminished.halfStepDistance, 23)
             XCTAssertEqual(diminished.quality, MusicIntervalQuality.diminished)
-            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.generic(octave: 2, plusQuantity: .unison))
+            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.compound(octaves: 2, plusQuantity: .unison))
             
             let augmented = try MusicInterval(rootPitch: C0, destinationPitch: Cs2)
             XCTAssertEqual(augmented.halfStepDistance, 25)
             XCTAssertEqual(augmented.quality, MusicIntervalQuality.augmented)
-            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.generic(octave: 2, plusQuantity: .unison))
+            XCTAssertEqual(perfect.quantity, MusicIntervalQuantity.compound(octaves: 2, plusQuantity: .unison))
         } catch {
             XCTFail("\(error) should not be generated")
         }
@@ -319,16 +337,16 @@ class MusicIntervalTests: XCTestCase {
         XCTAssert(!MusicIntervalQuantity.sixth.isPerfectType)
         XCTAssert(!MusicIntervalQuantity.seventh.isPerfectType)
         XCTAssert(MusicIntervalQuantity.octave.isPerfectType)
-        XCTAssert(MusicIntervalQuantity.generic(octave: 0, plusQuantity: .fifth).isPerfectType)
-        XCTAssert(MusicIntervalQuantity.generic(octave: 0, plusQuantity: .unison).isPerfectType)
-        XCTAssert(MusicIntervalQuantity.generic(octave: 2, plusQuantity: .fifth).isPerfectType)
-        XCTAssert(MusicIntervalQuantity.generic(octave: 1, plusQuantity: .fifth).isPerfectType)
+        XCTAssert(MusicIntervalQuantity.compound(octaves: 0, plusQuantity: .fifth).isPerfectType)
+        XCTAssert(MusicIntervalQuantity.compound(octaves: 0, plusQuantity: .unison).isPerfectType)
+        XCTAssert(MusicIntervalQuantity.compound(octaves: 2, plusQuantity: .fifth).isPerfectType)
+        XCTAssert(MusicIntervalQuantity.compound(octaves: 1, plusQuantity: .fifth).isPerfectType)
     }
     
     func testPerformance() {
         
         func createIntervals() {
-            let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+            let C0 = MusicPitch.C0
             let CSharp0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
             let _ = try! MusicInterval(rootPitch: C0, destinationPitch: C0)
             let _ = try! MusicInterval(rootPitch: C0, destinationPitch: CSharp0)
@@ -338,7 +356,7 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testIntervalFromQualityQuantity() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let D0 = MusicPitch(name: .d, accidental: .natural, octave: 0)
         do {
             let majorSecond = try MusicInterval(direction: .upward, quality: .major, quantity: .second)
@@ -369,7 +387,7 @@ class MusicIntervalTests: XCTestCase {
         }
         
         let Eis0 = MusicPitch(name: .e, accidental: .sharp, octave: 0)
-        let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+        let E0 = MusicPitch.E0
         do {
             let aug3 = try MusicInterval( direction: .upward, quality: .augmented, quantity: .third)
             let destination = try aug3.destinationPitch(from: C0)
@@ -438,11 +456,30 @@ class MusicIntervalTests: XCTestCase {
     }
     
     func testDirectionOnCreatedInterval() {
-        let C0 = MusicPitch(name: .c, accidental: .natural, octave: 0)
+        let C0 = MusicPitch.C0
         let Cis0 = MusicPitch(name: .c, accidental: .sharp, octave: 0)
         let upward = try! MusicInterval(rootPitch: C0, destinationPitch: Cis0)
         let downward = try! MusicInterval(rootPitch: Cis0, destinationPitch: C0)
         XCTAssertEqual(upward.direction, .upward)
         XCTAssertEqual(downward.direction, .downward)
+    }
+    
+    func testIntervalInversion() {
+        let C0 = MusicPitch.C0
+        let E0 = MusicPitch.E0
+        let C1 = C0.nextOctave
+        let E1 = E0.nextOctave
+        
+        let majorThird = try! MusicInterval(rootPitch: C0, destinationPitch: E0)
+        let minorSixth = try! MusicInterval(rootPitch: E0, destinationPitch: C1)
+        var otherMinorSixth = majorThird.inverted
+        
+        XCTAssertEqual(minorSixth, otherMinorSixth)
+        otherMinorSixth.invert()
+        XCTAssertEqual(otherMinorSixth, majorThird)
+        
+        var compound = try! C0..<E1
+        compound.invert()
+        XCTAssertEqual(minorSixth, compound)
     }
 }

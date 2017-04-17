@@ -128,7 +128,7 @@ public struct MusicInterval {
                 quality = .augmented
             }
         default:
-            throw MusicIntervalError.undefined(reason: "\(#line)")
+            fatalError()
         }
         
         return (quality, quantity)
@@ -158,6 +158,67 @@ public struct MusicInterval {
         
         return (offset: quantity.rawValue, modifier: modifier)
     }
+    
+    /// Converts the interval into its musically inverted form.
+    ///
+    /// Generally, when inverting a musical interval, the root note is moved an octave higher (or lower in terms of downward intervals) and the functions of the two notes are switched. An interval and its inverse, when stacked, form an octave.
+    ///
+    /// For example, C0 to E0 is represented by an interval of a Major Third. When inverted, E0 to C1 is represented by an interval of a Minor Sixth.
+    ///
+    /// In terms of quality, Minor intervals invert into Major (and vice versa), Diminished invert into Augmented (and vice versa), and Perfect remain the same.
+    ///
+    /// For quantity, Seconds become Sevenths, Thirds become Sixths, and Fourths become Fifths. As with quality, these are also reversible.
+    ///
+    /// Finally, by definition, compound intervals take the inversion of their non-compound part.
+    mutating public func invert() {
+        if case .compound(_, let quantity) = self.quantity {
+            self.quantity = quantity
+        }
+        
+        switch self.quality {
+        case .augmented:
+            self.quality = .diminished
+        case .diminished:
+            self.quality = .augmented
+        case .major:
+            self.quality = .minor
+        case .minor:
+            self.quality = .major
+        case .perfect:
+            break
+        }
+        
+        switch self.quantity {
+        case.unison:
+            break
+        case .second:
+            self.quantity = .seventh
+        case .third:
+            self.quantity = .sixth
+        case .fourth:
+            self.quantity = .fifth
+        case .fifth:
+            self.quantity = .fourth
+        case .sixth:
+            self.quantity = .third
+        case .seventh:
+            self.quantity = .second
+        case .octave:
+            self.quantity = .unison
+        case .compound(_, let quantity):
+            self.quantity = quantity
+            self.invert()
+        }
+    }
+    
+    /// Provides the inverted form of the interval as a new object.
+    public var inverted: MusicInterval {
+        var other = self
+        other.invert()
+        return other
+    }
+    
+    
     
     //INITIALIZERS
     ///Initializes an interval from a root pitch and a destination pitch.
