@@ -15,7 +15,7 @@ import Foundation
 /// - up: The upward direction
 /// - down: The downward direction
 /// - circular: Both upward and downward directions
-enum MusicScaleDirection {
+public enum MusicScaleDirection {
     case up, down, circular
 }
 
@@ -34,7 +34,7 @@ public struct MusicScale: MusicPitchCollection {
     ///   - direction: A `MusicScaleDirection` defining the direction of the scale (e.g. up, down, both). Defaults to upward.
     ///
     /// - note: By definition, `MusicScale` includes two octaves of the root note
-    init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .circular) throws {
+    public init(root: _Element, mode: MusicScaleMode, direction: MusicScaleDirection = .circular) throws {
         switch direction {
         case .up:
             pitches = try mode.upwardPitches(from: root)

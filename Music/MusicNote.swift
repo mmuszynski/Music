@@ -13,6 +13,16 @@ public struct MusicNote: Hashable {
     public var pitch: MusicPitch
     public var rhythm: MusicRhythm = .quarter
     
+    public init(pitch: MusicPitch, rhythm: MusicRhythm) {
+        self.pitch = pitch
+        self.rhythm = rhythm
+    }
+    
+    public init(pitchName: MusicPitchName, accidental: MusicPitchAccidental, octave: Int, rhythm: MusicRhythm) {
+        let pitch = MusicPitch(name: pitchName, accidental: accidental, octave: octave)
+        self.init(pitch: pitch, rhythm: rhythm)
+    }
+    
     ///Accidental of the note's pitch.
     public var accidental: MusicPitchAccidental {
         get {

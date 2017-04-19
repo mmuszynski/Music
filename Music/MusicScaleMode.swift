@@ -11,10 +11,10 @@ import Foundation
 ///Describes the mode of a music scale.
 ///
 ///A musical scale can be defined by its mode, which describes the relationships between the notes of the scale. For example, a major scale's pattern of half and whole steps (WWHWWWH) provides the blueprint for any major scale starting on any given note. These scales will all sound the same, only with different starting pitches.=
-enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentableDirectional {
+public enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentableDirectional {
     case major, harmonicMinor, naturalMinor, melodicMinor, majorPentatonic
     
-    var upwardIntervalDescription: [MusicInterval] {
+    public var upwardIntervalDescription: [MusicInterval] {
         switch self {
         case .major:
             return [(.upward, .major, .second),
@@ -45,7 +45,7 @@ enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentableDirec
         }
     }
     
-    var downwardIntervalDescription: [MusicInterval] {
+    public var downwardIntervalDescription: [MusicInterval] {
         switch self {
         case .melodicMinor:
             return MusicScaleMode.naturalMinor.downwardIntervalDescription
