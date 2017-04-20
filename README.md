@@ -6,7 +6,7 @@
 * **MusicRhythm** - A rhythm with a given duration
 * **MusicInterval** - The distance between two given notes
 
-### MusicCollection Protocol ###
+### MusicPitchCollection Protocol ###
 Defines a protocol to be apllied to a collection of MusicPitch objects. The only requirement is that the object contains an Array of MusicPitch objects called "pitches". Further functionality, such as enumeration or indexing, is inferred through a default extension of the protocol, but can be overridden if necessary (See also: MusicTransposable).
 
 The following types adopt MusicCollection, as they represent collections of notes:
@@ -75,7 +75,22 @@ let alsoMajorThird = MusicInterval(rootPitch: c0, destinationPitch: e0)
 ```
 
 ### MusicScale ###
+A MusicScale is a type of MusicPitchCollection that uses a root pitch and a scale mode to create a collection of pitches. Note that this collection is also transposable by default, as MusicPitchCollection adopts MusicTransposable by default.
+#### Example Usage ####
+```swift
+let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+let EMajor = MusicScale(root: E0, mode: MusicScaleMode.major, direction: MusicScaleDirection.upward)
+//[E0, F#0, G#0, A0, B0, C#1, D#, E1]
+```
+
 ### MusicChord ###
+A MusicScale is a type of MusicPitchCollection that uses a root pitch and a chord type to create a collection of pitches. Note that this collection is also transposable by default, as MusicPitchCollection adopts MusicTransposable by default.
+#### Example Usage ####
+```swift
+let E0 = MusicPitch(name: .e, accidental: .natural, octave: 0)
+let EMajor = MusicChord(root: E0, type: MusicChordType.major)
+//[E0, G#0, B0]
+```
 
 ## Further goals ##
 * Integration with MusicStaffView for the display of pitches and rhythms
