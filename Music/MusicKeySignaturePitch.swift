@@ -9,8 +9,8 @@
 import Foundation
 
 public struct MusicKeySignaturePitch: Equatable {
-    var name: MusicPitchName
-    var accidental: MusicPitchAccidental
+    public var name: MusicPitchName
+    public var accidental: MusicPitchAccidental
     
     public static func ==(lhs: MusicKeySignaturePitch, rhs: MusicKeySignaturePitch) -> Bool {
         return lhs.name == rhs.name && lhs.accidental == rhs.accidental
