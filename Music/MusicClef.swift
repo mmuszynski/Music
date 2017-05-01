@@ -95,7 +95,7 @@ public enum MusicClef {
     public func offsetForPitch(named name: MusicPitchName, octave: Int) -> Int {
         let reference = self.centerLinePitch
         let offset = reference.relativeOffset(for: name, octave: octave)
-        return -offset
+        return offset
     }
     
 }

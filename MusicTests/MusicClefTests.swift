@@ -71,4 +71,10 @@ class MusicClefTests: XCTestCase {
             }
         }
     }
+    
+    func testEquality() {
+        let trebleClef = MusicClef.gClef(offset: -2)
+        let otherTreble = MusicClef.treble
+        XCTAssertEqual(trebleClef, otherTreble)
+    }
 }
