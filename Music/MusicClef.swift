@@ -80,7 +80,7 @@ public enum MusicClef {
     }
     
     ///Calculates a pitch that is offset by a number of staff places from the `centerLinePitch` for this clef.
-    func pitch(forOffset offset: Int, accidental: MusicPitchAccidental = .none) -> MusicPitch {
+    public func pitch(forOffset offset: Int, accidental: MusicPitchAccidental = .none) -> MusicPitch {
         return MusicClef.pitch(from: self.centerLinePitch, offset: offset, accidental: accidental)
     }
     
