@@ -11,8 +11,8 @@ import XCTest
 
 class KeySignatureTests: XCTestCase {
     
-    func pitchTupleToMusicKeySignaturePitch(tuple: (MusicPitchName, MusicPitchAccidental)) -> MusicKeySignaturePitch {
-        return MusicKeySignaturePitch(name: tuple.0, accidental: tuple.1)
+    func pitchTupleToMusicPitchAccidental(tuple: (MusicPitchName, MusicAccidental)) -> MusicPitchAccidental {
+        return MusicPitchAccidental(name: tuple.0, accidental: tuple.1)
     }
 
     func testKeySignaturesAllNatural() {
@@ -27,7 +27,7 @@ class KeySignatureTests: XCTestCase {
     }
     
     func testKeySignaturesOneFlat() {
-        let testPitches = [(.b, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+        let testPitches = [(.b, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.fMajor
         let minor = MusicKeySignature.dMinor
@@ -39,7 +39,7 @@ class KeySignatureTests: XCTestCase {
     
     func testKeySignaturesTwoFlats() {
         let testPitches = [(.b, .flat),
-                           (.e, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.e, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.bFlatMajor
         let minor = MusicKeySignature.gMinor
@@ -52,7 +52,7 @@ class KeySignatureTests: XCTestCase {
     func testKeySignaturesThreeFlats() {
         let testPitches = [(.b, .flat),
                            (.e, .flat),
-                           (.a, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.a, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.eFlatMajor
         let minor = MusicKeySignature.cMinor
@@ -66,7 +66,7 @@ class KeySignatureTests: XCTestCase {
         let testPitches = [(.b, .flat),
                            (.e, .flat),
                            (.a, .flat),
-                           (.d, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.d, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.aFlatMajor
         let minor = MusicKeySignature.fMinor
@@ -81,7 +81,7 @@ class KeySignatureTests: XCTestCase {
                            (.e, .flat),
                            (.a, .flat),
                            (.d, .flat),
-                           (.g, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.g, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.dFlatMajor
         let minor = MusicKeySignature.bFlatMinor
@@ -97,7 +97,7 @@ class KeySignatureTests: XCTestCase {
                            (.a, .flat),
                            (.d, .flat),
                            (.g, .flat),
-                           (.c, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.c, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.gFlatMajor
         let minor = MusicKeySignature.eFlatMinor
@@ -114,7 +114,7 @@ class KeySignatureTests: XCTestCase {
                            (.d, .flat),
                            (.g, .flat),
                            (.c, .flat),
-                           (.f, .flat)].map(pitchTupleToMusicKeySignaturePitch)
+                           (.f, .flat)].map(pitchTupleToMusicPitchAccidental)
         
         let major = MusicKeySignature.cFlatMajor
         let minor = MusicKeySignature.aFlatMinor

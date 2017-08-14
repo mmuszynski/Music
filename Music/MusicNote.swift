@@ -18,19 +18,24 @@ public struct MusicNote: Hashable {
         self.rhythm = rhythm
     }
     
-    public init(pitchName: MusicPitchName, accidental: MusicPitchAccidental, octave: Int, rhythm: MusicRhythm) {
+    public init(pitchName: MusicPitchName, accidental: MusicAccidental, octave: Int, rhythm: MusicRhythm) {
         let pitch = MusicPitch(name: pitchName, accidental: accidental, octave: octave)
         self.init(pitch: pitch, rhythm: rhythm)
     }
     
     ///Accidental of the note's pitch.
-    public var accidental: MusicPitchAccidental {
+    public var accidental: MusicAccidental {
         get {
             return self.pitch.accidental
         }
         set {
             self.pitch.accidental = newValue
         }
+    }
+    
+    ///PitchAccidental of the note's pitch. Provides more information than just accidental value, such as location in staff for drawing.
+    public var pitchAccidental: MusicPitchAccidental {
+        return self.pitch.pitchAccidental
     }
     
     ///Name of the note's pitch

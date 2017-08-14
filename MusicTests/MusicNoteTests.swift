@@ -307,13 +307,13 @@ class MusicTests: XCTestCase {
     }
     
     func testAccidentalInits() {
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -3), nil)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -2), .doubleFlat)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: -1), .flat)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 0), .natural)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 1), .sharp)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 2), .doubleSharp)
-        XCTAssertEqual(MusicPitchAccidental(enharmonicModifier: 3), nil)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: -3), nil)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: -2), .doubleFlat)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: -1), .flat)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: 0), .natural)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: 1), .sharp)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: 2), .doubleSharp)
+        XCTAssertEqual(MusicAccidental(enharmonicModifier: 3), nil)
     }
     
     func testTransposition() {

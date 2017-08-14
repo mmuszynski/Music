@@ -22,8 +22,13 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
     
-    ///The `MusicPitchAccidental` representing the accidental modifier of the pitch
-    public var accidental: MusicPitchAccidental = .natural
+    ///The `MusicAccidental` representing the accidental modifier of the pitch
+    public var accidental: MusicAccidental = .natural
+    
+    ///The `MusicPitchAccidental` representing the accidental enum and the pitch information itself
+    public var pitchAccidental: MusicPitchAccidental {
+        return MusicPitchAccidental(name: self.name, accidental: self.accidental)
+    }
     
     ///The octave of the pitch
     public var octave: Int = 0
@@ -34,7 +39,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     }
     
     ///Standard initializer, rearranged to fit the way pitches are described.
-    public init(name: MusicPitchName, accidental: MusicPitchAccidental, octave: Int) {
+    public init(name: MusicPitchName, accidental: MusicAccidental, octave: Int) {
         self.name = name
         self.accidental = accidental
         self.octave = octave
@@ -45,7 +50,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///Computes `octave` and `name` properties.
     ///
     ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided accidental type.
-    public init?(enharmonicIndex: Int, accidental: MusicPitchAccidental) {
+    public init?(enharmonicIndex: Int, accidental: MusicAccidental) {
         //the octave will give a range of 12 half-steps
         //the accidental adds or subtracts from there
         //the name is the final piece of the puzzle
@@ -72,7 +77,7 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///- Warning: This method will return `nil` if the enharmonic cannot be spelled with the provided name.
     public init?(enharmonicIndex: Int, name: MusicPitchName) {
         //here's a dumb way of doing this. make all the potential notes possible with each of the accidental types
-        let accidentals: [MusicPitchAccidental] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
+        let accidentals: [MusicAccidental] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
         let potentials = accidentals.flatMap { MusicPitch(enharmonicIndex: enharmonicIndex, accidental: $0) }
         guard let correct = potentials.filter({ $0.name == name }).last else {
             return nil
@@ -85,8 +90,8 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///
     ///
     public func allEnharmonics() -> Set<MusicPitch> {
-        let accidentals: [MusicPitchAccidental] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
-        let accidentalSet = Set<MusicPitchAccidental>(accidentals)
+        let accidentals: [MusicAccidental] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
+        let accidentalSet = Set<MusicAccidental>(accidentals)
         let ei = self.enharmonicIndex
         var enharmonics = accidentalSet.flatMap { MusicPitch(enharmonicIndex: ei, accidental: $0) }
         enharmonics.append(self)

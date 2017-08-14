@@ -22,11 +22,11 @@
 		27A350871E96E75B00344087 /* MusicIntervalQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350761E96E75B00344087 /* MusicIntervalQuantity.swift */; };
 		27A350881E96E75B00344087 /* MusicIntervalRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350771E96E75B00344087 /* MusicIntervalRepresentable.swift */; };
 		27A350891E96E75B00344087 /* MusicKeySignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350781E96E75B00344087 /* MusicKeySignature.swift */; };
-		27A3508A1E96E75B00344087 /* MusicKeySignaturePitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350791E96E75B00344087 /* MusicKeySignaturePitch.swift */; };
+		27A3508A1E96E75B00344087 /* MusicPitchAccidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350791E96E75B00344087 /* MusicPitchAccidental.swift */; };
 		27A3508B1E96E75B00344087 /* MusicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507A1E96E75B00344087 /* MusicNote.swift */; };
 		27A3508C1E96E75B00344087 /* MusicPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507B1E96E75B00344087 /* MusicPitch.swift */; };
 		27A3508D1E96E75B00344087 /* MusicPitch+Transposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507C1E96E75B00344087 /* MusicPitch+Transposable.swift */; };
-		27A3508E1E96E75B00344087 /* MusicPitchAccidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507D1E96E75B00344087 /* MusicPitchAccidental.swift */; };
+		27A3508E1E96E75B00344087 /* MusicAccidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507D1E96E75B00344087 /* MusicAccidental.swift */; };
 		27A3508F1E96E75B00344087 /* MusicPitchCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507E1E96E75B00344087 /* MusicPitchCollection.swift */; };
 		27A350901E96E75B00344087 /* MusicPitchName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3507F1E96E75B00344087 /* MusicPitchName.swift */; };
 		27A350911E96E75B00344087 /* MusicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350801E96E75B00344087 /* MusicScale.swift */; };
@@ -70,11 +70,11 @@
 		27A350761E96E75B00344087 /* MusicIntervalQuantity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicIntervalQuantity.swift; path = Music/MusicIntervalQuantity.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350771E96E75B00344087 /* MusicIntervalRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicIntervalRepresentable.swift; path = Music/MusicIntervalRepresentable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350781E96E75B00344087 /* MusicKeySignature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicKeySignature.swift; path = Music/MusicKeySignature.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350791E96E75B00344087 /* MusicKeySignaturePitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicKeySignaturePitch.swift; path = Music/MusicKeySignaturePitch.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27A350791E96E75B00344087 /* MusicPitchAccidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitchAccidental.swift; path = Music/MusicPitchAccidental.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3507A1E96E75B00344087 /* MusicNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicNote.swift; path = Music/MusicNote.swift; sourceTree = "<group>"; };
 		27A3507B1E96E75B00344087 /* MusicPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitch.swift; path = Music/MusicPitch.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3507C1E96E75B00344087 /* MusicPitch+Transposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "MusicPitch+Transposable.swift"; path = "Music/MusicPitch+Transposable.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A3507D1E96E75B00344087 /* MusicPitchAccidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitchAccidental.swift; path = Music/MusicPitchAccidental.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27A3507D1E96E75B00344087 /* MusicAccidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicAccidental.swift; path = Music/MusicAccidental.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3507E1E96E75B00344087 /* MusicPitchCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitchCollection.swift; path = Music/MusicPitchCollection.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3507F1E96E75B00344087 /* MusicPitchName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitchName.swift; path = Music/MusicPitchName.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350801E96E75B00344087 /* MusicScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicScale.swift; path = Music/MusicScale.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -178,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				27A350781E96E75B00344087 /* MusicKeySignature.swift */,
-				27A350791E96E75B00344087 /* MusicKeySignaturePitch.swift */,
 			);
 			name = MusicKeySignature;
 			sourceTree = "<group>";
@@ -197,7 +196,8 @@
 				27A3507B1E96E75B00344087 /* MusicPitch.swift */,
 				27A3507F1E96E75B00344087 /* MusicPitchName.swift */,
 				27A3507C1E96E75B00344087 /* MusicPitch+Transposable.swift */,
-				27A3507D1E96E75B00344087 /* MusicPitchAccidental.swift */,
+				27A3507D1E96E75B00344087 /* MusicAccidental.swift */,
+				27A350791E96E75B00344087 /* MusicPitchAccidental.swift */,
 			);
 			name = MusicPitch;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
 					27527E7B1D9ED55300C97B25 = {
@@ -364,8 +364,8 @@
 				27A3506A1E96E72300344087 /* MusicChord.swift in Sources */,
 				27A350881E96E75B00344087 /* MusicIntervalRepresentable.swift in Sources */,
 				27A3508D1E96E75B00344087 /* MusicPitch+Transposable.swift in Sources */,
-				27A3508E1E96E75B00344087 /* MusicPitchAccidental.swift in Sources */,
-				27A3508A1E96E75B00344087 /* MusicKeySignaturePitch.swift in Sources */,
+				27A3508E1E96E75B00344087 /* MusicAccidental.swift in Sources */,
+				27A3508A1E96E75B00344087 /* MusicPitchAccidental.swift in Sources */,
 				27A350861E96E75B00344087 /* MusicIntervalQuality.swift in Sources */,
 				27A3508B1E96E75B00344087 /* MusicNote.swift in Sources */,
 				27A3506C1E96E72300344087 /* MusicChordType.swift in Sources */,
@@ -410,7 +410,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -418,7 +420,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -491,7 +497,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -499,7 +507,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -545,7 +557,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -553,7 +567,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

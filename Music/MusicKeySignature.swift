@@ -14,7 +14,7 @@ public enum MusicKeySignature {
     case aMinor, eMinor, bMinor, fSharpMinor, cSharpMinor, gSharpMinor, dSharpMinor, aSharpMinor
     case dMinor, gMinor, cMinor, fMinor, bFlatMinor, eFlatMinor, aFlatMinor
     
-    public var pitches: [MusicKeySignaturePitch] {
+    public var pitches: [MusicPitchAccidental] {
         switch self {
         case .cMajor, .aMinor:
             return []
@@ -49,23 +49,23 @@ public enum MusicKeySignature {
         }
     }
     
-    private var flats: [MusicKeySignaturePitch] {
-        return [MusicKeySignaturePitch(name: .b, accidental: .flat),
-                MusicKeySignaturePitch(name: .e, accidental: .flat),
-                MusicKeySignaturePitch(name: .a, accidental: .flat),
-                MusicKeySignaturePitch(name: .d, accidental: .flat),
-                MusicKeySignaturePitch(name: .g, accidental: .flat),
-                MusicKeySignaturePitch(name: .c, accidental: .flat),
-                MusicKeySignaturePitch(name: .f, accidental: .flat)]
+    private var flats: [MusicPitchAccidental] {
+        return [MusicPitchAccidental(name: .b, accidental: .flat),
+                MusicPitchAccidental(name: .e, accidental: .flat),
+                MusicPitchAccidental(name: .a, accidental: .flat),
+                MusicPitchAccidental(name: .d, accidental: .flat),
+                MusicPitchAccidental(name: .g, accidental: .flat),
+                MusicPitchAccidental(name: .c, accidental: .flat),
+                MusicPitchAccidental(name: .f, accidental: .flat)]
     }
     
-    private var sharps: [MusicKeySignaturePitch] {
-        return [MusicKeySignaturePitch(name: .f, accidental: .sharp),
-                MusicKeySignaturePitch(name: .c, accidental: .sharp),
-                MusicKeySignaturePitch(name: .g, accidental: .sharp),
-                MusicKeySignaturePitch(name: .d, accidental: .sharp),
-                MusicKeySignaturePitch(name: .a, accidental: .sharp),
-                MusicKeySignaturePitch(name: .e, accidental: .sharp),
-                MusicKeySignaturePitch(name: .b, accidental: .sharp)]
+    private var sharps: [MusicPitchAccidental] {
+        return [MusicPitchAccidental(name: .f, accidental: .sharp),
+                MusicPitchAccidental(name: .c, accidental: .sharp),
+                MusicPitchAccidental(name: .g, accidental: .sharp),
+                MusicPitchAccidental(name: .d, accidental: .sharp),
+                MusicPitchAccidental(name: .a, accidental: .sharp),
+                MusicPitchAccidental(name: .e, accidental: .sharp),
+                MusicPitchAccidental(name: .b, accidental: .sharp)]
     }
 }
