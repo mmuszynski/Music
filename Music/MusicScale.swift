@@ -26,6 +26,9 @@ public struct MusicScale: MusicPitchCollection {
     internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
     
+    /// A directive to use the `MusicAccidental.natural` instead of `MusicAccidental.none`, even though these are equivalent from a pitch sense.
+    public var usesNaturalAccidental = false
+    
     /// Initializes a `MusicScale`.
     ///
     /// - Parameters:
