@@ -117,11 +117,15 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
     ///This method calculates the relative distance between the current note and a second note when drawn on a staff. Since pitch names determine their position on the staff, the most obvious usage involves calculating the place to draw a note with a given name and octave against the reference pitch of a clef.
     ///
     /// - Parameters:
-    ///   - name: The `MusicPitchName` to compare to the current `MusicPitch`
-    ///   - octave: The octave of the second pitch.
-    public func relativeOffset(for pitch: MusicPitch) -> Int {
-        let finalPitch = pitch.name.rawValue
-        let finalOctave = pitch.octave
+    ///   - name: The `MusicPitchName` to compare to the current `MusicPitch`. If nil, this computes the distance to C0.
+    public func relativeOffset(for pitch: MusicPitch? = nil) -> Int {
+        var pitch = pitch
+        if pitch == nil {
+            pitch = MusicPitch(enharmonicIndex: 0, accidental: .none)
+        }
+        
+        let finalPitch = pitch!.name.rawValue
+        let finalOctave = pitch!.octave
         let initialPitch = self.name.rawValue
         let initialOctave = self.octave
                 
