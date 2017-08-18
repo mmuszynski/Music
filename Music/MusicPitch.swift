@@ -45,6 +45,40 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
         self.octave = octave
     }
     
+    ///Natural language initializer. Given a string, such as "A0", try to create a `MusicPitch` that represents that string.
+    ///
+    ///Current options:
+    ///
+    /// - flat: "b"
+    /// - sharp: "#"
+    /// - doubleFlat: "bb"
+    /// - doubleSharp: "x" or "X" or "##"
+    /// - There is currently no way to represent naturals and the initializer will default to `MusicAccidental.none`.
+    public init?(string: String) {
+        guard let name = string.first, let pitchName = MusicPitchName(stringValue: String(name)) else {
+            return nil
+        }
+        
+        var accidental: MusicAccidental
+        if string.contains("x") || string.contains("X") || string.contains("##") {
+            accidental = .doubleSharp
+        } else if string.contains("bb") {
+            accidental = .doubleFlat
+        } else if string.contains("#") {
+            accidental = .sharp
+        } else if string.contains("b") {
+            accidental = .flat
+        } else {
+            accidental = .none
+        }
+        
+        guard let octave = string.last, let octaveInt = Int(String(octave)) else {
+            return nil
+        }
+        
+        self = MusicPitch(name: pitchName, accidental: accidental, octave: octaveInt)
+    }
+    
     ///Initializer from `enharmonicIndex` and `accidental`.
     ///
     ///Computes `octave` and `name` properties.

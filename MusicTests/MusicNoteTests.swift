@@ -328,4 +328,24 @@ class MusicTests: XCTestCase {
         }
     }
     
+    func testStringInit() {
+        let C0 = MusicPitch(string: "C0")
+        XCTAssertEqual(C0, MusicPitch(name: .c, accidental: .none, octave: 0))
+        
+        let Cis1 = MusicPitch(string: "C#1")
+        XCTAssertEqual(Cis1, MusicPitch(name: .c, accidental: .sharp, octave: 1))
+        
+        let Cbis1 = MusicPitch(string: "Cb1")
+        XCTAssertEqual(Cbis1, MusicPitch(name: .c, accidental: .flat, octave: 1))
+        
+        let Cbb2 = MusicPitch(string: "Cbb2")
+        XCTAssertEqual(Cbb2, MusicPitch(name: .c, accidental: .doubleFlat, octave: 2))
+        
+        let Cx1 = MusicPitch(string: "Cx1")
+        XCTAssertEqual(Cx1, MusicPitch(name: .c, accidental: .doubleSharp, octave: 1))
+        
+        XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "CX1"))
+        XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "C##1"))
+    }
+    
 }
