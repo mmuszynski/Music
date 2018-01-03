@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MusicStaffView.xcodeproj">
+      location = "group:MIDI_sample.mid">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

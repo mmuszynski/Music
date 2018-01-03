@@ -8,8 +8,7 @@
 
 import Foundation
 
-public struct MusicNote: Hashable {
-    
+public struct MusicNote {
     public var pitch: MusicPitch
     public var rhythm: MusicRhythm = .quarter
     
@@ -57,32 +56,5 @@ public struct MusicNote: Hashable {
             self.pitch.octave = newValue
         }
     }
-    
-    private func isEquivalent(to note: MusicNote) -> Bool {
-        if self.pitch != note.pitch {
-            return false
-        } else if self.rhythm != note.rhythm {
-            return false
-        }
-        
-        return true
-    }
-    
-    private func isEnharmonicallyEquivalent(to otherNote: MusicNote) -> Bool {
-        return self.pitch.isEnharmonicEquivalent(of: otherNote.pitch)
-    }
-    
-    //Hashable
-    public var hashValue: Int {
-        return self.pitch.hashValue ^ self.rhythm.hashValue
-    }
-    
-    //Equatable
-    public static func ==(lhs: MusicNote, rhs: MusicNote) -> Bool {
-        return lhs.isEquivalent(to: rhs)
-    }
-    
-    //Comparable
-    
 }
 

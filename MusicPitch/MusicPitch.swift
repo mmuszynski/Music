@@ -8,16 +8,12 @@
 
 import Foundation
 
-infix operator ~==: ComparisonPrecedence
-
 ///MusicPitch is the fundamental discrete unit for naming and displaying musical frequencies.
 ///
 ///While frequency is the fundamental quality that determines what a pitch will sound like, MusicPitch describes the discrete units used in Western music used to name and reproduce notes of certain frequencies. In Western music, there are generally assumed to be twelve discrete, named semitones which comprise an interval span called an octave.
 ///
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
-///
-///
-public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
+public struct MusicPitch {
    
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
@@ -164,54 +160,5 @@ public struct MusicPitch: Hashable, Comparable, CustomDebugStringConvertible {
         let initialOctave = self.octave
                 
         return 7 * (finalOctave - initialOctave) + finalPitch - initialPitch
-    }
-
-    public static func ==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
-        if lhs.name != rhs.name {
-            return false
-        } else if rhs.octave != lhs.octave {
-            return false
-        } else if rhs.accidental != lhs.accidental {
-            return false
-        }
-        
-        return true
-    }
-    
-    public var hashValue: Int {
-        return enharmonicIndex.hashValue ^ name.hashValue ^ accidental.hashValue
-    }
-    
-    static func ~==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
-        return lhs.enharmonicIndex == rhs.enharmonicIndex
-    }
-    
-    public func isEnharmonicEquivalent(of pitch: MusicPitch) -> Bool {
-        return self ~== pitch
-    }
-    
-    /// Returns a Boolean value indicating whether the `enharmonicIndex` of the first
-    /// pitch is less than that of the second pitch.
-    ///
-    /// This function is the only requirement of the `Comparable` protocol. The
-    /// remainder of the relational operator functions are implemented by the
-    /// standard library for any type that conforms to `Comparable`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A pitch to compare.
-    ///   - rhs: Another pitch to compare.
-    public static func <(lhs: MusicPitch, rhs: MusicPitch) -> Bool {
-        guard lhs.enharmonicIndex != rhs.enharmonicIndex else {
-            return lhs.name.enharmonicModifier < rhs.name.enharmonicModifier
-        }
-        return lhs.enharmonicIndex < rhs.enharmonicIndex
-    }
-    
-    ///A more easily readable version of the description
-    public var debugDescription: String {
-        let name = self.name.debugDescription
-        let accidentalName = self.accidental.debugDescription
-        let octaveName = "\(self.octave)"
-        return name + accidentalName + octaveName
     }
 }
