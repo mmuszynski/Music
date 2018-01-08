@@ -28,18 +28,18 @@ class MusicRhythmTests: XCTestCase {
         XCTAssertEqual(MusicRhythm.whole.duration, duration1)
         let duration0: Double = 128
         XCTAssertEqual(MusicRhythm.breve.duration, duration0)
-        
+
         let durationDotted32: Double = 3
-        XCTAssertEqual(MusicRhythm.dotted(length: .thirtysecond).duration, durationDotted32)
-        
+        XCTAssertEqual(MusicRhythm.dotted(.thirtysecond, dots: 1).duration, durationDotted32)
+
         let durationDoubleDottedQuarter: Double = MusicRhythm.quarter.duration * 7 / 4
-        XCTAssertEqual(MusicRhythm.dotted(length: .dotted(length: .quarter)).duration, durationDoubleDottedQuarter)
-        
-        let durationDoubleDottedQuarterPlusSixteenth: Double = MusicRhythm.dotted(length: .dotted(length: .quarter)).duration + MusicRhythm.sixteenth.duration
-        XCTAssertEqual(duration2, durationDoubleDottedQuarterPlusSixteenth)
-        
-        let durationDottedQuarterEighth: Double = MusicRhythm.dotted(length: .quarter).duration + MusicRhythm.eighth.duration
-        XCTAssertEqual(durationDottedQuarterEighth, duration2)
+        XCTAssertEqual(MusicRhythm.dotted(.quarter, dots: 2).duration, durationDoubleDottedQuarter)
+//
+//        let durationDoubleDottedQuarterPlusSixteenth: Double = MusicRhythm.dotted(.quarter, dots: 2).duration + MusicRhythm.sixteenth.duration
+//        XCTAssertEqual(duration2, durationDoubleDottedQuarterPlusSixteenth)
+//
+//        let durationDottedQuarterEighth: Double = MusicRhythm.dotted(.quarter, dots: 1).duration + MusicRhythm.eighth.duration
+//        XCTAssertEqual(durationDottedQuarterEighth, duration2)
     }
     
 }
