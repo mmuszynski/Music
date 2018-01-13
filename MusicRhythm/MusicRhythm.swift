@@ -10,7 +10,6 @@ import Foundation
 
 public enum MusicRhythm {
     case breve, whole, half, quarter, eighth, sixteenth, thirtysecond, sixtyfourth
-    case semibreve, minim, semiquaver, demisemiquaver, hemidemisemiquaver
     indirect case dotted(_: MusicRhythm, dots: Int)
     indirect case compound(number: Int, duration: MusicRhythm)
     
@@ -20,6 +19,26 @@ public enum MusicRhythm {
     
     static var quaver: MusicRhythm {
         return .eighth
+    }
+    
+    static var semiquaver: MusicRhythm {
+        return .sixteenth
+    }
+    
+    static var demisemiquaver: MusicRhythm {
+        return .thirtysecond
+    }
+    
+    static var hemidemisemiquaver: MusicRhythm {
+        return .sixtyfourth
+    }
+    
+    static var minim: MusicRhythm {
+        return .half
+    }
+    
+    static var semibreve: MusicRhythm {
+        return .whole
     }
     
     /// Duration of the note relative to the sixty-fourth note or hemidemisemiquaver.
