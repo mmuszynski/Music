@@ -161,4 +161,12 @@ public struct MusicPitch {
                 
         return 7 * (finalOctave - initialOctave) + finalPitch - initialPitch
     }
+
+    /// Returns a `MusicNote` with the given pitch and a supplied rhythm
+    ///
+    /// - Parameter rhythm: The Rhythm for the note
+    /// - Returns: `MusicNote` object using self for pitch
+    public func note(with rhythm: MusicRhythm) -> MusicNote {
+        return MusicNote(pitch: self, rhythm: rhythm)
+    }
 }
