@@ -22,7 +22,7 @@ class MusicTests: XCTestCase {
     }
     
     func testNoteNameCreation() {
-        XCTAssertNil(MusicPitchName(stringValue: "bob"))
+        XCTAssertNil(MusicPitchName(string: "bob"))
         
         let a = MusicPitchName.a
         let b = MusicPitchName.b
@@ -32,13 +32,13 @@ class MusicTests: XCTestCase {
         let f = MusicPitchName.f
         let g = MusicPitchName.g
         
-        var Do = MusicPitchName(stringValue: "Do")
-        var Re = MusicPitchName(stringValue: "Re")
-        var Mi = MusicPitchName(stringValue: "Mi")
-        var Fa = MusicPitchName(stringValue: "Fa")
-        var So = MusicPitchName(stringValue: "So")
-        var La = MusicPitchName(stringValue: "La")
-        var Ti = MusicPitchName(stringValue: "Ti")
+        var Do = MusicPitchName(string: "Do")
+        var Re = MusicPitchName(string: "Re")
+        var Mi = MusicPitchName(string: "Mi")
+        var Fa = MusicPitchName(string: "Fa")
+        var So = MusicPitchName(string: "So")
+        var La = MusicPitchName(string: "La")
+        var Ti = MusicPitchName(string: "Ti")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)
@@ -48,13 +48,13 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(a, La)
         XCTAssertEqual(b, Ti)
         
-        Do = MusicPitchName(stringValue: "do")
-        Re = MusicPitchName(stringValue: "re")
-        Mi = MusicPitchName(stringValue: "mi")
-        Fa = MusicPitchName(stringValue: "fa")
-        So = MusicPitchName(stringValue: "so")
-        La = MusicPitchName(stringValue: "la")
-        Ti = MusicPitchName(stringValue: "ti")
+        Do = MusicPitchName(string: "do")
+        Re = MusicPitchName(string: "re")
+        Mi = MusicPitchName(string: "mi")
+        Fa = MusicPitchName(string: "fa")
+        So = MusicPitchName(string: "so")
+        La = MusicPitchName(string: "la")
+        Ti = MusicPitchName(string: "ti")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)
@@ -64,13 +64,13 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(a, La)
         XCTAssertEqual(b, Ti)
         
-        Do = MusicPitchName(stringValue: "C")
-        Re = MusicPitchName(stringValue: "D")
-        Mi = MusicPitchName(stringValue: "E")
-        Fa = MusicPitchName(stringValue: "F")
-        So = MusicPitchName(stringValue: "G")
-        La = MusicPitchName(stringValue: "A")
-        Ti = MusicPitchName(stringValue: "B")
+        Do = MusicPitchName(string: "C")
+        Re = MusicPitchName(string: "D")
+        Mi = MusicPitchName(string: "E")
+        Fa = MusicPitchName(string: "F")
+        So = MusicPitchName(string: "G")
+        La = MusicPitchName(string: "A")
+        Ti = MusicPitchName(string: "B")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)

@@ -44,6 +44,7 @@
 		27B09D721FFD531B00EFEB0E /* MusicNote+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */; };
 		27B09D741FFD55F400EFEB0E /* MusicPitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */; };
 		27BB738F1FFD6BD1008A6EF8 /* MidiDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */; };
+		27F8F0832017A8FB001B1CFD /* MusicTimeSignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */; };
 		27FCC9BD200C1CE2003991FA /* MusicTimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicNote+Hashable.swift"; sourceTree = "<group>"; };
 		27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPitchExtensions.swift; sourceTree = "<group>"; };
 		27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MidiDecoderTests.swift; path = MusicPitch/MidiDecoderTests.swift; sourceTree = SOURCE_ROOT; };
+		27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignatureTests.swift; sourceTree = "<group>"; };
 		27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,11 +168,11 @@
 				27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */,
 				27A3509C1E96E8D600344087 /* MusicScaleTests.swift */,
 				27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */,
+				27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */,
 				27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */,
 				27A350961E96E8D600344087 /* Info.plist */,
 			);
-			name = MusicTests;
-			path = MusicStaffViewTests;
+			path = MusicTests;
 			sourceTree = "<group>";
 		};
 		27B09D681FFD515A00EFEB0E /* Protocols */ = {
@@ -423,6 +425,7 @@
 				27A350A61E96E94400344087 /* MusicChordTests.swift in Sources */,
 				27A350A51E96E94000344087 /* MusicKeySignatureTests.swift in Sources */,
 				27A350B01E96EAF000344087 /* MusicRhythmTests.swift in Sources */,
+				27F8F0832017A8FB001B1CFD /* MusicTimeSignatureTests.swift in Sources */,
 				27A350A91E96E95100344087 /* MusicPitchTests.swift in Sources */,
 				27BB738F1FFD6BD1008A6EF8 /* MidiDecoderTests.swift in Sources */,
 				27A350A81E96E94D00344087 /* MusicClefTests.swift in Sources */,
@@ -498,7 +501,7 @@
 		274D4D801ED3412F0047AAF1 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -651,7 +654,7 @@
 		27527E911D9ED55300C97B25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -676,7 +679,7 @@
 		27527E921D9ED55300C97B25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;

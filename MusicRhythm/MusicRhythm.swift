@@ -83,6 +83,30 @@ public enum MusicRhythm {
     public func duration(relativeTo otherRhythm: MusicRhythm) -> Double {
         return self.duration / otherRhythm.duration
     }
+    
+    public init?(baseDuration: Int) {
+        switch baseDuration {
+        case 1:
+            self = .sixtyfourth
+        case 2:
+            self = .thirtysecond
+        case 4:
+            self = .sixteenth
+        case 8:
+            self = .eighth
+        case 16:
+            self = .quarter
+        case 32:
+            self = .half
+        case 64:
+            self = .whole
+        case 128:
+            self = .breve
+        default:
+            return nil
+        }
+    }
+    
 }
 
 extension MusicRhythm: Equatable {
@@ -150,4 +174,3 @@ extension MusicRhythm: CustomStringConvertible {
         }
     }
 }
-

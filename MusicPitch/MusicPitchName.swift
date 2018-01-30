@@ -27,8 +27,8 @@ public enum MusicPitchName: Int, CustomDebugStringConvertible {
     }
     
     ///Attempts to initialize a `MusicPitchName` from a string value (e.g. "A", "b", "do", "Re", etc)
-    public init?(stringValue: String) {
-        switch stringValue.lowercased() {
+    public init?(string: String) {
+        switch string.lowercased() {
         case "a", "la":
             self = .a
         case "b", "ti", "si":

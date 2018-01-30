@@ -42,4 +42,8 @@ class MusicRhythmTests: XCTestCase {
 //        XCTAssertEqual(durationDottedQuarterEighth, duration2)
     }
     
+    func testInitFromBaseDuration() {
+        //Base duration represents the number of 64th notes that fit into the note
+        XCTAssertEqual(MusicRhythm(baseDuration: 1), MusicRhythm.sixtyfourth)
+    }
 }

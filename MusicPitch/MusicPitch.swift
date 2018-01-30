@@ -51,7 +51,7 @@ public struct MusicPitch {
     /// - doubleSharp: "x" or "X" or "##"
     /// - There is currently no way to represent naturals and the initializer will default to `MusicAccidental.none`.
     public init?(string: String) {
-        guard let name = string.first, let pitchName = MusicPitchName(stringValue: String(name)) else {
+        guard let name = string.first, let pitchName = MusicPitchName(string: String(name)) else {
             return nil
         }
         
