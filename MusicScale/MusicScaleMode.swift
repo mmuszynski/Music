@@ -17,13 +17,13 @@ public enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentab
     public var upwardIntervalDescription: [MusicInterval] {
         switch self {
         case .major:
-            return [(.upward, .major, .second),
+            return ([(.upward, .major, .second),
                     (.upward, .major, .third),
                     (.upward, .perfect, .fourth),
                     (.upward, .perfect, .fifth),
                     (.upward, .major, .sixth),
                     (.upward, .major, .seventh),
-                    (.upward, .perfect, .octave)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .perfect, .octave)] as [(MusicIntervalDirection, MusicIntervalQuality, MusicIntervalQuantity)]).map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         case .harmonicMinor:
             var alteredMajor = MusicScaleMode.major.upwardIntervalDescription
             alteredMajor[1] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .third)
@@ -38,10 +38,10 @@ public enum MusicScaleMode: MusicIntervalRepresentable, MusicIntervalRepresentab
             alteredMajor[1] = try! MusicInterval(direction: .upward, quality: .minor, quantity: .third)
             return alteredMajor
         case .majorPentatonic:
-            return [(.upward, .major, .second),
+            return ([(.upward, .major, .second),
                     (.upward, .major, .third),
                     (.upward, .perfect, .fifth),
-                    (.upward, .major, .sixth)].map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
+                    (.upward, .major, .sixth)]  as [(MusicIntervalDirection, MusicIntervalQuality, MusicIntervalQuantity)]).map { try! MusicInterval(direction: $0.0, quality: $0.1, quantity: $0.2) }
         }
     }
     
