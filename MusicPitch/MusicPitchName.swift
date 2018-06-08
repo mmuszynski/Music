@@ -9,7 +9,7 @@
 import Foundation
 
 /// The name used to describe a musical pitch, describing its place on the staff.
-public enum MusicPitchName: Int, CustomDebugStringConvertible {
+public enum MusicPitchName: Int, CustomStringConvertible, CustomDebugStringConvertible {
     case c = 0, d, e, f, g, a, b
     
     /// All values of the enum, suitable for enumeration
@@ -83,6 +83,10 @@ public enum MusicPitchName: Int, CustomDebugStringConvertible {
     private func wrappableModulo(_ num: Int, mod: Int) -> Int {
         let laps = abs(num / mod) + 1
         return (mod * laps + num) % mod
+    }
+    
+    public var description: String {
+        return self.debugDescription
     }
     
     ///Provides non-localized name descriptions for debugging purposes

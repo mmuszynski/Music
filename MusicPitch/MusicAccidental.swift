@@ -9,7 +9,7 @@
 import Foundation
 
 /// The possible accidentals used in creating notes and key signagures
-public enum MusicAccidental: CustomDebugStringConvertible {
+public enum MusicAccidental: CustomStringConvertible, CustomDebugStringConvertible {
     case none
     case flat
     case natural
@@ -18,7 +18,7 @@ public enum MusicAccidental: CustomDebugStringConvertible {
     case doubleSharp
     
     /// The number of half steps that a given accidental value raises (or lowers if negative) a given pitch
-    var enharmonicModifier: Int {
+    public var enharmonicModifier: Int {
         switch self {
         case .none, .natural:
             return 0
@@ -34,7 +34,7 @@ public enum MusicAccidental: CustomDebugStringConvertible {
     }
     
     /// Initializes a `MusicAccidental` with a given `enharmonicModifier`, returning nil if the modifier value is invalid.
-    init?(enharmonicModifier: Int) {
+    public init?(enharmonicModifier: Int) {
         switch enharmonicModifier {
         case 0:
             self = .natural
@@ -49,6 +49,10 @@ public enum MusicAccidental: CustomDebugStringConvertible {
         default:
             return nil
         }
+    }
+    
+    public var description: String {
+        return debugDescription
     }
     
     /// Debug description

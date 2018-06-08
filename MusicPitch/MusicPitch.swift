@@ -13,8 +13,14 @@ import Foundation
 ///While frequency is the fundamental quality that determines what a pitch will sound like, MusicPitch describes the discrete units used in Western music used to name and reproduce notes of certain frequencies. In Western music, there are generally assumed to be twelve discrete, named semitones which comprise an interval span called an octave.
 ///
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
-public struct MusicPitch {
-   
+public struct MusicPitch: CustomStringConvertible {
+    public var description: String {
+        var name = self.name.description
+        name += accidental.description
+        name += "\(octave)"
+        return name
+    }
+    
     ///The `MusicPitchName` representing the name of the pitch
     public var name: MusicPitchName = .c
     
@@ -108,7 +114,7 @@ public struct MusicPitch {
     public init?(enharmonicIndex: Int, name: MusicPitchName) {
         //here's a dumb way of doing this. make all the potential notes possible with each of the accidental types
         let accidentals: [MusicAccidental] = [.doubleFlat, .flat, .natural, .sharp, .doubleSharp]
-        let potentials = accidentals.flatMap { MusicPitch(enharmonicIndex: enharmonicIndex, accidental: $0) }
+        let potentials = accidentals.compactMap { MusicPitch(enharmonicIndex: enharmonicIndex, accidental: $0) }
         guard let correct = potentials.filter({ $0.name == name }).last else {
             return nil
         }
@@ -123,7 +129,7 @@ public struct MusicPitch {
         let accidentals: [MusicAccidental] = [.doubleFlat, .doubleSharp, .flat, .natural, .sharp]
         let accidentalSet = Set<MusicAccidental>(accidentals)
         let ei = self.enharmonicIndex
-        var enharmonics = accidentalSet.flatMap { MusicPitch(enharmonicIndex: ei, accidental: $0) }
+        var enharmonics = accidentalSet.compactMap { MusicPitch(enharmonicIndex: ei, accidental: $0) }
         enharmonics.append(self)
         return Set<MusicPitch>(enharmonics)
     }

@@ -16,7 +16,12 @@ public struct MusicNote {
         self.pitch = pitch
         self.rhythm = rhythm
     }
-    
+
+    @available(*, unavailable, renamed: "init(pitchName:accidental:octave:rhythm:)")
+    public init(pitchName: MusicPitchName, accidental: MusicAccidental, rhythm: MusicRhythm, octave: Int) {
+        fatalError()
+    }
+
     public init(pitchName: MusicPitchName, accidental: MusicAccidental, octave: Int, rhythm: MusicRhythm) {
         let pitch = MusicPitch(name: pitchName, accidental: accidental, octave: octave)
         self.init(pitch: pitch, rhythm: rhythm)
