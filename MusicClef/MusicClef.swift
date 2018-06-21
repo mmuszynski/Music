@@ -62,7 +62,7 @@ public enum MusicClef {
     }
     
     ///Calculates a pitch that is offset by a number of staff places from another pitch
-    static func pitch(from referencePitch: MusicPitch, offset: Int, accidental: MusicAccidental = .none) -> MusicPitch {
+    static func pitch(from referencePitch: MusicPitch, offset: Int, accidental: MusicAccidental = .natural) -> MusicPitch {
         //change the offset such that it is relative to the C in this octave
         let clefOffsetFromOctaveC = referencePitch.name.rawValue
         let cOffset = offset + clefOffsetFromOctaveC
@@ -80,7 +80,7 @@ public enum MusicClef {
     }
     
     ///Calculates a pitch that is offset by a number of staff places from the `centerLinePitch` for this clef.
-    public func pitch(forOffset offset: Int, accidental: MusicAccidental = .none) -> MusicPitch {
+    public func pitch(forOffset offset: Int, accidental: MusicAccidental = .natural) -> MusicPitch {
         return MusicClef.pitch(from: self.centerLinePitch, offset: offset, accidental: accidental)
     }
     

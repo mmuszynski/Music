@@ -91,9 +91,9 @@ class MusicTests: XCTestCase {
         pitch2.name = .b
         XCTAssertEqual(pitch1, pitch2)
         
-        pitch1.accidental = .none
+        pitch1.accidental = .flat
         XCTAssertNotEqual(pitch1, pitch2)
-        pitch2.accidental = .none
+        pitch2.accidental = .flat
         XCTAssertEqual(pitch1, pitch2)
         
         pitch1.octave = 10
@@ -342,7 +342,7 @@ class MusicTests: XCTestCase {
     
     func testStringInit() {
         let C0 = MusicPitch(string: "C0")
-        XCTAssertEqual(C0, MusicPitch(name: .c, accidental: .none, octave: 0))
+        XCTAssertEqual(C0, MusicPitch(name: .c, accidental: .natural, octave: 0))
         
         let Csharp1 = MusicPitch(string: "C#1")
         XCTAssertEqual(Csharp1, MusicPitch(name: .c, accidental: .sharp, octave: 1))

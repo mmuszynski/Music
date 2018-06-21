@@ -13,7 +13,7 @@ import Foundation
 ///While frequency is the fundamental quality that determines what a pitch will sound like, MusicPitch describes the discrete units used in Western music used to name and reproduce notes of certain frequencies. In Western music, there are generally assumed to be twelve discrete, named semitones which comprise an interval span called an octave.
 ///
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
-public struct MusicPitch: CustomStringConvertible {
+public struct MusicPitch: Codable, CustomStringConvertible {
     public var description: String {
         var name = self.name.description
         name += accidental.description
@@ -71,7 +71,7 @@ public struct MusicPitch: CustomStringConvertible {
         } else if string.contains("b") {
             accidental = .flat
         } else {
-            accidental = .none
+            accidental = .natural
         }
         
         guard let octave = string.last, let octaveInt = Int(String(octave)) else {
@@ -145,7 +145,7 @@ public struct MusicPitch: CustomStringConvertible {
     ///   - name: The `MusicPitch` to compare to the current `MusicPitch`
     ///   - octave: The octave of the second pitch.
     public func relativeOffset(for name: MusicPitchName, octave: Int) -> Int {
-        return self.relativeOffset(for: MusicPitch(name: name, accidental: .none, octave: octave));
+        return self.relativeOffset(for: MusicPitch(name: name, accidental: .natural, octave: octave));
     }
     
     ///Calculates the relative distance between this pitch and a second when drawn on a staff.
@@ -157,7 +157,7 @@ public struct MusicPitch: CustomStringConvertible {
     public func relativeOffset(for pitch: MusicPitch? = nil) -> Int {
         var pitch = pitch
         if pitch == nil {
-            pitch = MusicPitch(enharmonicIndex: 0, accidental: .none)
+            pitch = MusicPitch(enharmonicIndex: 0, accidental: .natural)
         }
         
         let finalPitch = pitch!.name.rawValue
