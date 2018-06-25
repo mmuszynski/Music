@@ -13,7 +13,7 @@ import Foundation
 ///While frequency is the fundamental quality that determines what a pitch will sound like, MusicPitch describes the discrete units used in Western music used to name and reproduce notes of certain frequencies. In Western music, there are generally assumed to be twelve discrete, named semitones which comprise an interval span called an octave.
 ///
 ///In many cases, a pitch can be described by more than one name. In this case, these pitches are considered 'enharmonically equivalent' (although their frequencies will be different, for more, see `frequency(with referencePitch: at frequency:)`).
-public struct MusicPitch: Codable, CustomStringConvertible {
+public struct MusicPitch: Codable, CustomStringConvertible {    
     public var description: String {
         var name = self.name.description
         name += accidental.description
