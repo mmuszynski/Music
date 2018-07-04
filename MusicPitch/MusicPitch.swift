@@ -175,4 +175,18 @@ public struct MusicPitch: Codable, CustomStringConvertible {
     public func note(with rhythm: MusicRhythm) -> MusicNote {
         return MusicNote(pitch: self, rhythm: rhythm)
     }
+    
+    /// Attempts to respell the current pitch using an enharmonic equivalent
+    ///
+    /// Computes the enharmonic equivalent pitches and then selects the one with the given accidental. Returns nil if there is no enharmonic equivalent with the supplied accidental.
+    ///
+    /// - Parameter accidental: The desired accidental
+    /// - Returns: An equivalent `MusicPitch` or nil
+    public func respelled(with accidental: MusicAccidental) -> MusicPitch? {
+        let hasPreferredAccidental: (MusicPitch) -> Bool = { (pitch) -> Bool in
+            return pitch.accidental == accidental
+        }
+            
+        return self.allEnharmonics().first(where: hasPreferredAccidental)
+    }
 }

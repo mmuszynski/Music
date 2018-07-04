@@ -360,4 +360,10 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "C##1"))
     }
     
+    func testRespelling() {
+        let cis0 = MusicPitch(string: "C#0")!
+        let db0 = MusicPitch(string: "Db0")!
+        XCTAssertEqual(db0, cis0.respelled(with: .flat))
+    }
+    
 }
