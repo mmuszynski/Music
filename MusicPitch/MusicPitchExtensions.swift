@@ -24,8 +24,10 @@ extension MusicPitch: Hashable, Equatable {
         return true
     }
     
-    public var hashValue: Int {
-        return enharmonicIndex.hashValue ^ name.hashValue ^ accidental.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(enharmonicIndex)
+        hasher.combine(name)
+        hasher.combine(accidental)
     }
     
     static func ~==(lhs: MusicPitch, rhs: MusicPitch) -> Bool {

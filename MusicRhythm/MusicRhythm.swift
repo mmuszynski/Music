@@ -129,8 +129,8 @@ extension MusicRhythm: Hashable {
     ///
     /// Hash values are not guaranteed to be equal across different executions of
     /// your program. Do not save hash values to use during a future execution.
-    public var hashValue: Int {
-        return self.duration.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(duration)
     }
 }
 

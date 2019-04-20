@@ -50,7 +50,7 @@ public enum MusicPitchName: Int, Codable, CustomStringConvertible, CustomDebugSt
     
     ///Attempts to generate a `MusicPitchName` from an enharmonicModifier integer.
     public init?(enharmonicModifier: Int) {
-        guard let index = MusicPitchName.allModifiers.index(of: enharmonicModifier) else {
+        guard let index = MusicPitchName.allModifiers.firstIndex(of: enharmonicModifier) else {
             return nil
         }
         

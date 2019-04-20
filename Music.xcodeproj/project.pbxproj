@@ -328,13 +328,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
 					27527E7B1D9ED55300C97B25 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = DF288G8ZJ6;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					27527E841D9ED55300C97B25 = {
@@ -347,10 +347,11 @@
 			};
 			buildConfigurationList = 27527E761D9ED55300C97B25 /* Build configuration list for PBXProject "Music" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 27527E721D9ED55300C97B25;
 			productRefGroup = 27527E7D1D9ED55300C97B25 /* Products */;
@@ -517,8 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Profile;
 		};
@@ -675,8 +675,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -699,8 +698,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

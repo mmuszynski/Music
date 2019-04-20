@@ -23,9 +23,9 @@ extension MusicNote: Hashable {
         return self.pitch.isEnharmonicEquivalent(of: otherNote.pitch)
     }
     
-    //Hashable
-    public var hashValue: Int {
-        return self.pitch.hashValue ^ self.rhythm.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(pitch)
+        hasher.combine(rhythm)
     }
     
     //Equatable
