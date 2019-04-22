@@ -55,7 +55,7 @@ public struct MusicPitch: Codable, CustomStringConvertible {
     /// - sharp: "#"
     /// - doubleFlat: "bb"
     /// - doubleSharp: "x" or "X" or "##"
-    /// - There is currently no way to represent naturals and the initializer will default to `MusicAccidental.none`.
+    /// - There is currently no way to represent naturals so the initializer will default to `MusicAccidental.natural`.
     public init?(string: String) {
         guard let name = string.first, let pitchName = MusicPitchName(string: String(name)) else {
             return nil
