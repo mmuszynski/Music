@@ -60,9 +60,9 @@ public enum MusicRhythm {
             return 2
         case .sixtyfourth, .hemidemisemiquaver:
             return 1
-        case .compound(_):
+        case .compound(_, _):
             fatalError("Compound Rhythm has no base duration")
-        case .dotted(_):
+        case .dotted(_, _):
             fatalError("Dotted Rhythm has no base duration")
         }
     }

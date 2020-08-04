@@ -33,9 +33,9 @@ public struct MusicTimeSignature {
             return 32
         case .sixtyfourth:
             return 64
-        case .dotted(_):
+        case .dotted(_, _):
             fatalError("Dotted denominator is not yet supported")
-        case .compound(_):
+        case .compound(_, _):
             fatalError("Compound denominator is not supported and likely will not be")
         }
     }

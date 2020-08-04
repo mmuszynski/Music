@@ -21,8 +21,4 @@ class MusicTimeSignatureTests: XCTestCase {
         XCTAssertEqual(MusicTimeSignature(string: "4/4"), MusicTimeSignature.common)
     }
     
-    func testBeatGrouping() {
-        let fourFour = MusicTimeSignature.common
-    }
-    
 }
