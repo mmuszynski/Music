@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mike Muszynski. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Music.
 FOUNDATION_EXPORT double MusicVersionNumber;
