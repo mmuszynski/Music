@@ -44,6 +44,13 @@
 		27A350B21E96EB2900344087 /* MusicRhythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350B11E96EB2900344087 /* MusicRhythm.swift */; };
 		27B09D721FFD531B00EFEB0E /* MusicNote+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */; };
 		27B09D741FFD55F400EFEB0E /* MusicPitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */; };
+		27F4E1B224DB23DD00AAFB4D /* MidiDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1AF24DB23DD00AAFB4D /* MidiDecoder.swift */; };
+		27F4E1B324DB23DD00AAFB4D /* MIDIEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1B024DB23DD00AAFB4D /* MIDIEventType.swift */; };
+		27F4E1B424DB23DD00AAFB4D /* DataUnpacking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1B124DB23DD00AAFB4D /* DataUnpacking.swift */; };
+		27F4E1B724DB23F200AAFB4D /* MIDI_sample.mid in Resources */ = {isa = PBXBuildFile; fileRef = 27F4E1B624DB23F200AAFB4D /* MIDI_sample.mid */; };
+		27F4E1BB24DB241A00AAFB4D /* BasicMIDITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1BA24DB241A00AAFB4D /* BasicMIDITests.swift */; };
+		27F4E1BC24DB242B00AAFB4D /* MidiDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1B824DB23F700AAFB4D /* MidiDecoderTests.swift */; };
+		27F4E1BE24DB27D700AAFB4D /* MusicPitch+MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4E1BD24DB27D700AAFB4D /* MusicPitch+MIDI.swift */; };
 		27FCC9BD200C1CE2003991FA /* MusicTimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +105,13 @@
 		27A350B11E96EB2900344087 /* MusicRhythm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicRhythm.swift; sourceTree = "<group>"; };
 		27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicNote+Hashable.swift"; sourceTree = "<group>"; };
 		27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPitchExtensions.swift; sourceTree = "<group>"; };
+		27F4E1AF24DB23DD00AAFB4D /* MidiDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiDecoder.swift; sourceTree = "<group>"; };
+		27F4E1B024DB23DD00AAFB4D /* MIDIEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIEventType.swift; sourceTree = "<group>"; };
+		27F4E1B124DB23DD00AAFB4D /* DataUnpacking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUnpacking.swift; sourceTree = "<group>"; };
+		27F4E1B624DB23F200AAFB4D /* MIDI_sample.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = MIDI_sample.mid; sourceTree = "<group>"; };
+		27F4E1B824DB23F700AAFB4D /* MidiDecoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiDecoderTests.swift; sourceTree = "<group>"; };
+		27F4E1BA24DB241A00AAFB4D /* BasicMIDITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMIDITests.swift; sourceTree = "<group>"; };
+		27F4E1BD24DB27D700AAFB4D /* MusicPitch+MIDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicPitch+MIDI.swift"; sourceTree = "<group>"; };
 		27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +155,7 @@
 		27527E891D9ED55300C97B25 /* MusicTests */ = {
 			isa = PBXGroup;
 			children = (
+				27F4E1B524DB23EB00AAFB4D /* MIDI Tests */,
 				278E03DE24D9BC3A00700E27 /* Info.plist */,
 				278E03D424D9BC3100700E27 /* MusicChordTests.swift */,
 				278E03CE24D9BC3000700E27 /* MusicClefTests.swift */,
@@ -273,10 +288,32 @@
 				27B09D6E1FFD527E00EFEB0E /* MusicScale */,
 				27B09D6A1FFD51F100EFEB0E /* MusicChord */,
 				27FCC9BB200C1CBA003991FA /* MusicTimeSignature */,
+				27F4E1AE24DB23DD00AAFB4D /* MIDI Support */,
 				278E03C524D9BB2A00700E27 /* Music.h */,
 				278E03C624D9BB2A00700E27 /* Info.plist */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		27F4E1AE24DB23DD00AAFB4D /* MIDI Support */ = {
+			isa = PBXGroup;
+			children = (
+				27F4E1BD24DB27D700AAFB4D /* MusicPitch+MIDI.swift */,
+				27F4E1AF24DB23DD00AAFB4D /* MidiDecoder.swift */,
+				27F4E1B024DB23DD00AAFB4D /* MIDIEventType.swift */,
+				27F4E1B124DB23DD00AAFB4D /* DataUnpacking.swift */,
+			);
+			path = "MIDI Support";
+			sourceTree = "<group>";
+		};
+		27F4E1B524DB23EB00AAFB4D /* MIDI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27F4E1BA24DB241A00AAFB4D /* BasicMIDITests.swift */,
+				27F4E1B824DB23F700AAFB4D /* MidiDecoderTests.swift */,
+				27F4E1B624DB23F200AAFB4D /* MIDI_sample.mid */,
+			);
+			path = "MIDI Tests";
 			sourceTree = "<group>";
 		};
 		27FCC9BB200C1CBA003991FA /* MusicTimeSignature */ = {
@@ -385,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F4E1B724DB23F200AAFB4D /* MIDI_sample.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,17 +441,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A3508F1E96E75B00344087 /* MusicPitchCollection.swift in Sources */,
+				27F4E1B224DB23DD00AAFB4D /* MidiDecoder.swift in Sources */,
 				27A350901E96E75B00344087 /* MusicPitchName.swift in Sources */,
 				27A350921E96E75B00344087 /* MusicScaleMode.swift in Sources */,
 				27A350891E96E75B00344087 /* MusicKeySignature.swift in Sources */,
 				27FCC9BD200C1CE2003991FA /* MusicTimeSignature.swift in Sources */,
 				27A350841E96E75B00344087 /* MusicInterval+Equatable.swift in Sources */,
+				27F4E1B324DB23DD00AAFB4D /* MIDIEventType.swift in Sources */,
 				27A350851E96E75B00344087 /* MusicIntervalError.swift in Sources */,
 				275E65741EB61731006BAA07 /* MusicClef+Equatable.swift in Sources */,
+				27F4E1B424DB23DD00AAFB4D /* DataUnpacking.swift in Sources */,
 				27B09D721FFD531B00EFEB0E /* MusicNote+Hashable.swift in Sources */,
 				27A3508C1E96E75B00344087 /* MusicPitch.swift in Sources */,
 				27A350931E96E75B00344087 /* MusicTransposable.swift in Sources */,
 				27A350831E96E75B00344087 /* MusicInterval.swift in Sources */,
+				27F4E1BE24DB27D700AAFB4D /* MusicPitch+MIDI.swift in Sources */,
 				27A3506D1E96E72300344087 /* MusicChordType+Equatable.swift in Sources */,
 				27A350B21E96EB2900344087 /* MusicRhythm.swift in Sources */,
 				27A3506A1E96E72300344087 /* MusicChord.swift in Sources */,
@@ -439,10 +481,12 @@
 				278E03E124D9BDEE00700E27 /* MusicIntervalTests.swift in Sources */,
 				278E03E424D9BDEE00700E27 /* MusicScaleTests.swift in Sources */,
 				278E03E324D9BDEE00700E27 /* MusicClefTests.swift in Sources */,
+				27F4E1BC24DB242B00AAFB4D /* MidiDecoderTests.swift in Sources */,
 				278E03E824D9BDEE00700E27 /* MusicChordTests.swift in Sources */,
 				278E03E024D9BDEE00700E27 /* MusicRhythmTests.swift in Sources */,
 				278E03E624D9BDEE00700E27 /* MusicNoteTests.swift in Sources */,
 				278E03E724D9BDEE00700E27 /* MusicTimeSignatureTests.swift in Sources */,
+				27F4E1BB24DB241A00AAFB4D /* BasicMIDITests.swift in Sources */,
 				278E03E524D9BDEE00700E27 /* MusicKeySignatureTests.swift in Sources */,
 				278E03E224D9BDEE00700E27 /* MusicPitchTests.swift in Sources */,
 			);
