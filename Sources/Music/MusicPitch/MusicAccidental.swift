@@ -73,3 +73,10 @@ public enum MusicAccidental: Int, Codable, CustomStringConvertible, CustomDebugS
         }
     }
 }
+
+extension MusicAccidental: CaseIterable {
+    public typealias AllCases = [MusicAccidental]
+    public static var allCases: AllCases {
+        return [-2, -1, 0, 1, 2].map { MusicAccidental(rawValue: $0)! }
+    }
+}
