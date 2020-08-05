@@ -56,10 +56,10 @@ open class MidiDecoder: Decoder {
                 switch event.eventType {
                     
                 case .noteOff(let key, _):
-                    let note = MusicPitch(midiKey: key, in: MusicKeySignature.bFlatMajor)!
+                    let note = MusicPitch(midiKey: key)
                     trackNotes.append(note)
                 case .noteOn(let key, _):
-                    let note = MusicPitch(midiKey: key, in: MusicKeySignature.bFlatMajor)!
+                    let note = MusicPitch(midiKey: key)
                     notesCurrentlyOn.append(note)
                 default:
                     break

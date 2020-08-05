@@ -29,7 +29,7 @@ class MidiDecoderTests: XCTestCase {
         
         for key in nums.keys {
             let target = key
-            let inputData = Data(bytes: nums[key]!)
+            let inputData = Data(nums[key]!)
             XCTAssertEqual(lengthValue(fromMidiVariableLength: inputData), target)
         }
     }
