@@ -9,7 +9,7 @@
 import XCTest
 @testable import Music
 
-class MusicTests: XCTestCase {
+class MusicPitchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -22,7 +22,7 @@ class MusicTests: XCTestCase {
     }
     
     func testNoteNameCreation() {
-        XCTAssertNil(MusicPitchName(stringValue: "bob"))
+        XCTAssertNil(MusicPitchName(string: "bob"))
         
         let a = MusicPitchName.a
         let b = MusicPitchName.b
@@ -32,13 +32,13 @@ class MusicTests: XCTestCase {
         let f = MusicPitchName.f
         let g = MusicPitchName.g
         
-        var Do = MusicPitchName(stringValue: "Do")
-        var Re = MusicPitchName(stringValue: "Re")
-        var Mi = MusicPitchName(stringValue: "Mi")
-        var Fa = MusicPitchName(stringValue: "Fa")
-        var So = MusicPitchName(stringValue: "So")
-        var La = MusicPitchName(stringValue: "La")
-        var Ti = MusicPitchName(stringValue: "Ti")
+        var Do = MusicPitchName(string: "Do")
+        var Re = MusicPitchName(string: "Re")
+        var Mi = MusicPitchName(string: "Mi")
+        var Fa = MusicPitchName(string: "Fa")
+        var So = MusicPitchName(string: "So")
+        var La = MusicPitchName(string: "La")
+        var Ti = MusicPitchName(string: "Ti")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)
@@ -48,13 +48,13 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(a, La)
         XCTAssertEqual(b, Ti)
         
-        Do = MusicPitchName(stringValue: "do")
-        Re = MusicPitchName(stringValue: "re")
-        Mi = MusicPitchName(stringValue: "mi")
-        Fa = MusicPitchName(stringValue: "fa")
-        So = MusicPitchName(stringValue: "so")
-        La = MusicPitchName(stringValue: "la")
-        Ti = MusicPitchName(stringValue: "ti")
+        Do = MusicPitchName(string: "do")
+        Re = MusicPitchName(string: "re")
+        Mi = MusicPitchName(string: "mi")
+        Fa = MusicPitchName(string: "fa")
+        So = MusicPitchName(string: "so")
+        La = MusicPitchName(string: "la")
+        Ti = MusicPitchName(string: "ti")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)
@@ -64,13 +64,13 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(a, La)
         XCTAssertEqual(b, Ti)
         
-        Do = MusicPitchName(stringValue: "C")
-        Re = MusicPitchName(stringValue: "D")
-        Mi = MusicPitchName(stringValue: "E")
-        Fa = MusicPitchName(stringValue: "F")
-        So = MusicPitchName(stringValue: "G")
-        La = MusicPitchName(stringValue: "A")
-        Ti = MusicPitchName(stringValue: "B")
+        Do = MusicPitchName(string: "C")
+        Re = MusicPitchName(string: "D")
+        Mi = MusicPitchName(string: "E")
+        Fa = MusicPitchName(string: "F")
+        So = MusicPitchName(string: "G")
+        La = MusicPitchName(string: "A")
+        Ti = MusicPitchName(string: "B")
         
         XCTAssertEqual(c, Do)
         XCTAssertEqual(d, Re)
@@ -91,9 +91,9 @@ class MusicTests: XCTestCase {
         pitch2.name = .b
         XCTAssertEqual(pitch1, pitch2)
         
-        pitch1.accidental = .none
+        pitch1.accidental = .flat
         XCTAssertNotEqual(pitch1, pitch2)
-        pitch2.accidental = .none
+        pitch2.accidental = .flat
         XCTAssertEqual(pitch1, pitch2)
         
         pitch1.octave = 10
@@ -270,6 +270,18 @@ class MusicTests: XCTestCase {
         XCTAssertEqual(larger, sortedLarger)
     }
     
+    func testSortingWithEnharmonicEquivalents() {
+        let BdoubleSharp0 = MusicPitch(name: .b, accidental: .doubleSharp, octave: 0)
+        let Csharp1 = MusicPitch(string: "C#1")!
+        let Dflat1 = MusicPitch(string: "Db1")!
+        //confirm enharmonic equivalent
+        XCTAssertTrue(BdoubleSharp0 ~== Csharp1)
+        XCTAssertTrue(Dflat1 ~== Csharp1)
+        let sortedEnharmonics = [BdoubleSharp0, Csharp1, Dflat1].sorted()
+        let sortedManually = [BdoubleSharp0,Csharp1,Dflat1]
+        XCTAssertEqual(sortedManually, sortedEnharmonics)
+    }
+    
     //The relative offset needs to be calculated
     //
     func testRelativeOffsets() {
@@ -330,10 +342,10 @@ class MusicTests: XCTestCase {
     
     func testStringInit() {
         let C0 = MusicPitch(string: "C0")
-        XCTAssertEqual(C0, MusicPitch(name: .c, accidental: .none, octave: 0))
+        XCTAssertEqual(C0, MusicPitch(name: .c, accidental: .natural, octave: 0))
         
-        let Cis1 = MusicPitch(string: "C#1")
-        XCTAssertEqual(Cis1, MusicPitch(name: .c, accidental: .sharp, octave: 1))
+        let Csharp1 = MusicPitch(string: "C#1")
+        XCTAssertEqual(Csharp1, MusicPitch(name: .c, accidental: .sharp, octave: 1))
         
         let Cbis1 = MusicPitch(string: "Cb1")
         XCTAssertEqual(Cbis1, MusicPitch(name: .c, accidental: .flat, octave: 1))
@@ -346,6 +358,12 @@ class MusicTests: XCTestCase {
         
         XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "CX1"))
         XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "C##1"))
+    }
+    
+    func testRespelling() {
+        let cis0 = MusicPitch(string: "C#0")!
+        let db0 = MusicPitch(string: "Db0")!
+        XCTAssertEqual(db0, cis0.respelled(with: .flat))
     }
     
 }

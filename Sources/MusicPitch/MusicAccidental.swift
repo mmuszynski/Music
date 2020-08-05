@@ -16,6 +16,9 @@ public enum MusicAccidental: Int, Codable, CustomStringConvertible, CustomDebugS
     case doubleFlat
     case doubleSharp
     
+    @available(*, unavailable, renamed: "natural")
+    case none
+    
     /// The number of half steps that a given accidental value raises (or lowers if negative) a given pitch
     public var enharmonicModifier: Int {
         switch self {

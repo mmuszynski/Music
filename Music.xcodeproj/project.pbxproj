@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		27527E861D9ED55300C97B25 /* Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27527E7C1D9ED55300C97B25 /* Music.framework */; };
 		275E65741EB61731006BAA07 /* MusicClef+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E65731EB61731006BAA07 /* MusicClef+Equatable.swift */; };
+		278E03C724D9BB2A00700E27 /* Music.h in Headers */ = {isa = PBXBuildFile; fileRef = 278E03C524D9BB2A00700E27 /* Music.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		278E03E024D9BDEE00700E27 /* MusicRhythmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03D124D9BC3000700E27 /* MusicRhythmTests.swift */; };
+		278E03E124D9BDEE00700E27 /* MusicIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03CF24D9BC3000700E27 /* MusicIntervalTests.swift */; };
+		278E03E224D9BDEE00700E27 /* MusicPitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03D224D9BC3100700E27 /* MusicPitchTests.swift */; };
+		278E03E324D9BDEE00700E27 /* MusicClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03CE24D9BC3000700E27 /* MusicClefTests.swift */; };
+		278E03E424D9BDEE00700E27 /* MusicScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03CC24D9BC3000700E27 /* MusicScaleTests.swift */; };
+		278E03E524D9BDEE00700E27 /* MusicKeySignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03D024D9BC3000700E27 /* MusicKeySignatureTests.swift */; };
+		278E03E624D9BDEE00700E27 /* MusicNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03D324D9BC3100700E27 /* MusicNoteTests.swift */; };
+		278E03E724D9BDEE00700E27 /* MusicTimeSignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03CD24D9BC3000700E27 /* MusicTimeSignatureTests.swift */; };
+		278E03E824D9BDEE00700E27 /* MusicChordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E03D424D9BC3100700E27 /* MusicChordTests.swift */; };
 		27A3506A1E96E72300344087 /* MusicChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350661E96E72300344087 /* MusicChord.swift */; };
 		27A3506B1E96E72300344087 /* MusicChord+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350671E96E72300344087 /* MusicChord+Equatable.swift */; };
 		27A3506C1E96E72300344087 /* MusicChordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350681E96E72300344087 /* MusicChordType.swift */; };
 		27A3506D1E96E72300344087 /* MusicChordType+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350691E96E72300344087 /* MusicChordType+Equatable.swift */; };
 		27A3506F1E96E73900344087 /* MusicClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3506E1E96E73900344087 /* MusicClef.swift */; };
-		27A350711E96E74C00344087 /* Music.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A350701E96E74C00344087 /* Music.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27A350831E96E75B00344087 /* MusicInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350721E96E75B00344087 /* MusicInterval.swift */; };
 		27A350841E96E75B00344087 /* MusicInterval+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350731E96E75B00344087 /* MusicInterval+Equatable.swift */; };
 		27A350851E96E75B00344087 /* MusicIntervalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350741E96E75B00344087 /* MusicIntervalError.swift */; };
@@ -32,18 +41,9 @@
 		27A350911E96E75B00344087 /* MusicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350801E96E75B00344087 /* MusicScale.swift */; };
 		27A350921E96E75B00344087 /* MusicScaleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350811E96E75B00344087 /* MusicScaleMode.swift */; };
 		27A350931E96E75B00344087 /* MusicTransposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350821E96E75B00344087 /* MusicTransposable.swift */; };
-		27A350A41E96E93A00344087 /* MusicScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3509C1E96E8D600344087 /* MusicScaleTests.swift */; };
-		27A350A51E96E94000344087 /* MusicKeySignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */; };
-		27A350A61E96E94400344087 /* MusicChordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350971E96E8D600344087 /* MusicChordTests.swift */; };
-		27A350A71E96E94800344087 /* MusicIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350991E96E8D600344087 /* MusicIntervalTests.swift */; };
-		27A350A81E96E94D00344087 /* MusicClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350981E96E8D600344087 /* MusicClefTests.swift */; };
-		27A350A91E96E95100344087 /* MusicPitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3509B1E96E8D600344087 /* MusicPitchTests.swift */; };
-		27A350B01E96EAF000344087 /* MusicRhythmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */; };
 		27A350B21E96EB2900344087 /* MusicRhythm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A350B11E96EB2900344087 /* MusicRhythm.swift */; };
 		27B09D721FFD531B00EFEB0E /* MusicNote+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */; };
 		27B09D741FFD55F400EFEB0E /* MusicPitchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */; };
-		27BB738F1FFD6BD1008A6EF8 /* MidiDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */; };
-		27F8F0832017A8FB001B1CFD /* MusicTimeSignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */; };
 		27FCC9BD200C1CE2003991FA /* MusicTimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +61,23 @@
 		27527E7C1D9ED55300C97B25 /* Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27527E851D9ED55300C97B25 /* MusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275E65731EB61731006BAA07 /* MusicClef+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MusicClef+Equatable.swift"; sourceTree = "<group>"; };
+		278E03C524D9BB2A00700E27 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		278E03C624D9BB2A00700E27 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278E03CC24D9BC3000700E27 /* MusicScaleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicScaleTests.swift; sourceTree = "<group>"; };
+		278E03CD24D9BC3000700E27 /* MusicTimeSignatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTimeSignatureTests.swift; sourceTree = "<group>"; };
+		278E03CE24D9BC3000700E27 /* MusicClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicClefTests.swift; sourceTree = "<group>"; };
+		278E03CF24D9BC3000700E27 /* MusicIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicIntervalTests.swift; sourceTree = "<group>"; };
+		278E03D024D9BC3000700E27 /* MusicKeySignatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicKeySignatureTests.swift; sourceTree = "<group>"; };
+		278E03D124D9BC3000700E27 /* MusicRhythmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicRhythmTests.swift; sourceTree = "<group>"; };
+		278E03D224D9BC3100700E27 /* MusicPitchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPitchTests.swift; sourceTree = "<group>"; };
+		278E03D324D9BC3100700E27 /* MusicNoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicNoteTests.swift; sourceTree = "<group>"; };
+		278E03D424D9BC3100700E27 /* MusicChordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicChordTests.swift; sourceTree = "<group>"; };
+		278E03DE24D9BC3A00700E27 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A350661E96E72300344087 /* MusicChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicChord.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350671E96E72300344087 /* MusicChord+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "MusicChord+Equatable.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350681E96E72300344087 /* MusicChordType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicChordType.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350691E96E72300344087 /* MusicChordType+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "MusicChordType+Equatable.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A3506E1E96E73900344087 /* MusicClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicClef.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350701E96E74C00344087 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Music.h; path = Music/Music.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		27A350721E96E75B00344087 /* MusicInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicInterval.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350731E96E75B00344087 /* MusicInterval+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "MusicInterval+Equatable.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350741E96E75B00344087 /* MusicIntervalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicIntervalError.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -84,20 +95,9 @@
 		27A350801E96E75B00344087 /* MusicScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicScale.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350811E96E75B00344087 /* MusicScaleMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicScaleMode.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27A350821E96E75B00344087 /* MusicTransposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MusicTransposable.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350941E96E7B400344087 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Music/Info.plist; sourceTree = "<group>"; };
-		27A350961E96E8D600344087 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MusicTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		27A350971E96E8D600344087 /* MusicChordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicChordTests.swift; path = MusicTests/MusicChordTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350981E96E8D600344087 /* MusicClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicClefTests.swift; path = MusicTests/MusicClefTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350991E96E8D600344087 /* MusicIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicIntervalTests.swift; path = MusicTests/MusicIntervalTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicKeySignatureTests.swift; path = MusicTests/MusicKeySignatureTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A3509B1E96E8D600344087 /* MusicPitchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicPitchTests.swift; path = MusicTests/MusicPitchTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A3509C1E96E8D600344087 /* MusicScaleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MusicScaleTests.swift; path = MusicTests/MusicScaleTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicRhythmTests.swift; path = MusicTests/MusicRhythmTests.swift; sourceTree = SOURCE_ROOT; };
 		27A350B11E96EB2900344087 /* MusicRhythm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicRhythm.swift; sourceTree = "<group>"; };
 		27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicNote+Hashable.swift"; sourceTree = "<group>"; };
 		27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPitchExtensions.swift; sourceTree = "<group>"; };
-		27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MidiDecoderTests.swift; path = MusicPitch/MidiDecoderTests.swift; sourceTree = SOURCE_ROOT; };
-		27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignatureTests.swift; sourceTree = "<group>"; };
 		27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +123,8 @@
 		27527E721D9ED55300C97B25 = {
 			isa = PBXGroup;
 			children = (
-				27527E7E1D9ED55300C97B25 /* Music */,
-				27527E891D9ED55300C97B25 /* MusicTests */,
+				278E03C424D9BB2A00700E27 /* Sources */,
+				278E03CA24D9BB6500700E27 /* Tests */,
 				27527E7D1D9ED55300C97B25 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,10 +138,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27527E7E1D9ED55300C97B25 /* Music */ = {
+		27527E891D9ED55300C97B25 /* MusicTests */ = {
 			isa = PBXGroup;
 			children = (
-				27A350701E96E74C00344087 /* Music.h */,
+				278E03DE24D9BC3A00700E27 /* Info.plist */,
+				278E03D424D9BC3100700E27 /* MusicChordTests.swift */,
+				278E03CE24D9BC3000700E27 /* MusicClefTests.swift */,
+				278E03CF24D9BC3000700E27 /* MusicIntervalTests.swift */,
+				278E03D024D9BC3000700E27 /* MusicKeySignatureTests.swift */,
+				278E03D324D9BC3100700E27 /* MusicNoteTests.swift */,
+				278E03D224D9BC3100700E27 /* MusicPitchTests.swift */,
+				278E03D124D9BC3000700E27 /* MusicRhythmTests.swift */,
+				278E03CC24D9BC3000700E27 /* MusicScaleTests.swift */,
+				278E03CD24D9BC3000700E27 /* MusicTimeSignatureTests.swift */,
+			);
+			path = MusicTests;
+			sourceTree = "<group>";
+		};
+		278E03C424D9BB2A00700E27 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				27B09D681FFD515A00EFEB0E /* Protocols */,
 				27B09D6B1FFD521800EFEB0E /* MusicPitch */,
 				27B09D6C1FFD524500EFEB0E /* MusicRhythm */,
@@ -152,26 +168,18 @@
 				27B09D6E1FFD527E00EFEB0E /* MusicScale */,
 				27B09D6A1FFD51F100EFEB0E /* MusicChord */,
 				27FCC9BB200C1CBA003991FA /* MusicTimeSignature */,
-				27A350941E96E7B400344087 /* Info.plist */,
+				278E03C524D9BB2A00700E27 /* Music.h */,
+				278E03C624D9BB2A00700E27 /* Info.plist */,
 			);
-			name = Music;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		27527E891D9ED55300C97B25 /* MusicTests */ = {
+		278E03CA24D9BB6500700E27 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				27A3509B1E96E8D600344087 /* MusicPitchTests.swift */,
-				27A350971E96E8D600344087 /* MusicChordTests.swift */,
-				27A350981E96E8D600344087 /* MusicClefTests.swift */,
-				27A350991E96E8D600344087 /* MusicIntervalTests.swift */,
-				27A3509A1E96E8D600344087 /* MusicKeySignatureTests.swift */,
-				27A3509C1E96E8D600344087 /* MusicScaleTests.swift */,
-				27A350AE1E96EAE800344087 /* MusicRhythmTests.swift */,
-				27F8F0822017A8FB001B1CFD /* MusicTimeSignatureTests.swift */,
-				27BB738E1FFD6BD1008A6EF8 /* MidiDecoderTests.swift */,
-				27A350961E96E8D600344087 /* Info.plist */,
+				27527E891D9ED55300C97B25 /* MusicTests */,
 			);
-			path = MusicTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		27B09D681FFD515A00EFEB0E /* Protocols */ = {
@@ -278,7 +286,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A350711E96E74C00344087 /* Music.h in Headers */,
+				278E03C724D9BB2A00700E27 /* Music.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,15 +428,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A350A71E96E94800344087 /* MusicIntervalTests.swift in Sources */,
-				27A350A61E96E94400344087 /* MusicChordTests.swift in Sources */,
-				27A350A51E96E94000344087 /* MusicKeySignatureTests.swift in Sources */,
-				27A350B01E96EAF000344087 /* MusicRhythmTests.swift in Sources */,
-				27F8F0832017A8FB001B1CFD /* MusicTimeSignatureTests.swift in Sources */,
-				27A350A91E96E95100344087 /* MusicPitchTests.swift in Sources */,
-				27BB738F1FFD6BD1008A6EF8 /* MidiDecoderTests.swift in Sources */,
-				27A350A81E96E94D00344087 /* MusicClefTests.swift in Sources */,
-				27A350A41E96E93A00344087 /* MusicScaleTests.swift in Sources */,
+				278E03E124D9BDEE00700E27 /* MusicIntervalTests.swift in Sources */,
+				278E03E424D9BDEE00700E27 /* MusicScaleTests.swift in Sources */,
+				278E03E324D9BDEE00700E27 /* MusicClefTests.swift in Sources */,
+				278E03E824D9BDEE00700E27 /* MusicChordTests.swift in Sources */,
+				278E03E024D9BDEE00700E27 /* MusicRhythmTests.swift in Sources */,
+				278E03E624D9BDEE00700E27 /* MusicNoteTests.swift in Sources */,
+				278E03E724D9BDEE00700E27 /* MusicTimeSignatureTests.swift in Sources */,
+				278E03E524D9BDEE00700E27 /* MusicKeySignatureTests.swift in Sources */,
+				278E03E224D9BDEE00700E27 /* MusicPitchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +524,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
@@ -540,7 +548,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
-				INFOPLIST_FILE = MusicTests/Info.plist;
+				INFOPLIST_FILE = Tests/MusicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.MusicTests;
@@ -689,7 +697,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
@@ -723,7 +731,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
@@ -747,7 +755,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
-				INFOPLIST_FILE = MusicTests/Info.plist;
+				INFOPLIST_FILE = Tests/MusicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.MusicTests;
@@ -764,7 +772,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
-				INFOPLIST_FILE = MusicTests/Info.plist;
+				INFOPLIST_FILE = Tests/MusicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.MusicTests;
