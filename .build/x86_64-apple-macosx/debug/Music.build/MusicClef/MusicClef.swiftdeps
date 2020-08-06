@@ -1,0 +1,213 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MusicClef"
+provides-nominal:
+- "5Music0A4ClefO"
+provides-member:
+- ["5Music0A4ClefO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "%"
+- !private "+"
+- !private "-"
+- !private "/"
+- "<"
+- !private ">="
+- "AssignmentPrecedence"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "MusicAccidental"
+- "MusicClef"
+- "MusicPitch"
+- "MusicPitchName"
+- "TernaryPrecedence"
+depends-member:
+- !private ["s18AdditiveArithmeticP", ""]
+- !private ["s12CaseIterableP", "natural"]
+- !private ["s9CodingKeyP", ""]
+- !private ["s9CodingKeyP", "init"]
+- !private ["s9CodingKeyP", "intValue"]
+- !private ["s9CodingKeyP", "stringValue"]
+- !private ["SL", "init"]
+- !private ["SL", "name"]
+- !private ["SL", "octave"]
+- !private ["SL", "relativeOffset"]
+- !private ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "c"]
+- !private ["s28CustomDebugStringConvertibleP", "f"]
+- !private ["s28CustomDebugStringConvertibleP", "g"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "name"]
+- !private ["s28CustomDebugStringConvertibleP", "natural"]
+- !private ["s28CustomDebugStringConvertibleP", "octave"]
+- !private ["s28CustomDebugStringConvertibleP", "rawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "relativeOffset"]
+- !private ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "c"]
+- !private ["s23CustomStringConvertibleP", "f"]
+- !private ["s23CustomStringConvertibleP", "g"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "name"]
+- !private ["s23CustomStringConvertibleP", "natural"]
+- !private ["s23CustomStringConvertibleP", "octave"]
+- !private ["s23CustomStringConvertibleP", "rawValue"]
+- !private ["s23CustomStringConvertibleP", "relativeOffset"]
+- !private ["Se", "c"]
+- !private ["Se", "f"]
+- !private ["Se", "g"]
+- !private ["Se", "init"]
+- !private ["Se", "name"]
+- !private ["Se", "natural"]
+- !private ["Se", "octave"]
+- !private ["Se", "rawValue"]
+- !private ["Se", "relativeOffset"]
+- !private ["SE", "c"]
+- !private ["SE", "f"]
+- !private ["SE", "g"]
+- !private ["SE", "init"]
+- !private ["SE", "name"]
+- !private ["SE", "natural"]
+- !private ["SE", "octave"]
+- !private ["SE", "rawValue"]
+- !private ["SE", "relativeOffset"]
+- !private ["SQ", "=="]
+- !private ["SQ", "MusicClef"]
+- !private ["SQ", "MusicPitch"]
+- !private ["SQ", "MusicPitchName"]
+- !private ["SQ", ""]
+- !private ["SQ", "c"]
+- ["SQ", "cClef"]
+- !private ["SQ", "centerLinePitch"]
+- !private ["SQ", "f"]
+- ["SQ", "fClef"]
+- !private ["SQ", "g"]
+- ["SQ", "gClef"]
+- !private ["SQ", "init"]
+- !private ["SQ", "name"]
+- !private ["SQ", "natural"]
+- !private ["SQ", "octave"]
+- !private ["SQ", "offsetForPitch"]
+- !private ["SQ", "pitch"]
+- !private ["SQ", "rawValue"]
+- !private ["SQ", "referencePitch"]
+- !private ["SQ", "relativeOffset"]
+- !private ["s27ExpressibleByIntegerLiteralP", ""]
+- !private ["SH", ""]
+- !private ["SH", "c"]
+- !private ["SH", "f"]
+- !private ["SH", "g"]
+- !private ["SH", "hash"]
+- !private ["SH", "hashValue"]
+- !private ["SH", "init"]
+- !private ["SH", "name"]
+- !private ["SH", "natural"]
+- !private ["SH", "octave"]
+- !private ["SH", "rawValue"]
+- !private ["SH", "relativeOffset"]
+- !private ["5Music0A10AccidentalO", ""]
+- !private ["5Music0A10AccidentalO", "natural"]
+- ["5Music0A4ClefO", "Int"]
+- ["5Music0A4ClefO", "MusicAccidental"]
+- ["5Music0A4ClefO", "MusicClef"]
+- ["5Music0A4ClefO", "MusicPitch"]
+- ["5Music0A4ClefO", "MusicPitchName"]
+- ["5Music0A4ClefO", "alto"]
+- ["5Music0A4ClefO", "bass"]
+- ["5Music0A4ClefO", "cClef"]
+- ["5Music0A4ClefO", "centerLinePitch"]
+- ["5Music0A4ClefO", "fClef"]
+- ["5Music0A4ClefO", "gClef"]
+- ["5Music0A4ClefO", "offset"]
+- ["5Music0A4ClefO", "offsetForPitch"]
+- ["5Music0A4ClefO", "pitch"]
+- ["5Music0A4ClefO", "referencePitch"]
+- ["5Music0A4ClefO", "tenor"]
+- ["5Music0A4ClefO", "treble"]
+- !private ["5Music0A5PitchV", "CodingKeys"]
+- !private ["5Music0A5PitchV", ""]
+- !private ["5Music0A5PitchV", "init"]
+- !private ["5Music0A5PitchV", "name"]
+- !private ["5Music0A5PitchV", "octave"]
+- !private ["5Music0A5PitchV", "relativeOffset"]
+- !private ["5Music0A9PitchNameO", "RawValue"]
+- !private ["5Music0A9PitchNameO", ""]
+- !private ["5Music0A9PitchNameO", "c"]
+- !private ["5Music0A9PitchNameO", "f"]
+- !private ["5Music0A9PitchNameO", "g"]
+- !private ["5Music0A9PitchNameO", "init"]
+- !private ["5Music0A9PitchNameO", "rawValue"]
+- !private ["5Music0A12TransposableP", "init"]
+- !private ["5Music0A12TransposableP", "name"]
+- !private ["5Music0A12TransposableP", "octave"]
+- !private ["5Music0A12TransposableP", "relativeOffset"]
+- !private ["So8NSCodingP", ""]
+- !private ["Sj", ""]
+- !private ["SY", "c"]
+- !private ["SY", "f"]
+- !private ["SY", "g"]
+- !private ["SY", "init"]
+- !private ["SY", "natural"]
+- !private ["SY", "rawValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+depends-nominal:
+- !private "s18AdditiveArithmeticP"
+- !private "s12CaseIterableP"
+- !private "s9CodingKeyP"
+- !private "SL"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "SH"
+- !private "5Music0A10AccidentalO"
+- "5Music0A4ClefO"
+- !private "5Music0A5PitchV"
+- !private "5Music0A9PitchNameO"
+- !private "5Music0A12TransposableP"
+- !private "So8NSCodingP"
+- !private "Sj"
+- !private "SY"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "b1f875f695af76c8ea29bddbd93499b5"

@@ -1,0 +1,502 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MusicPitchName"
+provides-nominal:
+- "5Music0A9PitchNameO"
+provides-member:
+- ["5Music0A9PitchNameO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "%"
+- !private "*"
+- !private "+"
+- !private "-"
+- !private "/"
+- "=="
+- !private ">="
+- "AssignmentPrecedence"
+- "Codable"
+- "CustomDebugStringConvertible"
+- "CustomStringConvertible"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "MusicPitchName"
+- "String"
+- !private "StringLiteralType"
+- "TernaryPrecedence"
+- !private "UnicodeScalarType"
+- !private "abs"
+- "allValues"
+- !private "wrappableModulo"
+- !private "~="
+depends-member:
+- !private ["Sa", "firstIndex"]
+- ["Sa", "map"]
+- !private ["Sa", "subscript"]
+- ["SK", ""]
+- !private ["SK", "firstIndex"]
+- !private ["SK", "lowercased"]
+- ["SK", "map"]
+- !private ["SK", "subscript"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "firstIndex"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "lowercased"]
+- ["8CloudKit21CKRecordValueProtocolP", "map"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "subscript"]
+- !private ["s7CVarArgP", "firstIndex"]
+- !private ["s7CVarArgP", "lowercased"]
+- ["s7CVarArgP", "map"]
+- !private ["s7CVarArgP", "subscript"]
+- ["Sl", ""]
+- !private ["Sl", "firstIndex"]
+- !private ["Sl", "lowercased"]
+- ["Sl", "map"]
+- !private ["Sl", "subscript"]
+- !private ["SL", ""]
+- !private ["SL", "lowercased"]
+- !private ["10Foundation15ContiguousBytesP", "firstIndex"]
+- ["10Foundation15ContiguousBytesP", "map"]
+- !private ["10Foundation15ContiguousBytesP", "subscript"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- ["s28CustomDebugStringConvertibleP", "Default_RawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "MusicPitchName"]
+- ["s28CustomDebugStringConvertibleP", "RawValue"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_Default_RawValue"]
+- ["s28CustomDebugStringConvertibleP", "_rawHashValue"]
+- ["s28CustomDebugStringConvertibleP", "a"]
+- !private ["s28CustomDebugStringConvertibleP", "abs"]
+- !private ["s28CustomDebugStringConvertibleP", "allModifiers"]
+- ["s28CustomDebugStringConvertibleP", "allValues"]
+- ["s28CustomDebugStringConvertibleP", "b"]
+- ["s28CustomDebugStringConvertibleP", "c"]
+- ["s28CustomDebugStringConvertibleP", "d"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- ["s28CustomDebugStringConvertibleP", "e"]
+- ["s28CustomDebugStringConvertibleP", "encode"]
+- ["s28CustomDebugStringConvertibleP", "enharmonicModifier"]
+- ["s28CustomDebugStringConvertibleP", "f"]
+- !private ["s28CustomDebugStringConvertibleP", "firstIndex"]
+- ["s28CustomDebugStringConvertibleP", "g"]
+- ["s28CustomDebugStringConvertibleP", "hash"]
+- ["s28CustomDebugStringConvertibleP", "hashValue"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lowercased"]
+- ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "offset"]
+- ["s28CustomDebugStringConvertibleP", "rawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "wrappableModulo"]
+- !private ["s17CustomReflectableP", "firstIndex"]
+- !private ["s17CustomReflectableP", "lowercased"]
+- ["s17CustomReflectableP", "map"]
+- !private ["s17CustomReflectableP", "subscript"]
+- ["s23CustomStringConvertibleP", "=="]
+- ["s23CustomStringConvertibleP", "Default_RawValue"]
+- !private ["s23CustomStringConvertibleP", "MusicPitchName"]
+- ["s23CustomStringConvertibleP", "RawValue"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_Default_RawValue"]
+- ["s23CustomStringConvertibleP", "_rawHashValue"]
+- ["s23CustomStringConvertibleP", "a"]
+- !private ["s23CustomStringConvertibleP", "abs"]
+- !private ["s23CustomStringConvertibleP", "allModifiers"]
+- ["s23CustomStringConvertibleP", "allValues"]
+- ["s23CustomStringConvertibleP", "b"]
+- ["s23CustomStringConvertibleP", "c"]
+- ["s23CustomStringConvertibleP", "d"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- ["s23CustomStringConvertibleP", "e"]
+- ["s23CustomStringConvertibleP", "encode"]
+- ["s23CustomStringConvertibleP", "enharmonicModifier"]
+- ["s23CustomStringConvertibleP", "f"]
+- !private ["s23CustomStringConvertibleP", "firstIndex"]
+- ["s23CustomStringConvertibleP", "g"]
+- ["s23CustomStringConvertibleP", "hash"]
+- ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lowercased"]
+- ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "offset"]
+- ["s23CustomStringConvertibleP", "rawValue"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "wrappableModulo"]
+- ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "firstIndex"]
+- ["10Foundation12DataProtocolP", "map"]
+- !private ["10Foundation12DataProtocolP", "subscript"]
+- ["Se", "=="]
+- ["Se", "Default_RawValue"]
+- !private ["Se", "MusicPitchName"]
+- ["Se", "RawValue"]
+- ["Se", ""]
+- ["Se", "_Default_RawValue"]
+- ["Se", "_rawHashValue"]
+- ["Se", "a"]
+- !private ["Se", "abs"]
+- !private ["Se", "allModifiers"]
+- ["Se", "allValues"]
+- ["Se", "b"]
+- ["Se", "c"]
+- ["Se", "d"]
+- ["Se", "debugDescription"]
+- ["Se", "description"]
+- ["Se", "e"]
+- ["Se", "encode"]
+- ["Se", "enharmonicModifier"]
+- ["Se", "f"]
+- !private ["Se", "firstIndex"]
+- ["Se", "g"]
+- ["Se", "hash"]
+- ["Se", "hashValue"]
+- ["Se", "init"]
+- !private ["Se", "lowercased"]
+- ["Se", "map"]
+- !private ["Se", "offset"]
+- ["Se", "rawValue"]
+- !private ["Se", "subscript"]
+- !private ["Se", "wrappableModulo"]
+- ["SE", "=="]
+- ["SE", "Default_RawValue"]
+- !private ["SE", "MusicPitchName"]
+- ["SE", "RawValue"]
+- ["SE", ""]
+- ["SE", "_Default_RawValue"]
+- ["SE", "_rawHashValue"]
+- ["SE", "a"]
+- !private ["SE", "abs"]
+- !private ["SE", "allModifiers"]
+- ["SE", "allValues"]
+- ["SE", "b"]
+- ["SE", "c"]
+- ["SE", "d"]
+- ["SE", "debugDescription"]
+- ["SE", "description"]
+- ["SE", "e"]
+- ["SE", "encode"]
+- ["SE", "enharmonicModifier"]
+- ["SE", "f"]
+- !private ["SE", "firstIndex"]
+- ["SE", "g"]
+- ["SE", "hash"]
+- ["SE", "hashValue"]
+- ["SE", "init"]
+- !private ["SE", "lowercased"]
+- ["SE", "map"]
+- !private ["SE", "offset"]
+- ["SE", "rawValue"]
+- !private ["SE", "subscript"]
+- !private ["SE", "wrappableModulo"]
+- ["SQ", "=="]
+- ["SQ", "Default_RawValue"]
+- !private ["SQ", "MusicPitchName"]
+- ["SQ", "RawValue"]
+- ["SQ", ""]
+- ["SQ", "_Default_RawValue"]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "a"]
+- !private ["SQ", "abs"]
+- !private ["SQ", "allModifiers"]
+- ["SQ", "allValues"]
+- ["SQ", "b"]
+- ["SQ", "c"]
+- ["SQ", "d"]
+- ["SQ", "debugDescription"]
+- ["SQ", "description"]
+- ["SQ", "e"]
+- ["SQ", "encode"]
+- ["SQ", "enharmonicModifier"]
+- ["SQ", "f"]
+- !private ["SQ", "firstIndex"]
+- ["SQ", "g"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- !private ["SQ", "lowercased"]
+- ["SQ", "map"]
+- !private ["SQ", "offset"]
+- ["SQ", "rawValue"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "wrappableModulo"]
+- ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "firstIndex"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- ["s25ExpressibleByArrayLiteralP", "map"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "lowercased"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "lowercased"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "lowercased"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "lowercased"]
+- ["SH", "=="]
+- ["SH", "Default_RawValue"]
+- !private ["SH", "MusicPitchName"]
+- ["SH", "RawValue"]
+- ["SH", ""]
+- ["SH", "_Default_RawValue"]
+- ["SH", "_rawHashValue"]
+- ["SH", "a"]
+- !private ["SH", "abs"]
+- !private ["SH", "allModifiers"]
+- ["SH", "allValues"]
+- ["SH", "b"]
+- ["SH", "c"]
+- ["SH", "d"]
+- ["SH", "debugDescription"]
+- ["SH", "description"]
+- ["SH", "e"]
+- ["SH", "encode"]
+- ["SH", "enharmonicModifier"]
+- ["SH", "f"]
+- !private ["SH", "firstIndex"]
+- ["SH", "g"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- !private ["SH", "lowercased"]
+- ["SH", "map"]
+- !private ["SH", "offset"]
+- ["SH", "rawValue"]
+- !private ["SH", "subscript"]
+- !private ["SH", "wrappableModulo"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "lowercased"]
+- !private ["s10MirrorPathP", "lowercased"]
+- ["5Music0A9PitchNameO", "=="]
+- ["5Music0A9PitchNameO", "Default_RawValue"]
+- ["5Music0A9PitchNameO", "Int"]
+- ["5Music0A9PitchNameO", "MusicPitchName"]
+- ["5Music0A9PitchNameO", "RawValue"]
+- ["5Music0A9PitchNameO", "String"]
+- ["5Music0A9PitchNameO", ""]
+- ["5Music0A9PitchNameO", "_Default_RawValue"]
+- ["5Music0A9PitchNameO", "_rawHashValue"]
+- ["5Music0A9PitchNameO", "a"]
+- !private ["5Music0A9PitchNameO", "abs"]
+- ["5Music0A9PitchNameO", "allModifiers"]
+- ["5Music0A9PitchNameO", "allValues"]
+- ["5Music0A9PitchNameO", "b"]
+- ["5Music0A9PitchNameO", "c"]
+- ["5Music0A9PitchNameO", "d"]
+- ["5Music0A9PitchNameO", "debugDescription"]
+- ["5Music0A9PitchNameO", "description"]
+- ["5Music0A9PitchNameO", "e"]
+- ["5Music0A9PitchNameO", "encode"]
+- ["5Music0A9PitchNameO", "enharmonicModifier"]
+- ["5Music0A9PitchNameO", "f"]
+- ["5Music0A9PitchNameO", "g"]
+- ["5Music0A9PitchNameO", "hash"]
+- ["5Music0A9PitchNameO", "hashValue"]
+- ["5Music0A9PitchNameO", "init"]
+- ["5Music0A9PitchNameO", "nextName"]
+- ["5Music0A9PitchNameO", "offset"]
+- ["5Music0A9PitchNameO", "previousName"]
+- ["5Music0A9PitchNameO", "rawValue"]
+- !private ["5Music0A9PitchNameO", "wrappableModulo"]
+- ["SM", ""]
+- !private ["SM", "firstIndex"]
+- ["SM", "map"]
+- !private ["SM", "subscript"]
+- !private ["10Foundation19MutableDataProtocolP", "firstIndex"]
+- ["10Foundation19MutableDataProtocolP", "map"]
+- !private ["10Foundation19MutableDataProtocolP", "subscript"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "lowercased"]
+- !private ["So9NSCopyingP", "lowercased"]
+- !private ["So21NSItemProviderReadingP", "lowercased"]
+- !private ["So21NSItemProviderWritingP", "lowercased"]
+- !private ["So16NSMutableCopyingP", "lowercased"]
+- !private ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "lowercaseStringWithLocale"]
+- !private ["So8NSObjectC", "lowercased"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "lowercaseStringWithLocale"]
+- !private ["So8NSObjectP", "lowercased"]
+- !private ["So19NSPasteboardReadingP", "lowercased"]
+- !private ["So19NSPasteboardWritingP", "lowercased"]
+- !private ["So14NSSecureCodingP", "lowercased"]
+- !private ["So8NSStringC", "lowercased"]
+- ["Sk", ""]
+- !private ["Sk", "firstIndex"]
+- ["Sk", "map"]
+- !private ["Sk", "subscript"]
+- ["Sm", ""]
+- !private ["Sm", "firstIndex"]
+- !private ["Sm", "lowercased"]
+- ["Sm", "map"]
+- !private ["Sm", "subscript"]
+- ["SY", "=="]
+- ["SY", "Default_RawValue"]
+- !private ["SY", "MusicPitchName"]
+- ["SY", "RawValue"]
+- ["SY", ""]
+- ["SY", "_Default_RawValue"]
+- ["SY", "_rawHashValue"]
+- ["SY", "a"]
+- !private ["SY", "abs"]
+- !private ["SY", "allModifiers"]
+- ["SY", "allValues"]
+- ["SY", "b"]
+- ["SY", "c"]
+- ["SY", "d"]
+- ["SY", "debugDescription"]
+- ["SY", "description"]
+- ["SY", "e"]
+- ["SY", "encode"]
+- ["SY", "enharmonicModifier"]
+- ["SY", "f"]
+- ["SY", "g"]
+- ["SY", "hash"]
+- ["SY", "hashValue"]
+- ["SY", "init"]
+- !private ["SY", "offset"]
+- ["SY", "rawValue"]
+- !private ["SY", "wrappableModulo"]
+- ["ST", ""]
+- !private ["ST", "firstIndex"]
+- !private ["ST", "lowercased"]
+- ["ST", "map"]
+- !private ["ST", "subscript"]
+- !private ["SS", "lowercased"]
+- !private ["Sy", "lowercased"]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "lowercased"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "lowercased"]
+- !private ["s14_ArrayProtocolP", "firstIndex"]
+- ["s14_ArrayProtocolP", "map"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "lowercased"]
+- !private ["s24_DestructorSafeContainerP", "firstIndex"]
+- ["s24_DestructorSafeContainerP", "map"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "lowercased"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "lowercased"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "lowercased"]
+- !private ["s19_HasContiguousBytesP", "firstIndex"]
+- !private ["s19_HasContiguousBytesP", "lowercased"]
+- ["s19_HasContiguousBytesP", "map"]
+- !private ["s19_HasContiguousBytesP", "subscript"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "firstIndex"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "lowercased"]
+- ["s35_HasCustomAnyHashableRepresentationP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lowercased"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "lowercased"]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "_bridgeToObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_conditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_forceBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_unconditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "firstIndex"]
+- !private ["s21_ObjectiveCBridgeableP", "lowercased"]
+- ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["So13CKRecordValueP", "lowercased"]
+depends-nominal:
+- "Sa"
+- "SK"
+- "8CloudKit21CKRecordValueProtocolP"
+- "s7CVarArgP"
+- "Sl"
+- !private "SL"
+- "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "10Foundation12DataProtocolP"
+- "Se"
+- "SE"
+- "SQ"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "5Music0A9PitchNameO"
+- "SM"
+- "10Foundation19MutableDataProtocolP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So19NSPasteboardReadingP"
+- !private "So19NSPasteboardWritingP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- "Sk"
+- "Sm"
+- "SY"
+- "ST"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- "s14_ArrayProtocolP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- "s24_DestructorSafeContainerP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s19_HasContiguousBytesP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "s21_ObjectiveCBridgeableP"
+- !private "So13CKRecordValueP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "694ee0728f197a13086fff862b94cfcd"

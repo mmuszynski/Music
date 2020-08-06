@@ -1,0 +1,398 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MusicScaleDirection"
+- "MusicScale"
+- "=="
+provides-nominal:
+- "5Music0A14ScaleDirectionO"
+- "5Music0A5ScaleV"
+provides-member:
+- ["5Music0A14ScaleDirectionO", ""]
+- ["5Music0A5ScaleV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "..<"
+- "=="
+- "AssignmentPrecedence"
+- "Bool"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- "MusicPitch"
+- "MusicPitchCollection"
+- "MusicScale"
+- "MusicScaleDirection"
+- "MusicScaleMode"
+- "_Element"
+- !private "pitches"
+depends-member:
+- !private ["Sa", "count"]
+- !private ["Sa", "subscript"]
+- !private ["SK", ""]
+- !private ["SK", "count"]
+- !private ["SK", "subscript"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "count"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "subscript"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "subscript"]
+- ["Sl", "Default_Element"]
+- ["Sl", "Default_Index"]
+- ["Sl", "Default_Indices"]
+- ["Sl", "Default_Iterator"]
+- ["Sl", "Default_SubSequence"]
+- ["Sl", "Element"]
+- ["Sl", "Index"]
+- ["Sl", "Indices"]
+- ["Sl", "Iterator"]
+- ["Sl", "SubSequence"]
+- ["Sl", ""]
+- ["Sl", "_Default_Element"]
+- ["Sl", "_Default_Index"]
+- ["Sl", "_Default_Indices"]
+- ["Sl", "_Default_Iterator"]
+- ["Sl", "_Default_SubSequence"]
+- ["Sl", "_copyContents"]
+- ["Sl", "_copyToContiguousArray"]
+- ["Sl", "_customContainsEquatableElement"]
+- ["Sl", "_customIndexOfEquatableElement"]
+- ["Sl", "_customLastIndexOfEquatableElement"]
+- ["Sl", "_failEarlyRangeCheck"]
+- ["Sl", "count"]
+- ["Sl", "distance"]
+- ["Sl", "endIndex"]
+- ["Sl", "formIndex"]
+- ["Sl", "index"]
+- ["Sl", "indices"]
+- ["Sl", "isEmpty"]
+- ["Sl", "makeIterator"]
+- ["Sl", "pitches"]
+- ["Sl", "startIndex"]
+- ["Sl", "subscript"]
+- ["Sl", "transpose"]
+- ["Sl", "transposed"]
+- ["Sl", "underestimatedCount"]
+- ["Sl", "withContiguousStorageIfAvailable"]
+- !private ["10Foundation15ContiguousBytesP", "count"]
+- !private ["10Foundation15ContiguousBytesP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "count"]
+- !private ["10Foundation12DataProtocolP", "subscript"]
+- !private ["Se", "count"]
+- !private ["Se", "subscript"]
+- !private ["SE", "count"]
+- !private ["SE", "subscript"]
+- ["SQ", "=="]
+- ["SQ", ""]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "circular"]
+- !private ["SQ", "count"]
+- ["SQ", "down"]
+- !private ["SQ", "downwardPitches"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- !private ["SQ", "subscript"]
+- ["SQ", "up"]
+- !private ["SQ", "upwardIntervalDescription"]
+- !private ["SQ", "upwardPitches"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- ["SH", "=="]
+- ["SH", ""]
+- ["SH", "_rawHashValue"]
+- ["SH", "circular"]
+- !private ["SH", "count"]
+- ["SH", "down"]
+- !private ["SH", "downwardPitches"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["SH", "subscript"]
+- ["SH", "up"]
+- !private ["SH", "upwardIntervalDescription"]
+- !private ["SH", "upwardPitches"]
+- !private ["s6HasherV", "combine"]
+- ["5Music0A21IntervalRepresentableP", ""]
+- !private ["5Music0A21IntervalRepresentableP", "downwardPitches"]
+- !private ["5Music0A21IntervalRepresentableP", "upwardIntervalDescription"]
+- !private ["5Music0A21IntervalRepresentableP", "upwardPitches"]
+- !private ["5Music0A32IntervalRepresentableDirectionalP", "downwardPitches"]
+- !private ["5Music0A32IntervalRepresentableDirectionalP", "upwardIntervalDescription"]
+- !private ["5Music0A32IntervalRepresentableDirectionalP", "upwardPitches"]
+- !private ["5Music0A5PitchV", ""]
+- ["5Music0A15PitchCollectionP", "Default_Element"]
+- ["5Music0A15PitchCollectionP", "Default_Index"]
+- ["5Music0A15PitchCollectionP", "Default_Indices"]
+- ["5Music0A15PitchCollectionP", "Default_Iterator"]
+- ["5Music0A15PitchCollectionP", "Default_SubSequence"]
+- ["5Music0A15PitchCollectionP", "Element"]
+- ["5Music0A15PitchCollectionP", "Index"]
+- ["5Music0A15PitchCollectionP", "IndexDistance"]
+- ["5Music0A15PitchCollectionP", "Indices"]
+- ["5Music0A15PitchCollectionP", "Iterator"]
+- ["5Music0A15PitchCollectionP", "SubSequence"]
+- ["5Music0A15PitchCollectionP", ""]
+- ["5Music0A15PitchCollectionP", "_Default_Element"]
+- ["5Music0A15PitchCollectionP", "_Default_Index"]
+- ["5Music0A15PitchCollectionP", "_Default_Indices"]
+- ["5Music0A15PitchCollectionP", "_Default_Iterator"]
+- ["5Music0A15PitchCollectionP", "_Default_SubSequence"]
+- ["5Music0A15PitchCollectionP", "_copyContents"]
+- ["5Music0A15PitchCollectionP", "_copyToContiguousArray"]
+- ["5Music0A15PitchCollectionP", "_customContainsEquatableElement"]
+- ["5Music0A15PitchCollectionP", "_customIndexOfEquatableElement"]
+- ["5Music0A15PitchCollectionP", "_customLastIndexOfEquatableElement"]
+- ["5Music0A15PitchCollectionP", "_failEarlyRangeCheck"]
+- ["5Music0A15PitchCollectionP", "count"]
+- ["5Music0A15PitchCollectionP", "distance"]
+- ["5Music0A15PitchCollectionP", "endIndex"]
+- ["5Music0A15PitchCollectionP", "formIndex"]
+- ["5Music0A15PitchCollectionP", "index"]
+- ["5Music0A15PitchCollectionP", "indices"]
+- ["5Music0A15PitchCollectionP", "isEmpty"]
+- ["5Music0A15PitchCollectionP", "makeIterator"]
+- ["5Music0A15PitchCollectionP", "pitches"]
+- ["5Music0A15PitchCollectionP", "startIndex"]
+- ["5Music0A15PitchCollectionP", "subscript"]
+- ["5Music0A15PitchCollectionP", "transpose"]
+- ["5Music0A15PitchCollectionP", "transposed"]
+- ["5Music0A15PitchCollectionP", "underestimatedCount"]
+- ["5Music0A15PitchCollectionP", "withContiguousStorageIfAvailable"]
+- ["5Music0A5ScaleV", "=="]
+- ["5Music0A5ScaleV", "Bool"]
+- ["5Music0A5ScaleV", "Default_Element"]
+- ["5Music0A5ScaleV", "Default_Index"]
+- ["5Music0A5ScaleV", "Default_Indices"]
+- ["5Music0A5ScaleV", "Default_Iterator"]
+- ["5Music0A5ScaleV", "Default_SubSequence"]
+- ["5Music0A5ScaleV", "Element"]
+- ["5Music0A5ScaleV", "Index"]
+- ["5Music0A5ScaleV", "Indices"]
+- ["5Music0A5ScaleV", "Iterator"]
+- ["5Music0A5ScaleV", "MusicPitch"]
+- ["5Music0A5ScaleV", "MusicScale"]
+- ["5Music0A5ScaleV", "MusicScaleDirection"]
+- ["5Music0A5ScaleV", "MusicScaleMode"]
+- ["5Music0A5ScaleV", "SubSequence"]
+- ["5Music0A5ScaleV", ""]
+- ["5Music0A5ScaleV", "_Default_Element"]
+- ["5Music0A5ScaleV", "_Default_Index"]
+- ["5Music0A5ScaleV", "_Default_Indices"]
+- ["5Music0A5ScaleV", "_Default_Iterator"]
+- ["5Music0A5ScaleV", "_Default_SubSequence"]
+- ["5Music0A5ScaleV", "_Element"]
+- ["5Music0A5ScaleV", "_copyContents"]
+- ["5Music0A5ScaleV", "_copyToContiguousArray"]
+- ["5Music0A5ScaleV", "_customContainsEquatableElement"]
+- ["5Music0A5ScaleV", "_customIndexOfEquatableElement"]
+- ["5Music0A5ScaleV", "_customLastIndexOfEquatableElement"]
+- ["5Music0A5ScaleV", "_failEarlyRangeCheck"]
+- ["5Music0A5ScaleV", "count"]
+- ["5Music0A5ScaleV", "distance"]
+- ["5Music0A5ScaleV", "endIndex"]
+- ["5Music0A5ScaleV", "formIndex"]
+- ["5Music0A5ScaleV", "index"]
+- ["5Music0A5ScaleV", "indices"]
+- ["5Music0A5ScaleV", "init"]
+- ["5Music0A5ScaleV", "isEmpty"]
+- ["5Music0A5ScaleV", "makeIterator"]
+- ["5Music0A5ScaleV", "pitches"]
+- ["5Music0A5ScaleV", "startIndex"]
+- ["5Music0A5ScaleV", "subscript"]
+- ["5Music0A5ScaleV", "transpose"]
+- ["5Music0A5ScaleV", "transposed"]
+- ["5Music0A5ScaleV", "underestimatedCount"]
+- ["5Music0A5ScaleV", "withContiguousStorageIfAvailable"]
+- ["5Music0A14ScaleDirectionO", "=="]
+- ["5Music0A14ScaleDirectionO", ""]
+- ["5Music0A14ScaleDirectionO", "__derived_enum_equals"]
+- ["5Music0A14ScaleDirectionO", "_rawHashValue"]
+- ["5Music0A14ScaleDirectionO", "circular"]
+- ["5Music0A14ScaleDirectionO", "down"]
+- ["5Music0A14ScaleDirectionO", "hash"]
+- ["5Music0A14ScaleDirectionO", "hashValue"]
+- ["5Music0A14ScaleDirectionO", "up"]
+- !private ["5Music0A9ScaleModeO", ""]
+- !private ["5Music0A9ScaleModeO", "downwardPitches"]
+- !private ["5Music0A9ScaleModeO", "upwardIntervalDescription"]
+- !private ["5Music0A9ScaleModeO", "upwardPitches"]
+- ["5Music0A12TransposableP", "Default_Element"]
+- ["5Music0A12TransposableP", "Default_Index"]
+- ["5Music0A12TransposableP", "Default_Indices"]
+- ["5Music0A12TransposableP", "Default_Iterator"]
+- ["5Music0A12TransposableP", "Default_SubSequence"]
+- ["5Music0A12TransposableP", "Element"]
+- ["5Music0A12TransposableP", "Index"]
+- ["5Music0A12TransposableP", "Indices"]
+- ["5Music0A12TransposableP", "Iterator"]
+- ["5Music0A12TransposableP", "SubSequence"]
+- ["5Music0A12TransposableP", ""]
+- ["5Music0A12TransposableP", "_Default_Element"]
+- ["5Music0A12TransposableP", "_Default_Index"]
+- ["5Music0A12TransposableP", "_Default_Indices"]
+- ["5Music0A12TransposableP", "_Default_Iterator"]
+- ["5Music0A12TransposableP", "_Default_SubSequence"]
+- ["5Music0A12TransposableP", "_copyContents"]
+- ["5Music0A12TransposableP", "_copyToContiguousArray"]
+- ["5Music0A12TransposableP", "_customContainsEquatableElement"]
+- ["5Music0A12TransposableP", "_customIndexOfEquatableElement"]
+- ["5Music0A12TransposableP", "_customLastIndexOfEquatableElement"]
+- ["5Music0A12TransposableP", "_failEarlyRangeCheck"]
+- ["5Music0A12TransposableP", "count"]
+- ["5Music0A12TransposableP", "distance"]
+- ["5Music0A12TransposableP", "endIndex"]
+- ["5Music0A12TransposableP", "formIndex"]
+- ["5Music0A12TransposableP", "index"]
+- ["5Music0A12TransposableP", "indices"]
+- ["5Music0A12TransposableP", "isEmpty"]
+- ["5Music0A12TransposableP", "makeIterator"]
+- ["5Music0A12TransposableP", "pitches"]
+- ["5Music0A12TransposableP", "startIndex"]
+- ["5Music0A12TransposableP", "subscript"]
+- ["5Music0A12TransposableP", "transpose"]
+- ["5Music0A12TransposableP", "transposed"]
+- ["5Music0A12TransposableP", "underestimatedCount"]
+- ["5Music0A12TransposableP", "withContiguousStorageIfAvailable"]
+- !private ["SM", ""]
+- !private ["SM", "count"]
+- !private ["SM", "subscript"]
+- !private ["10Foundation19MutableDataProtocolP", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "subscript"]
+- !private ["So8NSCodingP", ""]
+- !private ["Sk", ""]
+- !private ["Sk", "count"]
+- !private ["Sk", "subscript"]
+- !private ["Sm", ""]
+- !private ["Sm", "count"]
+- !private ["Sm", "subscript"]
+- ["ST", "Default_Element"]
+- ["ST", "Default_Index"]
+- ["ST", "Default_Indices"]
+- ["ST", "Default_Iterator"]
+- ["ST", "Default_SubSequence"]
+- ["ST", "Element"]
+- ["ST", "Index"]
+- ["ST", "Indices"]
+- ["ST", "Iterator"]
+- ["ST", "SubSequence"]
+- ["ST", ""]
+- ["ST", "_Default_Element"]
+- ["ST", "_Default_Index"]
+- ["ST", "_Default_Indices"]
+- ["ST", "_Default_Iterator"]
+- ["ST", "_Default_SubSequence"]
+- ["ST", "_copyContents"]
+- ["ST", "_copyToContiguousArray"]
+- ["ST", "_customContainsEquatableElement"]
+- ["ST", "_customIndexOfEquatableElement"]
+- ["ST", "_customLastIndexOfEquatableElement"]
+- ["ST", "_failEarlyRangeCheck"]
+- ["ST", "count"]
+- ["ST", "distance"]
+- ["ST", "endIndex"]
+- ["ST", "formIndex"]
+- ["ST", "index"]
+- ["ST", "indices"]
+- ["ST", "isEmpty"]
+- ["ST", "makeIterator"]
+- ["ST", "pitches"]
+- ["ST", "startIndex"]
+- ["ST", "subscript"]
+- ["ST", "transpose"]
+- ["ST", "transposed"]
+- ["ST", "underestimatedCount"]
+- ["ST", "withContiguousStorageIfAvailable"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "count"]
+- !private ["s19_HasContiguousBytesP", "subscript"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+depends-nominal:
+- !private "Sa"
+- !private "SK"
+- !private "8CloudKit21CKRecordValueProtocolP"
+- !private "s7CVarArgP"
+- "Sl"
+- !private "10Foundation15ContiguousBytesP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- "s25ExpressibleByArrayLiteralP"
+- "SH"
+- !private "s6HasherV"
+- "5Music0A21IntervalRepresentableP"
+- !private "5Music0A32IntervalRepresentableDirectionalP"
+- !private "5Music0A5PitchV"
+- "5Music0A15PitchCollectionP"
+- "5Music0A5ScaleV"
+- "5Music0A14ScaleDirectionO"
+- !private "5Music0A9ScaleModeO"
+- "5Music0A12TransposableP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "Sk"
+- !private "Sm"
+- "ST"
+- !private "s14_ArrayProtocolP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "e1e9bfc509021c580548753ec377b277"

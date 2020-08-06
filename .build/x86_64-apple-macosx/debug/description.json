@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/mike\/Cocoa\/Frameworks\/music\/.build\/x86_64-apple-macosx\/debug\/MusicPackageTests.xctest\/Contents\/MacOS\/MusicPackageTests",
+      "packageName" : "Music",
+      "productName" : "MusicPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.Music-debug.module" : "Music",
+    "C.MusicTests-debug.module" : "MusicTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

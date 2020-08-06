@@ -1,0 +1,173 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/master.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicChord/MusicChord+Equatable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord+Equatable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord+Equatable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord+Equatable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord+Equatable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicChord/MusicChord.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChord.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicChord/MusicChordType+Equatable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType+Equatable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType+Equatable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType+Equatable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType+Equatable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicChord/MusicChordType.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicChord/MusicChordType.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicClef/MusicClef+Equatable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef+Equatable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef+Equatable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef+Equatable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef+Equatable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicClef/MusicClef.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicClef/MusicClef.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicInterval/MusicInterval+Equatable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval+Equatable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval+Equatable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval+Equatable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval+Equatable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicInterval/MusicInterval.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicInterval.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicInterval/MusicIntervalError.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalError.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalError.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalError~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalError.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicInterval/MusicIntervalQuality.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuality.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuality.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuality~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuality.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicInterval/MusicIntervalQuantity.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuantity.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuantity.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuantity~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicInterval/MusicIntervalQuantity.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicKeySignature/MusicKeySignature.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicKeySignature/MusicKeySignature.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicKeySignature/MusicKeySignature.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicKeySignature/MusicKeySignature~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicKeySignature/MusicKeySignature.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicNote/MusicNote+Hashable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote+Hashable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote+Hashable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote+Hashable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote+Hashable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicNote/MusicNote.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicNote/MusicNote.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MidiDecoderTests.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MidiDecoderTests.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MidiDecoderTests.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MidiDecoderTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MidiDecoderTests.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicAccidental.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicAccidental.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicAccidental.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicAccidental~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicAccidental.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicPitch+Transposable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch+Transposable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch+Transposable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch+Transposable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch+Transposable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicPitch.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitch.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicPitchAccidental.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchAccidental.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchAccidental.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchAccidental~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchAccidental.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicPitchExtensions.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchExtensions.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchExtensions.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchExtensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchExtensions.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicPitch/MusicPitchName.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchName.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchName.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchName~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicPitch/MusicPitchName.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicRhythm/MusicRhythm.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicRhythm/MusicRhythm.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicRhythm/MusicRhythm.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicRhythm/MusicRhythm~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicRhythm/MusicRhythm.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicScale/MusicScale.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScale.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScale.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScale~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScale.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicScale/MusicScaleMode.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScaleMode.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScaleMode.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScaleMode~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicScale/MusicScaleMode.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/MusicTimeSignature/MusicTimeSignature.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicTimeSignature/MusicTimeSignature.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicTimeSignature/MusicTimeSignature.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicTimeSignature/MusicTimeSignature~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/MusicTimeSignature/MusicTimeSignature.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/Protocols/MusicIntervalRepresentable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicIntervalRepresentable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicIntervalRepresentable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicIntervalRepresentable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicIntervalRepresentable.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/Protocols/MusicPitchCollection.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicPitchCollection.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicPitchCollection.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicPitchCollection~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicPitchCollection.swiftdeps"
+  },
+  "/Users/mike/Cocoa/Frameworks/music/Sources/Music/Protocols/MusicTransposable.swift": {
+    "dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicTransposable.d",
+    "object": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicTransposable.swift.o",
+    "swiftmodule": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicTransposable~partial.swiftmodule",
+    "swift-dependencies": "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Protocols/MusicTransposable.swiftdeps"
+  }
+}

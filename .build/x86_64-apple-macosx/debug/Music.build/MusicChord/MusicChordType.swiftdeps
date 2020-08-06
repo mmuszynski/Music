@@ -1,0 +1,366 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MusicChordType"
+provides-nominal:
+- "5Music0A9ChordTypeO"
+provides-member:
+- ["5Music0A9ChordTypeO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+"
+- !private "-"
+- !private "..<"
+- !private "Array"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- "MusicChordType"
+- "MusicInterval"
+- "MusicIntervalDirection"
+- "MusicIntervalQuality"
+- "MusicIntervalQuantity"
+- "MusicIntervalRepresentable"
+- "MusicPitch"
+- !private "tripletToInterval"
+depends-member:
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- !private ["Sa", "first"]
+- !private ["Sa", "init"]
+- !private ["Sa", "map"]
+- !private ["Sa", "sorted"]
+- !private ["Sa", "subscript"]
+- !private ["SK", ""]
+- !private ["SK", "append"]
+- !private ["SK", "count"]
+- !private ["SK", "first"]
+- !private ["SK", "init"]
+- !private ["SK", "map"]
+- !private ["SK", "sorted"]
+- !private ["SK", "subscript"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "append"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "count"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "first"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "map"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "sorted"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "subscript"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "first"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "map"]
+- !private ["s7CVarArgP", "sorted"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["Sl", ""]
+- !private ["Sl", "append"]
+- !private ["Sl", "count"]
+- !private ["Sl", "first"]
+- !private ["Sl", "init"]
+- !private ["Sl", "map"]
+- !private ["Sl", "sorted"]
+- !private ["Sl", "subscript"]
+- !private ["10Foundation15ContiguousBytesP", "append"]
+- !private ["10Foundation15ContiguousBytesP", "count"]
+- !private ["10Foundation15ContiguousBytesP", "first"]
+- !private ["10Foundation15ContiguousBytesP", "init"]
+- !private ["10Foundation15ContiguousBytesP", "map"]
+- !private ["10Foundation15ContiguousBytesP", "sorted"]
+- !private ["10Foundation15ContiguousBytesP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "augmented"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "diminished"]
+- !private ["s28CustomDebugStringConvertibleP", "fifth"]
+- !private ["s28CustomDebugStringConvertibleP", "first"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "major"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "minor"]
+- !private ["s28CustomDebugStringConvertibleP", "perfect"]
+- !private ["s28CustomDebugStringConvertibleP", "seventh"]
+- !private ["s28CustomDebugStringConvertibleP", "sorted"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "third"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "first"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s17CustomReflectableP", "sorted"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "augmented"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "diminished"]
+- !private ["s23CustomStringConvertibleP", "fifth"]
+- !private ["s23CustomStringConvertibleP", "first"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "major"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "minor"]
+- !private ["s23CustomStringConvertibleP", "perfect"]
+- !private ["s23CustomStringConvertibleP", "seventh"]
+- !private ["s23CustomStringConvertibleP", "sorted"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "third"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "append"]
+- !private ["10Foundation12DataProtocolP", "count"]
+- !private ["10Foundation12DataProtocolP", "first"]
+- !private ["10Foundation12DataProtocolP", "init"]
+- !private ["10Foundation12DataProtocolP", "map"]
+- !private ["10Foundation12DataProtocolP", "sorted"]
+- !private ["10Foundation12DataProtocolP", "subscript"]
+- !private ["Se", "append"]
+- !private ["Se", "count"]
+- !private ["Se", "first"]
+- !private ["Se", "init"]
+- !private ["Se", "map"]
+- !private ["Se", "sorted"]
+- !private ["Se", "subscript"]
+- !private ["SE", "append"]
+- !private ["SE", "count"]
+- !private ["SE", "first"]
+- !private ["SE", "init"]
+- !private ["SE", "map"]
+- !private ["SE", "sorted"]
+- !private ["SE", "subscript"]
+- !private ["SQ", "MusicChordType"]
+- !private ["SQ", "MusicInterval"]
+- !private ["SQ", ""]
+- !private ["SQ", "append"]
+- !private ["SQ", "augmented"]
+- ["SQ", "augmentedTriad"]
+- !private ["SQ", "count"]
+- !private ["SQ", "diminished"]
+- ["SQ", "diminishedTriad"]
+- ["SQ", "dominantSeventh"]
+- !private ["SQ", "fifth"]
+- !private ["SQ", "first"]
+- ["SQ", "fullyDiminishedSeventh"]
+- ["SQ", "generic"]
+- ["SQ", "halfDiminishedSeventh"]
+- !private ["SQ", "init"]
+- ["SQ", "intervalDescription"]
+- !private ["SQ", "major"]
+- ["SQ", "majorSeventh"]
+- ["SQ", "majorTriad"]
+- !private ["SQ", "map"]
+- !private ["SQ", "minor"]
+- ["SQ", "minorSeventh"]
+- ["SQ", "minorTriad"]
+- !private ["SQ", "perfect"]
+- ["SQ", "pitches"]
+- !private ["SQ", "seventh"]
+- !private ["SQ", "sorted"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "third"]
+- !private ["SQ", "tripletToInterval"]
+- !private ["SQ", "upward"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "first"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "map"]
+- !private ["s25ExpressibleByArrayLiteralP", "sorted"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["SH", "append"]
+- !private ["SH", "augmented"]
+- !private ["SH", "count"]
+- !private ["SH", "diminished"]
+- !private ["SH", "first"]
+- !private ["SH", "init"]
+- !private ["SH", "major"]
+- !private ["SH", "map"]
+- !private ["SH", "minor"]
+- !private ["SH", "perfect"]
+- !private ["SH", "sorted"]
+- !private ["SH", "subscript"]
+- !private ["SH", "upward"]
+- ["5Music0A9ChordTypeO", "MusicChordType"]
+- ["5Music0A9ChordTypeO", "MusicInterval"]
+- !private ["5Music0A9ChordTypeO", "MusicIntervalDirection"]
+- !private ["5Music0A9ChordTypeO", "MusicIntervalQuality"]
+- !private ["5Music0A9ChordTypeO", "MusicIntervalQuantity"]
+- ["5Music0A9ChordTypeO", "MusicPitch"]
+- ["5Music0A9ChordTypeO", "augmentedTriad"]
+- ["5Music0A9ChordTypeO", "diminishedTriad"]
+- ["5Music0A9ChordTypeO", "dominantSeventh"]
+- ["5Music0A9ChordTypeO", "fullyDiminishedSeventh"]
+- ["5Music0A9ChordTypeO", "generic"]
+- ["5Music0A9ChordTypeO", "genericType"]
+- ["5Music0A9ChordTypeO", "halfDiminishedSeventh"]
+- ["5Music0A9ChordTypeO", "intervalDescription"]
+- ["5Music0A9ChordTypeO", "majorSeventh"]
+- ["5Music0A9ChordTypeO", "majorTriad"]
+- ["5Music0A9ChordTypeO", "minorSeventh"]
+- ["5Music0A9ChordTypeO", "minorTriad"]
+- ["5Music0A9ChordTypeO", "pitches"]
+- !private ["5Music0A9ChordTypeO", "tripletToInterval"]
+- !private ["5Music0A8IntervalV", "init"]
+- !private ["5Music0A17IntervalDirectionO", "upward"]
+- !private ["5Music0A15IntervalQualityO", "augmented"]
+- !private ["5Music0A15IntervalQualityO", "diminished"]
+- !private ["5Music0A15IntervalQualityO", "major"]
+- !private ["5Music0A15IntervalQualityO", "minor"]
+- !private ["5Music0A15IntervalQualityO", "perfect"]
+- !private ["5Music0A16IntervalQuantityO", "fifth"]
+- !private ["5Music0A16IntervalQuantityO", "seventh"]
+- !private ["5Music0A16IntervalQuantityO", "third"]
+- !private ["5Music0A21IntervalRepresentableP", "MusicChordType"]
+- !private ["5Music0A21IntervalRepresentableP", "MusicInterval"]
+- ["5Music0A21IntervalRepresentableP", ""]
+- ["5Music0A21IntervalRepresentableP", "augmentedTriad"]
+- ["5Music0A21IntervalRepresentableP", "diminishedTriad"]
+- ["5Music0A21IntervalRepresentableP", "dominantSeventh"]
+- ["5Music0A21IntervalRepresentableP", "fullyDiminishedSeventh"]
+- ["5Music0A21IntervalRepresentableP", "generic"]
+- ["5Music0A21IntervalRepresentableP", "halfDiminishedSeventh"]
+- ["5Music0A21IntervalRepresentableP", "intervalDescription"]
+- ["5Music0A21IntervalRepresentableP", "majorSeventh"]
+- ["5Music0A21IntervalRepresentableP", "majorTriad"]
+- ["5Music0A21IntervalRepresentableP", "minorSeventh"]
+- ["5Music0A21IntervalRepresentableP", "minorTriad"]
+- ["5Music0A21IntervalRepresentableP", "pitches"]
+- !private ["5Music0A21IntervalRepresentableP", "tripletToInterval"]
+- !private ["5Music0A5PitchV", ""]
+- !private ["SM", ""]
+- !private ["SM", "append"]
+- !private ["SM", "count"]
+- !private ["SM", "first"]
+- !private ["SM", "init"]
+- !private ["SM", "map"]
+- !private ["SM", "sorted"]
+- !private ["SM", "subscript"]
+- !private ["10Foundation19MutableDataProtocolP", "append"]
+- !private ["10Foundation19MutableDataProtocolP", "count"]
+- !private ["10Foundation19MutableDataProtocolP", "first"]
+- !private ["10Foundation19MutableDataProtocolP", "init"]
+- !private ["10Foundation19MutableDataProtocolP", "map"]
+- !private ["10Foundation19MutableDataProtocolP", "sorted"]
+- !private ["10Foundation19MutableDataProtocolP", "subscript"]
+- !private ["So8NSCodingP", ""]
+- !private ["Sk", ""]
+- !private ["Sk", "append"]
+- !private ["Sk", "count"]
+- !private ["Sk", "first"]
+- !private ["Sk", "init"]
+- !private ["Sk", "map"]
+- !private ["Sk", "sorted"]
+- !private ["Sk", "subscript"]
+- !private ["Sm", ""]
+- !private ["Sm", "append"]
+- !private ["Sm", "count"]
+- !private ["Sm", "first"]
+- !private ["Sm", "init"]
+- !private ["Sm", "map"]
+- !private ["Sm", "sorted"]
+- !private ["Sm", "subscript"]
+- !private ["ST", "Element"]
+- !private ["ST", "Iterator"]
+- !private ["ST", ""]
+- !private ["ST", "append"]
+- !private ["ST", "count"]
+- !private ["ST", "first"]
+- !private ["ST", "init"]
+- !private ["ST", "makeIterator"]
+- !private ["ST", "map"]
+- !private ["ST", "sorted"]
+- !private ["ST", "subscript"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "count"]
+- !private ["s14_ArrayProtocolP", "first"]
+- !private ["s14_ArrayProtocolP", "init"]
+- !private ["s14_ArrayProtocolP", "map"]
+- !private ["s14_ArrayProtocolP", "sorted"]
+- !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "first"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "map"]
+- !private ["s24_DestructorSafeContainerP", "sorted"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "append"]
+- !private ["s19_HasContiguousBytesP", "count"]
+- !private ["s19_HasContiguousBytesP", "first"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "map"]
+- !private ["s19_HasContiguousBytesP", "sorted"]
+- !private ["s19_HasContiguousBytesP", "subscript"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "first"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "sorted"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "first"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "sorted"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+depends-nominal:
+- !private "Sa"
+- !private "SK"
+- !private "8CloudKit21CKRecordValueProtocolP"
+- !private "s7CVarArgP"
+- !private "Sl"
+- !private "10Foundation15ContiguousBytesP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "SH"
+- "5Music0A9ChordTypeO"
+- !private "5Music0A8IntervalV"
+- !private "5Music0A17IntervalDirectionO"
+- !private "5Music0A15IntervalQualityO"
+- !private "5Music0A16IntervalQuantityO"
+- "5Music0A21IntervalRepresentableP"
+- !private "5Music0A5PitchV"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "Sk"
+- !private "Sm"
+- !private "ST"
+- !private "s14_ArrayProtocolP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "309da9f5cd050cd0d4217868476f35a2"

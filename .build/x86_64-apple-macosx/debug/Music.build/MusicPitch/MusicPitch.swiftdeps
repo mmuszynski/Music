@@ -1,0 +1,769 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MusicPitch"
+provides-nominal:
+- "5Music0A5PitchV"
+provides-member:
+- ["5Music0A5PitchV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- !private "+"
+- !private "+="
+- !private "-"
+- !private "-="
+- !private "/"
+- "<"
+- "=="
+- !private ">"
+- "AssignmentPrecedence"
+- "Bool"
+- "Codable"
+- "CustomStringConvertible"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "MusicAccidental"
+- "MusicNote"
+- "MusicPitch"
+- "MusicPitchAccidental"
+- "MusicPitchName"
+- "MusicRhythm"
+- "Set"
+- "String"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- !private "accidental"
+- !private "name"
+- !private "octave"
+- !private "||"
+- !private "~="
+depends-member:
+- !private ["s18AdditiveArithmeticP", ""]
+- !private ["s18AdditiveArithmeticP", "init"]
+- !private ["Sa", "append"]
+- !private ["Sa", "compactMap"]
+- !private ["Sa", "filter"]
+- !private ["Sa", "last"]
+- !private ["SK", ""]
+- !private ["SK", "append"]
+- !private ["SK", "compactMap"]
+- !private ["SK", "contains"]
+- !private ["SK", "filter"]
+- !private ["SK", "first"]
+- !private ["SK", "init"]
+- !private ["SK", "last"]
+- !private ["Sz", ""]
+- !private ["Sz", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "append"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "compactMap"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "contains"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "filter"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "first"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "last"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "compactMap"]
+- !private ["s7CVarArgP", "contains"]
+- !private ["s7CVarArgP", "filter"]
+- !private ["s7CVarArgP", "first"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "last"]
+- !private ["s12CaseIterableP", "description"]
+- !private ["s12CaseIterableP", "doubleFlat"]
+- !private ["s12CaseIterableP", "doubleSharp"]
+- !private ["s12CaseIterableP", "enharmonicModifier"]
+- !private ["s12CaseIterableP", "flat"]
+- ["s12CaseIterableP", "natural"]
+- !private ["s12CaseIterableP", "sharp"]
+- ["s9CodingKeyP", "=="]
+- !private ["s9CodingKeyP", ""]
+- ["s9CodingKeyP", "_rawHashValue"]
+- ["s9CodingKeyP", "debugDescription"]
+- ["s9CodingKeyP", "description"]
+- ["s9CodingKeyP", "hash"]
+- ["s9CodingKeyP", "hashValue"]
+- ["s9CodingKeyP", "init"]
+- ["s9CodingKeyP", "intValue"]
+- ["s9CodingKeyP", "stringValue"]
+- !private ["Sl", ""]
+- !private ["Sl", "append"]
+- !private ["Sl", "compactMap"]
+- !private ["Sl", "contains"]
+- !private ["Sl", "filter"]
+- !private ["Sl", "first"]
+- !private ["Sl", "init"]
+- !private ["Sl", "last"]
+- !private ["SL", "Int"]
+- !private ["SL", "MusicNote"]
+- !private ["SL", "MusicPitch"]
+- !private ["SL", "MusicPitchAccidental"]
+- !private ["SL", "MusicPitchName"]
+- !private ["SL", "Set"]
+- !private ["SL", "String"]
+- !private ["SL", ""]
+- !private ["SL", "accidental"]
+- !private ["SL", "allEnharmonics"]
+- !private ["SL", "contains"]
+- ["SL", "description"]
+- ["SL", "encode"]
+- !private ["SL", "enharmonicIndex"]
+- !private ["SL", "first"]
+- ["SL", "init"]
+- !private ["SL", "last"]
+- !private ["SL", "name"]
+- !private ["SL", "octave"]
+- !private ["SL", "relativeOffset"]
+- !private ["10Foundation15ContiguousBytesP", "append"]
+- !private ["10Foundation15ContiguousBytesP", "compactMap"]
+- !private ["10Foundation15ContiguousBytesP", "filter"]
+- !private ["10Foundation15ContiguousBytesP", "last"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- !private ["s28CustomDebugStringConvertibleP", "Int"]
+- !private ["s28CustomDebugStringConvertibleP", "MusicNote"]
+- !private ["s28CustomDebugStringConvertibleP", "MusicPitch"]
+- !private ["s28CustomDebugStringConvertibleP", "MusicPitchAccidental"]
+- !private ["s28CustomDebugStringConvertibleP", "MusicPitchName"]
+- !private ["s28CustomDebugStringConvertibleP", "Set"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_rawHashValue"]
+- !private ["s28CustomDebugStringConvertibleP", "accidental"]
+- !private ["s28CustomDebugStringConvertibleP", "allEnharmonics"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- ["s28CustomDebugStringConvertibleP", "c"]
+- !private ["s28CustomDebugStringConvertibleP", "callAsFunction"]
+- !private ["s28CustomDebugStringConvertibleP", "compactMap"]
+- !private ["s28CustomDebugStringConvertibleP", "contains"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- !private ["s28CustomDebugStringConvertibleP", "doubleFlat"]
+- !private ["s28CustomDebugStringConvertibleP", "doubleSharp"]
+- ["s28CustomDebugStringConvertibleP", "encode"]
+- !private ["s28CustomDebugStringConvertibleP", "enharmonicIndex"]
+- !private ["s28CustomDebugStringConvertibleP", "enharmonicModifier"]
+- !private ["s28CustomDebugStringConvertibleP", "filter"]
+- !private ["s28CustomDebugStringConvertibleP", "first"]
+- !private ["s28CustomDebugStringConvertibleP", "flat"]
+- ["s28CustomDebugStringConvertibleP", "hash"]
+- ["s28CustomDebugStringConvertibleP", "hashValue"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "intValue"]
+- !private ["s28CustomDebugStringConvertibleP", "last"]
+- !private ["s28CustomDebugStringConvertibleP", "name"]
+- ["s28CustomDebugStringConvertibleP", "natural"]
+- !private ["s28CustomDebugStringConvertibleP", "octave"]
+- !private ["s28CustomDebugStringConvertibleP", "rawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "relativeOffset"]
+- !private ["s28CustomDebugStringConvertibleP", "sharp"]
+- ["s28CustomDebugStringConvertibleP", "stringValue"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "callAsFunction"]
+- !private ["s17CustomReflectableP", "compactMap"]
+- !private ["s17CustomReflectableP", "contains"]
+- !private ["s17CustomReflectableP", "filter"]
+- !private ["s17CustomReflectableP", "first"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "last"]
+- ["s23CustomStringConvertibleP", "=="]
+- !private ["s23CustomStringConvertibleP", "Int"]
+- !private ["s23CustomStringConvertibleP", "MusicNote"]
+- !private ["s23CustomStringConvertibleP", "MusicPitch"]
+- !private ["s23CustomStringConvertibleP", "MusicPitchAccidental"]
+- !private ["s23CustomStringConvertibleP", "MusicPitchName"]
+- !private ["s23CustomStringConvertibleP", "Set"]
+- !private ["s23CustomStringConvertibleP", "String"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_rawHashValue"]
+- !private ["s23CustomStringConvertibleP", "accidental"]
+- !private ["s23CustomStringConvertibleP", "allEnharmonics"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- ["s23CustomStringConvertibleP", "c"]
+- !private ["s23CustomStringConvertibleP", "compactMap"]
+- !private ["s23CustomStringConvertibleP", "contains"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- !private ["s23CustomStringConvertibleP", "doubleFlat"]
+- !private ["s23CustomStringConvertibleP", "doubleSharp"]
+- ["s23CustomStringConvertibleP", "encode"]
+- !private ["s23CustomStringConvertibleP", "enharmonicIndex"]
+- !private ["s23CustomStringConvertibleP", "enharmonicModifier"]
+- !private ["s23CustomStringConvertibleP", "filter"]
+- !private ["s23CustomStringConvertibleP", "first"]
+- !private ["s23CustomStringConvertibleP", "flat"]
+- ["s23CustomStringConvertibleP", "hash"]
+- ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "intValue"]
+- !private ["s23CustomStringConvertibleP", "last"]
+- !private ["s23CustomStringConvertibleP", "name"]
+- ["s23CustomStringConvertibleP", "natural"]
+- !private ["s23CustomStringConvertibleP", "octave"]
+- !private ["s23CustomStringConvertibleP", "rawValue"]
+- !private ["s23CustomStringConvertibleP", "relativeOffset"]
+- !private ["s23CustomStringConvertibleP", "sharp"]
+- ["s23CustomStringConvertibleP", "stringValue"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "append"]
+- !private ["10Foundation12DataProtocolP", "compactMap"]
+- !private ["10Foundation12DataProtocolP", "filter"]
+- !private ["10Foundation12DataProtocolP", "last"]
+- !private ["Se", "Int"]
+- !private ["Se", "MusicNote"]
+- !private ["Se", "MusicPitch"]
+- !private ["Se", "MusicPitchAccidental"]
+- !private ["Se", "MusicPitchName"]
+- !private ["Se", "Set"]
+- !private ["Se", "String"]
+- ["Se", ""]
+- !private ["Se", "accidental"]
+- !private ["Se", "allEnharmonics"]
+- !private ["Se", "append"]
+- ["Se", "c"]
+- !private ["Se", "callAsFunction"]
+- !private ["Se", "compactMap"]
+- !private ["Se", "contains"]
+- ["Se", "description"]
+- !private ["Se", "doubleFlat"]
+- !private ["Se", "doubleSharp"]
+- ["Se", "encode"]
+- !private ["Se", "enharmonicIndex"]
+- !private ["Se", "enharmonicModifier"]
+- !private ["Se", "filter"]
+- !private ["Se", "first"]
+- !private ["Se", "flat"]
+- ["Se", "init"]
+- !private ["Se", "last"]
+- !private ["Se", "name"]
+- ["Se", "natural"]
+- !private ["Se", "octave"]
+- !private ["Se", "rawValue"]
+- !private ["Se", "relativeOffset"]
+- !private ["Se", "sharp"]
+- !private ["s7DecoderP", "container"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["SE", "Int"]
+- !private ["SE", "MusicNote"]
+- !private ["SE", "MusicPitch"]
+- !private ["SE", "MusicPitchAccidental"]
+- !private ["SE", "MusicPitchName"]
+- !private ["SE", "Set"]
+- !private ["SE", "String"]
+- ["SE", ""]
+- !private ["SE", "accidental"]
+- !private ["SE", "allEnharmonics"]
+- !private ["SE", "append"]
+- ["SE", "c"]
+- !private ["SE", "callAsFunction"]
+- !private ["SE", "compactMap"]
+- !private ["SE", "contains"]
+- ["SE", "description"]
+- !private ["SE", "doubleFlat"]
+- !private ["SE", "doubleSharp"]
+- ["SE", "encode"]
+- !private ["SE", "enharmonicIndex"]
+- !private ["SE", "enharmonicModifier"]
+- !private ["SE", "filter"]
+- !private ["SE", "first"]
+- !private ["SE", "flat"]
+- ["SE", "init"]
+- !private ["SE", "last"]
+- !private ["SE", "name"]
+- ["SE", "natural"]
+- !private ["SE", "octave"]
+- !private ["SE", "rawValue"]
+- !private ["SE", "relativeOffset"]
+- !private ["SE", "sharp"]
+- !private ["s7EncoderP", "container"]
+- ["SQ", "=="]
+- !private ["SQ", "Int"]
+- !private ["SQ", "MusicNote"]
+- !private ["SQ", "MusicPitch"]
+- !private ["SQ", "MusicPitchAccidental"]
+- !private ["SQ", "MusicPitchName"]
+- !private ["SQ", "Set"]
+- !private ["SQ", "String"]
+- ["SQ", ""]
+- ["SQ", "_rawHashValue"]
+- !private ["SQ", "accidental"]
+- !private ["SQ", "allEnharmonics"]
+- !private ["SQ", "append"]
+- ["SQ", "c"]
+- !private ["SQ", "callAsFunction"]
+- !private ["SQ", "compactMap"]
+- !private ["SQ", "contains"]
+- ["SQ", "debugDescription"]
+- ["SQ", "description"]
+- !private ["SQ", "doubleFlat"]
+- !private ["SQ", "doubleSharp"]
+- ["SQ", "encode"]
+- !private ["SQ", "enharmonicIndex"]
+- !private ["SQ", "enharmonicModifier"]
+- !private ["SQ", "filter"]
+- !private ["SQ", "first"]
+- !private ["SQ", "flat"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- ["SQ", "intValue"]
+- !private ["SQ", "last"]
+- !private ["SQ", "name"]
+- ["SQ", "natural"]
+- !private ["SQ", "octave"]
+- !private ["SQ", "rawValue"]
+- !private ["SQ", "relativeOffset"]
+- !private ["SQ", "sharp"]
+- ["SQ", "stringValue"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "compactMap"]
+- !private ["s25ExpressibleByArrayLiteralP", "filter"]
+- !private ["s25ExpressibleByArrayLiteralP", "first"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "last"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "contains"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "first"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "last"]
+- !private ["s27ExpressibleByIntegerLiteralP", ""]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "callAsFunction"]
+- !private ["s23ExpressibleByNilLiteralP", "init"]
+- !private ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "contains"]
+- !private ["s32ExpressibleByStringInterpolationP", "first"]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s32ExpressibleByStringInterpolationP", "last"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "contains"]
+- !private ["s26ExpressibleByStringLiteralP", "first"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "last"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "contains"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "first"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "last"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- ["SH", "=="]
+- !private ["SH", "Int"]
+- !private ["SH", "MusicNote"]
+- !private ["SH", "MusicPitch"]
+- !private ["SH", "MusicPitchAccidental"]
+- !private ["SH", "MusicPitchName"]
+- !private ["SH", "Set"]
+- !private ["SH", "String"]
+- !private ["SH", ""]
+- ["SH", "_rawHashValue"]
+- !private ["SH", "accidental"]
+- !private ["SH", "allEnharmonics"]
+- !private ["SH", "append"]
+- ["SH", "c"]
+- !private ["SH", "callAsFunction"]
+- !private ["SH", "compactMap"]
+- !private ["SH", "contains"]
+- ["SH", "debugDescription"]
+- ["SH", "description"]
+- !private ["SH", "doubleFlat"]
+- !private ["SH", "doubleSharp"]
+- ["SH", "encode"]
+- !private ["SH", "enharmonicIndex"]
+- !private ["SH", "enharmonicModifier"]
+- !private ["SH", "filter"]
+- !private ["SH", "first"]
+- !private ["SH", "flat"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- ["SH", "intValue"]
+- !private ["SH", "last"]
+- !private ["SH", "name"]
+- ["SH", "natural"]
+- !private ["SH", "octave"]
+- !private ["SH", "rawValue"]
+- !private ["SH", "relativeOffset"]
+- !private ["SH", "sharp"]
+- ["SH", "stringValue"]
+- !private ["s6HasherV", "combine"]
+- !private ["Si", "init"]
+- !private ["s22KeyedDecodingContainerV", "decode"]
+- !private ["s30KeyedDecodingContainerProtocolP", "decode"]
+- !private ["s22KeyedEncodingContainerV", "encode"]
+- !private ["s30KeyedEncodingContainerProtocolP", "encode"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "contains"]
+- !private ["s25LosslessStringConvertibleP", "first"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "last"]
+- !private ["s10MirrorPathP", "contains"]
+- !private ["s10MirrorPathP", "first"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "last"]
+- ["5Music0A10AccidentalO", ""]
+- !private ["5Music0A10AccidentalO", "description"]
+- !private ["5Music0A10AccidentalO", "doubleFlat"]
+- !private ["5Music0A10AccidentalO", "doubleSharp"]
+- !private ["5Music0A10AccidentalO", "enharmonicModifier"]
+- !private ["5Music0A10AccidentalO", "flat"]
+- ["5Music0A10AccidentalO", "natural"]
+- !private ["5Music0A10AccidentalO", "sharp"]
+- !private ["5Music0A4NoteV", "init"]
+- !private ["5Music0A5PitchV", "Bool"]
+- ["5Music0A5PitchV", "CodingKeys"]
+- ["5Music0A5PitchV", "Int"]
+- ["5Music0A5PitchV", "MusicAccidental"]
+- ["5Music0A5PitchV", "MusicNote"]
+- ["5Music0A5PitchV", "MusicPitch"]
+- ["5Music0A5PitchV", "MusicPitchAccidental"]
+- ["5Music0A5PitchV", "MusicPitchName"]
+- ["5Music0A5PitchV", "MusicRhythm"]
+- ["5Music0A5PitchV", "Set"]
+- ["5Music0A5PitchV", "String"]
+- ["5Music0A5PitchV", ""]
+- ["5Music0A5PitchV", "accidental"]
+- ["5Music0A5PitchV", "allEnharmonics"]
+- ["5Music0A5PitchV", "description"]
+- ["5Music0A5PitchV", "encode"]
+- ["5Music0A5PitchV", "enharmonicIndex"]
+- ["5Music0A5PitchV", "init"]
+- ["5Music0A5PitchV", "name"]
+- ["5Music0A5PitchV", "note"]
+- ["5Music0A5PitchV", "octave"]
+- ["5Music0A5PitchV", "pitchAccidental"]
+- ["5Music0A5PitchV", "relativeOffset"]
+- ["5Music0A5PitchV", "respelled"]
+- !private ["5Music0A15PitchAccidentalV", "init"]
+- !private ["5Music0A9PitchNameO", "RawValue"]
+- ["5Music0A9PitchNameO", ""]
+- ["5Music0A9PitchNameO", "c"]
+- !private ["5Music0A9PitchNameO", "description"]
+- !private ["5Music0A9PitchNameO", "enharmonicModifier"]
+- !private ["5Music0A9PitchNameO", "init"]
+- !private ["5Music0A9PitchNameO", "rawValue"]
+- !private ["5Music0A12TransposableP", "Int"]
+- !private ["5Music0A12TransposableP", "MusicNote"]
+- !private ["5Music0A12TransposableP", "MusicPitch"]
+- !private ["5Music0A12TransposableP", "MusicPitchAccidental"]
+- !private ["5Music0A12TransposableP", "MusicPitchName"]
+- !private ["5Music0A12TransposableP", "Set"]
+- !private ["5Music0A12TransposableP", "String"]
+- !private ["5Music0A12TransposableP", "accidental"]
+- !private ["5Music0A12TransposableP", "allEnharmonics"]
+- ["5Music0A12TransposableP", "description"]
+- ["5Music0A12TransposableP", "encode"]
+- !private ["5Music0A12TransposableP", "enharmonicIndex"]
+- ["5Music0A12TransposableP", "init"]
+- !private ["5Music0A12TransposableP", "name"]
+- !private ["5Music0A12TransposableP", "octave"]
+- !private ["5Music0A12TransposableP", "relativeOffset"]
+- !private ["SM", ""]
+- !private ["SM", "append"]
+- !private ["SM", "compactMap"]
+- !private ["SM", "filter"]
+- !private ["SM", "last"]
+- !private ["10Foundation19MutableDataProtocolP", "append"]
+- !private ["10Foundation19MutableDataProtocolP", "compactMap"]
+- !private ["10Foundation19MutableDataProtocolP", "filter"]
+- !private ["10Foundation19MutableDataProtocolP", "last"]
+- !private ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "contains"]
+- !private ["So8NSCodingP", "first"]
+- !private ["So8NSCodingP", "last"]
+- !private ["So9NSCopyingP", "contains"]
+- !private ["So9NSCopyingP", "first"]
+- !private ["So9NSCopyingP", "last"]
+- !private ["So21NSItemProviderReadingP", "contains"]
+- !private ["So21NSItemProviderReadingP", "first"]
+- !private ["So21NSItemProviderReadingP", "last"]
+- !private ["So21NSItemProviderWritingP", "contains"]
+- !private ["So21NSItemProviderWritingP", "first"]
+- !private ["So21NSItemProviderWritingP", "last"]
+- !private ["So16NSMutableCopyingP", "contains"]
+- !private ["So16NSMutableCopyingP", "first"]
+- !private ["So16NSMutableCopyingP", "last"]
+- !private ["So8NSObjectC", "contains"]
+- !private ["So8NSObjectC", "containsString"]
+- !private ["So8NSObjectC", "first"]
+- !private ["So8NSObjectC", "last"]
+- !private ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "contains"]
+- !private ["So8NSObjectP", "containsString"]
+- !private ["So8NSObjectP", "first"]
+- !private ["So8NSObjectP", "last"]
+- !private ["So19NSPasteboardReadingP", "contains"]
+- !private ["So19NSPasteboardReadingP", "first"]
+- !private ["So19NSPasteboardReadingP", "last"]
+- !private ["So19NSPasteboardWritingP", "contains"]
+- !private ["So19NSPasteboardWritingP", "first"]
+- !private ["So19NSPasteboardWritingP", "last"]
+- !private ["So14NSSecureCodingP", "contains"]
+- !private ["So14NSSecureCodingP", "first"]
+- !private ["So14NSSecureCodingP", "last"]
+- !private ["So8NSStringC", "contains"]
+- !private ["So8NSStringC", "first"]
+- !private ["So8NSStringC", "last"]
+- !private ["Sj", ""]
+- !private ["Sj", "init"]
+- !private ["Sq", "callAsFunction"]
+- !private ["Sk", ""]
+- !private ["Sk", "append"]
+- !private ["Sk", "compactMap"]
+- !private ["Sk", "filter"]
+- !private ["Sk", "last"]
+- !private ["Sm", ""]
+- !private ["Sm", "append"]
+- !private ["Sm", "compactMap"]
+- !private ["Sm", "contains"]
+- !private ["Sm", "filter"]
+- !private ["Sm", "first"]
+- !private ["Sm", "init"]
+- !private ["Sm", "last"]
+- ["SY", "c"]
+- !private ["SY", "description"]
+- !private ["SY", "doubleFlat"]
+- !private ["SY", "doubleSharp"]
+- !private ["SY", "enharmonicModifier"]
+- !private ["SY", "flat"]
+- !private ["SY", "init"]
+- ["SY", "natural"]
+- !private ["SY", "rawValue"]
+- !private ["SY", "sharp"]
+- !private ["s10SIMDScalarP", "init"]
+- !private ["ST", ""]
+- !private ["ST", "append"]
+- !private ["ST", "compactMap"]
+- !private ["ST", "contains"]
+- !private ["ST", "filter"]
+- !private ["ST", "first"]
+- !private ["ST", "init"]
+- !private ["ST", "last"]
+- !private ["Sh", "compactMap"]
+- !private ["Sh", "first"]
+- !private ["Sh", "init"]
+- !private ["s10SetAlgebraP", "compactMap"]
+- !private ["s10SetAlgebraP", "first"]
+- !private ["s10SetAlgebraP", "init"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", ""]
+- !private ["s13SignedNumericP", "init"]
+- !private ["Sx", ""]
+- !private ["Sx", "init"]
+- !private ["SS", "contains"]
+- !private ["SS", "first"]
+- !private ["SS", "init"]
+- !private ["SS", "last"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s27StringInterpolationProtocolP", "init"]
+- !private ["Sy", "contains"]
+- !private ["Sy", "first"]
+- !private ["Sy", "init"]
+- !private ["Sy", "last"]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "contains"]
+- !private ["s16TextOutputStreamP", "first"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "last"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "contains"]
+- !private ["s20TextOutputStreamableP", "first"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "last"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s14_ArrayProtocolP", "compactMap"]
+- !private ["s14_ArrayProtocolP", "filter"]
+- !private ["s14_ArrayProtocolP", "last"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "contains"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "first"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "last"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "compactMap"]
+- !private ["s24_DestructorSafeContainerP", "filter"]
+- !private ["s24_DestructorSafeContainerP", "last"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "contains"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "first"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "last"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "contains"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "first"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "last"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "contains"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "first"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "last"]
+- !private ["s19_HasContiguousBytesP", "append"]
+- !private ["s19_HasContiguousBytesP", "compactMap"]
+- !private ["s19_HasContiguousBytesP", "contains"]
+- !private ["s19_HasContiguousBytesP", "filter"]
+- !private ["s19_HasContiguousBytesP", "first"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "last"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "compactMap"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "contains"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "filter"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "first"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "last"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "contains"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "first"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "last"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "contains"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "first"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "last"]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "_bridgeToObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_conditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_forceBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_unconditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "callAsFunction"]
+- !private ["s21_ObjectiveCBridgeableP", "compactMap"]
+- !private ["s21_ObjectiveCBridgeableP", "contains"]
+- !private ["s21_ObjectiveCBridgeableP", "filter"]
+- !private ["s21_ObjectiveCBridgeableP", "first"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "last"]
+- !private ["So13CKRecordValueP", "contains"]
+- !private ["So13CKRecordValueP", "first"]
+- !private ["So13CKRecordValueP", "last"]
+depends-nominal:
+- !private "s18AdditiveArithmeticP"
+- !private "Sa"
+- !private "SK"
+- !private "Sz"
+- !private "8CloudKit21CKRecordValueProtocolP"
+- !private "s7CVarArgP"
+- "s12CaseIterableP"
+- "s9CodingKeyP"
+- !private "Sl"
+- "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- "Se"
+- !private "s7DecoderP"
+- !private "s26DefaultStringInterpolationV"
+- "SE"
+- !private "s7EncoderP"
+- "SQ"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "SH"
+- !private "s6HasherV"
+- !private "Si"
+- !private "s22KeyedDecodingContainerV"
+- !private "s30KeyedDecodingContainerProtocolP"
+- !private "s22KeyedEncodingContainerV"
+- !private "s30KeyedEncodingContainerProtocolP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "5Music0A10AccidentalO"
+- !private "5Music0A4NoteV"
+- "5Music0A5PitchV"
+- !private "5Music0A15PitchAccidentalV"
+- "5Music0A9PitchNameO"
+- "5Music0A12TransposableP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So19NSPasteboardReadingP"
+- !private "So19NSPasteboardWritingP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sj"
+- !private "Sq"
+- !private "Sk"
+- !private "Sm"
+- "SY"
+- !private "s10SIMDScalarP"
+- !private "ST"
+- !private "Sh"
+- !private "s10SetAlgebraP"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- !private "Sx"
+- !private "SS"
+- !private "s27StringInterpolationProtocolP"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s14_ArrayProtocolP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "So13CKRecordValueP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "b8abbb6b068630b39138fbe5feb59842"

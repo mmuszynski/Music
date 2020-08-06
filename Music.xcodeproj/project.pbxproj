@@ -98,6 +98,7 @@
 		27A350B11E96EB2900344087 /* MusicRhythm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicRhythm.swift; sourceTree = "<group>"; };
 		27B09D711FFD531B00EFEB0E /* MusicNote+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicNote+Hashable.swift"; sourceTree = "<group>"; };
 		27B09D731FFD55F400EFEB0E /* MusicPitchExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPitchExtensions.swift; sourceTree = "<group>"; };
+		27F4E1C024DB55AD00AAFB4D /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		27FCC9BC200C1CE2003991FA /* MusicTimeSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTimeSignature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +124,7 @@
 		27527E721D9ED55300C97B25 = {
 			isa = PBXGroup;
 			children = (
+				27F4E1C024DB55AD00AAFB4D /* Package.swift */,
 				278E03C424D9BB2A00700E27 /* Sources */,
 				278E03CA24D9BB6500700E27 /* Tests */,
 				27527E7D1D9ED55300C97B25 /* Products */,

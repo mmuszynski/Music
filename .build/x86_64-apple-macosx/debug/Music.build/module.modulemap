@@ -1,0 +1,4 @@
+module Music {
+    header "/Users/mike/Cocoa/Frameworks/music/.build/x86_64-apple-macosx/debug/Music.build/Music-Swift.h"
+    requires objc
+}
