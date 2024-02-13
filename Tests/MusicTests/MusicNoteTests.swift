@@ -348,4 +348,8 @@ class MusicNoteNameTests: XCTestCase {
         XCTAssertEqual(MusicPitch(string: "Cx1"), MusicPitch(string: "C##1"))
     }
     
+    func testCaseIterableAccidental() {
+        //case iterable failed on 2/13/24 because the raw value was not equivalent to the enharmonic modifier as expected
+        let _ = MusicAccidental.allCases
+    }
 }
