@@ -35,4 +35,29 @@ extension MusicPitch {
     public func length(_ length: MusicRhythm) -> MusicNote {
         MusicNote(pitch: self, rhythm: length)
     }
+    
+    //A computed property to set the accidental of the pitch to a sharp
+    var sharp: Self {
+        self.accidental(.sharp)
+    }    
+    
+    //A computed property to set the accidental of the pitch to a natural
+    var natural: Self {
+        self.accidental(.natural)
+    }
+    
+    //A computed property to set the accidental of the pitch to a flat
+    var flat: Self {
+        self.accidental(.flat)
+    }
+    
+    //A computed property to set the accidental of the pitch to a double flat
+    var doubleFlat: Self {
+        self.accidental(.doubleFlat)
+    }    
+    
+    //A computed property to set the accidental of the pitch to a double flat
+    var doubleSharp: Self {
+        self.accidental(.doubleSharp)
+    }
 }
