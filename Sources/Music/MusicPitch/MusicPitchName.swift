@@ -9,7 +9,7 @@
 import Foundation
 
 /// The name used to describe a musical pitch, describing its place on the staff.
-public enum MusicPitchName: Int, Codable, CustomStringConvertible, CustomDebugStringConvertible {
+public enum MusicPitchName: Int, Codable, CustomStringConvertible, CustomDebugStringConvertible, Sendable {
     case c = 0, d, e, f, g, a, b
     
     /// All values of the enum, suitable for enumeration

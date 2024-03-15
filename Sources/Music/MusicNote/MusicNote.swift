@@ -33,7 +33,7 @@ public struct MusicNote {
             return self.pitch.accidental
         }
         set {
-            self.pitch.accidental = newValue
+            self.pitch = MusicPitch(name: self.pitch.name, accidental: newValue, octave: self.pitch.octave)
         }
     }
     
@@ -48,7 +48,7 @@ public struct MusicNote {
             return self.pitch.name
         }
         set {
-            self.pitch.name = newValue
+            self.pitch = MusicPitch(name: newValue, accidental: self.accidental, octave: self.octave)
         }
     }
     

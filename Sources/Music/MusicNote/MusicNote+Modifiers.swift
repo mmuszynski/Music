@@ -21,9 +21,7 @@ extension MusicPitch {
     public static let b: MusicPitch = .init(name: .b)
     
     public func accidental(_ accidental: MusicAccidental) -> MusicPitch {
-        var returnSelf = self
-        returnSelf.accidental = accidental
-        return returnSelf
+        MusicPitch(name: self.name, accidental: accidental, octave: self.octave)
     }
     
     public func octave(_ octave: Int) -> MusicPitch {

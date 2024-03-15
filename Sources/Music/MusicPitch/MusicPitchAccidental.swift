@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct MusicPitchAccidental: Equatable {
-    public var name: MusicPitchName
-    public var accidental: MusicAccidental
+public struct MusicPitchAccidental: Equatable, Sendable {
+    public let name: MusicPitchName
+    public let accidental: MusicAccidental
     
     public static func ==(lhs: MusicPitchAccidental, rhs: MusicPitchAccidental) -> Bool {
         return lhs.name == rhs.name && lhs.accidental == rhs.accidental

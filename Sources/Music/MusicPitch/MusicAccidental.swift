@@ -9,7 +9,7 @@
 import Foundation
 
 /// The possible accidentals used in creating notes and key signagures
-public enum MusicAccidental: Int, Codable, CustomStringConvertible, CustomDebugStringConvertible, RawRepresentable {
+public enum MusicAccidental: Int, Codable, CustomStringConvertible, CustomDebugStringConvertible, Sendable, RawRepresentable {
     case doubleFlat = -2
     case flat
     case natural
