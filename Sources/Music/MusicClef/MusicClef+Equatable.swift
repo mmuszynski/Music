@@ -31,3 +31,9 @@ extension MusicClef: Equatable {
         return lhs.isEqual(to: rhs)
     }
 }
+
+extension MusicClef: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.centerLinePitch)
+    }
+}
