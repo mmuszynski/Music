@@ -13,7 +13,7 @@ import Foundation
 ///The five lines in a musical staff are meaningless without reference to a clef. Over the evolution of western music, clefs organized themselves into three distinct types, the C Clef (most commonly associated with alto and tenor clefs), the G Clef (most commonly associated with treble clef) and the F Clef (most commonly associated with bass clef).
 ///
 ///However, these three clefs represent three categories under which most other clefs can be described. These clefs are represented as cases of the enum. Other, more useful clefs are represented as static functions (see `MusicClef.treble`, `MusicClef.bass`, etc)
-public enum MusicClef {
+public enum MusicClef: Sendable {
     case cClef(offset: Int)
     case fClef(offset: Int)
     case gClef(offset: Int)

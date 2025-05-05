@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MusicKeySignature {
+public enum MusicKeySignature: Sendable {
     case cMajor, fMajor, bFlatMajor, eFlatMajor, aFlatMajor, dFlatMajor, gFlatMajor, cFlatMajor
     case gMajor, dMajor, aMajor, eMajor, bMajor, fSharpMajor, cSharpMajor
     case aMinor, eMinor, bMinor, fSharpMinor, cSharpMinor, gSharpMinor, dSharpMinor, aSharpMinor
