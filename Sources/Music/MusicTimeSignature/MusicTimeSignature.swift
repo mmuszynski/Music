@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MusicTimeSignature {
+public struct MusicTimeSignature: Sendable {
     public var beats: Int
     public var baseRhythm: MusicRhythm
     

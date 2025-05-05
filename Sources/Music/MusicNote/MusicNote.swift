@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MusicNote {
+public struct MusicNote: Sendable {
     public var pitch: MusicPitch
     public var rhythm: MusicRhythm = .quarter
     

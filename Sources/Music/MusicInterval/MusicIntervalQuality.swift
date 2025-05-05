@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MusicIntervalQuality {
+public enum MusicIntervalQuality: Sendable {
     case perfect, major, minor, diminished, augmented
     
     var perfectModifier: Int? {

@@ -12,8 +12,8 @@ public struct MusicChord: MusicPitchCollection {
     internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
     
-    public var type: MusicChordType
-    public var root: MusicPitch
+    public let type: MusicChordType
+    public let root: MusicPitch
     
     public init(root: MusicPitch, type: MusicChordType) throws {
         self.type = type

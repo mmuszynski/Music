@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MusicRhythm {
+public enum MusicRhythm: Sendable {
     case breve, whole, half, quarter, eighth, sixteenth, thirtysecond, sixtyfourth
     indirect case dotted(_: MusicRhythm, dots: Int)
     indirect case compound(number: Int, duration: MusicRhythm)

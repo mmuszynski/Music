@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringConvertible {
+public enum MusicIntervalQuantity: CustomStringConvertible, CustomDebugStringConvertible, Sendable{
     case unison, second, third, fourth, fifth, sixth, seventh, octave
     indirect case compound(octaves: Int, plusQuantity: MusicIntervalQuantity)
     

@@ -22,7 +22,7 @@ public enum MusicScaleDirection {
 /// A `Collection` type that describes the pitches of a given `MusicScaleMode`.
 ///
 /// Musical scales lend themselves to a collection-type, acting as an immutable array of `MusicPitch` objects.
-public struct MusicScale: MusicPitchCollection {
+public struct MusicScale: MusicPitchCollection, Sendable {
     internal var pitches: [_Element] = []
     public typealias _Element = MusicPitch
     

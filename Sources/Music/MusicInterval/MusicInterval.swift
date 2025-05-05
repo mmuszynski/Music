@@ -10,19 +10,19 @@ import Foundation
 
 //public typealias MusicIntervalTriple = (direction: MusicIntervalDirection, quality: MusicIntervalQuality, quantity: MusicIntervalQuantity)
 
-public enum MusicIntervalDirection {
+public enum MusicIntervalDirection: Sendable {
     case upward, downward
 }
 
-public struct MusicInterval {
+public struct MusicInterval: Sendable {
     ///The quality of the interval, described as a `MusicIntervalQuality` type.
-    var quality: MusicIntervalQuality
+    let quality: MusicIntervalQuality
     
     ///The quantity of the interval, described as a `MusicIntervalQuantity` type.
-    var quantity: MusicIntervalQuantity
+    let quantity: MusicIntervalQuantity
     
     ///The direction of the interval, described as a `MusicIntervalDirection` type.
-    var direction: MusicIntervalDirection
+    let direction: MusicIntervalDirection
     
     ///The number of half steps spanned by the interval.
     ///
@@ -170,31 +170,38 @@ public struct MusicInterval {
     /// For quantity, Seconds become Sevenths, Thirds become Sixths, and Fourths become Fifths. As with quality, these are also reversible.
     ///
     /// Finally, by definition, compound intervals take the inversion of their non-compound part.
-    mutating public func invert() {
+    ///
+    /// - BUG: Currently, the interval returned by this function does not change direction. Is this intended?
+    mutating public func invert() throws {
+        var newQuanity: MusicIntervalQuantity = self.quantity
         if case .compound(_, let quantity) = self.quantity {
-            self.quantity = quantity
+            newQuanity = quantity
         }
         
-        self.quality = self.quality.complement
-        self.quantity = self.quantity.complement
+        newQuanity = newQuanity.complement
+        self = try! MusicInterval(direction: self.direction, quality: self.quality.complement, quantity: newQuanity)
     }
     
     /// Provides the inverted form of the interval as a new object.
     public var inverted: MusicInterval {
-        var other = self
-        other.invert()
-        return other
+        get throws {
+            var other = self
+            try other.invert()
+            return other
+        }
     }
     
     /// Provides the reverse of the interval, or the interval if the root and destination notes are switched.
-    mutating public func reverse() {
-        self.direction = self.direction == .upward ? .downward : .upward
+    mutating public func reverse() throws {
+        self = try MusicInterval(direction: self.direction == .upward ? .downward : .upward, quality: self.quality, quantity: self.quantity)
     }
     
     public var reversed: MusicInterval {
-        var other = self
-        other.reverse()
-        return other
+        get throws {
+            var other = self
+            try other.reverse()
+            return other
+        }
     }
     
     
